@@ -7,6 +7,7 @@
     <script src="https://wp-themes.com/wp-content/themes/twentyfifteen/js/html5.js"></script>
     <![endif]-->
     <title>Jonathan Verrecchia's Blog</title>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
     <link rel='stylesheet' id='twentyfifteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Noto+Sans%3A400italic%2C700italic%2C400%2C700%7CNoto+Serif%3A400italic%2C700italic%2C400%2C700%7CInconsolata%3A400%2C700&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
     <link rel='stylesheet' id='genericons-css'  href='https://wp-themes.com/wp-content/themes/twentyfifteen/genericons/genericons.css?ver=3.2' type='text/css' media='all' />
     <link rel='stylesheet' id='twentyfifteen-style-css'  href='https://wp-themes.com/wp-content/themes/twentyfifteen/style.css?ver=4.4-alpha-34532' type='text/css' media='all' />
@@ -66,7 +67,7 @@
         }
 
     .site-header {
-        margin-bottom: 15%;
+        /*margin-bottom: 15%;*/
     }
 
     #widget-area aside {
@@ -85,7 +86,8 @@
 
 <body class="home blog">
 <div id="page" class="hfeed site">
-    <a class="skip-link screen-reader-text" href="#content">Skip to content</a><div id="sidebar" class="sidebar">
+    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+<div id="sidebar" class="sidebar">
     <header id="masthead" class="site-header" role="banner">
         <div class="site-branding">
             <h1 class="site-title">
@@ -183,7 +185,7 @@ Responsive Initializr
 Today I'm proud to announce that a "Responsive template" is now available on <a href="http://www.initializr.com/" target="_blank">Initializr</a>! It will help you dealing with all the various devices used to display your site. Mobiles, tablets, netbooks, laptops, desktop monitors, HUGE desktop monitors... Making your site work correctly on all these devices is a real nightmare. Well guess what? This nightmare is... absolutely not over! But as least, the boilerplate code of a responsive layout is now here to make your life easier.<h2>About responsive web design</h2>
 
 <p>
-For those who have been living in a cave for the last few months (understand: for those who have a life and don’t spend days reading tweets and blogs) you probably need a short update about what a “responsive” design is.
+For those who have been living in a cave for the last few months (understand: for those who have a life and don’t spend days reading tweets and blogs) you probably need a short update about what a "responsive" design is.
 </p>
 
 <p>The concept, introduced by <a href="http://ethanmarcotte.com/" target="_blank">Ethan Marcotte</a>, is pretty simple: the page layout should adapt depending on the screen size so it’s always convenient and easily readable for the user. On mobile for instance, it’s more comfortable to get a minimalistic one-column vertical view than getting a 2 or 3 columns view – which is perfect for desktops. What about tablets? Maybe we can also adapt the layout to fit their medium size screen too? Since we can’t know the screen size of our users’ devices, well it should just work everywhere.</p>
@@ -196,7 +198,7 @@ To design a responsive layout, we have to forget about the usual static 960px wi
 
 <h2>A fluid layout with percentage widths</h2>
 
-<p>The first thing our page needs is a “fluid” layout. A layout is called fluid when the text adapts its container size and when proportions are preserved when the window is resized. To get this working we can’t have any hard coded static value for widths, horizontal padding nor horizontal margins. We can basically only use percentages:</p>
+<p>The first thing our page needs is a "fluid" layout. A layout is called fluid when the text adapts its container size and when proportions are preserved when the window is resized. To get this working we can’t have any hard coded static value for widths, horizontal padding nor horizontal margins. We can basically only use percentages:</p>
 
 <p>
 <script src="https://gist.github.com/verekia/06a4afe90649d5029ac1.js"></script>
