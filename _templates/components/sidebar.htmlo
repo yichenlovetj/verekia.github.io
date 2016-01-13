@@ -1,0 +1,81 @@
+<div id="sidebar" class="sidebar">
+    <header id="masthead" class="site-header" role="banner">
+        <div class="site-branding">
+            <h1 class="site-title">
+                <a href="/" rel="home">Jonathan Verrecchia's Blog</a>
+            </h1>
+            <p class="site-description">
+                Minimalism, Life, Code
+            </p>
+            <br>
+            <div class="social-box">
+                <p class="hide-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @verekia</a></p>
+                <p class="show-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @verekia</a></p>
+            </div>
+
+            <button class="secondary-toggle">Menu</button>
+        </div><!-- .site-branding -->
+    </header><!-- .site-header -->
+
+    <div id="secondary" class="secondary">
+        <div id="widget-area" class="widget-area" role="complementary">
+            <aside id="recent-posts-3" class="widget widget_recent_entries">
+                <h2 class="widget-title">
+                    Minimalism
+                </h2>
+                <ul>
+                    <li>
+<!-- htmlo: articles/todo-zero/url -->
+<!-- htmlo: articles/todo-zero/short-title -->
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <aside id="recent-posts-3" class="widget widget_recent_entries">
+                <h2 class="widget-title">
+                    Life
+                </h2>
+                <ul>
+                    <li>
+                        <a href="http://verekia.com/california/welcome">Going Vegan</a>
+                    </li>
+                    <li>
+                        <a href="http://verekia.com/california/welcome">Single Point of Failure</a>
+                    </li>
+                    <li>
+                        <a href="http://verekia.com/california/welcome">Music When Commuting</a>
+                    </li>
+                    <li>
+                        <a href="http://verekia.com/california/welcome">Moving to San Francisco</a>
+                    </li>
+                </ul>
+            </aside>
+            <aside id="recent-posts-3" class="widget widget_recent_entries">
+                <h2 class="widget-title">
+                    Code
+                </h2>
+                <ul>
+                    <li>
+<!-- htmlo: articles/css-preprocessors/url -->
+<!-- htmlo: articles/css-preprocessors/short-title -->
+                        </a>
+                    </li>
+                    <li>
+<!-- htmlo: articles/responsive-initializr/url -->
+<!-- htmlo: articles/responsive-initializr/short-title -->
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://verekia.com/requirejs/build-simple-client-side-mvc-app-require-js/">RequireJS MVC App</a>
+                    </li>
+                    <li>
+                        <a href="http://verekia.com/less-css/dont-read-less-css-tutorial-highly-addictive/">Less CSS Tutorial</a>
+                    </li>
+                    <li>
+                        <a href="http://verekia.com/windows8/overview-developing-windows-8-apps-html-css-javascript/">Windows 8 Development</a>
+                    </li>
+                </ul>
+            </aside>
+        </div><!-- .widget-area -->
+    </div><!-- .secondary -->
+</div><!-- .sidebar -->
