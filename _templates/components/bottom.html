@@ -21,6 +21,10 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
 <script>window.jQuery || document.write('<script src="/js/jquery.min.js"><\/script>')</script>
 
 <script>
+    if (window.location.pathname !== '/') {
+        $('.js-homepage-link').show();
+    };
+
     $('#widget-area .js-more').click(function(){
         $(this).parent().parent().find('.js-hidden-link').toggleClass('hidden');
         $(this).parent().remove();

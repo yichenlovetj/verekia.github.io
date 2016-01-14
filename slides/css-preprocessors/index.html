@@ -125,6 +125,14 @@
 
     <div id="secondary" class="secondary">
         <div id="widget-area" class="widget-area" role="complementary">
+            <aside id="recent-posts-3" class="widget widget_recent_entries hidden js-homepage-link">
+                <ul>
+                    <li>
+                        <a href="/">Back to the homepage
+                        </a>
+                    </li>
+                </ul>
+            </aside>
             <aside id="recent-posts-3" class="widget widget_recent_entries">
                 <h2 class="widget-title">
                     Minimalism
@@ -249,6 +257,10 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
 <script>window.jQuery || document.write('<script src="/js/jquery.min.js"><\/script>')</script>
 
 <script>
+    if (window.location.pathname !== '/') {
+        $('.js-homepage-link').show();
+    };
+
     $('#widget-area .js-more').click(function(){
         $(this).parent().parent().find('.js-hidden-link').toggleClass('hidden');
         $(this).parent().remove();
