@@ -25,13 +25,17 @@
                 </h2>
                 <ul>
                     <li>
+                        <a href="http://zeromalist.com" target="_blank">Zeromalist.com
+                        </a>
+                    </li>
+                    <li>
 <!-- htmlo: articles/todo-zero/url -->
 <!-- htmlo: articles/todo-zero/short-title -->
                         </a>
                     </li>
                 </ul>
             </aside>
-            <aside id="recent-posts-3" class="widget widget_recent_entries">
+<!--             <aside id="recent-posts-3" class="widget widget_recent_entries">
                 <h2 class="widget-title">
                     Life
                 </h2>
@@ -49,7 +53,7 @@
                         <a href="http://verekia.com/california/welcome">Moving to San Francisco</a>
                     </li>
                 </ul>
-            </aside>
+            </aside> -->
             <aside id="recent-posts-3" class="widget widget_recent_entries">
                 <h2 class="widget-title">
                     Code
@@ -66,13 +70,16 @@
                         </a>
                     </li>
                     <li>
-                        <a href="http://verekia.com/requirejs/build-simple-client-side-mvc-app-require-js/">RequireJS MVC App</a>
+                        <a href="/requirejs/build-simple-client-side-mvc-app-require-js/">RequireJS MVC App</a>
                     </li>
                     <li>
-                        <a href="http://verekia.com/less-css/dont-read-less-css-tutorial-highly-addictive/">Less CSS Tutorial</a>
+                        <a href="/less-css/dont-read-less-css-tutorial-highly-addictive/">Less CSS Tutorial</a>
                     </li>
                     <li>
-                        <a href="http://verekia.com/windows8/overview-developing-windows-8-apps-html-css-javascript/">Windows 8 Development</a>
+                        <a href="/windows8/overview-developing-windows-8-apps-html-css-javascript/">Windows 8 Development</a>
+                    </li>
+                    <li>
+                        <a href="/california/welcome">Moving to San Francisco</a>
                     </li>
                 </ul>
             </aside>
