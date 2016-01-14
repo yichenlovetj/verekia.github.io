@@ -19,7 +19,7 @@
 
     <div id="secondary" class="secondary">
         <div id="widget-area" class="widget-area" role="complementary">
-            <aside id="recent-posts-3" class="widget widget_recent_entries hidden js-homepage-link">
+            <aside id="homepage-link-container" class="widget widget_recent_entries hidden js-homepage-link">
                 <ul>
                     <li>
                         <a href="/">Back to the homepage
@@ -27,6 +27,12 @@
                     </li>
                 </ul>
             </aside>
+            <script>
+            if (window.location.pathname !== '/') {
+                document.getElementById('homepage-link-container').className = 
+                    document.getElementById('homepage-link-container').className.replace(/\bhidden\b/,'');
+            };
+            </script>
             <aside id="recent-posts-3" class="widget widget_recent_entries">
                 <h2 class="widget-title">
                     Transhumanism
@@ -98,7 +104,7 @@ Getting Things Done
             </aside> -->
             <aside id="recent-posts-3" class="widget widget_recent_entries">
                 <h2 class="widget-title">
-                    Code
+                    Code <a href="javascript:;" class="expand-nav-link js-more">(more)</a>
                 </h2>
                 <ul>
                     <li>
@@ -110,9 +116,6 @@ CSS Preprocessors Talk
 <a href="/initializr/responsive-template/">
 Responsive Initializr
                         </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" class="js-more">More</a>
                     </li>
                     <li class="hidden js-hidden-link">
                         <a href="/requirejs/build-simple-client-side-mvc-app-require-js/">RequireJS MVC App</a>
