@@ -6,13 +6,28 @@
 
 </div><!-- .site -->
 
-<script type='text/javascript' src='https://wp-themes.com/wp-content/themes/twentyfifteen/js/skip-link-focus-fix.js?ver=20141010'></script>
+<script type='text/javascript' src='/js/skip-link-focus-fix.js'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand child menu<\/span>","collapse":"<span class=\"screen-reader-text\">collapse child menu<\/span>"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='https://wp-themes.com/wp-content/themes/twentyfifteen/js/functions.js?ver=20150330'></script>
+<script type='text/javascript' src='/js/functions.js'></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/jquery.min.js"><\/script>')</script>
+
+<script>
+    $('#widget-area .js-more').click(function(){
+        $(this).parent().parent().find('.js-hidden-link').toggleClass('hidden');
+        $(this).parent().remove();
+    });
+</script>
+
+
 
 <!-- Twitter button -->
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>

@@ -9,17 +9,21 @@
     <title>Jonathan Verrecchia's Blog</title>
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
     <link rel='stylesheet' id='twentyfifteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Noto+Sans%3A400italic%2C700italic%2C400%2C700%7CNoto+Serif%3A400italic%2C700italic%2C400%2C700%7CInconsolata%3A400%2C700&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
-    <link rel='stylesheet' id='genericons-css'  href='https://wp-themes.com/wp-content/themes/twentyfifteen/genericons/genericons.css?ver=3.2' type='text/css' media='all' />
-    <link rel='stylesheet' id='twentyfifteen-style-css'  href='https://wp-themes.com/wp-content/themes/twentyfifteen/style.css?ver=4.4-alpha-34532' type='text/css' media='all' />
+    <link rel='stylesheet' id='genericons-css'  href='/css/twentyfifteen-genericons.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='twentyfifteen-style-css'  href='/css/twentyfifteen.css' type='text/css' media='all' />
     <!--[if lt IE 9]>
-    <link rel='stylesheet' id='twentyfifteen-ie-css'  href='https://wp-themes.com/wp-content/themes/twentyfifteen/css/ie.css?ver=20141010' type='text/css' media='all' />
+    <link rel='stylesheet' id='twentyfifteen-ie-css'  href='/css/twentyfifteen-ie.css' type='text/css' media='all' />
     <![endif]-->
     <!--[if lt IE 8]>
-    <link rel='stylesheet' id='twentyfifteen-ie7-css'  href='https://wp-themes.com/wp-content/themes/twentyfifteen/css/ie7.css?ver=20141010' type='text/css' media='all' />
+    <link rel='stylesheet' id='twentyfifteen-ie7-css'  href='/css/twentyfifteen-ie7.css' type='text/css' media='all' />
     <![endif]-->
     <style>
         .text-center {
             text-align: center;
+        }
+
+        .hidden {
+            display: none;
         }
 
         .island {
@@ -28,8 +32,13 @@
             border: 1px solid #ddd;
         }
 
+        .site-title {
+            font-family: 'Noto Serif', serif;
+            font-size: 16px;
+        }
+
         .social-box {
-            height: 28px;
+            height: 32px;
         }
 
         .social-box a {
@@ -70,6 +79,11 @@
         /*margin-bottom: 15%;*/
     }
 
+    .site-title {
+        margin-top: 20%;
+        margin-bottom: 10%;
+    }
+
     #widget-area aside {
         margin-bottom: 10%;
     }
@@ -78,6 +92,9 @@
         margin-bottom: 1em;
     }
 
+    #widget-area a {
+        display: block;
+    }
 
     </style>
     <script type='text/javascript' src='https://wp-themes.com/wp/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
@@ -90,14 +107,14 @@
 <div id="sidebar" class="sidebar">
     <header id="masthead" class="site-header" role="banner">
         <div class="site-branding">
-            <h1 class="site-title">
+            <h1 class="site-title hidden">
                 <a href="/" rel="home">Jonathan Verrecchia's Blog</a>
             </h1>
-            <p class="site-description">
+<!--             <p class="site-description">
                 Minimalism, Life, Code
             </p>
-            <br>
-            <div class="social-box">
+            <br> -->
+            <div class="social-box hidden">
                 <p class="hide-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @verekia</a></p>
                 <p class="show-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @verekia</a></p>
             </div>
@@ -165,12 +182,22 @@ Responsive Initializr
                         <a href="/less-css/dont-read-less-css-tutorial-highly-addictive/">Less CSS Tutorial</a>
                     </li>
                     <li>
+                        <a href="javascript:;" class="js-more">More</a>
+                    </li>
+                    <li class="hidden js-hidden-link">
                         <a href="/windows8/overview-developing-windows-8-apps-html-css-javascript/">Windows 8 Development</a>
                     </li>
-                    <li>
+                    <li class="hidden js-hidden-link">
                         <a href="/california/welcome">Moving to San Francisco</a>
                     </li>
                 </ul>
+                <h1 class="site-title">
+                    <a href="/" rel="home">by Jonathan Verrecchia</a>
+                </h1>
+                <div class="social-box">
+                    <p class="hide-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @verekia</a></p>
+                    <p class="show-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @verekia</a></p>
+                </div>
             </aside>
         </div><!-- .widget-area -->
     </div><!-- .secondary -->
@@ -206,13 +233,28 @@ Responsive Initializr
 
 </div><!-- .site -->
 
-<script type='text/javascript' src='https://wp-themes.com/wp-content/themes/twentyfifteen/js/skip-link-focus-fix.js?ver=20141010'></script>
+<script type='text/javascript' src='/js/skip-link-focus-fix.js'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand child menu<\/span>","collapse":"<span class=\"screen-reader-text\">collapse child menu<\/span>"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='https://wp-themes.com/wp-content/themes/twentyfifteen/js/functions.js?ver=20150330'></script>
+<script type='text/javascript' src='/js/functions.js'></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/jquery.min.js"><\/script>')</script>
+
+<script>
+    $('#widget-area .js-more').click(function(){
+        $(this).parent().parent().find('.js-hidden-link').toggleClass('hidden');
+        $(this).parent().remove();
+    });
+</script>
+
+
 
 <!-- Twitter button -->
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
@@ -235,17 +277,21 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
     <title>Jonathan Verrecchia's Blog</title>
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
     <link rel='stylesheet' id='twentyfifteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Noto+Sans%3A400italic%2C700italic%2C400%2C700%7CNoto+Serif%3A400italic%2C700italic%2C400%2C700%7CInconsolata%3A400%2C700&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
-    <link rel='stylesheet' id='genericons-css'  href='https://wp-themes.com/wp-content/themes/twentyfifteen/genericons/genericons.css?ver=3.2' type='text/css' media='all' />
-    <link rel='stylesheet' id='twentyfifteen-style-css'  href='https://wp-themes.com/wp-content/themes/twentyfifteen/style.css?ver=4.4-alpha-34532' type='text/css' media='all' />
+    <link rel='stylesheet' id='genericons-css'  href='/css/twentyfifteen-genericons.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='twentyfifteen-style-css'  href='/css/twentyfifteen.css' type='text/css' media='all' />
     <!--[if lt IE 9]>
-    <link rel='stylesheet' id='twentyfifteen-ie-css'  href='https://wp-themes.com/wp-content/themes/twentyfifteen/css/ie.css?ver=20141010' type='text/css' media='all' />
+    <link rel='stylesheet' id='twentyfifteen-ie-css'  href='/css/twentyfifteen-ie.css' type='text/css' media='all' />
     <![endif]-->
     <!--[if lt IE 8]>
-    <link rel='stylesheet' id='twentyfifteen-ie7-css'  href='https://wp-themes.com/wp-content/themes/twentyfifteen/css/ie7.css?ver=20141010' type='text/css' media='all' />
+    <link rel='stylesheet' id='twentyfifteen-ie7-css'  href='/css/twentyfifteen-ie7.css' type='text/css' media='all' />
     <![endif]-->
     <style>
         .text-center {
             text-align: center;
+        }
+
+        .hidden {
+            display: none;
         }
 
         .island {
@@ -254,8 +300,13 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
             border: 1px solid #ddd;
         }
 
+        .site-title {
+            font-family: 'Noto Serif', serif;
+            font-size: 16px;
+        }
+
         .social-box {
-            height: 28px;
+            height: 32px;
         }
 
         .social-box a {
@@ -296,6 +347,11 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
         /*margin-bottom: 15%;*/
     }
 
+    .site-title {
+        margin-top: 20%;
+        margin-bottom: 10%;
+    }
+
     #widget-area aside {
         margin-bottom: 10%;
     }
@@ -304,6 +360,9 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
         margin-bottom: 1em;
     }
 
+    #widget-area a {
+        display: block;
+    }
 
     </style>
     <script type='text/javascript' src='https://wp-themes.com/wp/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
@@ -316,14 +375,14 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
 <div id="sidebar" class="sidebar">
     <header id="masthead" class="site-header" role="banner">
         <div class="site-branding">
-            <h1 class="site-title">
+            <h1 class="site-title hidden">
                 <a href="/" rel="home">Jonathan Verrecchia's Blog</a>
             </h1>
-            <p class="site-description">
+<!--             <p class="site-description">
                 Minimalism, Life, Code
             </p>
-            <br>
-            <div class="social-box">
+            <br> -->
+            <div class="social-box hidden">
                 <p class="hide-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @verekia</a></p>
                 <p class="show-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @verekia</a></p>
             </div>
@@ -391,12 +450,22 @@ Responsive Initializr
                         <a href="/less-css/dont-read-less-css-tutorial-highly-addictive/">Less CSS Tutorial</a>
                     </li>
                     <li>
+                        <a href="javascript:;" class="js-more">More</a>
+                    </li>
+                    <li class="hidden js-hidden-link">
                         <a href="/windows8/overview-developing-windows-8-apps-html-css-javascript/">Windows 8 Development</a>
                     </li>
-                    <li>
+                    <li class="hidden js-hidden-link">
                         <a href="/california/welcome">Moving to San Francisco</a>
                     </li>
                 </ul>
+                <h1 class="site-title">
+                    <a href="/" rel="home">by Jonathan Verrecchia</a>
+                </h1>
+                <div class="social-box">
+                    <p class="hide-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @verekia</a></p>
+                    <p class="show-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @verekia</a></p>
+                </div>
             </aside>
         </div><!-- .widget-area -->
     </div><!-- .secondary -->
@@ -558,13 +627,28 @@ nunc. Morbi imperdiet augue
 
 </div><!-- .site -->
 
-<script type='text/javascript' src='https://wp-themes.com/wp-content/themes/twentyfifteen/js/skip-link-focus-fix.js?ver=20141010'></script>
+<script type='text/javascript' src='/js/skip-link-focus-fix.js'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand child menu<\/span>","collapse":"<span class=\"screen-reader-text\">collapse child menu<\/span>"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='https://wp-themes.com/wp-content/themes/twentyfifteen/js/functions.js?ver=20150330'></script>
+<script type='text/javascript' src='/js/functions.js'></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/jquery.min.js"><\/script>')</script>
+
+<script>
+    $('#widget-area .js-more').click(function(){
+        $(this).parent().parent().find('.js-hidden-link').toggleClass('hidden');
+        $(this).parent().remove();
+    });
+</script>
+
+
 
 <!-- Twitter button -->
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>

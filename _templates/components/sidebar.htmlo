@@ -1,14 +1,14 @@
 <div id="sidebar" class="sidebar">
     <header id="masthead" class="site-header" role="banner">
         <div class="site-branding">
-            <h1 class="site-title">
+            <h1 class="site-title hidden">
                 <a href="/" rel="home">Jonathan Verrecchia's Blog</a>
             </h1>
-            <p class="site-description">
+<!--             <p class="site-description">
                 Minimalism, Life, Code
             </p>
-            <br>
-            <div class="social-box">
+            <br> -->
+            <div class="social-box hidden">
                 <p class="hide-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @verekia</a></p>
                 <p class="show-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @verekia</a></p>
             </div>
@@ -76,12 +76,22 @@
                         <a href="/less-css/dont-read-less-css-tutorial-highly-addictive/">Less CSS Tutorial</a>
                     </li>
                     <li>
+                        <a href="javascript:;" class="js-more">More</a>
+                    </li>
+                    <li class="hidden js-hidden-link">
                         <a href="/windows8/overview-developing-windows-8-apps-html-css-javascript/">Windows 8 Development</a>
                     </li>
-                    <li>
+                    <li class="hidden js-hidden-link">
                         <a href="/california/welcome">Moving to San Francisco</a>
                     </li>
                 </ul>
+                <h1 class="site-title">
+                    <a href="/" rel="home">by Jonathan Verrecchia</a>
+                </h1>
+                <div class="social-box">
+                    <p class="hide-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @verekia</a></p>
+                    <p class="show-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @verekia</a></p>
+                </div>
             </aside>
         </div><!-- .widget-area -->
     </div><!-- .secondary -->
