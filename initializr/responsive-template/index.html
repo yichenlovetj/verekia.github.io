@@ -34,7 +34,7 @@
 
         .site-title {
             font-family: 'Noto Serif', serif;
-            font-size: 16px;
+            font-size: 100%;
         }
 
         .social-box {
@@ -57,14 +57,21 @@
        }
 
        @media only screen 
-       and (max-width : 940px) {
+       and (max-width : 954px) {
             .show-on-tablet {
+                display: none;
+            }
+            .show-on-mobile {
+                display: block;
+            }
+
+            .hide-on-mobile {
                 display: none;
             }
        }
 
        @media only screen 
-       and (min-width : 941px) 
+       and (min-width : 955px) 
        and (max-width : 1400px) {
             .hide-on-tablet {
                 display: none;
@@ -120,14 +127,14 @@
 <div id="sidebar" class="sidebar">
     <header id="masthead" class="site-header" role="banner">
         <div class="site-branding">
-            <h1 class="site-title hidden">
-                <a href="/" rel="home">Jonathan Verrecchia's Blog</a>
+            <h1 class="site-title hidden show-on-mobile">
+                <a href="/" rel="home">Jonathan Verrecchia's Projects</a>
             </h1>
 <!--             <p class="site-description">
                 Minimalism, Life, Code
             </p>
             <br> -->
-            <div class="social-box hidden">
+            <div class="social-box hidden show-on-mobile">
                 <p class="hide-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @verekia</a></p>
                 <p class="show-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @verekia</a></p>
             </div>
@@ -154,6 +161,26 @@
             </script>
             <aside id="recent-posts-3" class="widget widget_recent_entries">
                 <h2 class="widget-title">
+                    Lifestyle <a href="javascript:;" class="expand-nav-link js-more">(more)</a>
+                </h2>
+                <ul>
+                    <li>
+                        <a href="http://zeromalist.com" target="_blank">Life Framework
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/" target="_blank">Minimalism Coaching
+                        </a>
+                    </li>
+                    <li class="hidden js-hidden-link">
+<a href="/slides/todo-zero/">
+Getting Things Done
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <aside id="recent-posts-3" class="widget widget_recent_entries">
+                <h2 class="widget-title">
                     Transhumanism
                 </h2>
                 <ul>
@@ -163,26 +190,6 @@
                     </li>
                     <li>
                         <a href="/">Open Letter to the ASI
-                        </a>
-                    </li>
-                </ul>
-            </aside>
-            <aside id="recent-posts-3" class="widget widget_recent_entries">
-                <h2 class="widget-title">
-                    Lifestyle
-                </h2>
-                <ul>
-                    <li>
-                        <a href="http://zeromalist.com" target="_blank">Minimalism Guidelines
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/" target="_blank">Minimalism Coaching
-                        </a>
-                    </li>
-                    <li>
-<a href="/slides/todo-zero/">
-Getting Things Done
                         </a>
                     </li>
                 </ul>
@@ -249,10 +256,10 @@ Responsive Initializr
                         <a href="/california/welcome">Moving to San Francisco</a>
                     </li>
                 </ul>
-                <h1 class="site-title">
+                <h1 class="site-title hide-on-mobile">
                     <a href="/" rel="home">by Jonathan Verrecchia</a>
                 </h1>
-                <div class="social-box">
+                <div class="social-box hide-on-mobile">
                     <p class="hide-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @verekia</a></p>
                     <p class="show-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @verekia</a></p>
                 </div>

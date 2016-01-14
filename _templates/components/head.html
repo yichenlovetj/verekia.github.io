@@ -34,7 +34,7 @@
 
         .site-title {
             font-family: 'Noto Serif', serif;
-            font-size: 16px;
+            font-size: 100%;
         }
 
         .social-box {
@@ -57,14 +57,21 @@
        }
 
        @media only screen 
-       and (max-width : 940px) {
+       and (max-width : 954px) {
             .show-on-tablet {
+                display: none;
+            }
+            .show-on-mobile {
+                display: block;
+            }
+
+            .hide-on-mobile {
                 display: none;
             }
        }
 
        @media only screen 
-       and (min-width : 941px) 
+       and (min-width : 955px) 
        and (max-width : 1400px) {
             .hide-on-tablet {
                 display: none;
