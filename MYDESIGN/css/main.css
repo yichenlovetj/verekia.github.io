@@ -115,7 +115,7 @@ html {
 }
 
 .nav-content {
-    width: 260px;
+    width: 232px;
 }
 
 .nav-dropdown {
@@ -211,7 +211,8 @@ html {
     }
 
     .nav-content {
-        width: initial;
+        width: 662.75px;
+        margin: auto;
     }
 
     .nav-list {
@@ -233,6 +234,9 @@ html {
 }
 
 @media (max-width: 735px) {
+    .nav-content {
+        width: initial;
+    }
     .main-content {
         width: initial;
     }
