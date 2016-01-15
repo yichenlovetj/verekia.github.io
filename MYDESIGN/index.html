@@ -51,8 +51,9 @@
                     <div class="nav-signature-name">
                         Jonathan Verrecchia, Paris
                     </div>
-                    <a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-size="large" data-dnt="true">Follow @verekia</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                    <div class="twitter-button-container" style="display: none">
+                        <a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-size="large" data-dnt="true">Follow @verekia</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -95,7 +96,12 @@
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-        <script src="js/main.js"></script>
+
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+        <script>
+            setTimeout(function(){ $('.twitter-button-container').fadeIn(500); }, 500);
+        </script>
 
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

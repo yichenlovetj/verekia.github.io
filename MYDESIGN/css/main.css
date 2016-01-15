@@ -107,10 +107,14 @@ html {
     box-sizing: inherit;
 }
 
+.hidden {
+    display: none;
+}
+
 .nav-column {
     position: fixed;
     min-width: 34.88%;
-    padding: 120px 0 40px 20%;
+    padding: 100px 0 40px 20%;
     background: white;
 }
 
@@ -125,7 +129,7 @@ html {
 
 .main-column {
     min-width: 60.92%;
-    padding: 85px 21.66% 80px 4.38%;
+    padding: 65px 21.66% 80px 4.38%;
     margin-left: 36%;
     background: white;
 }
@@ -202,7 +206,7 @@ html {
     }
 }
 
-@media (max-width: 975px) {
+@media (max-width: 990px) {
 
     .nav-column {
         position: static;
@@ -243,6 +247,14 @@ html {
 }
 
 
+/* Enables sidebar scrolling on short screens */
+
+@media (max-height: 730px) {
+    .nav-column {
+        overflow-y: scroll;
+        height: 100%
+    }
+}
 
 
 
