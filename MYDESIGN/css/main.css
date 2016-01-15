@@ -186,7 +186,7 @@ html {
 
     .nav-column {
         padding-left: 4.35%;
-        min-width: initial;
+        min-width: 27%;
     }
 
     .main-column {
@@ -249,7 +249,7 @@ html {
 
 /* Enables sidebar scrolling on short screens */
 
-@media (max-height: 750px) {
+@media (max-height: 750px) and (min-width: 991px){
     .nav-column {
         padding-top: 50px;
     }
@@ -259,7 +259,7 @@ html {
     }
 }
 
-@media (max-height: 660px) {
+@media (max-height: 660px) and (min-width: 991px){
     .nav-column {
         overflow-y: scroll;
         height: 100%;
