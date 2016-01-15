@@ -249,16 +249,22 @@ html {
 
 /* Enables sidebar scrolling on short screens */
 
-@media (max-height: 730px) {
+@media (max-height: 750px) {
     .nav-column {
-        overflow-y: scroll;
-        height: 100%
+        padding-top: 50px;
+    }
+
+    .main-column {
+        padding-top: 15px;
     }
 }
 
-
-
-
+@media (max-height: 660px) {
+    .nav-column {
+        overflow-y: scroll;
+        height: 100%;
+    }
+}
 
 
 
