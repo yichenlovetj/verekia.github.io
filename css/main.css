@@ -250,6 +250,10 @@ a.expand-nav-link {
     color: #333;
 }
 
+.homepage-top-space {
+    height: 90px;
+}
+
 .homepage-content h2 a {
     border-bottom: none;
     color: #333;
@@ -328,6 +332,10 @@ a.expand-nav-link {
 
     .main-content {
         margin: auto;
+    }
+
+    .homepage-top-space {
+        display: none;
     }
 }
 
