@@ -107,8 +107,31 @@ html {
     box-sizing: inherit;
 }
 
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.main-content a {
+    border-bottom: 1px solid black;
+}
+
+.main-content img {
+    max-width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 .hidden {
-    display: none;
+    display: none !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
 }
 
 .nav-column {
@@ -135,7 +158,44 @@ html {
 }
 
 .main-content {
-    width: 662.755px;
+    width: 660px;
+}
+
+.separator {
+    margin: 10px auto 60px;
+}
+
+hr {
+    border-color: #ddd;
+}
+
+/*.horizontal-separator {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    border: 5px solid white;
+    position: absolute;
+    top: -70px;
+    left: 42%;
+    -webkit-box-shadow: 0px 0px 0px 1px #ddd, 0px 0px 0px 20px white, 0px 0px 0px 21px #ddd, 0px 0px 0px 27px white;
+            box-shadow: 0px 0px 0px 1px #ddd, 0px 0px 0px 20px white, 0px 0px 0px 21px #ddd, 0px 0px 0px 27px white;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+
+.line-separator {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    bottom: 40px;
+    -webkit-box-shadow: 0px 0px 0px 1px #ddd;
+            box-shadow: 0px 0px 0px 1px #ddd;
+}
+*/
+.homepage-link {
+    margin-bottom: 16px;
 }
 
 .nav-list h2 {
@@ -155,8 +215,12 @@ html {
     color: #333;
 }
 
+.nav-list a {
+    display: block;
+}
+
 .nav-signature {
-    margin-top: 40px;
+    margin-bottom: 40px;
     font-weight: bold;
 }
 
@@ -164,14 +228,44 @@ html {
     margin-bottom: 6px;
 }
 
+.twitter-button-container {
+    height: 31px;
+}
+
 .twitter-follow-button {
     color: white;
+}
+
+a.expand-nav-link {
+    display: inline;
+    font-weight: normal;
+    margin-left: 5px;
+    font-size: 14px;
+    color: #999;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.expand-nav-link:hover {
+    color: #333;
+}
+
+.homepage-content h2 a {
+    border-bottom: none;
+    color: #333;
 }
 
 .main-content h1 {
     line-height: 45px;
     color: #444;
     margin-bottom: 38px;
+}
+
+.island {
+    padding: 4% 5%;
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
 }
 
 

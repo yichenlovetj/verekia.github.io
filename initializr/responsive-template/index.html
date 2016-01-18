@@ -1,283 +1,98 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="https://wp-themes.com/wp-content/themes/twentyfifteen/js/html5.js"></script>
-    <![endif]-->
-    <title>Jonathan Verrecchia's Blog</title>
-    <link rel="shortcut icon" type="image/png" href="/favicon.png">
-    <link rel='stylesheet' id='twentyfifteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Noto+Sans%3A400italic%2C700italic%2C400%2C700%7CNoto+Serif%3A400italic%2C700italic%2C400%2C700%7CInconsolata%3A400%2C700&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
-    <link rel='stylesheet' id='genericons-css'  href='/css/twentyfifteen-genericons.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='twentyfifteen-style-css'  href='/css/twentyfifteen.css' type='text/css' media='all' />
-    <!--[if lt IE 9]>
-    <link rel='stylesheet' id='twentyfifteen-ie-css'  href='/css/twentyfifteen-ie.css' type='text/css' media='all' />
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel='stylesheet' id='twentyfifteen-ie7-css'  href='/css/twentyfifteen-ie7.css' type='text/css' media='all' />
-    <![endif]-->
-    <style>
-        .text-center {
-            text-align: center;
-        }
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Jonathan Verrecchia's Projects and Blog</title>
+        <meta name="description" content="Articles and projects about minimalism, transhumanism, music, and code.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        .hidden {
-            display: none;
-        }
+        <link rel="shortcut icon" type="image/png" href="/favicon.png">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-        .island {
-            padding: 5%;
-            background: #f7f7f7;
-            border: 1px solid #ddd;
-        }
-
-        .site-title {
-            font-family: 'Noto Serif', serif;
-            font-size: 100%;
-        }
-
-        .social-box {
-            height: 32px;
-        }
-
-        .social-box a {
-            color: white;
-        }
-
-        .show-on-tablet {
-            display: none;
-        }
-
-       @media only screen 
-       and (min-width : 1401px) {
-            .show-on-tablet {
-                display: none;
-            }
-       }
-
-       @media only screen 
-       and (max-width : 954px) {
-            .show-on-tablet {
-                display: none;
-            }
-            .show-on-mobile {
-                display: block;
-            }
-
-            .hide-on-mobile {
-                display: none;
-            }
-       }
-
-       @media only screen 
-       and (min-width : 955px) 
-       and (max-width : 1400px) {
-            .hide-on-tablet {
-                display: none;
-            }
-
-            .show-on-tablet {
-                display: block;
-            }
-        }
-
-    .site-header {
-        /*margin-bottom: 15%;*/
-    }
-
-    .site-title {
-        margin-top: 20%;
-        margin-bottom: 10%;
-    }
-
-    #widget-area aside {
-        margin-bottom: 10%;
-    }
-
-    #widget-area h2 {
-        margin-bottom: 1em;
-    }
-
-    #widget-area a {
-        display: block;
-    }
-
-    #widget-area .expand-nav-link {
-        display: inline;
-        font-weight: normal;
-        margin-left: 5px;
-        font-size: 14px;
-        color: #999;
-        text-transform: none;
-    }
-
-    #widget-area .expand-nav-link:hover {
-        color: #333;
-    }
-
-    </style>
-    <script type='text/javascript' src='https://wp-themes.com/wp/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
-    <script type='text/javascript' src='https://wp-themes.com/wp/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
-</head>
-
-<body class="home blog">
-<div id="page" class="hfeed site">
-    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
-<div id="sidebar" class="sidebar">
-    <header id="masthead" class="site-header" role="banner">
-        <div class="site-branding">
-            <h1 class="site-title hidden show-on-mobile">
-                <a href="/" rel="home">Jonathan Verrecchia's Projects</a>
-            </h1>
-<!--             <p class="site-description">
-                Minimalism, Life, Code
-            </p>
-            <br> -->
-            <div class="social-box hidden show-on-mobile">
-                <p class="hide-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @verekia</a></p>
-                <p class="show-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @verekia</a></p>
+        <link href='https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+<div class="nav-column">
+    <div class="nav-content">
+        <div class="nav-signature">
+            <div class="nav-signature-name">
+                <a href="/">Jonathan Verrecchia</a>
             </div>
-
-            <button class="secondary-toggle">Menu</button>
-        </div><!-- .site-branding -->
-    </header><!-- .site-header -->
-
-    <div id="secondary" class="secondary">
-        <div id="widget-area" class="widget-area" role="complementary">
-            <aside id="homepage-link-container" class="widget widget_recent_entries hidden js-homepage-link">
-                <ul>
-                    <li>
-                        <a href="/">Back to the homepage
-                        </a>
-                    </li>
-                </ul>
-            </aside>
-            <script>
+            <div class="twitter-button-container" style="opacity: 0">
+                <a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-size="large" data-dnt="true">Follow @verekia</a>
+            </div>
+        </div>
+        <div class="nav-list">
+            <!-- <script>
             if (window.location.pathname !== '/') {
-                document.getElementById('homepage-link-container').className = 
-                    document.getElementById('homepage-link-container').className.replace(/\bhidden\b/,'');
+                document.write('<a href="/" class="homepage-link">Go back to the homepage</a>');
             };
-            </script>
-            <aside id="recent-posts-3" class="widget widget_recent_entries">
-                <h2 class="widget-title">
-                    Lifestyle <a href="javascript:;" class="expand-nav-link js-more">(more)</a>
-                </h2>
-                <ul>
-                    <li>
-                        <a href="http://zeromalist.com" target="_blank">Life Framework
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/" target="_blank">Minimalism Coaching
-                        </a>
-                    </li>
-                    <li class="hidden js-hidden-link">
-<a href="/slides/todo-zero/">
-Getting Things Done
-                        </a>
-                    </li>
-                </ul>
-            </aside>
-            <aside id="recent-posts-3" class="widget widget_recent_entries">
-                <h2 class="widget-title">
-                    Transhumanism
-                </h2>
-                <ul>
-                    <li>
-                        <a href="/" target="_blank">The Future of Humanity
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">Open Letter to the ASI
-                        </a>
-                    </li>
-                </ul>
-            </aside>
-            <aside id="recent-posts-3" class="widget widget_recent_entries">
-                <h2 class="widget-title">
-                    Music
-                </h2>
-                <ul>
-                    <li>
-                        <a href="http://soundcloud.com/leafadventure" target="_blank">Leaf Adventure
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">Music Production Lessons
-                        </a>
-                    </li>
-                </ul>
-            </aside>
-<!--             <aside id="recent-posts-3" class="widget widget_recent_entries">
-                <h2 class="widget-title">
-                    Life
-                </h2>
-                <ul>
-                    <li>
-                        <a href="http://verekia.com/california/welcome">Going Vegan</a>
-                    </li>
-                    <li>
-                        <a href="http://verekia.com/california/welcome">Single Point of Failure</a>
-                    </li>
-                    <li>
-                        <a href="http://verekia.com/california/welcome">Music When Commuting</a>
-                    </li>
-                    <li>
-                        <a href="http://verekia.com/california/welcome">Moving to San Francisco</a>
-                    </li>
-                </ul>
-            </aside> -->
-            <aside id="recent-posts-3" class="widget widget_recent_entries">
-                <h2 class="widget-title">
-                    Code <a href="javascript:;" class="expand-nav-link js-more">(more)</a>
-                </h2>
-                <ul>
-                    <li>
+            </script> -->
+            <h2>Lifestyle <a href="javascript:;" class="expand-nav-link js-more">(more)</a></h2>
+            <ul>
+                <li>
+                    <a href="http://zeromalist.com" target="_blank">Life Framework
+                    </a>
+                </li>
+                <li>
+                    <a href="/" target="_blank">Minimalism Coaching
+                    </a>
+                </li>
+            </ul>
+            <h2>Transhumanism</h2>
+            <ul>
+                <li>
+                    <a href="/" target="_blank">The Future of Humanity
+                    </a>
+                </li>
+                <li>
+                    <a href="/" target="_blank">Open Letter to the ASI
+                    </a>
+                </li>
+            </ul>
+            <h2>Music</h2>
+            <ul>
+                <li>
+                    <a href="http://soundcloud.com/leafadventure" target="_blank">Leaf Adventure
+                    </a>
+                </li>
+                <li>
+                    <a href="/">Music Production Lessons
+                    </a>
+                </li>
+            </ul>
+            <h2>Code <a href="javascript:;" class="expand-nav-link js-more">(more)</a></h2>
+            <ul>
+                <li>
 <a href="/slides/css-preprocessors/">
 CSS Preprocessors Talk
-                        </a>
-                    </li>
-                    <li>
+                    </a>
+                <li>
 <a href="/initializr/responsive-template/">
 Responsive Initializr
-                        </a>
-                    </li>
-                    <li class="hidden js-hidden-link">
-                        <a href="/requirejs/build-simple-client-side-mvc-app-require-js/">RequireJS MVC App</a>
-                    </li>
-                    <li class="hidden js-hidden-link">
-                        <a href="/less-css/dont-read-less-css-tutorial-highly-addictive/">Less CSS Tutorial</a>
-                    </li>
-                    <li class="hidden js-hidden-link">
-                        <a href="/windows8/overview-developing-windows-8-apps-html-css-javascript/">Windows 8 Development</a>
-                    </li>
-                    <li class="hidden js-hidden-link">
-                        <a href="/california/welcome">Moving to San Francisco</a>
-                    </li>
-                </ul>
-                <h1 class="site-title hide-on-mobile">
-                    <a href="/" rel="home">by Jonathan Verrecchia</a>
-                </h1>
-                <div class="social-box hide-on-mobile">
-                    <p class="hide-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @verekia</a></p>
-                    <p class="show-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @verekia</a></p>
-                </div>
-            </aside>
-        </div><!-- .widget-area -->
-    </div><!-- .secondary -->
-</div><!-- .sidebar -->
-    <div id="content" class="site-content">
+                    </a>
+            </ul>
 
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main"><article class="post type-post status-publish format-standard hentry category-uncategorized">
-    
-<header class="entry-header">
-<h1 class="entry-title">Initializr: With Great Templates Comes Great Responsivity!
+            <!-- Warning! Adjust vertical media queries after adding links -->
+
+        </div>
+        <select class="nav-dropdown">
+        </select>
+    </div>
+</div>
+<div class="main-column">
+    <div class="main-content">
+<h1>
+Initializr: With Great Templates Comes Great Responsivity!
 </h1>
-</header>
-
-    <div class="entry-content"><p class="text-center">
+<p class="text-center">
     <img src="/_templates/articles/responsive-initializr/img/responsive-web-design-template.png" alt="Resize me - Reponsive Web Design Template">
 </p>
 
@@ -425,50 +240,34 @@ To design a responsive layout, we have to forget about the usual static 960px wi
 
 <p>I hope this new responsive template will make your web developer life easier, so you can focus on your actual business instead of setting up again and again the same boilerplate code. I would love to hear your feedback about this, so feel free to <a href="https://github.com/verekia/initializr-template/issues" target="_blank">open issues on Github</a> or mention <a href="http://twitter.com/#!/initializr" target="_blank">@initializr</a> or <a href="http://twitter.com/#!/verekia" target="_blank">@verekia</a> on Twitter, I usually reply fast :)</p>
 
-<p>Merry Christmas and Happy New Year!</p><p><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @verekia</a></p>
-</div><!-- .entry-content -->
-
-
-<footer class="entry-footer">
-<span class="screen-reader-text">Posted on </span><time class="entry-date published"datetime="2011-12-20">
+<p>Merry Christmas and Happy New Year!</p><div class="text-right"><span class="screen-reader-text">Posted on </span><time class="entry-date published"datetime="2011-12-20">
 December 20, 2011
-</time>
-</footer>
+    </time>
+</div>            </div>
+        </div>
 
-</article><!-- #post-## -->        </main><!-- .site-main -->
-    </div><!-- .content-area -->
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
 
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-    </div><!-- .site-content -->
+        <script>
+            setTimeout(function(){ $('.twitter-button-container').animate({opacity:1}); }, 500);
 
-</div><!-- .site -->
+            // $('#widget-area .js-more').click(function(){
+            //     $(this).parent().parent().find('.js-hidden-link').toggleClass('hidden');
+            //     $(this).remove();
+            // });
 
-<script type='text/javascript' src='/js/skip-link-focus-fix.js'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand child menu<\/span>","collapse":"<span class=\"screen-reader-text\">collapse child menu<\/span>"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='/js/functions.js'></script>
+        </script>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script>window.jQuery || document.write('<script src="/js/jquery.min.js"><\/script>')</script>
-
-
-<script>
-    $('#widget-area .js-more').click(function(){
-        $(this).parent().parent().find('.js-hidden-link').toggleClass('hidden');
-        $(this).remove();
-    });
-</script>
-
-
-
-<!-- Twitter button -->
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-</body>
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+    </body>
 </html>

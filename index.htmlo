@@ -2,40 +2,60 @@
 <!-- htmlo: components/sidebar -->
 <!-- htmlo: components/main -->
 
-<!-- htmlo: components/indexitemhead -->
-<!-- htmlo: articles/todo-zero/url -->
-<!-- htmlo: articles/todo-zero/full-title -->
-<!-- htmlo: components/indexitembeforecontent -->
-<!-- // htmlo: articles/todo-zero/excerpt -->
-<!-- htmlo: articles/todo-zero/content -->
-<!-- // htmlo: articles/todo-zero/url -->
-<!-- // htmlo: components/readmore -->
-<!-- htmlo: components/indexbeforedate -->
-<!-- htmlo: articles/todo-zero/date -->
-<!-- htmlo: components/articlebottom -->
+<!-- htmlo: components/homepage -->
 
+<!--
+<div class="homepage-content">
+-->
 
-<!-- htmlo: components/indexitemhead -->
-<!-- htmlo: articles/css-preprocessors/url -->
-<!-- htmlo: articles/css-preprocessors/full-title -->
-<!-- htmlo: components/indexitembeforecontent -->
-<!-- htmlo: articles/css-preprocessors/excerpt -->
-<!-- htmlo: articles/css-preprocessors/url -->
-<br><br>Slides available here
-</a>
-<!-- htmlo: components/indexbeforedate -->
-<!-- htmlo: articles/css-preprocessors/date -->
-<!-- htmlo: components/articlebottom -->
+<!-- components/indexitemhead -->
+<!-- articles/todo-zero/url -->
+<!-- articles/todo-zero/full-title -->
+<!-- components/indexitembeforecontent -->
+<!-- articles/todo-zero/excerpt -->
+<!-- articles/todo-zero/content -->
+<!-- articles/todo-zero/url -->
+<!-- components/readmore -->
+<!-- components/indexbeforedate -->
+<!-- articles/todo-zero/date -->
+<!-- components/articlebottom -->
 
-<!-- htmlo: components/indexitemhead -->
-<!-- htmlo: articles/responsive-initializr/url -->
-<!-- htmlo: articles/responsive-initializr/full-title -->
-<!-- htmlo: components/indexitembeforecontent -->
-<!-- htmlo: articles/responsive-initializr/excerpt -->
-<!-- htmlo: articles/responsive-initializr/url -->
-<!-- htmlo: components/readmore -->
-<!-- htmlo: components/indexbeforedate -->
-<!-- htmlo: articles/responsive-initializr/date -->
-<!-- htmlo: components/articlebottom -->
+<!--
+<div class="separator clearfix">
+    <hr><hr><hr><hr><hr>
+</div>
+-->
+
+<!-- components/indexitemhead -->
+<!-- articles/css-preprocessors/url -->
+<!-- articles/css-preprocessors/full-title -->
+<!-- components/indexitembeforecontent -->
+<!-- articles/css-preprocessors/excerpt -->
+<!-- articles/css-preprocessors/url -->
+<!--<br><br>Slides available here</a> -->
+<!-- components/indexbeforedate -->
+<!-- articles/css-preprocessors/date -->
+<!-- components/articlebottom -->
+
+<!--
+<div class="separator clearfix">
+    <hr><hr><hr><hr><hr>
+</div>
+-->
+
+<!-- components/indexitemhead -->
+<!-- articles/responsive-initializr/url -->
+<!-- articles/responsive-initializr/full-title -->
+<!-- components/indexitembeforecontent -->
+<!-- articles/responsive-initializr/excerpt -->
+<!-- articles/responsive-initializr/url -->
+<!-- components/readmore -->
+<!-- components/indexbeforedate -->
+<!-- articles/responsive-initializr/date -->
+<!-- components/articlebottom -->
+
+<!--
+</div>
+-->
 
 <!-- htmlo: components/bottom -->

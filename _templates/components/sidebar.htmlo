@@ -1,143 +1,68 @@
-<div id="sidebar" class="sidebar">
-    <header id="masthead" class="site-header" role="banner">
-        <div class="site-branding">
-            <h1 class="site-title hidden show-on-mobile">
-                <a href="/" rel="home">Jonathan Verrecchia's Projects</a>
-            </h1>
-<!--             <p class="site-description">
-                Minimalism, Life, Code
-            </p>
-            <br> -->
-            <div class="social-box hidden show-on-mobile">
-                <p class="hide-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @verekia</a></p>
-                <p class="show-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @verekia</a></p>
+<div class="nav-column">
+    <div class="nav-content">
+        <div class="nav-signature">
+            <div class="nav-signature-name">
+                <a href="/">Jonathan Verrecchia</a>
             </div>
-
-            <button class="secondary-toggle">Menu</button>
-        </div><!-- .site-branding -->
-    </header><!-- .site-header -->
-
-    <div id="secondary" class="secondary">
-        <div id="widget-area" class="widget-area" role="complementary">
-            <aside id="homepage-link-container" class="widget widget_recent_entries hidden js-homepage-link">
-                <ul>
-                    <li>
-                        <a href="/">Back to the homepage
-                        </a>
-                    </li>
-                </ul>
-            </aside>
-            <script>
+            <div class="twitter-button-container" style="opacity: 0">
+                <a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-size="large" data-dnt="true">Follow @verekia</a>
+            </div>
+        </div>
+        <div class="nav-list">
+            <!-- <script>
             if (window.location.pathname !== '/') {
-                document.getElementById('homepage-link-container').className = 
-                    document.getElementById('homepage-link-container').className.replace(/\bhidden\b/,'');
+                document.write('<a href="/" class="homepage-link">Go back to the homepage</a>');
             };
-            </script>
-            <aside id="recent-posts-3" class="widget widget_recent_entries">
-                <h2 class="widget-title">
-                    Lifestyle <a href="javascript:;" class="expand-nav-link js-more">(more)</a>
-                </h2>
-                <ul>
-                    <li>
-                        <a href="http://zeromalist.com" target="_blank">Life Framework
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/" target="_blank">Minimalism Coaching
-                        </a>
-                    </li>
-                    <li class="hidden js-hidden-link">
-<!-- htmlo: articles/todo-zero/url -->
-<!-- htmlo: articles/todo-zero/short-title -->
-                        </a>
-                    </li>
-                </ul>
-            </aside>
-            <aside id="recent-posts-3" class="widget widget_recent_entries">
-                <h2 class="widget-title">
-                    Transhumanism
-                </h2>
-                <ul>
-                    <li>
-                        <a href="/" target="_blank">The Future of Humanity
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">Open Letter to the ASI
-                        </a>
-                    </li>
-                </ul>
-            </aside>
-            <aside id="recent-posts-3" class="widget widget_recent_entries">
-                <h2 class="widget-title">
-                    Music
-                </h2>
-                <ul>
-                    <li>
-                        <a href="http://soundcloud.com/leafadventure" target="_blank">Leaf Adventure
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">Music Production Lessons
-                        </a>
-                    </li>
-                </ul>
-            </aside>
-<!--             <aside id="recent-posts-3" class="widget widget_recent_entries">
-                <h2 class="widget-title">
-                    Life
-                </h2>
-                <ul>
-                    <li>
-                        <a href="http://verekia.com/california/welcome">Going Vegan</a>
-                    </li>
-                    <li>
-                        <a href="http://verekia.com/california/welcome">Single Point of Failure</a>
-                    </li>
-                    <li>
-                        <a href="http://verekia.com/california/welcome">Music When Commuting</a>
-                    </li>
-                    <li>
-                        <a href="http://verekia.com/california/welcome">Moving to San Francisco</a>
-                    </li>
-                </ul>
-            </aside> -->
-            <aside id="recent-posts-3" class="widget widget_recent_entries">
-                <h2 class="widget-title">
-                    Code <a href="javascript:;" class="expand-nav-link js-more">(more)</a>
-                </h2>
-                <ul>
-                    <li>
+            </script> -->
+            <h2>Lifestyle <a href="javascript:;" class="expand-nav-link js-more">(more)</a></h2>
+            <ul>
+                <li>
+                    <a href="http://zeromalist.com" target="_blank">Life Framework
+                    </a>
+                </li>
+                <li>
+                    <a href="/" target="_blank">Minimalism Coaching
+                    </a>
+                </li>
+            </ul>
+            <h2>Transhumanism</h2>
+            <ul>
+                <li>
+                    <a href="/" target="_blank">The Future of Humanity
+                    </a>
+                </li>
+                <li>
+                    <a href="/" target="_blank">Open Letter to the ASI
+                    </a>
+                </li>
+            </ul>
+            <h2>Music</h2>
+            <ul>
+                <li>
+                    <a href="http://soundcloud.com/leafadventure" target="_blank">Leaf Adventure
+                    </a>
+                </li>
+                <li>
+                    <a href="/">Music Production Lessons
+                    </a>
+                </li>
+            </ul>
+            <h2>Code <a href="javascript:;" class="expand-nav-link js-more">(more)</a></h2>
+            <ul>
+                <li>
 <!-- htmlo: articles/css-preprocessors/url -->
 <!-- htmlo: articles/css-preprocessors/short-title -->
-                        </a>
-                    </li>
-                    <li>
+                    </a>
+                <li>
 <!-- htmlo: articles/responsive-initializr/url -->
 <!-- htmlo: articles/responsive-initializr/short-title -->
-                        </a>
-                    </li>
-                    <li class="hidden js-hidden-link">
-                        <a href="/requirejs/build-simple-client-side-mvc-app-require-js/">RequireJS MVC App</a>
-                    </li>
-                    <li class="hidden js-hidden-link">
-                        <a href="/less-css/dont-read-less-css-tutorial-highly-addictive/">Less CSS Tutorial</a>
-                    </li>
-                    <li class="hidden js-hidden-link">
-                        <a href="/windows8/overview-developing-windows-8-apps-html-css-javascript/">Windows 8 Development</a>
-                    </li>
-                    <li class="hidden js-hidden-link">
-                        <a href="/california/welcome">Moving to San Francisco</a>
-                    </li>
-                </ul>
-                <h1 class="site-title hide-on-mobile">
-                    <a href="/" rel="home">by Jonathan Verrecchia</a>
-                </h1>
-                <div class="social-box hide-on-mobile">
-                    <p class="hide-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @verekia</a></p>
-                    <p class="show-on-tablet"><a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @verekia</a></p>
-                </div>
-            </aside>
-        </div><!-- .widget-area -->
-    </div><!-- .secondary -->
-</div><!-- .sidebar -->
+                    </a>
+            </ul>
+
+            <!-- Warning! Adjust vertical media queries after adding links -->
+
+        </div>
+        <select class="nav-dropdown">
+        </select>
+    </div>
+</div>
