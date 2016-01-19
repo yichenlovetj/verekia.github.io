@@ -345,7 +345,7 @@ a.expand-nav-link {
 
     .nav-signature {
         margin-bottom: 20px;
-/*        height: 36px;*/
+        position: relative;
     }
 
     .nav-signature-name {
@@ -356,6 +356,7 @@ a.expand-nav-link {
         display: inline-block;
         margin-left: 10px;
         position: absolute;
+        right: 0;
         margin-top: -1px;
     }
 }
@@ -392,6 +393,19 @@ a.expand-nav-link {
     }
 }
 
+/* Crops the followers count on mobile, works for English follow buttons only */
+@media (max-width: 471px) {
+    .twitter-button-container {
+        width: 138px;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 366px) {
+    .twitter-button-container {
+        display: none;
+    }
+}
 
 
 
