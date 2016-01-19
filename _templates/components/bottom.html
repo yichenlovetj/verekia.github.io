@@ -9,10 +9,22 @@
         <script>
             setTimeout(function(){ $('.twitter-button-container').animate({opacity:1}); }, 500);
 
-            // $('#widget-area .js-more').click(function(){
-            //     $(this).parent().parent().find('.js-hidden-link').toggleClass('hidden');
-            //     $(this).remove();
-            // });
+            var displayedNavSection = null;
+
+            $('.js-nav-expand').click(function(){
+                if (!displayedNavSection) {
+                    displayedNavSection = $(this).parents('.js-nav-list-section');
+                    $(this).parents('.js-nav-list').find('.js-nav-list-section').hide();
+                    displayedNavSection.show();
+                    displayedNavSection.find('.js-nav-item-hidden').show();
+                    $(this).text('(back)');
+                } else {
+                    $('.js-nav-list-section').show();
+                    $(this).text('(more)');
+                    $('.js-nav-item-hidden').hide()
+                    displayedNavSection = null;
+                }
+            });
 
         </script>
 

@@ -224,6 +224,10 @@ hr {
     font-weight: bold;
 }
 
+.nav-item-hidden {
+    display: none;
+}
+
 .nav-signature-name {
     margin-bottom: 6px;
 }

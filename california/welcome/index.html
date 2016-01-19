@@ -29,57 +29,94 @@
                 <a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-size="large" data-dnt="true">Follow @verekia</a>
             </div>
         </div>
-        <div class="nav-list">
+        <div class="nav-list js-nav-list">
             <!-- <script>
             if (window.location.pathname !== '/') {
                 document.write('<a href="/" class="homepage-link">Go back to the homepage</a>');
             };
             </script> -->
-            <h2>Lifestyle <a href="javascript:;" class="expand-nav-link js-more">(more)</a></h2>
-            <ul>
-                <li>
-                    <a href="http://zeromalist.com" target="_blank">Life Framework
-                    </a>
-                </li>
-                <li>
-                    <a href="/" target="_blank">Minimalism Coaching
-                    </a>
-                </li>
-            </ul>
-            <h2>Transhumanism</h2>
-            <ul>
-                <li>
-                    <a href="/" target="_blank">The Future of Humanity
-                    </a>
-                </li>
-                <li>
-                    <a href="/" target="_blank">Open Letter to the ASI
-                    </a>
-                </li>
-            </ul>
-            <h2>Music</h2>
-            <ul>
-                <li>
-                    <a href="http://soundcloud.com/leafadventure" target="_blank">Leaf Adventure
-                    </a>
-                </li>
-                <li>
-                    <a href="/">Music Production Lessons
-                    </a>
-                </li>
-            </ul>
-            <h2>Code <a href="javascript:;" class="expand-nav-link js-more">(more)</a></h2>
-            <ul>
-                <li>
+            <div class="js-nav-list-section">
+                <h2>Lifestyle <a href="javascript:;" class="expand-nav-link js-nav-expand">(more)</a></h2>
+                <ul>
+                    <li>
+                        <a href="http://zeromalist.com" target="_blank">Life Framework
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/" target="_blank">Minimalism Coaching
+                        </a>
+                    </li>
+                    <li class="nav-item-hidden js-nav-item-hidden">
+                        <a href="/" target="_blank">Going Vegan
+                        </a>
+                    </li>
+                    <li class="nav-item-hidden js-nav-item-hidden">
+                        <a href="/" target="_blank">Single Point of Failure
+                        </a>
+                    </li>
+                    <li class="nav-item-hidden js-nav-item-hidden">
+                        <a href="/" target="_blank">Music When Commuting
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="js-nav-list-section">
+                <h2>Transhumanism</h2>
+                <ul>
+                    <li>
+                        <a href="/" target="_blank">The Future of Humanity
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/" target="_blank">Open Letter to the ASI
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="js-nav-list-section">
+                <h2>Music</h2>
+                <ul>
+                    <li>
+                        <a href="http://soundcloud.com/leafadventure" target="_blank">Leaf Adventure
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">Music Production Lessons
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="js-nav-list-section">
+                <h2>Code <a href="javascript:;" class="expand-nav-link js-nav-expand">(more)</a></h2>
+                <ul>
+                    <li>
 <a href="/slides/css-preprocessors/">
 CSS Preprocessors Talk
-                    </a>
-                <li>
+                        </a>
+                    </li>
+                    <li>
 <a href="/initializr/responsive-template/">
 Responsive Initializr
-                    </a>
-            </ul>
-
+                        </a>
+                    </li>
+                    <li class="nav-item-hidden js-nav-item-hidden">
+                        <a href="/" target="_blank">RequireJS MVC App
+                        </a>
+                    </li>
+                    <li class="nav-item-hidden js-nav-item-hidden">
+                        <a href="/" target="_blank">Less CSS Tutorial
+                        </a>
+                    </li>
+                    <li class="nav-item-hidden js-nav-item-hidden">
+                        <a href="/" target="_blank">Windows 8 Development
+                        </a>
+                    </li>
+                    <li class="nav-item-hidden js-nav-item-hidden">
+                        <a href="/" target="_blank">Moving to San Francisco
+                        </a>
+                    </li>
+                </ul>
+            </div>
             <!-- Warning! Adjust vertical media queries after adding links -->
 
         </div>
@@ -114,10 +151,22 @@ August 19, 2012
         <script>
             setTimeout(function(){ $('.twitter-button-container').animate({opacity:1}); }, 500);
 
-            // $('#widget-area .js-more').click(function(){
-            //     $(this).parent().parent().find('.js-hidden-link').toggleClass('hidden');
-            //     $(this).remove();
-            // });
+            var displayedNavSection = null;
+
+            $('.js-nav-expand').click(function(){
+                if (!displayedNavSection) {
+                    displayedNavSection = $(this).parents('.js-nav-list-section');
+                    $(this).parents('.js-nav-list').find('.js-nav-list-section').hide();
+                    displayedNavSection.show();
+                    displayedNavSection.find('.js-nav-item-hidden').show();
+                    $(this).text('(back)');
+                } else {
+                    $('.js-nav-list-section').show();
+                    $(this).text('(more)');
+                    $('.js-nav-item-hidden').hide()
+                    displayedNavSection = null;
+                }
+            });
 
         </script>
 
