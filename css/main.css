@@ -230,6 +230,9 @@ hr {
 
 .nav-signature-name {
     margin-bottom: 6px;
+    font-size: 16px;
+    margin-top: 0;
+    letter-spacing: 0.6px;
 }
 
 .twitter-button-container {
@@ -394,14 +397,14 @@ a.expand-nav-link {
 }
 
 /* Crops the followers count on mobile, works for English follow buttons only */
-@media (max-width: 471px) {
+@media (max-width: 490px) {
     .twitter-button-container {
         width: 138px;
         overflow: hidden;
     }
 }
 
-@media (max-width: 366px) {
+@media (max-width: 390px) {
     .twitter-button-container {
         display: none;
     }

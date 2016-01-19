@@ -1,9 +1,9 @@
 <div class="nav-column">
     <div class="nav-content">
         <div class="nav-signature clearfix">
-            <div class="nav-signature-name">
+            <h1 class="nav-signature-name">
                 <a href="/">Jonathan Verrecchia</a>
-            </div>
+            </h1>
             <div class="twitter-button-container" style="opacity: 0">
                 <a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="large" data-dnt="true">Follow @verekia</a>
             </div>
