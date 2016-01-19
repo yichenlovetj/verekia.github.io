@@ -26,14 +26,24 @@
                 }
             });
 
+
             // The blank option avoids text flicking at loading
             $('.js-select-blank-option').remove();
 
             // The \n compensates HTMLO's newline created in the value="\n" attribute.
             $('.js-nav-dropbown').val('\n' + window.location.pathname);
 
-            $('.js-nav-dropbown').change(function(){
-                window.location = $(this).val()
+            var displayedSelectLink = $('.js-nav-dropbown').val();
+
+            $('.js-nav-dropbown').change(function(stuff){
+                option = $(this).find('option[value="' + $(this).val() + '"]');
+                if (option.data('new-tab')) {
+                    window.open($(this).val(), '_blank');
+                    // To not display an external link on the dropbown after it opens
+                    $('.js-nav-dropbown').val(displayedSelectLink);
+                } else {
+                    window.location = $(this).val();
+                }
             });
 
         </script>
