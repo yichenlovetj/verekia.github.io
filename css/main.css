@@ -308,12 +308,13 @@ a.expand-nav-link {
     }
 }
 
+/* Mobile View */
+
 @media (max-width: 990px) {
 
     .nav-column {
         position: static;
-        padding: 40px 5%;
-        border-bottom: 1px solid #e2e2e2;
+        padding: 40px 5% 0;
     }
 
     .nav-content {
@@ -331,7 +332,7 @@ a.expand-nav-link {
 
     .main-column {
         margin-left: 0;
-        padding: 40px 5%;
+        padding: 10px 5% 40px;
     }
 
     .main-content {
@@ -340,6 +341,22 @@ a.expand-nav-link {
 
     .homepage-top-space {
         display: none;
+    }
+
+    .nav-signature {
+        margin-bottom: 20px;
+/*        height: 36px;*/
+    }
+
+    .nav-signature-name {
+        display: inline-block;
+    }
+
+    .twitter-button-container {
+        display: inline-block;
+        margin-left: 10px;
+        position: absolute;
+        margin-top: -1px;
     }
 }
 
