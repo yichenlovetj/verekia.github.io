@@ -41,20 +41,14 @@
                         <a href="/" target="_blank">The Future of Humanity
                         </a>
                     </li>
-                    <li>
-                        <a href="/" target="_blank">Open Letter to the ASI
-                        </a>
-                    </li>
+<!-- htmlo: external-links/open-letter-asi/nav-item -->
                 </ul>
             </div>
             <div class="js-nav-list-section">
                 <h2>Music</h2>
                 <ul>
 <!-- htmlo: external-links/leaf-adventure/nav-item -->
-                    <li>
-                        <a href="/">Music Production Lessons
-                        </a>
-                    </li>
+<!-- htmlo: articles/music-production-lessons/nav-item -->
                 </ul>
             </div>
             <div class="js-nav-list-section">
@@ -87,9 +81,19 @@
             <option class="js-select-blank-option" value=""></option>
             <option value="
 /">Homepage</option>
+            <optgroup label="Lifestyle">
+            </optgroup>
+            <optgroup label="Transhumanism">
+<!-- htmlo: external-links/open-letter-asi/select-link -->
+            </optgroup>
+            <optgroup label="Music">
+<!-- htmlo: external-links/leaf-adventure/select-link -->
+<!-- htmlo: articles/music-production-lessons/select-link -->
+            </optgroup>
+            <optgroup label="Code">
 <!-- htmlo: articles/css-preprocessors/select-link -->
 <!-- htmlo: articles/responsive-initializr/select-link -->
-<!-- htmlo: external-links/leaf-adventure/select-link -->
+            </optgroup>
         </select>
     </div>
 </div>
