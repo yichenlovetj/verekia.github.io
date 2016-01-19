@@ -198,6 +198,10 @@ hr {
     margin-bottom: 16px;
 }
 
+.css-email::before {
+    content: "hello@verekia.com";
+}
+
 .nav-list h2 {
     text-transform: uppercase;
     font-family: 'Noto Sans', sans-serif;

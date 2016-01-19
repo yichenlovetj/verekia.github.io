@@ -1,0 +1,8 @@
+<!-- htmlo: components/head-top -->
+        <title>Jonathan Verrecchia's Resume</title>
+        <meta name="description" content="Software Engineer, previously Front-End Engineer at Yelp">
+<!-- htmlo: components/head-bottom -->
+
+My resume is currently located at <strong><a href="http://jonathan-verrecchia.com">jonathan-verrecchia.com</a></strong>, but will be moved here soon.
+
+<!-- htmlo: components/bottom-simple -->
