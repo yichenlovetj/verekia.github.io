@@ -134,6 +134,10 @@ a {
     text-align: right !important;
 }
 
+.full-width {
+    width: 100%;
+}
+
 .nav-column {
     position: fixed;
     min-width: 34.88%;
