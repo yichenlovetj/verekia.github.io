@@ -9,11 +9,6 @@
             </div>
         </div>
         <div class="nav-list js-nav-list">
-            <!-- <script>
-            if (window.location.pathname !== '/') {
-                document.write('<a href="/" class="homepage-link">Go back to the homepage</a>');
-            };
-            </script> -->
             <div class="js-nav-list-section">
                 <h2>Lifestyle <a href="javascript:;" class="expand-nav-link js-nav-expand">(more)</a></h2>
                 <ul>
@@ -69,12 +64,12 @@
                 <h2>Code <a href="javascript:;" class="expand-nav-link js-nav-expand">(more)</a></h2>
                 <ul>
                     <li>
-<!-- htmlo: articles/css-preprocessors/url -->
+<!-- htmlo: articles/css-preprocessors/link -->
 <!-- htmlo: articles/css-preprocessors/short-title -->
                         </a>
                     </li>
                     <li>
-<!-- htmlo: articles/responsive-initializr/url -->
+<!-- htmlo: articles/responsive-initializr/link -->
 <!-- htmlo: articles/responsive-initializr/short-title -->
                         </a>
                     </li>
@@ -99,7 +94,9 @@
             <!-- Warning! Adjust vertical media queries after adding links -->
 
         </div>
-        <select class="nav-dropdown">
+        <select class="nav-dropdown js-nav-dropbown">
+<!-- htmlo: articles/css-preprocessors/select-link -->
+<!-- htmlo: articles/responsive-initializr/select-link -->
         </select>
     </div>
 </div>

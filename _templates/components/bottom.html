@@ -26,6 +26,13 @@
                 }
             });
 
+            // The \n compensates HTMLO's newline created in the value="\n" attribute.
+            $('.js-nav-dropbown').val('\n' + window.location.pathname);
+
+            $('.js-nav-dropbown').change(function(){
+                window.location = $(this).val()
+            });
+
         </script>
 
         <script>
