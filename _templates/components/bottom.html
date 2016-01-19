@@ -26,6 +26,9 @@
                 }
             });
 
+            // The blank option avoids text flicking at loading
+            $('.js-select-blank-option').remove();
+
             // The \n compensates HTMLO's newline created in the value="\n" attribute.
             $('.js-nav-dropbown').val('\n' + window.location.pathname);
 

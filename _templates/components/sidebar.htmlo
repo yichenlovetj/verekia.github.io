@@ -95,6 +95,9 @@
 
         </div>
         <select class="nav-dropdown js-nav-dropbown">
+            <option class="js-select-blank-option" value=""></option>
+            <option value="
+/">Homepage</option>
 <!-- htmlo: articles/css-preprocessors/select-link -->
 <!-- htmlo: articles/responsive-initializr/select-link -->
         </select>
