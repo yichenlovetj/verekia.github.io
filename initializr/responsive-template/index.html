@@ -76,10 +76,6 @@
 http://soundcloud.com/leafadventure" target="_blank">
 Leaf Adventure</a>
 </li>                    <li>
-                        <a href="http://soundcloud.com/leafadventure" >Leaf Adventure
-                        </a>
-                    </li>
-                    <li>
                         <a href="/">Music Production Lessons
                         </a>
                     </li>
@@ -129,7 +125,7 @@ CSS Preprocessors Talk
 </option><option value="
 /initializr/responsive-template/">
 Responsive Initializr
-</option><option data-new-tab="true" value="
+</option><option value="
 http://soundcloud.com/leafadventure">
 Leaf Adventure</option>        </select>
     </div>
@@ -318,24 +314,16 @@ December 20, 2011
                 }
             });
 
-
             // The blank option avoids text flicking at loading
             $('.js-select-blank-option').remove();
 
             // The \n compensates HTMLO's newline created in the value="\n" attribute.
             $('.js-nav-dropbown').val('\n' + window.location.pathname);
 
-            var displayedSelectLink = $('.js-nav-dropbown').val();
-
-            $('.js-nav-dropbown').change(function(stuff){
-                option = $(this).find('option[value="' + $(this).val() + '"]');
-                if (option.data('new-tab')) {
-                    window.open($(this).val(), '_blank');
-                    // To not display an external link on the dropbown after it opens
-                    $('.js-nav-dropbown').val(displayedSelectLink);
-                } else {
-                    window.location = $(this).val();
-                }
+            $('.js-nav-dropbown').change(function(){
+                window.location = $(this).val();
+                // Note to self: opening a new tab using window.open on mobile blocks a popup
+                // so I ended up using a simple window.location
             });
 
         </script>
