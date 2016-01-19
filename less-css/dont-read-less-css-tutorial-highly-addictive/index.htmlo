@@ -1,0 +1,15 @@
+<!-- htmlo: components/head-top -->
+<!-- htmlo: articles/less-css/full-title -->
+<!-- htmlo: components/head-after-title -->
+<!-- htmlo: components/head-bottom -->
+
+<!-- htmlo: components/sidebar -->
+<!-- htmlo: components/main -->
+<!-- htmlo: components/articletop -->
+<!-- htmlo: articles/less-css/full-title -->
+<!-- htmlo: components/aftertitle -->
+<!-- htmlo: articles/less-css/content -->
+<!-- htmlo: components/beforedate -->
+<!-- htmlo: articles/less-css/date -->
+<!-- htmlo: components/articlebottom -->
+<!-- htmlo: components/bottom -->
