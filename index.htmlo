@@ -1,61 +1,10 @@
-<!-- htmlo: components/head -->
+<!-- htmlo: components/head-top -->
+Jonathan Verrecchia's Projects and Blog</title>
+<meta name="description" content="Articles and projects about minimalism, transhumanism, music, and code.">
+<!-- htmlo: components/head-bottom -->
+
 <!-- htmlo: components/sidebar -->
 <!-- htmlo: components/main -->
-
 <!-- htmlo: components/homepage -->
-
-<!--
-<div class="homepage-content">
--->
-
-<!-- components/indexitemhead -->
-<!-- articles/todo-zero/url -->
-<!-- articles/todo-zero/full-title -->
-<!-- components/indexitembeforecontent -->
-<!-- articles/todo-zero/excerpt -->
-<!-- articles/todo-zero/content -->
-<!-- articles/todo-zero/url -->
-<!-- components/readmore -->
-<!-- components/indexbeforedate -->
-<!-- articles/todo-zero/date -->
-<!-- components/articlebottom -->
-
-<!--
-<div class="separator clearfix">
-    <hr><hr><hr><hr><hr>
-</div>
--->
-
-<!-- components/indexitemhead -->
-<!-- articles/css-preprocessors/url -->
-<!-- articles/css-preprocessors/full-title -->
-<!-- components/indexitembeforecontent -->
-<!-- articles/css-preprocessors/excerpt -->
-<!-- articles/css-preprocessors/url -->
-<!--<br><br>Slides available here</a> -->
-<!-- components/indexbeforedate -->
-<!-- articles/css-preprocessors/date -->
-<!-- components/articlebottom -->
-
-<!--
-<div class="separator clearfix">
-    <hr><hr><hr><hr><hr>
-</div>
--->
-
-<!-- components/indexitemhead -->
-<!-- articles/responsive-initializr/url -->
-<!-- articles/responsive-initializr/full-title -->
-<!-- components/indexitembeforecontent -->
-<!-- articles/responsive-initializr/excerpt -->
-<!-- articles/responsive-initializr/url -->
-<!-- components/readmore -->
-<!-- components/indexbeforedate -->
-<!-- articles/responsive-initializr/date -->
-<!-- components/articlebottom -->
-
-<!--
-</div>
--->
 
 <!-- htmlo: components/bottom -->

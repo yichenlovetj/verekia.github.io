@@ -14,6 +14,7 @@
                 <ul>
 <!-- htmlo: external-links/life-framework/nav-item -->
 <!-- htmlo: articles/minimalism-coaching/nav-item -->
+<!-- htmlo: articles/todo-zero/nav-item -->
                     <li class="nav-item-hidden js-nav-item-hidden">
                         <a href="/" target="_blank">Going Vegan
                         </a>
@@ -75,6 +76,7 @@
             <optgroup label="Lifestyle">
 <!-- htmlo: external-links/life-framework/select-link -->
 <!-- htmlo: articles/minimalism-coaching/select-link -->
+<!-- htmlo: articles/todo-zero/select-link -->
             </optgroup>
             <optgroup label="Transhumanism">
 <!-- htmlo: external-links/future-humanity/select-link -->
