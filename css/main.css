@@ -112,6 +112,14 @@ a {
     text-decoration: none;
 }
 
+.main-content h2 {
+    margin-top: 40px;
+}
+
+.main-content h3 {
+    margin-top: 30px;
+}
+
 .main-content a {
     border-bottom: 1px solid black;
 }
@@ -120,6 +128,10 @@ a {
     display: block;
     max-width: 100%;
     margin: 30px auto;
+}
+
+.gist {
+    margin-top: 1em;
 }
 
 .hidden {
