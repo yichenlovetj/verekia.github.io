@@ -12,9 +12,7 @@ For those who have been living in a cave for the last few months (understand: fo
 
 <p>The concept, introduced by <a href="http://ethanmarcotte.com/" target="_blank">Ethan Marcotte</a>, is pretty simple: the page layout should adapt depending on the screen size so it’s always convenient and easily readable for the user. On mobile for instance, it’s more comfortable to get a minimalistic one-column vertical view than getting a 2 or 3 columns view – which is perfect for desktops. What about tablets? Maybe we can also adapt the layout to fit their medium size screen too? Since we can’t know the screen size of our users’ devices, well it should just work everywhere.</p>
 
-<p class="text-center">
 <img src="/_templates/articles/responsive-initializr/img/responsive-web-design-ethan-marcotte.jpg" alt="Responsive Web Design - Ethan Marcotte">
-</p>
 
 To design a responsive layout, we have to forget about the usual static 960px width layouts and go fluid with percentage widths and media queries.
 
@@ -22,9 +20,7 @@ To design a responsive layout, we have to forget about the usual static 960px wi
 
 <p>The first thing our page needs is a "fluid" layout. A layout is called fluid when the text adapts its container size and when proportions are preserved when the window is resized. To get this working we can’t have any hard coded static value for widths, horizontal padding nor horizontal margins. We can basically only use percentages:</p>
 
-<p>
 <script src="https://gist.github.com/verekia/06a4afe90649d5029ac1.js"></script>
-</p>
 
 <p>If you strictly follow this approach, your layout will scale perfectly from a small mobile screen to a huge desktop monitor. It’s already pretty cool, but you still have the same layout on every device, which is far from ideal! Don’t worry, now comes the fun part with media-queries to solve this problem.</p>
 
@@ -35,15 +31,11 @@ To design a responsive layout, we have to forget about the usual static 960px wi
 <h3>The mobile view</h3>
 <p>Here is the very simple mobile display of the responsive template. It doesn’t take into account any media query yet:</p>
 
-<p class="text-center">
 <img src="/_templates/articles/responsive-initializr/img/responsive-layout-mobile-smartphone-iphone.png" alt="Responsive Layout for mobile - Smartphone - iPhone" style="width: 250px">
-</p>
 
 <p>You can see that an aside orange block is located at the bottom of the page:</p>
 
-<p class="text-center">
 <img src="/_templates/articles/responsive-initializr/img/media-query-mobile-smartphone-iphone-bottom.png" alt="Responsive Layout for mobile - Smartphone - iPhone" style="width: 250px">
-</p>
 
 <p class="island"><strong>Note</strong>: Remember that an <code>aside</code> element is absolutely not meant to just be on the right or the left of an other element. Its semantic definition is that its content should be related to the main content, so its perfectly fine to have it under the article.
 </p>
@@ -57,9 +49,7 @@ To design a responsive layout, we have to forget about the usual static 960px wi
 
 <p>Which has the following result:</p>
 
-<p class="text-center">
 <img src="/_templates/articles/responsive-initializr/img/media-query-tablets-ipad.png" alt="Media Queries Tablets iPad" style="width: 400px">
-</p>
 
 <h3>The wide view</h3>
 
@@ -69,9 +59,7 @@ To design a responsive layout, we have to forget about the usual static 960px wi
 
 <p>This is what we get on a screen of approximately 900 pixels wide:</p>
 
-<p class="text-center">
 <img src="/_templates/articles/responsive-initializr/img/media-query-960.png" alt="960 pixels wide layout">
-</p>
 
 <p>We now have a nice 2-columns desktop view. You see, it wasn't that hard to start from the mobile version first! I admit it might not be intuitive at first, but you get used to it pretty fast, and it's definitely cleaner.</p>
 
@@ -90,9 +78,7 @@ To design a responsive layout, we have to forget about the usual static 960px wi
 
 <p>I've set the wrapper’s width to 1026px (1140px – 10%) because on the previous layouts the margins were set to 10%. Therefore if we resize the browser it will move from one layout to another seamlessly. Here is the widest layout we can get:</p>
 
-<p class="text-center">
 <img src="/_templates/articles/responsive-initializr/img/media-query-1140-large.png" alt="Wide screen 1140 pixels static layout">
-</p>
 
 <p>All right! We’re done with media queries!</p>
 
@@ -112,9 +98,7 @@ To design a responsive layout, we have to forget about the usual static 960px wi
 
 <p>Here is also a <a href="http://goldenratiocalculator.com/?width=100" target="_blank">golden ratio calculator</a> for you to play with, and an <a href="http://net.tutsplus.com/tutorials/other/the-golden-ratio-in-web-design/" target="_blank">interesting tutorial</a> about how to apply it to your layout. Feel free to use this black magic or not, but don’t go crazy with it, this is more myth than science :)</p>
 
-<p class="text-center">
 <img src="/_templates/articles/responsive-initializr/img/golden-ratio.jpg" alt="Golden ratio">
-</p>
 
 <h3>3rd gift: Readability For The Win</h3>
 
@@ -130,9 +114,7 @@ To design a responsive layout, we have to forget about the usual static 960px wi
 <li>Put stuff between paragraphs when you can and when it makes sense so the reader can breath before he starts a new one (charts, pictures, code, decorations...).</li>
 </ul>
 
-<p class="text-center">
 <img src="/_templates/articles/responsive-initializr/img/readability.jpg" alt="Glasses">
-</p>
 
 <h3>4th gift: A Github repository for this responsive template</h3>
 
@@ -140,9 +122,7 @@ To design a responsive layout, we have to forget about the usual static 960px wi
 
 <p>Here is the new repository: <a href="https://github.com/verekia/initializr-template" target="_blank">github.com/verekia/initializr-template</a>.</p>
 
-<p class="text-center">
 <img src="/_templates/articles/responsive-initializr/img/github-logo.png" alt="Github logo">
-</p>
 
 <h2>Enjoy!</h2>
 

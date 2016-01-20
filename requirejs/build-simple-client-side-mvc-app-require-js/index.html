@@ -153,7 +153,569 @@ Less CSS Tutorial</option>            </optgroup>
     <div class="main-content">
 <h1>
 Build a simple client-side MVC app with RequireJS</h1>
-RequireJS<p class="text-right"><span class="screen-reader-text">Posted on </span><time class="entry-date published"
+ <a href="/_templates/articles/requirejs/img/require-js-logo.png" target="_blank">
+<img src="/_templates/articles/requirejs/img/require-js-logo.png" alt="Require JS Logo" title="Require JS Logo" />
+</a>
+
+<p>
+As a web developer, you certainly often started coding your JavaScript in a single file, and, as the code base gets larger and larger, it became really difficult to maintain. To solve this problem you can split your code in several files, add more <code>script</code> tags and use global variables to reach functions declared in other files. But this pollutes the global namespace and for each file an additional HTTP request consumes bandwidth, which slows down the loading time of the page.
+</p>
+
+<p>
+If this happened to you, you certainly understand that there is a strong need to organize our front-end code differently, particularly if we have to build large-scale web apps with thousands of lines of JavaScript. We need a new way to organize all this mess to make it easier to maintain. This new technique consists in using script loaders. Plenty of them are available on the web, but we'll focus on a very good one called RequireJS.
+</p>
+
+<p>
+In this step by step tutorial you will learn how to build a simple MVC (Model - View - Controller) app using RequireJS. You don't need any particular previous knowledge of script loading - we'll see the basics together.
+</p>
+
+<h2>Introduction</h2>
+
+<h3>What is RequireJS and why it's awesome</h3>
+
+<p>
+RequireJS is an implementation of <a href="https://github.com/amdjs/amdjs-api/wiki/AMD" target="_blank">AMD</a> (Asynchronous Module Definition), an API for declaring modules and loading them asynchronously on the fly when they're needed. It's developed by <a href="http://twitter.com/#!/jrburke" target="_blank">James Burke</a>, and it just reach the symbolic 1.0 version after 2 years of development. RequireJS can help you organize your code with modules and will manage for you the asynchronous and parallel downloads of your files. Since scripts are loaded only when needed and in parallel, it reduces the loading time of your page, which is great!
+</p>
+
+<h3>MVC for the front-end?</h3>
+
+<p>
+MVC is a well known design pattern to organize server-side code and make it modular and sustainable. What about using it for front-end? Can we apply this design pattern to JavaScript? If you're just using JavaScript for animating, validating few forms or any simple treatment that doesn't require many lines of code (let's say less than 100 lines), there is no need to structure your files using MVC, and probably no need to use RequireJS either. However if you're building a rich web app with many different views, definitely yes!
+</p>
+
+<h3>The app we'll create</h3>
+
+To illustrate how to organize your MVC code using RequireJS, we'll create a very simple app with 2 views:
+<ul>
+    <li>The first view will display a list of users (represented by a <code>name</code> attribute),</li>
+    <li>The second view will allow you to add a user.</li>
+</ul>
+
+This is how it will look like at the end:
+
+ <a href="/_templates/articles/requirejs/img/requirejs-mvc-app.png" target="_blank">
+<img src="/_templates/articles/requirejs/img/requirejs-mvc-app.png" alt="Require JS MVC App" title="Require JS MVC App" />
+</a>
+
+The business logic is obviously super simple so you can focus on understanding what's really important here: structuring your code. And since it's that simple, I <em>strongly</em> recommend that you really try to do it in parallel of reading this tutorial. It won't take long, and if you have never done modular programming or used RequireJS before, coding this example will really help you become a better programmer. Seriously, it's worth it, you should do it.
+
+<h3>HTML and CSS files</h3>
+
+Here is the HTML markup we'll use for this example:
+
+<!-- [html]
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>A simple MVC structure</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>My users</h1>
+        <nav><a href="#list">List</a> - <a href="#add">Add</a></nav>
+        <div id="app"></div>
+    </div>
+    <script data-main="js/main" src="js/require.js"></script>
+</body>
+</html>
+[/html] -->
+
+The navigation in our app will be the links of the <code>nav</code> menu which will remain present on each page of the app, and all the magic of the MVC application will happen in the <code>#app</code> div. We also included RequireJS (which you can grab <a href="http://requirejs.org/docs/download.html" target="_blank">here</a>) at the bottom of the <code>body</code>, and you can notice a special attribute on the <code>script</code> tag: <code>data-main="js/main"</code>. The value passed to this attribute is used by RequireJS as the entry point of the entire application.
+
+Let's also add just a little bit of basic styling:
+
+<!-- [css]
+#container{
+    font-family:Calibri, Helvetica, serif;
+    color:#444;
+    width:200px;
+    margin:100px auto 0;
+    padding:30px;
+    border:1px solid #ddd;
+    background:#f6f6f6;
+    -webkit-border-radius:4px;
+       -moz-border-radius:4px;
+            border-radius:4px;
+}
+
+h1, nav{
+    text-align:center;
+    margin:0 0 20px;
+}
+[/css] -->
+
+<h3>OOP reminder: What is a module?</h3>
+
+In JavaScript Object-Oriented Programming, there is a very common design pattern called Module Pattern. It is used to encapsulate methods and attributes in objects (which are the "modules") to avoid polluting the global namespace. It is also used to kind of simulate classes from other OOP languages like Java or PHP. This is how you would define a simple <code>MyMath</code> module in our <code>main.js</code> file:
+<!-- [javascript]
+var MyMath = (function(){
+
+    // Put your private variables and functions here
+    
+    return { // Here are the public methods
+        add:function(a, b){
+            return a + b;
+        }
+    };
+})();
+
+console.log(MyMath.add(1, 2));
+[/javascript] -->
+
+Public methods are declared using the object literal notation, which is not very convenient. You can alternatively use the Revealing Module Pattern, which returns private attributes and methods:
+
+<!-- [javascript]
+var MyMath = (function(){
+
+    // With this pattern you can use the usual function notation:
+    
+    function add(a, b){
+        return a + b;
+    }
+    
+    return {
+        add:add // But don't forget to declare it in the returned object!
+    };
+})();
+
+console.log(MyMath.add(1, 2));
+[/javascript] -->
+
+I will be using the Revealing Module Pattern in the rest of this article.
+
+<h2>RequireJS</h2>
+
+<h3>Defining a module with RequireJS</h3>
+
+In the last section we declared a module in a variable to call it later. This is just one way to declare modules. We're now going to see a (barely!) different method used by RequireJS. The purpose of RequireJS is to split our JavaScript files for a better maintainability, so let's create a <code>MyMath.js</code> file to <em>define</em> our <code>MyMath</code> module in the same folder as <code>main.js</code>:
+
+<!-- [javascript]
+define(function(){
+
+    function add(a, b){
+        return a + b;
+    }
+    
+    return {
+        add:add
+    };
+});
+[/javascript] -->
+
+Instead of declaring a variable, we just put the module as a parameter of the <code>define</code> function. This function is provided by RequireJS and will make our module accessible from the outside.
+
+<h3>Requiring a module from the main file</h3>
+
+
+Let's go back to our <code>main.js</code> file. RequireJS provides a second function called <code>require</code> that we're going to use to call our <code>MyMath</code> module. Here is what our <code>main.js</code> now looks like:
+
+<!-- [javascript]
+require(['MyMath'], function(MyMath){
+    
+    console.log(MyMath.add(1, 2));  
+
+});
+[/javascript] -->
+
+The call to <code>MyMath</code> is now wrapped in the <code>require</code> function, which takes 2 parameters:
+<ul>
+<li>An array of modules we want to load, declared with their path relative to the entry point (remember the <code>data-main</code> attribute in the HTML) and without the <code>.js</code> extension,</li>
+<li>A function to call once these dependencies are loaded. The modules will be passed as parameters of this function so you can simply name those parameters with the same modules names.</li>
+</ul>
+
+You can now reload the page and... congratulations! You just called a method from an other file! Yes, that was super easy and you're now ready for the big scary MVC architecture (which works exactly like the module definition you just did, so be sure you'll be doing great!).
+
+<h2>The MVC structure</h2>
+
+<p class="advice"><strong>Important note</strong>: In this tutorial, we'll mimic the server-side MVC in which 1 controller = 1 view. In front-end development, it is very common to have multiple views per controller. In this case views become visual components like buttons or fields. MVC JavaScript frameworks like Backbone use this different approach which is not the purpose of this article. My goal here is not to create a real life entire MVC framework, but simply illustrate how RequireJS works through a structure that many of you already know well.</p>
+
+Let's start with the part I'm sure you love: creating all the folders and files of our project. We want to use Models to represent data, the business logic will be handled by Controllers, and those controllers will call specific Views to render pages. So guess what? We need 3 folders: Models, Controllers and Views. Considering our simple app case, we'll have 2 controllers, 2 views and 1 model.
+
+Our JavaScript folder now looks like this:
+<ul>
+<li>Controllers</li>
+<ul><li>AddController.js</li>
+<li>ListController.js</li></ul>
+<li>Models</li>
+<ul><li>User.js</li></ul>
+<li>Views</li>
+<ul><li>AddView.js</li>
+<li>ListView.js</li></ul>
+<li>main.js</li>
+<li>require.js</li>
+</ul>
+
+Got the structure ready? Great! Let's start implementing the simplest part: the Model.
+
+<h2>The Model: User.js</h2>
+
+In this example, a <code>User</code> will be a simple class with a <code>name</code> attribute:
+<!-- [javascript]
+define(function(){
+    
+    function User(name){
+        this.name = name || 'Default name';
+    }
+    
+    return User;
+});
+[/javascript] -->
+
+If we now come back to our <code>main.js</code> file, we can declare the dependency to <code>User</code> in the require method, and manually create a set of users for the purpose of this example:
+
+<!-- [javascript]
+require(['Models/User'], function(User){
+    
+    var users = [new User('Barney'),
+                 new User('Cartman'),
+                 new User('Sheldon')];
+    
+    for (var i = 0, len = users.length; i < len; i++){
+        console.log(users[i].name);
+    }
+    
+    localStorage.users = JSON.stringify(users);
+});
+[/javascript] -->
+
+We then serialize in JSON the users array and store it in the HTML5 local storage to make it accessible just like a database:
+
+ <a href="/_templates/articles/requirejs/img/users-console.png" target="_blank">
+<img src="/_templates/articles/requirejs/img/users-console.png" alt="Chrome Console showing the users" title="Chrome Console showing the users" />
+</a>
+
+<p class="advice"><strong>Note</strong>: JSON serialization with <code>stringify</code> and deserialization with <code>parse</code> need a polyfill to work in IE7 and inferiors. You should use Douglas Crockford's <code>json2.js</code> from his <a href="https://github.com/douglascrockford/JSON-js" target="_blank">Github repository</a> for this.</p>
+
+<h2>Displaying the users list</h2>
+
+It's time to display those users in the app interface!  We'll have to work with <code>ListController.js</code> and <code>ListView.js</code> to do that. Those 2 components are obviously related, and they'll be linked someway. There are many ways we can do that, and to keep this example simple, here is what I suggest: The <code>ListView</code> will have a <code>render</code> method and our <code>ListController</code> will simply get the users from the local storage and call <code>ListView</code>'s <code>render</code> method by passing the users as a parameter. So obviously, <code>ListController</code> needs <code>ListView</code> as a dependency.
+
+Just like with <code>require</code>, you can pass an array of dependencies to <code>define</code> if the module relies on other modules. Let's also create a <code>start</code> method (or any other name that makes sense to you - like <code>run</code> or <code>main</code>), to put the main behavior of the controller in it:
+
+<!-- [javascript]
+define(['Views/ListView'], function(ListView){
+    
+    function start(){
+        var users = JSON.parse(localStorage.users);
+        ListView.render({users:users});
+    }
+    
+    return {
+        start:start
+    };
+});
+[/javascript] -->
+
+Here we deserialize the users from the local storage and pass it to <code>render</code> as an object. Now, all we have to do is implementing a <code>render</code> method in <code>ListView.js</code>:
+
+<!-- [javascript]
+define(function(){
+    
+    function render(parameters){
+        var appDiv = document.getElementById('app');
+
+        var users = parameters.users;
+        
+        var html = '<ul>';
+        for (var i = 0, len = users.length; i < len; i++){
+            html += '<li>' + users[i].name + '</li>';
+        }
+        html += '</ul>';
+        
+        appDiv.innerHTML = html;
+    }
+
+    return {
+        render:render
+    };
+});
+[/javascript] -->
+
+This method simply loops on our users to concatenate them in an HTML string we inject in the <code>#app</code> element.
+
+<p class="advice"><strong>Important</strong>: Using plain HTML in a JavaScript file like this is not an ideal solution, because it's very hard to maintain. You should instead consider templating. Templates are an elegant way to insert data in HTML markup. Many very good templating systems are available on the web. You can for instance use <a href="https://github.com/jquery/jquery-tmpl" target="_blank">jQuery-tmpl</a> or <a href="https://github.com/janl/mustache.js" target="_blank">Mustache.js</a>. But this is beyond the scope of this article and it would add complexity to the current architecture, so I prefer keeping it simple.</p>
+
+Now, all we need to do is to "run" our <code>ListController</code> module. To do that let's declare it as a dependency of <code>require</code> in our <code>main.js</code> file, and call <code>ListController.start()</code>:
+<!-- [javascript]
+require(['Models/User', 'Controllers/ListController'], function(User, ListController){
+    
+    var users = [new User('Barney'),
+                 new User('Cartman'),
+                 new User('Sheldon')];
+    
+    localStorage.users = JSON.stringify(users);
+    
+    ListController.start(); 
+});
+[/javascript] -->
+
+You can now refresh your page to get this wonderful list of users:
+
+ <a href="/_templates/articles/requirejs/img/mvc-users-list.png" target="_blank">
+<img src="/_templates/articles/requirejs/img/mvc-users-list.png" alt="MVC users list" title="MVC users list" />
+</a>
+
+Woooaaaah, it works! Congratulations if you coded this too!
+
+<p class="advice"><strong>Note</strong>: For the moment, we can only manually declare the controller we want to run since we don't have any routing system yet. But we'll create a very simple one pretty soon, be patient!</p>
+
+<h2>Adding a user</h2>
+
+We now want to be able to add users to our list. We'll display a simple text input and a button, with an event handler when the button is clicked to add the user to the local storage. Let's start with <code>AddController</code>, just like we did in the previous section. This file will be pretty simple since we don't have any parameter to give to the view. Here is <code>AddController.js</code>:
+
+<!-- [javascript]
+define(['Views/AddView'], function(AddView){
+
+    function start(){
+        AddView.render();
+    }
+
+    return {
+        start:start
+    };
+});
+[/javascript] -->
+
+And its corresponding view:
+
+<!-- [javascript]
+define(function(){
+    
+    function render(parameters){
+        var appDiv = document.getElementById('app');
+        appDiv.innerHTML = '<input id="user-name" /><button id="add">Add this user</button>';
+    }
+    
+    return {
+        render:render
+    };
+});
+[/javascript] -->
+
+You can now declare <code>AddController</code> as a dependency in your main file and call its <code>start</code> method to successfully get the expected view:
+
+ <a href="/_templates/articles/requirejs/img/mvc-add-user.png" target="_blank">
+<img src="/_templates/articles/requirejs/img/mvc-add-user.png" alt="MVC Add user" title="MVC Add user" />
+</a>
+
+But since we don't have any event bind on the button yet, this view is not very useful... Let's work on that. I have a question for you: Where should we put the event logic for this event? In the view? In the controller? If we put it in the view it would be the right place to add the events listeners, but putting the business logic in a view would be a very bad practice. Putting the event logic in the controller seems to be a better idea, even if it's not perfect because we don't want to see any div's ID in there, which belong to the view.
+
+<p class="advice"><strong>Note</strong>: The best way to go would be having event listeners in the view, which would call business logic methods located in the controller or in a new dedicated events module. This is really easy to do but it would make this example more complex and I don't want you to be lost. Feel free to try doing it for practicing!</p>
+
+As I said, let's put all the event logic in the controller. We can create a <code>bindEvents</code> function in <code>AddController</code> and call it after the view has finished rendering the HTML:
+
+<!-- [javascript]
+define(['Views/AddView', 'Models/User'], function(AddView, User){
+
+    function start(){
+        AddView.render();
+        bindEvents();       
+    }
+    
+    function bindEvents(){
+        document.getElementById('add').addEventListener('click', function(){
+            var users = JSON.parse(localStorage.users);
+            var userName = document.getElementById('user-name').value;
+            users.push(new User(userName));
+            localStorage.users = JSON.stringify(users);
+            require(['Controllers/ListController'], function(ListController){
+                ListController.start();
+            });
+        }, false);
+    }
+
+    return {
+        start:start
+    };
+});
+[/javascript] -->
+
+In <code>bindEvents</code>, we simply add an event listener for clicks on the <code>#add</code> button (feel free to use your own function to deal with IE's <code>attachEvent</code> - or just use jQuery). When the button is clicked, we get the users string from the local storage, deserialize it to get the array, push a new user with the name contained in the <code>#user-name</code> input field, and put the updated users array back to the local storage. After that we finally <code>require</code> the <code>ListController</code> to execute its <code>start</code> method so we can see the result:
+
+ <a href="/_templates/articles/requirejs/img/mvc-list-added.png" target="_blank">
+<img src="/_templates/articles/requirejs/img/mvc-list-added.png" alt="MVC List - User added" title="MVC List - User added" />
+</a>
+
+Brilliant! It's time for you to take a break, you've done a very good job if you're still doing this example with me. You deserve a cup of coffee before we continue!
+
+<h2>Navigation between views with routes</h2>
+
+Okay back to work. Our little app is pretty cool but it really sucks that we still cannot navigate between views to add more users. What is missing is a <em>routing</em> system. If you've worked with server-side MVC frameworks before, you're probably familiar with this. Each URL leads to a different view. However here we're client-side and it's slightly different. JavaScript single page interfaces like this one use the hash of the URL to navigate between different parts of the app. In our case, we want to be able to reach the 2 different views when hitting those URLs:
+<ul>
+<li>http://yourlocalhostpath/#list</li>
+<li>http://yourlocalhostpath/#add</li>
+</ul>
+
+This will make each page of our app bookmarkable and easily reachable.
+
+<p class="advice"><strong>Note</strong>: Firefox, Chrome and Opera also have a pretty good support of HTML5 history management (pushState, popState, replaceState), which saves you from dealing with hashes.</p>
+
+<h3>Browsers compatibility and functioning</h3>
+
+
+Managing history and hash navigation can be very painful if you need a good compatibility with old browsers. Depending on the browsers you aim to support here are different solution you can consider:
+<ul>
+<li><a href="http://caniuse.com/#search=history" target="_blank">Only the most advanced browsers</a>: HTML5 history management,</li>
+<li><a href="http://caniuse.com/#search=hashchange" target="_blank">Most of the current browsers</a>: HTML5 hashchange event,</li>
+<li>Old browsers: Simple manual monitoring of hash changes,</li>
+<li>Very old browsers: Manual monitoring + iframe hack.</li>
+</ul>
+
+In our case we will do the simple manual monitoring, which is pretty easy to implement. All we need to do is checking if the hash changed every n milliseconds, and fire some function if a change is detected.
+
+<p class="advice"><strong>Note</strong>: A <a href="http://tkyk.github.com/jquery-history-plugin/" target="_blank">jQuery plugin</a> is also available to manage this for you.</p>
+
+<h3>The routes and the main routing loop</h3>
+
+Let's create a <code>Router.js</code> file next to <code>main.js</code> to manage the routing logic. In this file we need a way to declare our routes and the default one if none is specified in the URL. We can for instance use a simple array of route objects that contain a <code>hash</code> and the corresponding <code>controller</code> we want to load. We also need a <code>defaultRoute</code> if no hash is present in the URL:
+
+<!-- [javascript]
+define(function(){
+
+    var routes = [{hash:'#list', controller:'ListController'},
+                  {hash:'#add',  controller:'AddController'}];
+    var defaultRoute = '#list';
+    var currentHash = '';
+    
+    function startRouting(){
+        window.location.hash = window.location.hash || defaultRoute;
+        setInterval(hashCheck, 100);
+    }
+    
+    return {
+        startRouting:startRouting
+    };
+});
+[/javascript] -->
+
+When <code>startRouting</code> will be called, it will set the default hash value in the URL, and will start a repetition of calls to <code>hashCheck</code> that we haven't implemented yet. The <code>currentHash</code> variable will be used to store the current value of the hash if a change is detected.
+
+<h3>Check for hash changes</h3>
+
+And here is <code>hashCheck</code>, the function called every 100 milliseconds: 
+
+<!-- [javascript]
+function hashCheck(){
+    if (window.location.hash != currentHash){
+        for (var i = 0, currentRoute; currentRoute = routes[i++];){
+            if (window.location.hash == currentRoute.hash)
+                loadController(currentRoute.controller);
+        }
+        currentHash = window.location.hash;
+    }
+}
+[/javascript] -->
+
+<code>hashCheck</code> simply checks if the hash has changed compared to the <code>currentHash</code>, and if it matches one of the routes, calls <code>loadController</code> with the corresponding controller name.
+
+<h3>Loading the right controller</h3>
+
+Finally, <code>loadController</code> just performs a call to <code>require</code> to load the controller's module and execute its <code>start</code> function:
+
+<!-- [javascript]
+function loadController(controllerName){
+    require(['Controllers/' + controllerName], function(controller){
+        controller.start();
+    });
+}
+[/javascript] -->
+
+So the final <code>Router.js</code> file looks like this:
+
+<!-- [javascript]
+define(function(){
+    
+    var routes = [{hash:'#list', controller:'ListController'},
+                  {hash:'#add',  controller:'AddController'}];
+    var defaultRoute = '#list';
+    var currentHash = '';
+    
+    function startRouting(){
+        window.location.hash = window.location.hash || defaultRoute;
+        setInterval(hashCheck, 100);
+    }
+    
+    function hashCheck(){
+        if (window.location.hash != currentHash){
+            for (var i = 0, currentRoute; currentRoute = routes[i++];){
+                if (window.location.hash == currentRoute.hash)
+                    loadController(currentRoute.controller);
+            }
+            currentHash = window.location.hash;
+        }
+    }
+    
+    function loadController(controllerName){
+        require(['Controllers/' + controllerName], function(controller){
+            controller.start();
+        });
+    }
+    
+    return {
+        startRouting:startRouting
+    };
+});
+[/javascript] -->
+
+<h3>Using the new routing system</h3>
+
+Now all we have to do is to <code>require</code> this module from our main file and call <code>startRouting</code>:
+
+<!-- [javascript]
+require(['Models/User', 'Router'], function(User, Router){
+    
+    var users = [new User('Barney'),
+                 new User('Cartman'),
+                 new User('Sheldon')];
+    
+    localStorage.users = JSON.stringify(users);
+
+    Router.startRouting();  
+});
+[/javascript] -->
+
+If we want to navigate in our app from a controller to another, we can just replace the current <code>window.hash</code> with the new controller's hash route. In our case we still manually load the <code>ListController</code> in <code>AddController</code> instead of using our new routing system:
+
+<!-- [javascript]
+require(['Controllers/ListController'], function(ListController){
+    ListController.start();
+});
+[/javascript] -->
+
+Let's replace those 3 lines with a simple hash update:
+
+<!-- [javascript]
+window.location.hash = '#list';
+[/javascript] -->
+
+And this is it! Our app has now a functional routing system! You can navigate from a view to another, come back, do whatever you want with the hash in the URL, it will keep loading the right controller if it matches the routes declared in the router. Sweet!
+
+Here is an <a href="http://verekia.com/demo/require-js/" target="_blank">online demo</a> of the app.
+
+<h2>Conclusion</h2>
+
+You can be proud of yourself, you built an entire MVC app without any framework! We just used RequireJS to link our files together, which is really the only mandatory tool to build something modular. So now what are the next steps? Well if you liked the minimalist Do It Yourself approach I had in this tutorial, you can enrich our little framework with new features as your app grows and has new technical needs. Here are some ideas of potential interesting next steps:
+<ul>
+<li>Integrate a templating system,</li>
+<li>Create a small external library to put all what is not purely related to your app (like the routing system) to be able to reuse it on other projects,</li>
+<li>Define what a Model, a View and a Controller are with objects in this library,</li>
+<li>Create a new abstraction layer to deal with getting the data from various sources (RESTful APIs, localStorage, IndexedDB...).</li></ul>
+
+This DIY approach is excellent to learn, but the current state of our framework is really not sufficient for real life projects at this point. If you're too lazy to implement the features listed above (and this list is absolutely not exhaustive!), you can also start learning how to use an existing MVC framework. The most popular are:
+<ul>
+<li><a href="http://documentcloud.github.com/backbone/" target="_blank">Backbone</a></li>
+<li><a href="http://javascriptmvc.com/" target="_blank">JavaScriptMVC</a></li>
+<li><a href="http://www.sproutcore.com/" target="_blank">Sproutcore</a></li>
+<li><a href="http://www.sencha.com/products/extjs/" target="_blank">ExtJS</a></li>
+<li><a href="http://knockoutjs.com/" target="_blank">Knockout</a></li>
+</ul>
+
+I personally like Backbone because it's lightweight (less than 5kb minified), so my next tutorial will be about mixing RequireJS and Backbone, which works pretty well! Follow <a href="http://twitter.com/#!/verekia" target="_blank">@verekia</a> for updates about this. You should also follow Addy Osmani and read his tutorials about <a href="http://addyosmani.com/blog/large-scale-jquery/" target="_blank">large scale JavaScript applications</a> and <a href="http://addyosmani.com/writing-modular-js/" target="_blank">modular JavaScript</a>, and <a href="http://twitter.com/#!/jrburke" target="_blank">James Burke</a> the creator of RequireJS. Both are very good sources of information for building modular JavaScript apps. Addy Osmani also started a project called <a href="http://addyosmani.github.com/todomvc/" target="_blank">TodoMVC</a> to compare how different MVC frameworks can be used to build the same simple web app, which is really helpful to choose the right framework for your needs.
+
+That's all for today folks, thanks for reading!
+<p class="text-right"><span class="screen-reader-text">Posted on </span><time class="entry-date published"
 datetime="2011-11-02">
 November 2, 2011
     </time>

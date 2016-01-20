@@ -117,9 +117,9 @@ a {
 }
 
 .main-content img {
+    display: block;
     max-width: 100%;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin: 30px auto;
 }
 
 .hidden {
@@ -173,31 +173,7 @@ hr {
     border-color: #ddd;
 }
 
-/*.horizontal-separator {
-    height: 100px;
-    width: 100px;
-    margin: auto;
-    border: 5px solid white;
-    position: absolute;
-    top: -70px;
-    left: 42%;
-    -webkit-box-shadow: 0px 0px 0px 1px #ddd, 0px 0px 0px 20px white, 0px 0px 0px 21px #ddd, 0px 0px 0px 27px white;
-            box-shadow: 0px 0px 0px 1px #ddd, 0px 0px 0px 20px white, 0px 0px 0px 21px #ddd, 0px 0px 0px 27px white;
-    -webkit-transform: rotate(45deg);
-       -moz-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-}
 
-.line-separator {
-    width: 100%;
-    height: 40px;
-    position: relative;
-    bottom: 40px;
-    -webkit-box-shadow: 0px 0px 0px 1px #ddd;
-            box-shadow: 0px 0px 0px 1px #ddd;
-}
-*/
 .homepage-link {
     margin-bottom: 16px;
 }
@@ -277,7 +253,7 @@ a.expand-nav-link {
 .main-content h1 {
     line-height: 45px;
     color: #444;
-    margin-bottom: 38px;
+    margin-bottom: 30px;
 }
 
 .island {
