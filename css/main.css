@@ -194,6 +194,10 @@ hr {
     content: "hello@verekia.com";
 }
 
+.css-email-leaf::before {
+    content: "leaf@leafadventure.com";
+}
+
 .nav-list h2 {
     text-transform: uppercase;
     font-family: 'Noto Sans', sans-serif;
@@ -254,7 +258,8 @@ a.expand-nav-link {
 }
 
 .homepage-top-space {
-    height: 90px;
+    /*height: 106px; -> when 4 menu sections, and transhumanism intro */
+    height: 130px;
 }
 
 .homepage-content h2 a {
@@ -375,7 +380,8 @@ a.expand-nav-link {
 /* Enables compact sidebar scrolling on short screens
    We don't want the sidebar on the mobile view. */
 
-@media (max-height: 750px) and (min-width: 991px){
+/* With 4 menu sections: 750px of height */
+@media (max-height: 700px) and (min-width: 991px){
     .nav-column {
         padding-top: 50px;
     }
@@ -385,7 +391,8 @@ a.expand-nav-link {
     }
 }
 
-@media (max-height: 660px) and (min-width: 991px){
+/* With 4 menu sections: 660px of height */
+@media (max-height: 550px) and (min-width: 991px){
     .nav-column {
         overflow-y: scroll;
         height: 100%;
