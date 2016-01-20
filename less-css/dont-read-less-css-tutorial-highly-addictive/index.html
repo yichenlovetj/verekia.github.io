@@ -157,40 +157,58 @@ DON'T READ this Less CSS Tutorial (Highly Addictive)</h1>
 <img src="/_templates/articles/less-css/img/less-css-logo.png" alt="Less CSS Logo" title="Less CSS Logo" />
 </a>
 
-<p class="warning">
+<p class="island">
 <strong>WARNING</strong>: If you like copy-pasting, find-replacing, scrolling in giant messy CSS files, not reusing your code, writing hundreds of times the same thing, you should definitely LEAVE THIS PAGE RIGHT NOW. I'm serious, if you start reading this tutorial, you might like it and could dangerously become way more productive. At the end of this read, you might even think crazy things like <i>"pure CSS sucks"</i> ! You've been warned...
 </p>
 
-<strong>EDIT:</strong> I strongly recommend reading or watching <a href="http://verekia.com/slides/css-preprocessors" target="_blank">my talk about CSS Preprocessors</a> and consider using <a href="http://sass-lang.com/" target="_blank">Sass</a> instead of Less.
+<strong>EDIT:</strong> I strongly recommend reading or watching <a href="/slides/css-preprocessors" target="_blank">my talk about CSS Preprocessors</a> and consider using <a href="http://sass-lang.com/" target="_blank">Sass</a> instead of Less.
 
+<p>
 If you're a web developer or designer you probably faced this kind of situation before:
 <i>"I wonder if we should use a different theme on our website, can we try a blue one instead of the current green?"</i>
+</p>
 
+<p>
 2 possible answers:
+</p>
+
 <ul>
-<li>A pure CSS developer: "Damn... Can you come back in 15 minutes?"</li>
-<li>A Less CSS developer: "Sure! Wait just a second... Done, look!"</li>
+    <li>A pure CSS developer: "Damn... Can you come back in 15 minutes?"</li>
+    <li>A Less CSS developer: "Sure! Wait just a second... Done, look!"</li>
 </ul>
 
+<p>
 If you're using pure CSS, even when respecting best practices, chances are that your answer will be the first one. Indeed, CSS is really far from being perfect. Hasn't it come to your mind that some essential features are missing from a such widely used language? For instance, very basic things like <em>variables</em>.
+</p>
 
+<p>
 Declaring a simple variable to store a color at the top of your stylesheet and being able to change the entire theme of your site by only changing this single variable would be pretty neat right? And what about all these repetitions each time you use CSS3 properties with vendor prefixes? Wouldn't it be useful to have to declare that just once?
+</p>
 
+<p>
 Well guess what, we're gonna fix that! This article will demonstrate the power of Less, an enrichment of CSS using JavaScript. It adds tons of awesome features missing from CSS to make your web developer life so much easier. Trust me, once you've tried it, it changes the way you code your stylesheets forever and you'll never come back to pure CSS!
-
-<!--more-->
+</p>
 
 <h2>What is Less?</h2>
 
 <h3>A "dynamic" CSS</h3>
 
+<p>
 According to the official website, Less is a "dynamic stylesheet language". I have a question for you now: How many stylesheet languages do you know?
+</p>
 
+<p>
 Well except if you developed your own language and a dedicated browser to interpret it, chances are that you only know CSS. You might even have never thought about "What if there were another stylesheet language?". Well Less is <em>kind of</em> one. "Kind of" because you develop using the Less language, but in the end, it's compiled to pure CSS so that browsers can read it.
+</p>
 
+<p>
 It's also called "dynamic" because it enriches CSS with many common features available in most modern dynamic programming languages (like variables for instance). During the development phase, you'll be able to use all those new cool features we'll see in this tutorial and it will help you code way more efficiently.
+</p>
 
+<p>
 Less compiler, which is written in JavaScript, will convert all your Less code into CSS to be interpretable by the client. When does this conversion happen? Well you have 3 options:
+</p>
+
 <ul>
     <li>On the fly in the browser with <code>less.js</code>,</li>
     <li>By using the lessc compiler via the command-line,</li>
@@ -199,283 +217,292 @@ Less compiler, which is written in JavaScript, will convert all your Less code i
 
 <h3>Compiling in the browser with less.js</h3>
 
+<p>
 <a href="http://lesscss.org/" target="_blank">LessCSS.org</a> has a big tempting button to download <code>less.js</code>. It is not a good idea. At least not for production.
+</p>
 
+<p>
 <code>Less.js</code> will perform AJAX requests to grab your Less files, will then process those files to convert them into CSS, and finally inject the resulting CSS in the head of your document. It is extremely inefficient in terms of performance and you should never use it in production. Plus, if the user's JavaScript is deactivated, well... it will just not work at all.
+</p>
 
+<p>
 But if you just want to do a quick Less prototype or if you don't have access to your usual development environment, <code>less.js</code> is perfectly fine!
+</p>
 
 <h3>Lessc and the command-line</h3>
 
+<p>
 You can also execute Less in your terminal. In order to do this, you will need to install <a href="http://nodejs.org/" target="_blank">Node.js</a> on your development machine, and then install the Less module by running:
+</p>
 
-<!-- [css]
-npm install less -g
-[/css] -->
+<p>
+<code>npm install less -g</code>
+</p>
 
+<p>
 You can then simply run the following command to compile a <code>style.less</code> file to <code>style.css</code>:
+</p>
 
-<!-- [css]
-lessc style.less > style.css
-[/css] -->
+<p>
+<code>lessc style.less > style.css</code>
+</p>
 
+<p>
 Simple and efficient, I highly recommend this method. But if you're really scared of the command-line, you can also use an application to do it for you.
+</p>
 
 <h3>Using an application to compile for you</h3>
 
-Here is a list of applications that you can run when you are working that will manage the compilation for you. It is taken from my slides about <a href="http://verekia.com/slides/css-preprocessors" target="_blank">CSS Preprocessors</a>:
+<p>
+Here is a list of applications that you can run when you are working that will manage the compilation for you. It is taken from my slides about <a href="/slides/css-preprocessors" target="_blank">CSS Preprocessors</a>:
+</p>
 
  <a href="/_templates/articles/less-css/img/gui-compilers.png" target="_blank">
 <img src="/_templates/articles/less-css/img/gui-compilers.png" alt="GUI Compilers" title="Gui Compilers" />
 </a>
 
+<p>
 Some of these apps are free, others are paid. I've personally tried Codekit on Mac, which costs $25 and works really well.
+</p>
 
 <h2>Okay sounds cool, let's start!</h2>
 
+<p>
 In this entire scenario, my goal will be to draw CSS shapes with different colors and decorations (cause it's visual and I know you like it). Of course you can, and should, imagine how you can apply this to a real project. I highly recommend that you implement this example for real, because it's the best way to learn. Honestly, you should <strong>really</strong> do it. I know you're lazy but trust me, it's worth it. So create an empty HTML file and here we go!
+</p>
 
 <h3>Our HTML file</h3>
 
+<p>
 First, here is the HTML we'll be using:
-<!-- [html]
-<!doctype html>
-<head>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="shape" id="shape1"></div>
-    <div class="shape" id="shape2"></div>
-    <div class="shape" id="shape3"></div>
-</body>
-</html>
-[/html]
- -->
+</p>
+
+<script src="https://gist.github.com/verekia/3ae0fe3203f4f5d20fb0.js"></script>
  
 <h3>A little bit of basic CSS styling</h3>
 
+<p>
 Okay, we can finally start! First, create and open a <code>style.less</code> file. Then we add some CSS styles to our shapes in order to see them. We'll set the default shape to a simple light blue square:
-<!-- [css]
-.shape{
-    display:inline-block;
-    width:200px;
-    height:200px;
-    background:#ddf;
-    margin:20px;
-}
-[/css] -->
+</p>
 
+<script src="https://gist.github.com/verekia/aaf8546cca050a8d716f.js"></script>
+
+<p>
 Run <code>lessc style.less > style.css</code> to compile it and this is what your browser should display:
+</p>
 
  <a href="/_templates/articles/less-css/img/less-css-1.png" target="_blank">
 <img src="/_templates/articles/less-css/img/less-css-1.png" alt="Less CSS - 3 blue squares" title="Less CSS - 3 blue squares" />
 </a>
 
+<p>
 Nothing surprising here, just pure and simple CSS for the moment. But what if our example gets mucher bigger and we declared the <code>#ddf</code> light blue color in several different places in the file? Even with very good CSS best practices, we would still have to replace every single declaration of this color in order to try a new theme for example. That's not convenient at all. Let's use a Less variable to handle this.
+</p>
 
 <h2>Variables</h2>
 
+<p>
 Less variables can be declared and used with the <code>@</code> symbol. You give them a name and a value, and then you can refer to the name of the variable anywhere in your Less file:
-<!-- [css]
-@lightBlue:#ddf;
+</p>
 
-.shape{
-    display:inline-block;
-    width:200px;
-    height:200px;
-    background:@lightBlue;
-    margin:20px;
-}
-[/css] -->
+<script src="https://gist.github.com/verekia/2c7d23011ed6bfb716f1.js"></script>
 
+<p>
 Pretty cool right? But it won't be very helpful if we have to change the references to <code>@lightBlue</code> everywhere in the code. So we can for instance declare an other variable for our "default theme":
+</p>
 
-<!-- [css]
-@lightRed:   #fdd;
-@lightGreen: #dfd;
-@lightBlue:  #ddf;
+<script src="https://gist.github.com/verekia/3e3f1ffa9a1a8759b275.js"></script>
 
-@defaultThemeColor:@lightGreen;
-
-.shape{
-    display:inline-block;
-    width:200px;
-    height:200px;
-    background:@defaultThemeColor;
-    margin:20px;
-}
-[/css] -->
+<p>
 With this example you can see our code becoming more modular and reusable. We just have to change the <code>@defaultThemeColor</code> to <code>@lightGreen</code> to apply the new green theme:
+</p>
 
  <a href="/_templates/articles/less-css/img/less-css-2.png" target="_blank">
 <img src="/_templates/articles/less-css/img/less-css-2.png" alt="Less CSS - Three green squares" title="Less CSS - Three green squares" />
 </a>
 
+<p>
 You can see a Less best practice here as well: declaring all the dumb constants at the top of the file, and then adding some logic.Talking about constants, be aware that Less "variables" are actually just constants, and their value cannot be changed once they're set. So like Indiana Jones, "choose wisely"!
+</p>
 
-<div class="advice"><strong>Personal tip</strong>: I like to use the usual camelCase notation (lowercase for the first word, then uppercase for the first letter of the following words) for variables. You could also use the CSS-style naming convention with dashes-between-lowercase-words, it's up to you. It personally helps me to differentiate Less from pure CSS.
-</div>
+<p class="island">
+<strong>Personal tip</strong>: I like to use the usual camelCase notation (lowercase for the first word, then uppercase for the first letter of the following words) for variables. You could also use the CSS-style naming convention with dashes-between-lowercase-words, it's up to you. It personally helps me to differentiate Less from pure CSS.
+</p>
+
 <h2>Mixins</h2>
 
-
+<p>
 Do you know how to draw rounds in CSS? You just have to set a very high CSS3 border-radius value. Let's apply that to the first shape:
-<!-- [css]
-#shape1{
-    border-radius:9999px;
-}
-[/css] -->
+</p>
 
+<script src="https://gist.github.com/verekia/e6484a63535997f0fe0d.js"></script>
 
  <a href="/_templates/articles/less-css/img/less-css-3.png" target="_blank">
 <img src="/_templates/articles/less-css/img/less-css-3.png" alt="Less CSS - Round and squares" title="Less CSS - Round and squares" />
 </a>
 
+<p>
 Since we used CSS3, if we want it to work for as many browsers as possible, we must provide the alternative <code>-webkit-</code> and <code>-moz-</code> vendor prefixes versions as well. So you would do something like this is regular CSS:
-<!-- [css]
-#shape1{
-    -webkit-border-radius:9999px;
-       -moz-border-radius:9999px;
-            border-radius:9999px;
-}
-[/css] -->
+</p>
 
+<script src="https://gist.github.com/verekia/db77e3f1ff5f9f20e78f.js"></script>
+
+<p>
 We see something interesting here: three properties with the same value. Pretty boring to write right? No problem, Less to the rescue!
+</p>
 
+<p>
 With Less we can define "mixins", which are something comparable to functions in other programming languages. In Less they're used to group CSS instructions. We'll use a mixin to handle the boring repetition of border-radius declarations. Just like variables, you have to declare a mixin before calling it, with the <code>.</code> symbol this time:
+</p>
 
-<!-- [css]
-.Round{
-    -webkit-border-radius:9999px;
-       -moz-border-radius:9999px;
-            border-radius:9999px;   
-}
+<script src="https://gist.github.com/verekia/ee463e6b666943db039d.js"></script>
 
-#shape1{
-    .Round;
-}
-[/css] -->
-
+<p>
 You can then apply this <code>.Round</code> mixin wherever you want to make something round without having to declare the <code>border-radius</code> instructions again. That's already cool, but it gets even cooler with parameters.
+</p>
 
-<div class="advice"><strong>Personal best practice</strong>: You probably noticed that I used a capitalized letter for the mixin name. Well since CSS class selectors also use the <code>.</code> symbol, there is no way to differentiate it from a Less mixin name. That's why I always use capitalized letters. That also mimics Object Oriented Programming, which uses capitalized letters for classes.
-</div>
+<p class="island">
+<strong>Personal best practice</strong>: You probably noticed that I used a capitalized letter for the mixin name. Well since CSS class selectors also use the <code>.</code> symbol, there is no way to differentiate it from a Less mixin name. That's why I always use capitalized letters. That also mimics Object Oriented Programming, which uses capitalized letters for classes.
+</p>
 
 <h2>Parametric mixins</h2>
 
+<p>
 I now want to be able to create rounded squares, not just rounds. Let's modify our <code>.Round</code> mixin to something more generic: <code>.RoundedShape</code>. Our <code>RoundedShape</code> mixin should be able to handle rounds and rounded squares, depending on the parameters used to call it. To declare parameters, use parentheses after the mixin name:
-<!-- [css]
-@defaultRadius:30px;
+</p>
 
-.RoundedShape(@radius:@defaultRadius){
-    -webkit-border-radius:@radius;
-       -moz-border-radius:@radius;
-            border-radius:@radius;  
-}
-[/css] -->
+<script src="https://gist.github.com/verekia/612368d687d439d35b84.js"></script>
 
+<p>
 A parameter can be used similarly to a variable inside the mixin, and you can specify a default value for the parameter if none is given when the mixin is called. I also used a variable for this default value to keep the code reusable and generic.
+</p>
 
+<p>
 So now that we have our cool RoundedShape mixin, let's create 2 other mixins which will call it to create rounds and rounded squares:
-<!-- [css]
-.Round{
-    .RoundedShape(9999px);
-}
+</p>
 
-.RoundedSquare(@radius:@defaultRadius){
-    .RoundedShape(@radius);
-}
-[/css] -->
+<script src="https://gist.github.com/verekia/8632c0e3fe7d0986c877.js"></script>
 
+<p>
 And then, all we have to do to is applying those <code>Round</code> and <code>RoundedSquare</code> to our shapes:
-<!-- [css]
-#shape1{
-    .Round;
-}
+</p>
 
-#shape2{
-    .RoundedSquare;
-}
-[/css] -->
+<script src="https://gist.github.com/verekia/08d408e81632d1acbf8b.js"></script>
+
+<p>
 Now refresh your page and... BOOM!
+</p>
 
  <a href="/_templates/articles/less-css/img/less-css-4.png" target="_blank">
 <img src="/_templates/articles/less-css/img/less-css-4.png" alt="Less CSS - Rounded rectangle" title="Less CSS - Rounded rectangle" />
 </a>
 
+<p>
 Since we haven't passed any parameter to <code>RoundedSquare</code>, the 30px <code>@defaultRadius</code> variable is used, but we could also call it with parameters, on <code>#shape3</code> for instance:
+</p>
 
-<!-- [css]
-#shape3{
-    .RoundedSquare(60px)
-}
-[/css] -->
+<script src="https://gist.github.com/verekia/da88dc5fe1827a7072e8.js"></script>
 
  <a href="/_templates/articles/less-css/img/less-css-5.png" target="_blank">
 <img src="/_templates/articles/less-css/img/less-css-5.png" alt="Less CSS : Round and rounded squares" title="Less CSS : Round and rounded squares" />
 </a>
 
+<p>
 With just 3 lines to call our mixins, we have a whole logic handling behind the scene that makes our code super reusable and easily maintainable. How cool is that? We can go way further with mixins. In my opinion, variables and mixins are so powerful that it's a sufficient reason to move to Less! But since Less offers tons of other amazing features, let's take a look at it.
+</p>
 
 <h2>Operations</h2>
 
+<p>
 One other powerful feature of Less is the ability to use mathematical operations in your stylesheets (I agree it sounds boring, but it's actually very cool). Let's declare a <code>@defaultShapesWidth</code> variable to set the default shapes widths to <code>200px</code> instead of hard-coding it like we used to:
-<!-- [css]
-@defaultShapesWidth:200px;
-[/css] -->
-Now I want to add some borders to our shapes. Borders, whose size will always be 10% of the shape width. How would you do that in pure CSS? Yeah, exactly, you can't at all! So thanks to Less, we can now do this kind of operation:
-<!-- [css]
-@borderSize:@defaultShapesWidth * 0.1;
-[/css] -->
-You can add, subtract, multiply and divide values. So you might think <i>"Yeah, but it only works for pixels right?"</i>. Nope sir, it also works for colors!
-<!-- [css]
-@defaultThemeColor:@lightBlue;
-@borderColor:@defaultThemeColor - #222;
-[/css] -->
-We darkened the light blue color by subtracting 2 hexadecimal units to each RGB value. It can be confusing the first time. Just keep in mind that adding or subtracting <code>#000</code> has no effect and <code>#fff</code> has a maximal effect.
+</p>
 
+<p>
+<code>@defaultShapesWidth:200px;</code>
+</p>
+
+<p>
+Now I want to add some borders to our shapes. Borders, whose size will always be 10% of the shape width. How would you do that in pure CSS? Yeah, exactly, you can't at all! So thanks to Less, we can now do this kind of operation:
+</p>
+
+<p>
+<code>@borderSize:@defaultShapesWidth * 0.1;</code>
+</p>
+
+<p>
+You can add, subtract, multiply and divide values. So you might think <i>"Yeah, but it only works for pixels right?"</i>. Nope sir, it also works for colors!
+</p>
+
+<script src="https://gist.github.com/verekia/0219d37fc8fdb98a211c.js"></script>
+
+<p>
+We darkened the light blue color by subtracting 2 hexadecimal units to each RGB value. It can be confusing the first time. Just keep in mind that adding or subtracting <code>#000</code> has no effect and <code>#fff</code> has a maximal effect.
+</p>
+
+<p>
 And this is what we get when applying these new variables to a border rule:
-<!-- [css]
-border:@borderSize solid @borderColor;
-[/css] -->
+</p>
+
+<p>
+<code>border:@borderSize solid @borderColor;</code>
+</p>
 
  <a href="/_templates/articles/less-css/img/less-css-6.png" target="_blank">
 <img src="/_templates/articles/less-css/img/less-css-6.png" alt="Less CSS - Shapes with borders" title="Less CSS - Shapes with borders" />
 </a>
 
+<p>
 The result is exactly as expected. That's awesome. But the color operation we used was pretty simple. Adding a little bit of dark is easy, performing saturation operations is way more complicated and unintuitive.  Fortunately, we can use some handy color functions to do that!
+</p>
 
-<div class="advice"><strong>Side note</strong>: Remember that all this funky Less code will be converted to CSS in the end, so this will be static once generated. If you programmatically resize the width of a shape, the border won't scale with it on the fly.
-</div>
+<p class="island">
+<strong>Side note</strong>: Remember that all this funky Less code will be converted to CSS in the end, so this will be static once generated. If you programmatically resize the width of a shape, the border won't scale with it on the fly.
+</p>
 
 <h2>Color functions</h2>
 
-
+<p>
 Less provides the following color functions:
+</p>
+
 <ul>
-<li><code>darken()</code> and <code>lighten()</code>, which add some black or white,</li>
-<li><code>saturate()</code> and <code>desaturate()</code>, to make a color more "colorful" or more "grayscale",</li>
-<li><code>fadein()</code> and <code>fadeout()</code>, to increase or reduce transparency,</li>
-<li>and <code>spin()</code>, which modifies the hue of the color.</li>
+    <li><code>darken()</code> and <code>lighten()</code>, which add some black or white,</li>
+    <li><code>saturate()</code> and <code>desaturate()</code>, to make a color more "colorful" or more "grayscale",</li>
+    <li><code>fadein()</code> and <code>fadeout()</code>, to increase or reduce transparency,</li>
+    <li>and <code>spin()</code>, which modifies the hue of the color.</li>
 </ul>
 
+<p>
 If, for instance, we want to make the border completely desaturated to get it's equivalent on the grayscale, we would use the desaturate function like this:
-<!-- [css]
-@borderColor:desaturate(@defaultThemeColor, 100%);
-[/css] -->
+</p>
+
+<p>
+<code>@borderColor:desaturate(@defaultThemeColor, 100%);</code>
+</p>
+
+<p>
 And we can even use the output of a color function as the input of another:
-<!-- [css]
-@borderColor:darken(desaturate(@defaultThemeColor, 100%), 20%);
-[/css] -->
+</p>
+
+<p>
+<code>@borderColor:darken(desaturate(@defaultThemeColor, 100%), 20%);</code>
+</p>
+
+<p>
 Which has the following result:
+</p>
 
  <a href="/_templates/articles/less-css/img/less-css-7.png" target="_blank">
 <img src="/_templates/articles/less-css/img/less-css-7.png" alt="Less CSS - Color functions on shapes" title="Less CSS - Color functions on shapes" />
 </a>
 
+<p>
 All color operations take a color and a percentage as parameters, except spin, which uses integers between 0 and 255 instead of percentages to modify the hue:
-<!-- [css]
-@defaultThemeColor:spin(@lightBlue, 100);
-[/css] -->
+</p>
+
+<p>
+<code>@defaultThemeColor:spin(@lightBlue, 100);</code>
+</p>
 
  <a href="/_templates/articles/less-css/img/less-css-8.png" target="_blank">
 <img src="/_templates/articles/less-css/img/less-css-8.png" alt="Less CSS - Spin colors" title="Less CSS - Spin colors" />
@@ -483,151 +510,112 @@ All color operations take a color and a percentage as parameters, except spin, w
 
 <h2>Nested rules</h2>
 
+<p>
 When designing a complex page using CSS, you often have to chain selectors to aim a particular element in the DOM, like this:
+</p>
 
-<!-- [css]
-#header h1{
-}
+<script src="https://gist.github.com/verekia/10334c99c23bf81332ef.js"></script>
 
-#main h1{
-}
-[/css] -->
+<p>
 Depending on the container of the <code>h1</code> elements, their style will be different if they're in the <code>#header</code> or the <code>#main</code> section. This syntax is fine when you have a very simple DOM, but if you have to chain 4 or 5 selectors it gets messy and visually hard to represent the hierarchy of your styles. With Less you can nest rules inside parent rules to mimic the DOM structure:
-<!-- [css]
-#header{
-    /* #header styles */
-    h1{
-        /* #header h1 styles */
-    }
-}
-[/css] -->
-This can be a little bit confusing at the beginning but when you get used to it, this syntax helps a lot to visualise where is located the element you're working on.
+</p>
 
+<script src="https://gist.github.com/verekia/18121e0114c0c8588826.js"></script>
+
+<p>
+This can be a little bit confusing at the beginning but when you get used to it, this syntax helps a lot to visualise where is located the element you're working on.
+</p>
+
+<p>
 There is also a super handy way to use pseudo-classes (you know, those special selectors like <code>:hover</code>). Let's say we want to change our shapes' color when hovering them with the mouse, we can use nested rules combined with the <code>&</code> selector:
-<!-- [css]
-.shape{
-    &:hover{
-        background:@lightRed;
-    }
-}
-[/css] -->
+</p>
+
+<script src="https://gist.github.com/verekia/e800a13928660f56fcb7.js"></script>
+
+<p>
 This <code>&</code> symbol represents the current selected elements. It's the equivalent of "<code>this</code>" in most programming languages. Very convenient! And here is the result:
+</p>
 
  <a href="/_templates/articles/less-css/img/less-css-9.png" target="_blank">
 <img src="/_templates/articles/less-css/img/less-css-9.png" alt="Less CSS - Hover on shapes" title="Less CSS - Hover on shapes" />
 </a>
 
+<p>
 Nested rules are pretty awesome, but there is a little drawback: since we use CSS syntax highlighting for our <code>*.less</code> files, many editors (including Eclipse) will go crazy and do some very bad syntax coloration with nested rules. If you can deal with broken syntax highlighting it will be fine, but for most of us, it's really awful. The only thing we can do is wait for a proper plugin to bring a real Less support to our editors.
+</p>
 
-Personally, I only use nested rules for very simple one level nesting with few properties or for the <code>&:hover</code> thing. But it really depends on you.
+<p>
+Personally, I only use nested rules for very simple one level nesting with few properties or for the <code>&:hover</code> thing. But it's really up to you.
+</p>
 
 <h2>Importing</h2>
 
+<p>
 Finally, the last thing I wanted to show you is how to import Less files. It's a very good practice to separate your rules into different files instead of having a 1000 lines giant file.
+</p>
 
+<p>
 Importing a file into another in Less is as simple as that:
-<!-- [css]
-@import "colors.less";
-[/css] -->
+</p>
 
+<p>
+<code>@import "colors.less";</code>
+</p>
+
+<p>
 You can even omit the .less extension and just declare:
-<!-- [css]
-@import "colors";
-[/css] -->
+</p>
 
+<p>
+<code>@import "colors";</code>
+</p>
+
+<p>
 So depending on your project, you can split your files in a relevant way. Personally, I like having separate files for:
+</p>
+
 <ul>
-<li>CSS Reset or normalization,</li>
-<li>Colors,</li>
-<li>Fonts and typography,</li>
-<li>UI Elements,</li>
-<li>The main styles of the page,</li>
-<li>...and any other relevant group of rules depending on your project.</li>
+    <li>CSS Reset or normalization,</li>
+    <li>Colors,</li>
+    <li>Fonts and typography,</li>
+    <li>UI Elements,</li>
+    <li>The main styles of the page,</li>
+    <li>...and any other relevant group of rules depending on your project.</li>
 </ul>
 
+<p>
 You can take a look at the very good Twitter Bootstrap <a href="https://github.com/twitter/bootstrap/tree/master/lib" target="_blank">Github repository</a> to see how those guys splitted up their files for a professional usage.
+</p>
 
+<p>
 You may think that imports result in many unnecessary HTTP requests that will slow down the loading time of your page, and that's true! But remember we'll use the Less output as a new CSS. If we do so, we really don't care about using multiple files, since at the end, everything will be concatenated into just one! So don't be afraid of imports. They will really help you to structure your code.
+</p>
 
 <h2>Final Less code</h2>
 
+<p>
 Here is what the final code looks like (no import for such a little example):
-<!-- [css]
-/**********************
-       CONSTANTS
-***********************/
+</p>
 
-@lightRed:   #fdd;
-@lightGreen: #dfd;
-@lightBlue:  #ddf;
-@defaultShapesWidth:200px;
-@defaultRadius:30px;
+<script src="https://gist.github.com/verekia/734fcc296de17dfc7a0f.js"></script>
 
-/*********************************
-   OPERATIONS & COLOR FUNCTIONS
-**********************************/
-
-@darkBlue: @lightBlue - #555;
-
-@defaultThemeColor:@lightBlue;
-//@defaultThemeColor:spin(@lightBlue, 100);
-
-@borderSize:@defaultShapesWidth * 0.1;
-@borderColor:@defaultThemeColor - #222; 
-//@borderColor:darken(desaturate(@defaultThemeColor, 100%), 20%); 
-
-
-/**********************
-        MIXINS
-***********************/
-
-.RoundedShape(@radius:@defaultRadius){
-    -webkit-border-radius:@radius;
-       -moz-border-radius:@radius;
-            border-radius:@radius;  
-}
-
-.Round{
-    .RoundedShape(9999px);
-}
-
-.RoundedSquare(@radius:@defaultRadius){
-    .RoundedShape(@radius);
-}
-
-/**********************
-         STYLES
-***********************/
-
-.shape{
-    display:inline-block;
-    width:@defaultShapesWidth;
-    height:200px;
-    background:@defaultThemeColor;
-    margin:20px;
-    border:@borderSize solid @borderColor;
-}
-
-.shape{
-    &:hover{ background:@lightRed   }
-}
-
-#shape1{ .Round }
-#shape2{ .RoundedSquare }
-#shape3{ .RoundedSquare(60px) }
-[/css] -->
-
+<p>
 You will also notice that you can use single line comments, which is a very simple but clever addition to CSS!
-
-And here is the <a href="/demo/less-css/" target="_blank">demonstration of this Less CSS example</a>.
+</p>
 
 <h2>Conclusion</h2>
 
+<p>
 We've seen a lot of amazing features in this tutorial, and I hope it made you want to start using Less. I personally think Less is a real game changer for web development, and I cannot even consider going back to pure CSS. Less is like CSS5 in 2011!
+</p>
 
-There are still very interesting things I haven't covered in this tutorial so if you're interested in learning more about Less, you should definitely check the <a href="http://lesscss.org/" target="_blank">official documentation</a>. Oh and by the way, since Less is also open source and hosted on <a href="https://github.com/cloudhead/less.js" target="_blank">Github</a> you can easily get involved, report issues, or fork it. This <a href="http://verekia.com/less-css/dont-read-less-css-tutorial-highly-addictive#comment-275">great comment</a> also gives some very interesting tips you should be aware of.
+<p>
+There are still very interesting things I haven't covered in this tutorial so if you're interested in learning more about Less, you should definitely check the <a href="http://lesscss.org/" target="_blank">official documentation</a>. Oh and by the way, since Less is also open source and hosted on <a href="https://github.com/cloudhead/less.js" target="_blank">Github</a> you can easily get involved, report issues, or fork it.
+</p>
 
-That's all folks! Thanks for reading and feel free to share your thoughts and previous experience about Less in the comments section. I'd love to know if you enjoy it as much as I do!<p class="text-right"><span class="screen-reader-text">Posted on </span><time class="entry-date published"
+<p>
+That's all folks! Thanks for reading and feel free to share your thoughts and previous experience about Less in the comments section. I'd love to know if you enjoy it as much as I do!
+</p><p class="text-right"><span class="screen-reader-text">Posted on </span><time class="entry-date published"
 datetime="2011-10-12">
 October 12, 2011
     </time>
