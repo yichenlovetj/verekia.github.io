@@ -344,7 +344,7 @@ a.expand-nav-link {
     }
 
     .homepage-top-space {
-        display: none;
+        height: 15px;
     }
 
     .nav-signature {
