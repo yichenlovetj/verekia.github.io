@@ -332,9 +332,7 @@ a.expand-nav-link {
     font-weight: normal;
     position: relative;
     top: -1px;
-    margin-left: 20px;
 }
-
 
 @media (max-width: 1436px) {
 
@@ -430,6 +428,11 @@ a.expand-nav-link {
     }
     .main-content {
         width: initial;
+    }
+
+    .resume-aside-note {
+        float: none;
+        margin-top: 3px;
     }
 }
 

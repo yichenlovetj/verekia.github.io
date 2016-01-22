@@ -16,15 +16,15 @@ I am specialized in <strong>large-scale Front-End Engineering</strong>. I turn m
 
 <h3 class="clearfix">Founder of <a target="_blank" href="
 <!-- htmlo: external-links/life-framework/url -->
-">Life Framework</a><span class="resume-aside-note">Paris - 04/2015 to present</span></h3>
+">Life Framework</a><div class="resume-aside-note">Paris - 04/2015 to present</div></h3>
 
 I develop and document a lifestyle framework based on minimalism and heavy digitization to improve one's well-being. The framework aims at increasing happiness, fixing memory flaws, saving money, and reducing stress.
 
-<h3 class="clearfix">Front-End Engineer at <a target="_blank" href="http://www.yelp.com">Yelp</a><span class="resume-aside-note">San Francisco - 02/2012 to 03/2015</span></h3>
+<h3 class="clearfix">Front-End Engineer at <a target="_blank" href="http://www.yelp.com">Yelp</a><div class="resume-aside-note">San Francisco - 02/2012 to 03/2015</div></h3>
 
 In a small team of about 4 Front-End Engineers, I developed features and components for Yelp's site and mobile web app, to serve fast pages to more than <a target="_blank" href="http://www.yelp.com/factsheet">90 million</a> unique visitors per month; with a strong focus on creating a robust and sustainable CSS codebase. I was involved in developer relations and recruiting, and brought <a target="_blank" href="http://www.meetup.com/sfhtml5/events/61279952/">SFHTML5</a> to Yelp. We worked with SASS, OOCSS, a UI styleguide, JavaScript, and Python.
 
-<h3 class="clearfix">Web Developer Intern at <a target="_blank" href="http://www.sfeir.com/">SFEIR</a><span class="resume-aside-note">Paris - 02/2011 to 08-2011</span></h3>
+<h3 class="clearfix">Web Developer Intern at <a target="_blank" href="http://www.sfeir.com/">SFEIR</a><div class="resume-aside-note">Paris - 02/2011 to 08-2011</div></h3>
 
 I developed HTML5, GWT, Google App Engine, and Android apps at the Innovation Department of SFEIR. We won a French Google Chrome HTML5 app contest with one of the first <a href="https://chrome.google.com/webstore/detail/kadoojjbafjcfdjcafflfnoimccbnlfd" target="_blank">web-based music player</a> for Chrome.
 
@@ -38,7 +38,7 @@ I co-wrote a <a target="_blank" href="http://www.dunod.com/informatique-multimed
 
 <h3>Initializr</h3>
 
-<a target="_blank" href="http://www.initializr.com">Initializr</a> is my contribution to the community to make the web better by accelerating the creation of new HTML5 projects. It is the official custom build tool of <a target="_blank" href="http://html5boilerplate.com/">HTML5 Boilerplate</a>. Initializr receives a traffic of 42.000 visitors per month, generating 15.000 downloads, and has more than 8000 <a target="_blank" href="https://twitter.com/initializr">Twitter followers</a>, and 2000 <a href="https://github.com/verekia/" target="_blank">Github stars</a>.
+<a target="_blank" href="http://www.initializr.com">Initializr</a> is my contribution to the community to make the web better by accelerating the creation of new HTML5 projects. It is the official custom build tool of <a target="_blank" href="http://html5boilerplate.com/">HTML5 Boilerplate</a>. Initializr receives a traffic of 42.000 visitors per month, generating 15.000 downloads, and has more than 8000 <a target="_blank" href="https://twitter.com/initializr">Twitter followers</a>, and 2500 <a href="https://github.com/verekia/" target="_blank">Github stars</a> total.
 
 <h3>Blogging and social media audience</h3>
 
