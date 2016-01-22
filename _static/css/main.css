@@ -138,6 +138,10 @@ a {
     display: none !important;
 }
 
+.relative {
+    position: relative;
+}
+
 .text-center {
     text-align: center !important;
 }
@@ -171,6 +175,47 @@ a {
     padding: 65px 21.66% 80px 4.38%;
     margin-left: 36%;
     background: white;
+}
+
+.single-column {
+    margin: 70px auto 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: initial;
+}
+
+a.print-link {
+    color: #999;
+    border: none;
+    margin-left: 15px;
+    font-weight: normal;
+    font-size: 21px;
+    position: relative;
+    top: -2px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+a.print-link:hover {
+    color: #222;
+}
+
+@media print {
+    .single-column {
+        padding: 20px 20px 0;
+    }
+
+    .resume {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .print-link {
+        display: none;
+    }
+
+    .page-break {
+        page-break-after: always;
+    }
 }
 
 .main-content {
@@ -280,6 +325,16 @@ a.expand-nav-link {
     margin-bottom: 30px;
 }
 
+.resume-aside-note {
+    float: right;
+    font-size: 16px;
+    color: #666;
+    font-weight: normal;
+    position: relative;
+    top: -1px;
+    margin-left: 20px;
+}
+
 
 @media (max-width: 1436px) {
 
@@ -340,7 +395,9 @@ a.expand-nav-link {
     }
 
     .main-content {
-        margin: auto;
+        margin-top: 0;
+        margin-right: auto;
+        margin-left: auto;
     }
 
     .homepage-top-space {
@@ -409,6 +466,12 @@ a.expand-nav-link {
 
 @media (max-width: 390px) {
     .twitter-button-container {
+        display: none;
+    }
+}
+
+@media print {
+    .print-hide {
         display: none;
     }
 }
@@ -525,18 +588,18 @@ a.expand-nav-link {
         text-shadow: none !important;
     }
 
-    a,
+/*    a,
     a:visited {
         text-decoration: underline;
-    }
+    }*/
 
-    a[href]:after {
+/*    a[href]:after {
         content: " (" attr(href) ")";
     }
 
     abbr[title]:after {
         content: " (" attr(title) ")";
-    }
+    }*/
 
     /*
      * Don't show links that are fragment identifiers,
