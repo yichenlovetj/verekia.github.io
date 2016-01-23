@@ -199,25 +199,6 @@ a.print-link:hover {
     color: #222;
 }
 
-@media print {
-    .single-column {
-        padding: 20px 20px 0;
-    }
-
-    .resume {
-        font-size: 14px;
-        line-height: 19px;
-    }
-
-    .print-link {
-        display: none;
-    }
-
-    .page-break {
-        page-break-after: always;
-    }
-}
-
 .main-content {
     width: 660px;
 }
@@ -479,6 +460,41 @@ a.expand-nav-link {
     }
 }
 
+@media print {
+    .single-column {
+        padding: 20px 60px 0;
+        margin-bottom: 0;
+    }
+
+    .resume {
+        font-size: 14px;
+        line-height: 21px;
+        padding-top: 80px;
+    }
+
+    .print-link {
+        display: none;
+    }
+
+    .page-break {
+        page-break-after: always;
+    }
+
+    @page {
+        size: auto;
+        margin: 0;
+    }
+
+    /* Specificity War */
+    .resume .resume-aside-note {
+        float: right;
+        margin-top: 0;
+    }
+
+    .print-space-above {
+        padding-top: 30px;
+    }
+}
 
 
 /* ==========================================================================
