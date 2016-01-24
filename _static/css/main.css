@@ -112,6 +112,10 @@ a {
     text-decoration: none;
 }
 
+code {
+    word-break: break-word;
+}
+
 .main-content h2 {
     margin-top: 40px;
 }
