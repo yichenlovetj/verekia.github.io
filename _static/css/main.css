@@ -263,7 +263,8 @@ hr {
     margin-bottom: 6px;
     font-size: 16px;
     margin-top: 0;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.9px;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .twitter-button-container {
