@@ -10,6 +10,15 @@
         </div>
         <div class="nav-list js-nav-list">
             <div class="js-nav-list-section">
+                <h2>Front-End <a href="javascript:;" class="expand-nav-link js-nav-expand">(more)</a></h2>
+                <ul>
+<!-- htmlo: articles/css-preprocessors/nav-item -->
+<!-- htmlo: articles/responsive-initializr/nav-item -->
+<!-- htmlo: articles/requirejs/nav-item -->
+<!-- htmlo: articles/less-css/nav-item -->
+                </ul>
+            </div>
+            <div class="js-nav-list-section">
                 <h2>Lifestyle</h2>
                 <!-- <h2>Lifestyle <a href="javascript:;" class="expand-nav-link js-nav-expand">(more)</a></h2> -->
                 <ul>
@@ -48,20 +57,17 @@
 <!-- htmlo: articles/music-production-lessons/nav-item -->
                 </ul>
             </div>
-            <div class="js-nav-list-section">
-                <h2>Code <a href="javascript:;" class="expand-nav-link js-nav-expand">(more)</a></h2>
-                <ul>
-<!-- htmlo: articles/css-preprocessors/nav-item -->
-<!-- htmlo: articles/responsive-initializr/nav-item -->
-<!-- htmlo: articles/requirejs/nav-item -->
-<!-- htmlo: articles/less-css/nav-item -->
-                </ul>
-            </div>
         </div>
         <select class="nav-dropdown js-nav-dropbown">
             <option class="js-select-blank-option" value=""></option>
             <option value="
 /">Homepage</option>
+            <optgroup label="Front-End">
+<!-- htmlo: articles/css-preprocessors/select-link -->
+<!-- htmlo: articles/responsive-initializr/select-link -->
+<!-- htmlo: articles/requirejs/select-link -->
+<!-- htmlo: articles/less-css/select-link -->
+            </optgroup>
             <optgroup label="Lifestyle">
 <!-- htmlo: external-links/life-framework/select-link -->
 <!--
@@ -78,12 +84,6 @@
             <optgroup label="Music">
 <!-- htmlo: external-links/leaf-adventure/select-link -->
 <!-- htmlo: articles/music-production-lessons/select-link -->
-            </optgroup>
-            <optgroup label="Code">
-<!-- htmlo: articles/css-preprocessors/select-link -->
-<!-- htmlo: articles/responsive-initializr/select-link -->
-<!-- htmlo: articles/requirejs/select-link -->
-<!-- htmlo: articles/less-css/select-link -->
             </optgroup>
         </select>
     </div>

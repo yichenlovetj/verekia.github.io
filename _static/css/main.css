@@ -128,7 +128,8 @@ code {
     border-bottom: 1px solid black;
 }
 
-.main-content img {
+.main-content img,
+.full-size-img {
     display: block;
     max-width: 100%;
     margin: 30px auto;
@@ -288,8 +289,7 @@ a.expand-nav-link {
 }
 
 .homepage-top-space {
-    /*height: 106px; -> when 4 menu sections, and transhumanism intro */
-    height: 130px;
+    height: 35px;
 }
 
 .homepage-content h2 a {

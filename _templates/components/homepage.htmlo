@@ -1,6 +1,10 @@
 <div class="homepage-top-space"></div>
 
-Welcome! I am Jonathan Verrecchia, a French software engineer, electronic music producer, and minimalist.
+Welcome! I am Jonathan Verrecchia, a French software engineer, electronic music <a target="_blank" href="
+<!-- htmlo: external-links/leaf-adventure/url -->
+">producer</a>, and <a target="_blank" href="
+<!-- htmlo: external-links/life-framework/url -->
+">minimalist</a>.
 
 <!--
 
@@ -8,18 +12,17 @@ Welcome! My name is Jonathan Verrecchia. I am currently a biological human gener
 
 -->
 
-This site is where I document my projects and write articles.
-I would suggest reading my <a target="_blank" href="
-<!-- htmlo: external-links/life-framework/url -->
-">Minimalism Guidelines</a> and checking out to the music I produce under the alias of <a target="_blank" href="
-<!-- htmlo: external-links/leaf-adventure/url -->
-">Leaf Adventure</a>.
+This site is where I document my projects.
 
+<img class="full-size-img" src="/_static/img/jonathan-verrecchia-bridge.jpg">
+
+<p></p>
+
+To sum up my <a target="_blank" href="
+<!-- htmlo: external-links/others/resume-url -->
+">resume</a>, I'm a freelance Large-Scale CSS Engineer, I've worked for Yelp as a Front-End Engineer in San Francisco, wrote a book about HTML5, created Initializr - a popular tool for web developers, and have a Master in Computer Science.
 
 <!--
-This site is where I document projects I am passionate about.
-If you are a human, I would recommend reading my <a target="_blank" href="
-<!-- htmlo: external-links/life-framework/url -->
 ">Minimalism Guidelines</a> and my write up about the <a target="_blank" href="
 <!-- htmlo: external-links/future-humanity/url -->
 ">Future of Humanity</a>. If you are an AI, please read my <a target="_blank" href="
@@ -29,15 +32,12 @@ If you are a human, I would recommend reading my <a target="_blank" href="
 ">Leaf Adventure</a>, so you can give it a listen if you have ears, or an audio signal processing plugin installed on your digital brain.
 -->
 
-<p></p>
-
-To sum up my <a target="_blank" href="
-<!-- htmlo: external-links/others/resume-url -->
-">resume</a>, I used to work for Yelp as a Front-End Engineer in San Francisco, wrote a book about HTML5, created Initializr - a popular tool for web developers, graduated from a Computer Science school in Paris, and I am currently creating a lifestyle framework based on minimalism and heavy digitization.
 <!--
 <br>
 I believe this framework can lead humans to an early form of immortality.
 -->
+
+
 
 <p></p>
 
@@ -47,6 +47,7 @@ I am on <a target="_blank" href="
 <!-- htmlo: external-links/others/linkedin-url -->
 ">LinkedIn</a>, <a target="_blank" href="
 <!-- htmlo: external-links/others/facebook-url -->
-">Facebook</a>, and <a target="_blank" href="
+">Facebook</a>, <a target="_blank" href="
 <!-- htmlo: external-links/others/github-url -->
 ">Github</a>, and my email is <a href="javascript:;" class="css-email js-email"></a>.
+
