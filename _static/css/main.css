@@ -250,6 +250,10 @@ hr {
     display: block;
 }
 
+.nav-double-link-item a {
+    display: inline;
+}
+
 .nav-signature {
     margin-bottom: 40px;
     font-weight: bold;
