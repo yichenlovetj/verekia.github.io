@@ -1,61 +1,9 @@
 <!-- htmlo: components/head-top -->
-Resume | Jonathan Verrecchia</title>
-<meta name="description" content="Software Engineer, previously Front-End Engineer at Yelp">
+<!-- htmlo: external-links/resume/page-title -->
 <!-- htmlo: components/head-bottom -->
 
 <div class="single-column main-content resume">
-<h1>Jonathan Verrecchia – Resume <a href="javascript:window.print()" class="print-link">(PDF)</a></h1>
-
-Software Engineer, author, speaker, blogger. You can reach me at <a href="javascript:;" class="css-email js-email"></a>.
-
-<p></p>
-
-I am specialized in <strong>large-scale CSS engineering</strong>. I turn messy HTML templates and CSS into scalable, easy-to-maintain, and performant front-end architectures. I have worked in JavaScript, Python, and Java environments, although these are not my focus. I have good web design skills, which can be useful in small or medium-sized companies, and developer relations experience that may interest large companies.
-
-<h2>Work Experience</h2>
-
-<h3 class="clearfix">Freelance Large-Scale CSS Engineer<div class="resume-aside-note">Paris &nbsp;&bull;&nbsp; Present</div></h3>
-
-I currently offer remote consulting to take your CSS codebase to the next level. Whether you need a simple audit or a thorough refactoring, we can tailor an offer that fits your needs. Please visit my
-<!-- htmlo: external-links/freelance/link -->
-Freelance</a> page for more information.
-
-<h3 class="clearfix">Front-End Engineer at <a target="_blank" href="http://www.yelp.com">Yelp</a><div class="resume-aside-note">San Francisco &nbsp;&bull;&nbsp; 02/2012 to 03/2015</div></h3>
-
-In a small team of about 4 Front-End Engineers, I developed features and components for Yelp's site and mobile web app, to serve fast pages to more than <a target="_blank" href="http://www.yelp.com/factsheet">90 million</a> unique visitors per month; with a strong focus on creating a robust and sustainable CSS codebase. I was involved in developer relations and recruiting, and brought <a target="_blank" href="http://www.meetup.com/sfhtml5/events/61279952/">SFHTML5</a> to Yelp. We worked with SASS, OOCSS, a UI styleguide, JavaScript, and Python.
-
-<h3 class="clearfix">Web Developer Intern at <a target="_blank" href="http://www.sfeir.com/">SFEIR</a><div class="resume-aside-note">Paris &nbsp;&bull;&nbsp; 02/2011 to 08-2011</div></h3>
-
-I developed HTML5, GWT, Google App Engine, and Android apps at the Innovation Department of SFEIR. We won a French Google Chrome HTML5 app contest with one of the first <a href="https://chrome.google.com/webstore/detail/kadoojjbafjcfdjcafflfnoimccbnlfd" target="_blank">web-based music player</a> for Chrome.
-
-<div class="page-break"></div>
-
-<h2 class="print-space-above">Developer Relations</h2>
-
-<h3>Author of a book about HTML5</h3>
-
-I co-wrote a <a target="_blank" href="http://www.dunod.com/informatique-multimedia/developpement/developpement-web/html5">book about HTML5</a> which covers a wide range of features, such as: semantics, microdata, audio and video, canvas, web sockets, offline apps, etc. The foreword is by Paul Irish, from the Google Chrome team. I also wrote a <a target="_blank" href="http://www.eyrolles.com/Informatique/Livre/savoir-tout-faire-pour-le-web-css3-htlm5-et-jquery-9782361450434">guest chapter</a> in another book about HTML5</a>, and an article in <a href="http://www.webdesignmag.fr/" target="_blank">Web Design Magazine</a>.</p>
-
-<h3>Initializr</h3>
-
-<a target="_blank" href="http://www.initializr.com">Initializr</a> is my contribution to the community to make the web better by accelerating the creation of new HTML5 projects. It is the official custom build tool of <a target="_blank" href="http://html5boilerplate.com/">HTML5 Boilerplate</a>. Initializr receives a traffic of 42.000 visitors per month, generating 15.000 downloads, has more than 8000 <a target="_blank" href="https://twitter.com/initializr">Twitter followers</a>, and a total of 2500 <a href="https://github.com/verekia/" target="_blank">Github stars</a>.
-
-<h3>Blogging and social media audience</h3>
-
- It comes naturally to me to explain technical topics clearly. My blogs about front-end development – <a target="_blank" href="http://verekia.com/requirejs/build-simple-client-side-mvc-app-require-js/">verekia.com</a> and <a target="_blank" href="http://www.html5-css3.fr/html5/introduction-html5">html5-css3.fr</a> – receive about 20.000 visitors per month. I have also built a wide audience of web developers on social media with more than 9000 <a target="_blank" href="https://twitter.com/verekia">Twitter followers</a>. This audience can be reached with front-end content.
-
-<h3>Public speaking</h3>
-
-I gave talks at <a target="_blank" href="http://www.meetup.com/sfhtml5/events/61279952/">SFHTML5</a>, the <a href="http://www.acm.uiuc.edu/conference/2012/speakers.php" target="_blank">University of Illinois at Urbana-Champaign</a>, <a target="_blank" href="/resume/gtug.jpg">Google Developer Group in Paris</a>, <a target="_blank" href="http://www.meetup.com/fr-FR/paris-webComponents/events/213319332/">Pars Web Components</a>, <a href="/resume/sfeirplays.jpg" target="_blank">Sfeir'Plays</a>, and several internal presentations at Yelp and Sfeir. My most popular presentation, about CSS preprocessors, reached about <a target="_blank" href="https://www.youtube.com/watch?v=FlW2vvl0yvo">30.000 YouTube views</a>, with a ratio of 98% upvotes.
-
-<h2>Education and Languages</h2>
-
-I have a Master in Computer Science from <a href="https://en.wikipedia.org/wiki/%C3%89cole_pour_l%27informatique_et_les_techniques_avanc%C3%A9es" target="_blank">EPITA</a>, where I learned programming, data structures, algorithms, UNIX, web and mobile development, and much more (mostly coded in C, Java, and PHP). I was a student representative, won an <a target="_blank" href="https://csiweb.ucd.ie/news/first-ucd-epita-android-workshop-great-success">Android contest</a> with the University College of Dublin, and organized the <a target="_blank" href="/resume/Open-Source-Day-2010.png">Open Source Day 2010</a>.
-
-<p></p>
-
-I speak and write French natively, English fluently, and Spanish decently.
-
+<!-- htmlo: external-links/resume/content -->
 </div>
 
 <!-- htmlo: components/bottom-simple -->

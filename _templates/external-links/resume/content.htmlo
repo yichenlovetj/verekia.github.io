@@ -1,25 +1,3 @@
-<!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Resume | Jonathan Verrecchia</title>
-<meta name="description" content="Software Engineer, previously Front-End Engineer at Yelp">        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="shortcut icon" type="image/png" href="/favicon.png">
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-        <link href='https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="/_static/css/normalize.css">
-        <link rel="stylesheet" href="/_static/css/main.css">
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-<div class="single-column main-content resume">
 <h1>Jonathan Verrecchia – Resume <a href="javascript:window.print()" class="print-link">(PDF)</a></h1>
 
 Software Engineer, author, speaker, blogger. You can reach me at <a href="javascript:;" class="css-email js-email"></a>.
@@ -33,8 +11,7 @@ I am specialized in <strong>large-scale CSS engineering</strong>. I turn messy H
 <h3 class="clearfix">Freelance Large-Scale CSS Engineer<div class="resume-aside-note">Paris &nbsp;&bull;&nbsp; Present</div></h3>
 
 I currently offer remote consulting to take your CSS codebase to the next level. Whether you need a simple audit or a thorough refactoring, we can tailor an offer that fits your needs. Please visit my
-<a href="
-/freelance/" target="_blank">
+<!-- htmlo: external-links/freelance/link -->
 Freelance</a> page for more information.
 
 <h3 class="clearfix">Front-End Engineer at <a target="_blank" href="http://www.yelp.com">Yelp</a><div class="resume-aside-note">San Francisco &nbsp;&bull;&nbsp; 02/2012 to 03/2015</div></h3>
@@ -71,21 +48,4 @@ I have a Master in Computer Science from <a href="https://en.wikipedia.org/wiki/
 
 <p></p>
 
-I speak and write French natively, English fluently, and Spanish decently.</div>
-
-<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script>window.jQuery || document.write('<script src="/_static/js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-<script>
-$('.js-email').click(function(){
-    alert('Hi! Please type this email address manually. In order to prevent spam, it can\'t be copy/pasted. Sorry about that.' );
-});
-</script><script>
-    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-    e.src='https://www.google-analytics.com/analytics.js';
-    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-    ga('create','UA-11028046-12','auto');ga('send','pageview');
-</script>
-    </body>
-</html>
+I speak and write French natively, English fluently, and Spanish decently.

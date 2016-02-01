@@ -1,79 +1,9 @@
 <!-- htmlo: components/head-top -->
-Freelance Large-Scale CSS Consulting | Jonathan Verrecchia</title>
-<meta name="description" content="Freelance Large-Scale CSS Consulting">
+<!-- htmlo: external-links/freelance/page-title -->
 <!-- htmlo: components/head-bottom -->
 
-<div class="single-column main-content resume">
-
-<h1>Freelance Large-Scale CSS Consulting</h1>
-
-My name is Jonathan Verrecchia, and I'm a Front-End Engineer. Here is my
-<!-- htmlo: external-links/resume/link -->
-resume</a>, and you can reach me at <a href="javascript:;" class="css-email js-email"></a>.
-
-<h2>What I can do for your company</h2>
-
-I can <strong>increase the speed and efficiency of developers</strong> who work with your CSS codebase. My ultimate goal is to make them able to create entirely new pages without writing a single line of CSS (as long as the new pages don't introduce very different components). The process also gives a more optimized workflow for web designers, who will be able to collaborate with front-end developers much more efficiently.
-
-<img class="full-size-img" src="/_static/img/jonathan-verrecchia-bridge.jpg">
-
-<h2>Why hiring me as a freelancer</h2>
-
-I have extensive and proven expertise in the field of Front-End Engineering (see my
-<!-- htmlo: external-links/resume/link -->
-resume</a> for more details). By hiring a remote freelancer instead of a full-time employee, there is no need to pay for health insurance, HR, a computer, training, an office space, and you have more flexibility.
-
-<p></p>
-
-Regarding remote collaboration, I have worked for Yelp remotely from France for 2 years, which worked out very well, despite the 9-hour timezone difference.
-
-<h2>Rates</h2>
-
-<strong>59€/h</strong> ($63) is my base hourly rate. It decreases as the total duration increases:
-
-<ul>
-<li><strong>48€/h</strong> ($51) for 6 hours = <strong>288€</strong> ($306) for <strong>1 day</strong></li>
-<li><strong>43€/h</strong> ($46) for 30 hours = <strong>1290€</strong> ($1380) for <strong>1 week</strong> of 5 days</li>
-<li><strong>39€/h</strong> ($42) for 132 hours = <strong>5148€</strong> ($5544) for <strong>1 month</strong> of 22 days</li>
-</ul>
-
-Meal times are free of charge and ignored in these rates. Extra hours are charged at the base hourly rate. The initial discussions of your needs are free.
-
-<h2>Payments</h2>
-
-Before starting, we estimate how many hours should be needed, and you pay 50% of that estimate upfront. When you or I consider my work done, you pay the rest based on the time I spent working for you (this is not a per-project rate). This second payment can range anywhere from 0, up to 75% of the original estimate (so 125% paid total), depending on how much time I've worked for you.
-
-<p></p>
-
-In case of underestimation: If we realize after the project starts that you will need me to work for you for more than 1.25 times our initial estimate, we need to re-evaluate our estimate and have you pay the difference between the 50% of the original estimate and the 50% of the new estimate before I continue.
-
-<p></p>
-
-In case of overestimation: If I end up working for less time than the 50% you paid, I will reimburse you the difference.
-
-<h2>How to optimize your expenses when hiring me</h2>
-
-Once I start working for you, it is in your best interest to maximize the amount of time I spend doing CSS architecture work.
-
-<p></p>
-
-The following items count as part of my work for you, and you should minimize the time I spend on them as much as possible:
-
-<ul>
-<li>Setting up the development environment to be able to work with your codebase (adding me as a Github collaborator on a simple website can take 5 minutes, setting up remote access to virtual machines, a VPN and SSHFS can take days)</li>
-<li>Getting familiar with your site, its components, pages, HTML and CSS codebases</li>
-<li>Training coworkers, or communicating with them (developers or designers), via email, IM, audio or video calls. I would recommend making sure everyone involved is brought up to speed on the situation before I start.</li>
-<li>Fixing broken things, even if I broke them myself (see section below).</li>
-</ul>
-
-<h2>Things I am not liable or responsible for</h2>
-
-Unlike programming languages, CSS cannot be tested with unit tests. And since I am going to modify your CSS codebase a lot, my changes can very likely break the design of a page or a component. In order to avoid this as much as possible, my code changes should be reviewed by someone familiar with your site and its CSS codebase, ideally an other front-end developer.
-
-<p></p>
-
-I am not responsible for integrating a CSS preprocessor like Sass or Less into your build system. This is a DevOps job that varies greatly depending on the structure of your development environment. That being said, even though I highly recommend having a CSS preprocessor, it is not mandatory for the work I would do for you.
-
+<div class="single-column main-content">
+<!-- htmlo: external-links/freelance/content -->
 </div>
 
 <!-- htmlo: components/bottom-simple -->
