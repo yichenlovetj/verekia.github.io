@@ -2,12 +2,9 @@
         </div>
 
 <!-- htmlo: components/js-jquery -->
-
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<!-- htmlo: components/js-twitter-button -->
 
         <script>
-            setTimeout(function(){ $('.twitter-button-container').animate({opacity:1}); }, 500);
-
             var displayedNavSection = null;
 
             $('.js-nav-expand').click(function(){

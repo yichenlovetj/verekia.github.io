@@ -92,7 +92,10 @@ Unlike programming languages, CSS cannot be tested with unit tests. And since I 
 I am not responsible for integrating a CSS preprocessor like Sass or Less into your build system. This is a DevOps job that varies greatly depending on the structure of your development environment. That being said, even though I highly recommend having a CSS preprocessor, it is not mandatory for the work I would do for you.</div>
 
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script>window.jQuery || document.write('<script src="/_static/js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="/_static/js/vendor/jquery-1.12.0.min.js"><\/script>')</script><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+setTimeout(function(){ $('.twitter-button-container').animate({opacity:1}); }, 500);
+</script>
 <script>
 $('.js-email').click(function(){
     alert('Hi! Please type this email address manually. In order to prevent spam, it can\'t be copy/pasted. Sorry about that.' );

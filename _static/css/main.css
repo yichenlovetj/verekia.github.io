@@ -32,6 +32,17 @@ code {
     word-break: break-word;
 }
 
+
+.sep-24 { margin: 24px 0 }
+.sep-30 { margin: 30px 0 }
+.sep-36 { margin: 36px 0 }
+.sep-42 { margin: 42px 0 }
+.sep-48 { margin: 48px 0 }
+.sep-54 { margin: 54px 0 }
+.sep-60 { margin: 60px 0 }
+.sep-66 { margin: 66px 0 }
+.sep-72 { margin: 72px 0 }
+
 .main-content h2 {
     margin-top: 40px;
 }
@@ -42,6 +53,10 @@ code {
 
 .main-content a {
     border-bottom: 1px solid black;
+}
+
+.no-border {
+    border: none !important;
 }
 
 .main-content img,
@@ -73,6 +88,10 @@ code {
 
 .full-width {
     width: 100%;
+}
+
+.inline-block {
+    display: inline-block !important;
 }
 
 .nav-column {
@@ -193,6 +212,23 @@ hr {
 
 .twitter-follow-button {
     color: white;
+}
+
+.mailchimp-form-input {
+    border: 1px solid #bbb;
+    padding: 4px 17px 3px 5px;
+    font-size: 14px;
+}
+
+.mailchimp-form-button {
+    background: #e8e8e8;
+    border: 1px solid #bbb;
+    padding: 4px 10px 3px;
+    font-size: 14px;
+}
+
+.mailchimp-form-button:hover {
+    background: #f0f0f0;
 }
 
 a.expand-nav-link {
@@ -317,7 +353,7 @@ a.expand-nav-link {
         display: inline-block;
     }
 
-    .twitter-button-container {
+    .twitter-button-container-sidebar {
         display: inline-block;
         margin-left: 10px;
         position: absolute;
@@ -367,14 +403,14 @@ a.expand-nav-link {
 
 /* Crops the followers count on mobile, works for English follow buttons only */
 @media (max-width: 490px) {
-    .twitter-button-container {
+    .twitter-button-container-sidebar {
         width: 138px;
         overflow: hidden;
     }
 }
 
 @media (max-width: 390px) {
-    .twitter-button-container {
+    .twitter-button-container-sidebar {
         display: none;
     }
 }

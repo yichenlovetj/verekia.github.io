@@ -1,0 +1,9 @@
+<!-- htmlo: components/head-top -->
+<!-- htmlo: external-links/zeromalist/page-title -->
+<!-- htmlo: components/head-bottom -->
+
+<div class="single-column main-content">
+<!-- htmlo: external-links/zeromalist/content -->
+</div>
+
+<!-- htmlo: components/bottom-simple -->

@@ -4,9 +4,7 @@
             <h1 class="nav-signature-name">
                 <a href="/">Jonathan Verrecchia</a>
             </h1>
-            <div class="twitter-button-container" style="opacity: 0">
-                <a href="https://twitter.com/verekia" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="large" data-dnt="true">Follow @verekia</a>
-            </div>
+<!-- htmlo: components/twitter-button-sidebar -->
         </div>
         <div class="nav-list js-nav-list">
             <div class="js-nav-list-section">
@@ -30,7 +28,7 @@
                 <h2>Lifestyle</h2>
                 <!-- <h2>Lifestyle <a href="javascript:;" class="expand-nav-link js-nav-expand">(more)</a></h2> -->
                 <ul>
-<!-- htmlo: external-links/life-framework/nav-item -->
+<!-- htmlo: external-links/zeromalist/nav-item -->
 <!--
 <!-- htmlo: articles/minimalism-coaching/nav-item -->
 -->
@@ -79,7 +77,7 @@
 <!-- htmlo: articles/less-css/select-link -->
             </optgroup>
             <optgroup label="Lifestyle">
-<!-- htmlo: external-links/life-framework/select-link -->
+<!-- htmlo: external-links/zeromalist/select-link -->
 <!--
 <!-- htmlo: articles/minimalism-coaching/select-link -->
 -->
