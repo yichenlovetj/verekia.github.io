@@ -1,36 +1,106 @@
-<h1>Freelance Large-Scale CSS Consulting</h1>
+<h1>Don't have time to clean up your CSS? Let me take care of it, that's my thing.</h1>
 
-My name is Jonathan Verrecchia, and I'm a Front-End Engineer. Here is my
-<!-- htmlo: external-links/resume/link -->
-resume</a>, and you can reach me at <a href="javascript:;" class="css-email js-email"></a>.
+Writing CSS is quick and easy. Writing <strong>scalable</strong> and <strong>maintainable</strong> CSS is hard.
 
 <h2>What I can do for your company</h2>
 
-I can <strong>increase the speed and efficiency of developers</strong> who work with your CSS codebase. My ultimate goal is to make them able to create entirely new pages without writing a single line of CSS (as long as the new pages don't introduce very different components). The process also gives a more optimized workflow for web designers, who will be able to collaborate with front-end developers much more efficiently.
+I can <strong>increase the speed and efficiency of developers</strong> who work with your CSS codebase. My ultimate goal is to make them able to create entirely new pages without barely writing any CSS. The process also gives a more optimized workflow for web designers, who will be able to collaborate with front-end developers more efficiently.
 
 <img class="full-size-img" src="/_static/img/jonathan-verrecchia-bridge.jpg">
 
+My name is Jonathan Verrecchia, and I'm a freelance Front-End Engineer, previously employed at <a target="_blank" href="http://www.yelp.com">Yelp</a>. Here is my
+<!-- htmlo: external-links/resume/link -->
+resume</a>, and you can reach me at <a href="javascript:;" class="css-email js-email"></a>.
+
+<!--
 <h2>Why hiring me as a freelancer</h2>
 
 I have extensive and proven expertise in the field of Front-End Engineering (see my
 <!-- htmlo: external-links/resume/link -->
 resume</a> for more details). By hiring a remote freelancer instead of a full-time employee, there is no need to pay for health insurance, HR, a computer, training, an office space, and you have more flexibility.
 
+
 <p></p>
 
 Regarding remote collaboration, I have worked for Yelp remotely from France for 2 years, which worked out very well, despite the 9-hour timezone difference.
 
+-->
+
 <h2>Rates</h2>
 
-<strong>59€/h</strong> ($63) is my base hourly rate. It decreases as the total duration increases:
-
 <ul>
-<li><strong>48€/h</strong> for 6 hours = <strong>288€</strong> ($306) for <strong>1 day</strong></li>
-<li><strong>43€/h</strong> for 30 hours = <strong>1290€</strong> ($1380) for <strong>1 week</strong> of 5 days</li>
-<li><strong>39€/h</strong> for 132 hours = <strong>5148€</strong> ($5544) for <strong>1 month</strong> of 22 days</li>
+<li><strong>290€</strong> ($317) per day</li>
+<li><strong>276€</strong> ($302) per day for 5 days = <strong>1380€</strong> ($1510) per week</li>
+<li><strong>230€</strong> ($252) per day for 22 days = <strong>5060€</strong> ($5541) per month</li>
 </ul>
 
-Meal times are free of charge and ignored in these rates. Extra hours are charged at the base hourly rate. The initial discussions of your needs are free.
+All taxes are included. Discussing your needs is free.
+
+<h2>How it works, step by step</h2>
+
+<h3>Estimate and first payment</h3>
+
+First, we talk about your needs, and you optionally make me sign an NDA.
+
+<p></p>
+
+Next, you take screenshots of all your pages, and share some of your CSS/SASS/LESS files with me. I can then give you an estimate of the time I need to clean up your CSS.
+
+<p></p>
+
+You send a first payment of 50% of this estimate. As an example, if we agree on 20 days, that would be 10 days paid upfront.
+
+<h3 id="preparing-content">Preparing your content</h3>
+
+Someone from your team will have to gather all the plain HTML and CSS/SASS/LESS code of the pages you want me to work on, with as many different visual components rendered as possible. In practice, that means this person will display your pages' sources from a browser, and save those into HTML files for every page. If you have components that have different states based on JS interaction, make sure to include them in the package as well, but do not include any JS file. When refactoring your CSS, I will assume that you gave me 100% of your visual elements and their associated code, so aim to be as exhaustive as possible.
+
+<h3>What I will do</h3>
+
+Using the files you provided, I will rewrite the CSS code to make it more scalable and maintainable. The size of your CSS will get drastically reduced. My changes in the HTML code will be minor and mostly consist in renaming classes. The visual changes will also be minor: if you have multiple visual elements that are very similar, I will standardize them across pages. I will also create a styleguide page containing all of your standardized components, displaying the HTML code needed to render them. I will make the CSS code available for you during the whole process.
+
+<h3>Second payment and delivery</h3>
+
+When you or I consider my work done with the CSS cleanup, you pay the remainder based on the number of days I've worked. In our example, if I've worked 15 days total, that will be a second payment of 5 days (since you've already paid for 10).
+
+<p></p>
+
+I will send you all the updated HTML pages, the styleguide page, and most importantly, a list of instructions to update your HTML code in your templating engine files. Some typical examples of instructions are:
+<ul>
+<li>Rename your <code>class="user-profile-header"</code> to <code>class="media-block"</code></li>
+<li>Rename your <code>id="news-feed"</code> to <code>class="block-list"</code></li>
+<li>Remove the extra <code>div</code> surrounding <code>"user-profile"</code></li>
+</ul>
+
+All of these instructions will be simple, most of them being replacing classnames.
+
+<h3>Updating your templates</h3>
+
+Following these instructions will be highly educational, and will help you become familiar with the new CSS codebase and with the best practices you should follow in the future. I will document the CSS codebase with comments, and the styleguide I provide will show clearly the HTML code needed to render your components. Any web developer, even not specialized in Front-End, will be able to perform these updates very easily and learn along the way.
+
+<p></p>
+
+I will provide free support if you have any question during this phase, as long as it's strictly related to integrating my changes. Any issue being the consequence of you not providing 100% of your visual elements and their associated HTML/CSS code won't be supported, which is why you need to be very careful when <a href="#preparing-content">Preparing your content</a>.
+
+
+
+<h2>Contract Flexibility</h2>
+
+<h3>Cancel anytime</h3>
+
+What makes this contract so flexible is that you don't need 100% of the cleanup to be done in order to take advantage of it. If I cleaned up 60% of your codebase, that is still 60% better than it was before, and if that's good enough for you, or if you don't have the resources to go all the way up to 100%, that is still a great improvement. As long as all my work days have been paid, I will deliver to you everything I've worked on.
+
+<h3>Underestimation</h3>
+
+If we realize that we underestimated the workload (if it is more than 1.25 times our initial estimate), we need to re-evaluate our estimate and have you pay the difference between the first payment and 50% of the new estimate before I continue.
+
+<h3>Overestimation</h3>
+
+If I finish the CSS refactoring in less time than your first payment covered, or if you want to cancel for any reason during that period, I will reimburse the overpaid days.
+
+
+
+
+<!--
 
 <h2>Payments</h2>
 
@@ -66,3 +136,5 @@ Unlike programming languages, CSS cannot be tested with unit tests. And since I 
 <p></p>
 
 I am not responsible for integrating a CSS preprocessor like Sass or Less into your build system. This is a DevOps job that varies greatly depending on the structure of your development environment. That being said, even though I highly recommend having a CSS preprocessor, it is not mandatory for the work I would do for you.
+
+-->
