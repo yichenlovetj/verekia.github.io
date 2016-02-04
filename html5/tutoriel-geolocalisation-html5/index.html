@@ -183,7 +183,7 @@ Tutoriel de géolocalisation en HTML5</h1>
 <img src="/_templates/articles/html5-geolocalisation/img/tutoriel-geolocalisation-html5.png" alt="Terre" title="Terre" />
 </a>
 
-Ce tutoriel a pour but de mettre en pratique pas à pas la géolocalisation en HTML5. Nous allons voir comment il est possible de récupérer les coordonnées d'un utilisateur, comment gérer les cas de succès et d'erreur avec les callbacks, comment suivre ses déplacements, et enfin toutes les informations que nous pouvons obtenir sur ses coordonnées, comme sa vitesse ou sa direction.
+Ce tutoriel a pour but de mettre en pratique pas à pas la géolocalisation en HTML5. Nous allons voir comment il est possible de récupérer les coordonnées d'un utilisateur, comment gérer les cas de succès et d'erreur avec les <em>callbacks</em>, comment suivre ses déplacements, et enfin toutes les informations que nous pouvons obtenir sur ses coordonnées, comme sa vitesse ou sa direction.
 
 <p></p>
 
@@ -191,7 +191,7 @@ Avant de commencer il est important de rappeler qu'à l'heure actuelle, la géol
 
 <h2>Récupérer les coordonnées</h2>
 
-Tout d'abord, nous allons créer un document HTML le plus simple possible, sans se soucier du Doctype, de la partie head et des autres détails de la structure HTML habituelle. Nous avons uniquement besoin d'exécuter du code JavaScript. Voilà donc à quoi ressemble notre fichier :
+Tout d'abord, nous allons créer un document HTML le plus simple possible, sans se soucier du <code>Doctype</code>, de la partie <code>head</code> et des autres détails de la structure HTML habituelle. Nous avons uniquement besoin d'exécuter du code JavaScript. Voilà donc à quoi ressemble notre fichier :
 
 <script src="https://gist.github.com/verekia/7531663978030d432dc9.js"></script>
 
@@ -199,12 +199,12 @@ Avant de chercher à utiliser la géolocalisation, il est bien entendu important
 
 <script src="https://gist.github.com/verekia/a58d41e2ecb22fd698eb.js"></script>
 
-navigator.geolocation renvoie un simple booléen valant vrai ou faux selon la capacité du navigateur à utiliser la géolocalisation (... autrement dit c'est un détecteur d'IE !).
+<code>navigator.geolocation</code> renvoie un simple booléen valant vrai ou faux selon la capacité du navigateur à utiliser la géolocalisation (...autrement dit c'est un détecteur d'IE !).
 Ensuite, afin de récupérer les coordonnées, on utilise la méthode <code>getCurrentPosition()</code> :
 
 <script src="https://gist.github.com/verekia/e3295a807bcd558712df.js"></script>
 
-Cette méthode prend en paramètre une fonction de "callback" qu'elle va appeler en lui fournissant le paramètre position contenant les coordonnées. Dans l'exemple ci-dessus, on utilise une fonction anonyme afin de traiter la variable position immédiatement à la suite du code d'appel. Dans le cas où l'on souhaite un traitement plus propre et détaillé, on utilisera une fonction nommée et déclarée comme le montrent les prochains exemples.
+Cette méthode prend en paramètre une fonction de <em>callback</em> qu'elle va appeler en lui fournissant le paramètre position contenant les coordonnées. Dans l'exemple ci-dessus, on utilise une fonction anonyme afin de traiter la variable position immédiatement à la suite du code d'appel. Dans le cas où l'on souhaite un traitement plus propre et détaillé, on utilisera une fonction nommée et déclarée comme le montrent les prochains exemples.
 
 <p class="island">
 <em>Mais attends une seconde... On peut connaître l'emplacement de n'importe quel utilisateur avec un petit bout de code comme ça ?</em>
@@ -241,13 +241,13 @@ Enfin, le 3ème paramètre de <code>getCurrentPosition()</code> sert à indiquer
 On peut ainsi spécifier :
 <ul>
     <li>L'utilisation du GPS pour obtenir des coordonnées beaucoup plus précises</li>
-    <li>Un Timeout si l'on a besoin d'une réponse avant un certain délai</li>
+    <li>Un <em>timeout</em> si l'on a besoin d'une réponse avant un certain délai</li>
     <li>La durée de vie maximale d'une coordonnée envoyée par l'utilisateur</li>
 </ul>
 
 <script src="https://gist.github.com/verekia/62e1f0792c8d4f929c85.js"></script>
 
-Les options timeout et maximumAge sont indiquées en millisecondes, donc ici, on établit un délai de 10 secondes de timeout, et une durée de vie maximale de la dernière position de l'utilisateur de 10 minutes. Par défaut, <code>timeout</code> a pour valeur <code>Infinity</code>, et si <code>maximumAge</code> vaut <code>0</code>, alors l'application demande systématiquement une mise à jour de la position de l'utilisateur.
+Les options <code>timeout</code> et <code>maximumAge</code> sont indiquées en millisecondes, donc ici, on établit un délai de 10 secondes de timeout, et une durée de vie maximale de la dernière position de l'utilisateur de 10 minutes. Par défaut, <code>timeout</code> a pour valeur <code>Infinity</code>, et si <code>maximumAge</code> vaut 0, alors l'application demande systématiquement une mise à jour de la position de l'utilisateur.
 
 <h2>Suivre les déplacements</h2>
 
