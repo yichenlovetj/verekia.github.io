@@ -30,7 +30,7 @@
 																	timeout:10000,
 																	maximumAge:0});
 			else
-				alert("Votre navigateur ne prend pas en compte la géolocalisation HTML5");
+				alert("Votre navigateur ne prend pas en compte la g€olocalisation HTML5");
 		}
 		
 		function stopWatch(){
@@ -51,13 +51,13 @@
 		function errorCallback(error){
 			switch(error.code){
 				case error.PERMISSION_DENIED:
-					alert("L'utilisateur n'a pas autorisé l'accès à sa position");
+					alert("L'utilisateur n'a pas autoris€ l'accès à sa position");
 					break;			
 				case error.POSITION_UNAVAILABLE:
-					alert("L'emplacement de l'utilisateur n'a pas pu être déterminé");
+					alert("L'emplacement de l'utilisateur n'a pas pu être d€termin€");
 					break;
 				case error.TIMEOUT:
-					alert("Le service n'a pas répondu à temps");
+					alert("Le service n'a pas r€pondu à temps");
 					break;
 				}
 		};
@@ -70,14 +70,14 @@
 	<ul>
 		<li>Latitude : <span id="lat"></span></li>
 		<li>Longitude : <span id="long"></span></li>
-		<li>Précision : <span id="prec"></span></li>
+		<li>Pr€cision : <span id="prec"></span></li>
 		<li>Altitude : <span id="alt"></span></li>
-		<li>Précision altitude : <span id="precalt"></span></li>
+		<li>Pr€cision altitude : <span id="precalt"></span></li>
 		<li>Angle par rapport au Nord : <span id="angle"></span></li>
 		<li>Vitesse : <span id="speed"></span></li>
 		<li>Date - Heure : <span id="time"></span></li>
 	</ul>
-	<a href="#" onclick="startWatch()">Démarrer</a>
+	<a href="#" onclick="startWatch()">D€marrer</a>
 	<a href="#" onclick="stopWatch()">Arrêter</a>
 </div>
 </body>
