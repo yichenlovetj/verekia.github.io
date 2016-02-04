@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+<head>
+	<style>
+	canvas{border:1px solid}
+	</style>
+	<script src="canvas2image.js"></script>
+	<!--[if IE]><script src="excanvas.js"></script><![endif]-->
+</head>
+<body>
+<canvas id="mycanvas" width="500" height="300">
+	Il faut vivre avec son temps mon vieux !
+</canvas>
+
+
+<a href="#" id="save">Save</a>
+<script>
+	var oCtx = null;
+
+	window.addEventListener('load', function() {
+		oCtx = document.getElementById("mycanvas").getContext("2d");
+		//drawCat();
+		dessinerTriangleOmbreDegrade();
+		//oCtx.save();
+		//oCtx.translate(0, 10);
+		//dessinerTriangleOmbreDegrade();
+		//oCtx.translate(0, 10);
+		//dessinerTriangleOmbreDegrade();
+		//oCtx.restore();
+		//dessinerTriangleFerme();
+		//dessinerTriangleOmbre();
+		//drawCat(); 
+		ecrireTitre();
+	}, false);
+	
+function dessinerRectangle(){
+  oCtx.fillRect(100, 100, 300, 50);	  
+};
+
+function dessinerRectangleGris(){
+  oCtx.fillStyle = "#cccccc";
+  oCtx.fillRect(100, 100, 300, 50);	  
+};
+	
+function dessinerTrait(){
+  oCtx.beginPath();
+  oCtx.moveTo(100, 100);
+  oCtx.lineTo(200, 200);
+  oCtx.stroke();
+}
+	
+function dessinerTriangle(){
+  oCtx.beginPath();
+  oCtx.moveTo(100, 100);
+  oCtx.lineTo(200, 200);
+  oCtx.lineTo(200, 100);
+  oCtx.lineTo(100, 100);
+  oCtx.lineWidth = 10;
+  oCtx.fillStyle = "#dddddd";
+  oCtx.fill();
+  oCtx.strokeStyle = "#222222";
+  oCtx.stroke();
+}	
+	
+function dessinerTriangleFerme(){
+  oCtx.beginPath();
+  oCtx.moveTo(100, 100);
+  oCtx.lineTo(200, 200);
+  oCtx.lineTo(200, 100);
+  oCtx.lineTo(100, 100);
+  oCtx.closePath();
+  oCtx.lineWidth = 10;
+  oCtx.fillStyle = "#dddddd";
+  oCtx.fill();
+  oCtx.strokeStyle = "#222222";
+  oCtx.stroke();
+}	
+
+function dessinerTriangleTranslation(){
+  oCtx.save();
+  oCtx.translate(250, 150);
+  oCtx.beginPath();
+  oCtx.moveTo(40, 0);
+  oCtx.lineTo(0, -60);
+  oCtx.lineTo(-40, 0);
+  oCtx.lineTo(40, 0);
+  oCtx.closePath();
+  oCtx.lineWidth = 10;
+  oCtx.shadowOffsetX = 40;
+  oCtx.stroke();
+  oCtx.restore();
+}
+
+function dessinerTriangleOmbre(){
+  oCtx.save();
+  oCtx.translate(250, 150);
+  oCtx.beginPath();
+  oCtx.moveTo(40, 0);
+  oCtx.lineTo(0, -60);
+  oCtx.lineTo(-40, 0);
+  oCtx.lineTo(40, 0);
+  oCtx.closePath();
+  oCtx.lineWidth = 10;
+  oCtx.shadowOffsetX = 5;
+  oCtx.shadowOffsetY = 5;
+  oCtx.shadowBlur    = 10;
+  oCtx.shadowColor   = 'rgba(0, 0, 0, 0.3)';
+  oCtx.stroke();
+  oCtx.restore();
+}
+
+function dessinerTriangleOmbreDegrade(){
+  oCtx.save();
+  oCtx.translate(250, 150);
+  
+  var oGradient = oCtx.createLinearGradient(0, 0, 0, -60);
+  oGradient.addColorStop(0.1, "white");
+  oGradient.addColorStop(1, "black");
+  
+  oCtx.beginPath();
+  oCtx.moveTo(40, 0);
+  oCtx.lineTo(0, -60);
+  oCtx.lineTo(-40, 0);
+  oCtx.lineTo(40, 0);
+  oCtx.closePath();
+  oCtx.lineWidth = 10;
+  oCtx.shadowOffsetX = 5;
+  oCtx.shadowOffsetY = 5;
+  oCtx.shadowBlur    = 10;
+  oCtx.shadowColor   = 'rgba(0, 0, 0, 0.3)';
+  
+  oCtx.strokeStyle = oGradient;
+  oCtx.stroke();
+  oCtx.restore();
+}
+
+function ecrireTitre(){
+  oCtx.save();
+  oCtx.translate(250, 200);
+
+  oCtx.shadowOffsetY = 2;
+  oCtx.shadowBlur    = 2;
+  oCtx.shadowColor   = 'rgba(0, 0, 0, 0.3)';
+  
+  oCtx.fillStyle = "red";
+  oCtx.font = "30px Calibri";
+  oCtx.textAlign = "center";
+  oCtx.fillText("Triangulous", 0, 0, 200);
+
+  oCtx.restore();
+}
+	
+	
+	function drawCat(ctx){
+		var cat = new Image();
+		cat.src = "cat.jpg";	
+		cat.onload = function(){
+			oCtx.drawImage(cat, 0, 0);
+			var imageData = oCtx.getImageData(0, 0, 489, 367);
+			
+			for (var i = 0; i<= imageData.data.length; i = i + 4){
+				
+				var grayscale = (imageData.data[i] * 0.3 +
+								 imageData.data[i + 1] * 0.59 +
+								 imageData.data[i + 2] *0.11);
+				
+				imageData.data[i] = grayscale;
+				imageData.data[i + 1] = grayscale;
+				imageData.data[i + 2] = grayscale;
+				}
+				oCtx.putImageData(imageData, 0, 0);
+				
+		};
+	}
+	
+	function drawCat2(ctx){
+		var cat = new Image();
+		cat.src = "cat.jpg";	
+		cat.onload = function(){
+			oCtx.drawImage(cat, 0, 0);
+			var imageData = oCtx.getImageData(0, 0, 489, 367);
+			var reverted = oCtx.createImageData(489, 367);
+			var j = 0;
+			for (var i = imageData.data.length -4; i> 4; i = i - 4){
+				reverted.data[j] = imageData.data[i];
+				reverted.data[j + 1] = imageData.data[i + 1];
+				reverted.data[j + 2] = imageData.data[i + 2];
+				reverted.data[j + 3] = imageData.data[i + 3];
+				j = j + 4;
+			}
+
+				
+				oCtx.putImageData(reverted, 0, 0);
+		};
+	}
+
+	document.getElementById("save").addEventListener('click', function() {
+		//Canvas2Image.saveAsPNG( document.getElementById("mycanvas"));
+		//window.open(ctx.canvas.toDataURL('image/png'));
+		window.location = oCtx.canvas.toDataURL("image/png");
+		//var strDataURI = ctx.canvas.toDataURL("image/png;base64"); document.write(strDataURI);
+		
+	}, false);	
+	
+	</script>
+</body>
+</html>

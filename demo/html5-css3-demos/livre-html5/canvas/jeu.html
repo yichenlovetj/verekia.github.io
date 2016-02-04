@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+	<style>
+		canvas{border:1px solid}
+	</style>
+</head>
+<body>
+<canvas id="mycanvas" width="500" height="300">
+	Il faut vivre avec son temps mon vieux !
+</canvas>
+<script>
+	var oCtx = null;
+	var oRect = {x:200, y:100};
+	var oMove = {up:0, down:0, left:0, right:0};
+	
+	window.addEventListener('load', function() {
+		oCtx = document.getElementById("mycanvas").getContext("2d");
+		setInterval(mainLoop, 16);
+	}, false);
+	
+	function mainLoop(){
+		oCtx.clearRect(0, 0, 500, 300);
+		oCtx.fillRect(oRect.x, oRect.y, 100, 60);
+		if (oMove.down) oRect.y++;
+		if (oMove.up) oRect.y--;
+		if (oMove.left) oRect.x--;
+		if (oMove.right) oRect.x++;
+	}
+
+	window.addEventListener("keydown", function(e){
+		if (e.keyCode == 40) oMove.down = 1;
+		if (e.keyCode == 38) oMove.up = 1;
+		if (e.keyCode == 37) oMove.left = 1;
+		if (e.keyCode == 39) oMove.right = 1;
+	}, false);
+	
+	window.addEventListener("keyup", function(e){
+		if (e.keyCode == 40) oMove.down = 0;
+		if (e.keyCode == 38) oMove.up = 0;
+		if (e.keyCode == 37) oMove.left = 0;
+		if (e.keyCode == 39) oMove.right = 0;
+	}, false);	
+		
+	</script>
+</body>
+</html>

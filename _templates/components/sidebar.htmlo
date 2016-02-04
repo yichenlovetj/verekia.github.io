@@ -22,6 +22,7 @@
 <!-- htmlo: articles/responsive-initializr/nav-item -->
 <!-- htmlo: articles/requirejs/nav-item -->
 <!-- htmlo: articles/less-css/nav-item -->
+<!-- htmlo: articles/html5-geolocalisation/nav-item -->
                 </ul>
             </div>
             <div class="js-nav-list-section">
@@ -75,6 +76,7 @@
 <!-- htmlo: articles/responsive-initializr/select-link -->
 <!-- htmlo: articles/requirejs/select-link -->
 <!-- htmlo: articles/less-css/select-link -->
+<!-- htmlo: articles/html5-geolocalisation/select-link -->
             </optgroup>
             <optgroup label="Lifestyle">
 <!-- htmlo: external-links/zeromalist/select-link -->

@@ -1,0 +1,360 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Tutoriel de géolocalisation en HTML5        | Jonathan Verrecchia</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" type="image/png" href="/favicon.png">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+        <link href='https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/_static/css/normalize.css">
+        <link rel="stylesheet" href="/_static/css/main.css">
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+<div class="nav-column">
+    <div class="nav-content">
+        <div class="nav-signature clearfix">
+            <h1 class="nav-signature-name">
+                <a href="/">Jonathan Verrecchia</a>
+            </h1>
+<div class="twitter-button-container twitter-button-container-sidebar" style="opacity: 0">
+    <a href="https://twitter.com/verekia" class="twitter-follow-button twitter-follow-button-sidebar" data-show-count="true" data-lang="en" data-size="large" data-dnt="true">Follow @verekia</a>
+</div>        </div>
+        <div class="nav-list js-nav-list">
+            <div class="js-nav-list-section">
+                <h2>Front-End <a href="javascript:;" class="expand-nav-link js-nav-expand">(more)</a></h2>
+                <ul>
+                    <li class="nav-double-link-item">
+<a href="
+/freelance/" target="_blank">
+Freelance</a> |
+<a href="
+/resume/" target="_blank">
+Resume</a>
+</li>
+<li>
+<a href="
+/slides/css-preprocessors/">
+CSS Preprocessors Talk
+</a>
+</li><li class="nav-item-hidden js-nav-item-hidden">
+<a href="
+/initializr/responsive-template/">
+Responsive Initializr
+</a>
+</li><li class="nav-item-hidden js-nav-item-hidden">
+<a href="
+/requirejs/build-simple-client-side-mvc-app-require-js/">
+RequireJS Tutorial</a>
+</li><li class="nav-item-hidden js-nav-item-hidden">
+<a href="
+/less-css/dont-read-less-css-tutorial-highly-addictive/">
+Less CSS Tutorial</a>
+</li><li class="nav-item-hidden js-nav-item-hidden">
+<a href="
+/html5/tutoriel-geolocalisation-html5/">
+[FR] Géolocalisation HTML5</a>
+</li>                </ul>
+            </div>
+            <div class="js-nav-list-section">
+                <h2>Lifestyle</h2>
+                <!-- <h2>Lifestyle <a href="javascript:;" class="expand-nav-link js-nav-expand">(more)</a></h2> -->
+                <ul>
+<li>
+<a href="
+/zeromalist/" target="_blank">
+Minimalism Guidelines</a>
+</li><!--
+<li>
+<a href="
+/">
+Minimalism Coaching</a>
+</li>-->
+<li>
+<a href="
+/slides/todo-zero/">
+Getting Things Done</a>
+</li>
+<!--                     <li class="nav-item-hidden js-nav-item-hidden">
+                        <a href="/" target="_blank">Going Vegan
+                        </a>
+                    </li>
+                    <li class="nav-item-hidden js-nav-item-hidden">
+                        <a href="/" target="_blank">Single Point of Failure
+                        </a>
+                    </li>
+                    <li class="nav-item-hidden js-nav-item-hidden">
+                        <a href="/" target="_blank">Music When Commuting
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
+<!--
+            <div class="js-nav-list-section">
+                <h2>Transhumanism</h2>
+                <ul>
+<li>
+<a href="
+/" target="_blank">
+The Future of Humanity</a>
+</li><li>
+<a href="
+/" target="_blank">
+Open Letter to the ASI</a>
+</li>                </ul>
+            </div>
+-->
+            <div class="js-nav-list-section">
+                <h2>Music</h2>
+                <ul>
+<li>
+<a href="
+http://soundcloud.com/leafadventure" target="_blank">
+Leaf Adventure</a>
+</li><li>
+<a href="
+/music-production-lessons/">
+Music Production Lessons</a>
+</li>                </ul>
+            </div>
+        </div>
+        <select class="nav-dropdown js-nav-dropbown">
+            <option class="js-select-blank-option" value=""></option>
+            <option value="
+/">Homepage</option>
+            <optgroup label="Front-End">
+<option value="
+/freelance/">
+Freelance</option><option value="
+/resume/">
+Resume</option><option value="
+/slides/css-preprocessors/">
+CSS Preprocessors Talk
+</option><option value="
+/initializr/responsive-template/">
+Responsive Initializr
+</option><option value="
+/requirejs/build-simple-client-side-mvc-app-require-js/">
+RequireJS Tutorial</option><option value="
+/less-css/dont-read-less-css-tutorial-highly-addictive/">
+Less CSS Tutorial</option><option value="
+/html5/tutoriel-geolocalisation-html5/">
+[FR] Géolocalisation HTML5</option>            </optgroup>
+            <optgroup label="Lifestyle">
+<option value="
+/zeromalist/">
+Minimalism Guidelines</option><!--
+<option value="
+/">
+Minimalism Coaching</option>-->
+<option value="
+/slides/todo-zero/">
+Getting Things Done</option>            </optgroup>
+<!--
+            <optgroup label="Transhumanism">
+<option value="
+/">
+The Future of Humanity</option><option value="
+/">
+Open Letter to the ASI</option>            </optgroup>
+-->
+            <optgroup label="Music">
+<option value="
+http://soundcloud.com/leafadventure">
+Leaf Adventure</option><option value="
+/music-production-lessons/">
+Music Production Lessons</option>            </optgroup>
+        </select>
+    </div>
+</div>
+<div class="main-column">
+    <div class="main-content">
+<h1>
+Tutoriel de géolocalisation en HTML5</h1>
+ <a href="/_templates/articles/html5-geolocalisation/img/tutoriel-geolocalisation-html5.png" target="_blank">
+<img src="/_templates/articles/html5-geolocalisation/img/tutoriel-geolocalisation-html5.png" alt="Terre" title="Terre" />
+</a>
+
+Ce tutoriel a pour but de mettre en pratique pas à pas la géolocalisation en HTML5. Nous allons voir comment il est possible de récupérer les coordonnées d'un utilisateur, comment gérer les cas de succès et d'erreur avec les callbacks, comment suivre ses déplacements, et enfin toutes les informations que nous pouvons obtenir sur ses coordonnées, comme sa vitesse ou sa direction.
+
+<p></p>
+
+Avant de commencer il est important de rappeler qu'à l'heure actuelle, la géolocalisation n'est pas encore supportée par Internet Explorer. En revanche, tous les autres navigateurs modernes l'implémentent correctement. Il est possible de suivre l'évolution des fonctionnalités HTML5 prises en charge par les différents navigateurs sur <a target="_blank" href="http://caniuse.com/">CanIUse.com</a> ou bien le <a target="_blank" href="http://en.wikipedia.org/wiki/Comparison_of_layout_engines_(HTML5)">Wiki des moteurs de rendu</a> utilisés par les navigateurs.
+
+<h2>Récupérer les coordonnées</h2>
+
+Tout d'abord, nous allons créer un document HTML le plus simple possible, sans se soucier du Doctype, de la partie head et des autres détails de la structure HTML habituelle. Nous avons uniquement besoin d'exécuter du code JavaScript. Voilà donc à quoi ressemble notre fichier :
+
+<script src="https://gist.github.com/verekia/7531663978030d432dc9.js"></script>
+
+Avant de chercher à utiliser la géolocalisation, il est bien entendu important de savoir si le navigateur de l'utilisateur la supporte. Pour cela on ajoute tout simplement les lignes suivantes :
+
+<script src="https://gist.github.com/verekia/a58d41e2ecb22fd698eb.js"></script>
+
+navigator.geolocation renvoie un simple booléen valant vrai ou faux selon la capacité du navigateur à utiliser la géolocalisation (... autrement dit c'est un détecteur d'IE !).
+Ensuite, afin de récupérer les coordonnées, on utilise la méthode <code>getCurrentPosition()</code> :
+
+<script src="https://gist.github.com/verekia/e3295a807bcd558712df.js"></script>
+
+Cette méthode prend en paramètre une fonction de "callback" qu'elle va appeler en lui fournissant le paramètre position contenant les coordonnées. Dans l'exemple ci-dessus, on utilise une fonction anonyme afin de traiter la variable position immédiatement à la suite du code d'appel. Dans le cas où l'on souhaite un traitement plus propre et détaillé, on utilisera une fonction nommée et déclarée comme le montrent les prochains exemples.
+
+<p class="island">
+<em>Mais attends une seconde... On peut connaître l'emplacement de n'importe quel utilisateur avec un petit bout de code comme ça ?</em>
+</p>
+
+Oui, à condition qu'il accepte de partager sa localisation ! Vous avez peut-être déjà remarqué le bandeau qui apparaît en haut de certaines pages (le même bandeau qui vous propose d'enregistrer un mot de passe par exemple). Afin d'accepter de partager sa localisation, un bandeau de ce type apparaît :
+
+ <a href="/_templates/articles/html5-geolocalisation/img/barre-autorisation-partage-géolocalisation.png" target="_blank">
+<img src="/_templates/articles/html5-geolocalisation/img/barre-autorisation-partage-géolocalisation.png" alt="Barre d'autorisation de partage de géolocalisation" title="Barre d'autorisation de partage de géolocalisation" />
+</a>
+
+Sur les smartphones, c'est un pop-up équivalent qui apparaît.
+
+<p class="island">
+<em>Et elle apparaît quand cette barre ?</em>
+</p>
+
+Elle apparaît dès que l'on cherche à accéder aux coordonnées de l'utilisateur. Donc par exemple lorsque vous utilisez <code>getCurrentPosition</code> ! Ce qui évite de demander l'autorisation inutilement à l'utilisateur. Allez, on reprend avec nos callbacks !
+
+<h2>Utilisation des callbacks</h2>
+
+La méthode <code>getCurrentPosition()</code> peut prendre un second paramètre : le callback d'erreur. C'est la fonction qui sera appelée dans les cas où :
+<ul>
+    <li>L'utilisateur refuse l'autorisation d'accès à sa position</li>
+    <li>L'emplacement de l'utilisateur n'ait pas pu être déterminé</li>
+    <li>Le service de géolocalisation ne réponde pas assez vite</li>
+</ul>
+
+On utilise donc la fonction de callback pour gérer ces 3 cas :
+
+<script src="https://gist.github.com/verekia/ceeeb8d40e733f6e27a1.js"></script>
+
+Enfin, le 3ème paramètre de <code>getCurrentPosition()</code> sert à indiquer certaines options particulières, écrites de la forme suivante : <code>{nom:valeur, nom:valeur, ...}</code>.
+On peut ainsi spécifier :
+<ul>
+    <li>L'utilisation du GPS pour obtenir des coordonnées beaucoup plus précises</li>
+    <li>Un Timeout si l'on a besoin d'une réponse avant un certain délai</li>
+    <li>La durée de vie maximale d'une coordonnée envoyée par l'utilisateur</li>
+</ul>
+
+<script src="https://gist.github.com/verekia/62e1f0792c8d4f929c85.js"></script>
+
+Les options timeout et maximumAge sont indiquées en millisecondes, donc ici, on établit un délai de 10 secondes de timeout, et une durée de vie maximale de la dernière position de l'utilisateur de 10 minutes. Par défaut, <code>timeout</code> a pour valeur <code>Infinity</code>, et si <code>maximumAge</code> vaut <code>0</code>, alors l'application demande systématiquement une mise à jour de la position de l'utilisateur.
+
+<h2>Suivre les déplacements</h2>
+
+Dans de nombreux cas, on aimerait mettre à jour la position de l'utilisateur si celui-ci se déplace. On pourrait penser qu'une fonctionnalité telle que celle-ci pourrait être assez lourde à mettre en place... ce n'est pas le cas ! Il suffit simplement de remplacer <code>getCurrentPosition()</code> par :
+
+<script src="https://gist.github.com/verekia/0c08e81303802a951b2d.js"></script>
+
+Comme on veut permettre à l'utilisateur d'arrêter le suivi de ses déplacements, on ajoute un simple lien effectuant un appel à <code>clearWatch()</code>.
+
+<script src="https://gist.github.com/verekia/b83d4752aa31e24652de.js"></script>
+
+<script src="https://gist.github.com/verekia/174aef76b5f99e20dbb1.js"></script>
+
+Enfin, si l'on souhaite pouvoir tester facilement ce code en se promenant dans la rue avec son smartphone, il faut activer l'option <code>enableHighAccuracy</code> pour utiliser le GPS afin d'avoir une mise à jour fréquente de la position.
+
+Voici le code JavaScript complet permettant d'afficher une nouvelle popup contenant les coordonnées chaque fois que l'utilisateur se déplace :
+
+<script src="https://gist.github.com/verekia/0fa72af36f675b3cba63.js"></script>
+
+C'est court n'est-ce pas ? Et encore, nous avons une gestion des erreurs, ainsi qu'une fonctionnalité d'arrêt de la géolocalisation ! Si on avait voulu simplifier à l'extrême on aurait pu laisser uniquement les lignes vitales :
+
+<script src="https://gist.github.com/verekia/fe0e3f93bec74890c2c5.js"></script>
+
+Je ne sais pas ce que vous en dites, mais lorsque je me suis rendu compte que 4 lignes de code JavaScript pouvaient faire fonctioner un suivi de position par GPS, j'ai vraiment été bluffé. Cela montre bien la volonté du W3C de faire de l'HTML5 un nouveau standard simple à utiliser.
+
+<h2>La vitesse ! La boussole ! L'altitude !</h2>
+
+Si vous avez été charmés par la simplicité par la partie précédente, voilà qui devrait vous achever !
+Lorsque l'on récupère la variable position afin d'obtenir la latitude grâce à <code>position.coords.latitude</code>, on a accès à plusieurs autres attributs :
+<ul>
+    <li><code>position.timestamp</code>, qui renvoie le timestamp de l'heure à laquelle a été mise à jour la position</li>
+    <li><code>position.coords.altitude</code>, qui correspond à l'altitude de l'utilisateur</li>
+    <li><code>position.coords.accuracy</code>, qui correspond à la précision des coordonnées</li>
+    <li><code>position.coords.altitudeAccuracy</code>, qui correspond à la précision de l'altitude</li>
+    <li><code>position.coords.heading</code>, qui correspond à l'angle compris entre 0 et 360° par rapport au Nord (ce n'est pas aussi précis que la boussole d'un smartphone)</li>
+    <li><code>position.coords.speed</code>, qui correspond à la vitesse de l'utilisateur par rapport à sa dernière position.</li>
+</ul>
+
+Toutes ces valeurs sont remplies par le service de géolocalisation et vous n'avez absolument pas besoin de les calculer vous-même !
+
+<p></p>
+
+Pour terminer, voici la démonstration complète de tout ce que l'on vient de voir, avec une mise en page minimale :
+
+<a href="
+/demo/exemple-geolocalisation-html5/">
+Démonstration de géolocalisation en HTML5
+</a>
+
+<p></p>
+
+Et maintenant la cerise sur le gâteau : Pour ceux qui souhaitent utiliser toutes ces informations grâce à l'API Google Maps, je vous invite à lire mon <a href="http://www.html5-css3.fr/html5/tutoriel-api-google-maps-geolocalisation-html5">Tutoriel sur l'API Google Maps avec la géolocalisation en HTML5</a>.<p class="text-right"><span class="screen-reader-text">Posted on </span><time class="entry-date published"
+datetime="2010-09-14">
+September 14, 2010
+    </time>
+</p>            </div>
+        </div>
+
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="/_static/js/vendor/jquery-1.12.0.min.js"><\/script>')</script><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+setTimeout(function(){ $('.twitter-button-container').animate({opacity:1}); }, 500);
+</script>
+        <script>
+            var displayedNavSection = null;
+
+            $('.js-nav-expand').click(function(){
+                if (!displayedNavSection) {
+                    displayedNavSection = $(this).parents('.js-nav-list-section');
+                    $(this).parents('.js-nav-list').find('.js-nav-list-section').hide();
+                    displayedNavSection.show();
+                    displayedNavSection.find('.js-nav-item-hidden').show();
+                    $(this).text('(back)');
+                } else {
+                    $('.js-nav-list-section').show();
+                    $(this).text('(more)');
+                    $('.js-nav-item-hidden').hide()
+                    displayedNavSection = null;
+                }
+            });
+
+            // The blank option avoids text flicking at loading
+            $('.js-select-blank-option').remove();
+
+            // The \n compensates HTMLO's newline created in the value="\n" attribute.
+            $('.js-nav-dropbown').val('\n' + window.location.pathname);
+
+            $('.js-nav-dropbown').change(function(){
+                window.location = $(this).val();
+                // Note to self: opening a new tab using window.open on mobile blocks a popup
+                // so I ended up using a simple window.location
+            });
+
+
+        </script>
+
+<script>
+$('.js-email').click(function(){
+    alert('Hi! Please type this email address manually. In order to prevent spam, it can\'t be copy/pasted. Sorry about that.' );
+});
+</script><script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='https://www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-11028046-12','auto');ga('send','pageview');
+</script>
+    </body>
+</html>
