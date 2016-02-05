@@ -407,6 +407,17 @@ a.expand-nav-link {
         width: 138px;
         overflow: hidden;
     }
+
+    .mailchimp-form-input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .mailchimp-form-button{
+        width: 100%;
+        margin-top: 9px;
+        box-sizing: border-box;
+    }
 }
 
 @media (max-width: 390px) {
