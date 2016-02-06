@@ -33,15 +33,52 @@ code {
 }
 
 
-.sep-24 { margin: 24px 0 }
-.sep-30 { margin: 30px 0 }
-.sep-36 { margin: 36px 0 }
-.sep-42 { margin: 42px 0 }
-.sep-48 { margin: 48px 0 }
-.sep-54 { margin: 54px 0 }
-.sep-60 { margin: 60px 0 }
-.sep-66 { margin: 66px 0 }
-.sep-72 { margin: 72px 0 }
+.sep-24 { margin: 24px 0 !important }
+.sep-30 { margin: 30px 0 !important }
+.sep-36 { margin: 36px 0 !important }
+.sep-42 { margin: 42px 0 !important }
+.sep-48 { margin: 48px 0 !important }
+.sep-54 { margin: 54px 0 !important }
+.sep-60 { margin: 60px 0 !important }
+.sep-66 { margin: 66px 0 !important }
+.sep-72 { margin: 72px 0 !important }
+
+.padding-l-24 { padding-left: 24px !important }
+.padding-l-30 { padding-left: 30px !important }
+.padding-l-36 { padding-left: 36px !important }
+.padding-l-42 { padding-left: 42px !important }
+.padding-l-48 { padding-left: 48px !important }
+.padding-l-54 { padding-left: 54px !important }
+.padding-l-60 { padding-left: 60px !important }
+
+.padding-r-24 { padding-right: 24px !important }
+.padding-r-30 { padding-right: 30px !important }
+.padding-r-36 { padding-right: 36px !important }
+.padding-r-42 { padding-right: 42px !important }
+.padding-r-48 { padding-right: 48px !important }
+.padding-r-54 { padding-right: 54px !important }
+.padding-r-60 { padding-right: 60px !important }
+
+.panels {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: table;
+    margin: 0;
+    min-width: 100%;
+    padding: 0;
+    table-layout: auto;
+}
+
+.panel {
+    display: table-cell;
+    padding: 0;
+    vertical-align: top;
+}
+
+.panel-50 {
+    width: 50%;
+}
 
 .main-content h2 {
     margin-top: 40px;
