@@ -1,9 +1,9 @@
 <!-- htmlo: components/head-top -->
-<!-- htmlo: external-links/freelance/page-title -->
+<!-- htmlo: external-links/consulting/page-title -->
 <!-- htmlo: components/head-bottom -->
 
 <div class="single-column main-content">
-<!-- htmlo: external-links/freelance/content -->
+<!-- htmlo: external-links/consulting/content -->
 </div>
 
 <!-- htmlo: components/bottom-simple -->

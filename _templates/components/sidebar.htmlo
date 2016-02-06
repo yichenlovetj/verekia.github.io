@@ -11,8 +11,8 @@
                 <h2>Front-End <a href="javascript:;" class="expand-nav-link js-nav-expand">(more)</a></h2>
                 <ul>
                     <li class="nav-double-link-item">
-<!-- htmlo: external-links/freelance/link -->
-<!-- htmlo: external-links/freelance/short-title -->
+<!-- htmlo: external-links/consulting/link -->
+<!-- htmlo: external-links/consulting/short-title -->
 </a> |
 <!-- htmlo: external-links/resume/link -->
 <!-- htmlo: external-links/resume/short-title -->
@@ -70,7 +70,7 @@
             <option value="
 /">Homepage</option>
             <optgroup label="Front-End">
-<!-- htmlo: external-links/freelance/select-link -->
+<!-- htmlo: external-links/consulting/select-link -->
 <!-- htmlo: external-links/resume/select-link -->
 <!-- htmlo: articles/css-preprocessors/select-link -->
 <!-- htmlo: articles/responsive-initializr/select-link -->
