@@ -50,6 +50,7 @@ code {
 .padding-l-48 { padding-left: 48px !important }
 .padding-l-54 { padding-left: 54px !important }
 .padding-l-60 { padding-left: 60px !important }
+.padding-l-6p { padding-left: 6% !important }
 
 .padding-r-24 { padding-right: 24px !important }
 .padding-r-30 { padding-right: 30px !important }
@@ -58,6 +59,8 @@ code {
 .padding-r-48 { padding-right: 48px !important }
 .padding-r-54 { padding-right: 54px !important }
 .padding-r-60 { padding-right: 60px !important }
+.padding-r-6p { padding-right: 6% !important }
+
 
 .panels {
     -webkit-box-sizing: border-box;
@@ -313,6 +316,18 @@ a.expand-nav-link {
     top: -1px;
 }
 
+.pricing {
+    font-size: 18px;
+}
+
+.pricing-item:first-of-type {
+    padding-left: 6%;
+}
+
+.pricing-item:last-of-type {
+    padding-right: 6%;
+}
+
 @media (max-width: 1436px) {
 
     .nav-column {
@@ -455,6 +470,15 @@ a.expand-nav-link {
         margin-top: 9px;
         box-sizing: border-box;
     }
+
+    .pricing-item:first-of-type {
+        padding-left: 0;
+    }
+
+    .pricing-item:last-of-type {
+        padding-right: 0;
+    }
+
 }
 
 @media (max-width: 390px) {
