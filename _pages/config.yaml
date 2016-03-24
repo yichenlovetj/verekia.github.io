@@ -15,13 +15,9 @@ consulting:
 
 'consulting/development/contract/fr':
     short-title: Contrat de prestation
-    company_name: Alcopa Auction
     company_name: '[Nom de votre entreprise]'
-    company_person: Martin LEONARD
     company_person: '[Nom du représentant]'
-    company_person_role: Responsable Technique
     company_person_role: '[Rôle du représentant]'
-    company_address: 38 rue de la République, 93100 Montreuil
     company_address: '[Adresse de votre entreprise]'
     email_perso: jonathan.verrecchia+[nom-de-l'entreprise]@gmail.com
     cycle: 15
