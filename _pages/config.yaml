@@ -19,7 +19,7 @@ consulting:
     company_person: '[Nom du représentant]'
     company_person_role: '[Rôle du représentant]'
     company_address: '[Adresse de votre entreprise]'
-    email_perso: jonathan.verrecchia+[nom-de-l'entreprise]@gmail.com
+    email_perso: jonathan.verrecchia+[entreprise]@gmail.com
     cycle: 15
 
 'consulting/code-review/contract':
