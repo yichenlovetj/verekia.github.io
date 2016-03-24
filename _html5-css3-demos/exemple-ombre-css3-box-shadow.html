@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		body{
+			background-color:#666;	
+		}
+		#main{
+			width:900px;
+			margin:auto;
+			padding-top:100px;
+		}		
+
+		#shadowbox1{
+			width:200px;
+			height:100px;
+			margin:100px 100px 100px 200px;
+			float:left;
+			background-color:#777;
+			
+			-moz-border-radius:20px;
+			-moz-box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.5),
+							0px 2px 2px 0px rgba(255, 255, 255, 0.5) inset;
+			-webkit-border-radius:20px;
+			-webkit-box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.5),
+							   0px 2px 2px 0px rgba(255, 255, 255, 0.5) inset;	
+			border-radius:20px;
+			box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.5),
+					   0px 2px 2px 0px rgba(255, 255, 255, 0.5) inset;							   
+		}
+		
+		#shadowbox2{
+			width:200px;
+			height:100px;
+			margin:100px 100px 100px 500px;
+			background-color:#555;
+			
+			-moz-border-radius:20px;
+			-moz-box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset,
+							0px 2px 2px 0px rgba(255, 255, 255, 0.5);
+			-webkit-border-radius:20px;
+			-webkit-box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset,
+							   0px 2px 2px 0px rgba(255, 255, 255, 0.5);
+			border-radius:20px;
+			box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset,
+					   0px 2px 2px 0px rgba(255, 255, 255, 0.5);						  
+		}
+}
+	</style>
+</head>
+
+<body>
+	<div id="main">
+		<div id="shadowbox1">
+		</div>
+		<div id="shadowbox2">
+		</div>
+	</div>
+</body>
+
+</html>

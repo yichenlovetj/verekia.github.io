@@ -1,0 +1,96 @@
+<h1 class="text-center">Development</h1>
+
+<p class="sep-54"></p>
+
+If you don't have the in-house resources, <strong>I can refactor it for you</strong>. I can standardize your UI components, document them into a <em>styleguide</em>, and drastically downsize and declutter your CSS codebase to make it more scalable and maintainable.
+
+<p class="sep-30"></p>
+
+<h2>Development, step by step</h2>
+
+<h3>Estimate and first payment</h3>
+
+First, we talk about your needs. Then, you take screenshots of all of your pages, and share some of your CSS/SASS/LESS files with me, in order for me to give you an estimate of the time I would need to refactor your CSS.
+
+<p></p>
+
+You send a first payment of 50% of this estimate. As an example, if we agree on 20 days, that would be 10 days paid upfront.
+
+<h3 id="preparing-content">Preparing your content</h3>
+
+Someone from your team will have to gather all the plain HTML and CSS/SASS/LESS code of the pages you want me to work on, with as many different visual components rendered as possible. In practice, that means this person will display your pages' sources from a browser, and save those into <em>static</em> HTML files for every page. If you have components that have different states based on JS interaction, make sure to include their alternative DOMs in the static pages as well. Include all your JS files, just for me to check which IDs / classes they target. When refactoring your CSS, I will assume that you gave me 100% of your visual elements and their associated code, so aim to be as exhaustive as possible.
+
+<h3>What I will do</h3>
+
+Using the files you provided, I will rewrite the CSS code to make it more scalable and maintainable. The size of your CSS will get drastically reduced. My changes in the HTML code will be minor and mostly consist in renaming classes, and I won't modify JS files at all. The visual changes will also be minor: if you have multiple visual elements that are very similar, I will standardize them across pages, and make them responsive if possible. I will also create a styleguide page containing all of your standardized components, displaying the HTML code needed to render them. The CSS code will be made available for you during the whole process.
+
+<h3>Second payment and delivery</h3>
+
+When you or I consider my work done with the CSS cleanup, you pay the remainder based on the number of days I've worked. In our example, if I've worked 15 days total, that will be a second payment of 5 days (since you've already paid for 10).
+
+<p></p>
+
+I will send you all the updated HTML pages, the styleguide page, and most importantly, a list of instructions to update your HTML code in your templating engine files. Some typical examples of instructions are:
+<ul>
+<li>Rename your <code>class="user-profile-header"</code> to <code>class="media-block"</code></li>
+<li>Rename your <code>id="news-feed"</code> to <code>class="block-list"</code></li>
+<li>Remove the extra <code>div</code> surrounding <code>"user-profile"</code></li>
+</ul>
+
+All of these instructions will be simple, most of them being replacing classnames.
+
+<h3>Updating your templates</h3>
+
+Following these instructions will be highly educational, and will help you become familiar with the new CSS codebase and with the best practices you should follow in the future. I will document the CSS codebase with comments, and the styleguide I provide will show clearly the HTML code needed to render your components. Any web developer, even not specialized in Front-End, will be able to perform these updates very easily and learn along the way.
+
+<p></p>
+
+I will provide free support if you have any question during this phase, as long as it's strictly related to integrating my changes. Any issue being the consequence of you not providing 100% of your visual elements and their associated HTML/CSS code won't be supported, which is why you need to be very careful when <a href="#preparing-content">Preparing your content</a>.
+
+
+
+<h2>Contract Flexibility</h2>
+
+<h3>Cancel anytime</h3>
+
+What makes this contract so flexible is that you don't need 100% of the cleanup to be done in order to take advantage of it. If I cleaned up 60% of your codebase, that is still 60% better than it was before, and if that's good enough for you, or if you don't have the resources to go all the way up to 100%, that is still a great improvement. As long as all my work days have been paid, I will deliver to you everything I've worked on.
+
+<h3>Underestimation</h3>
+
+If we realize that we underestimated the workload (if it is more than 1.25 times our initial estimate), we need to re-evaluate our estimate and have you pay the difference between the first payment and 50% of the new estimate before I continue.
+
+<h3>Overestimation</h3>
+
+If I finish the CSS refactoring in less time than your first payment covered, or if you want to cancel for any reason during that period, I will reimburse the overpaid days.
+
+<p class="sep-48"></p>
+
+
+<!--
+
+Once I start working for you, it is in your best interest to maximize the amount of time I spend doing CSS architecture work.
+
+<p></p>
+
+The following items count as part of my work for you, and you should minimize the time I spend on them as much as possible:
+
+<ul>
+<li>Setting up the development environment to be able to work with your codebase (adding me as a Github collaborator on a simple website can take 5 minutes, setting up remote access to virtual machines, a VPN and SSHFS can take days)</li>
+<li>Getting familiar with your site, its components, pages, HTML and CSS codebases</li>
+<li>Training coworkers, or communicating with them (developers or designers), via email, IM, audio or video calls. I would recommend making sure everyone involved is brought up to speed on the situation before I start.</li>
+<li>Fixing broken things, even if I broke them myself (see section below).</li>
+</ul>
+
+<h2>Things I am not liable or responsible for</h2>
+
+Unlike programming languages, CSS cannot be tested with unit tests. And since I am going to modify your CSS codebase a lot, my changes can very likely break the design of a page or a component. In order to avoid this as much as possible, my code changes should be reviewed by someone familiar with your site and its CSS codebase, ideally an other front-end developer.
+
+<p></p>
+
+I am not responsible for integrating a CSS preprocessor like Sass or Less into your build system. This is a DevOps job that varies greatly depending on the structure of your development environment. That being said, even though I highly recommend having a CSS preprocessor, it is not mandatory for the work I would do for you.
+-->
+
+
+<div class="text-center">
+    Go back to {{> _pages/consulting/link }}CSS Architecture Consulting</a>
+</div>

@@ -1,0 +1,62 @@
+<div class="nav-column">
+    <div class="nav-content">
+        <div class="nav-signature clearfix">
+            <h1 class="nav-signature-name">
+                <a href="/">Jonathan Verrecchia</a>
+            </h1>
+            {{> _components/twitter-button-sidebar }}
+        </div>
+        <div class="nav-list js-nav-list">
+            <div class="js-nav-list-section">
+                <h2>Front-End <a href="javascript:;" class="expand-nav-link js-nav-expand">(more)</a></h2>
+                <ul>
+                    <li class="nav-double-link-item">
+                        {{> _pages/consulting/link }}{{{ global.consulting.short-title }}}</a>
+                        |
+                        {{> _pages/resume/link }}{{{ global.resume.short-title }}}</a>
+                    </li>
+                    {{> _pages/slides/css-preprocessors/nav-item }}
+                    {{> _pages/initializr/responsive-template/nav-item }}
+                    {{> _pages/requirejs/build-simple-client-side-mvc-app-require-js/nav-item }}
+                    {{> _pages/less-css/dont-read-less-css-tutorial-highly-addictive/nav-item }}
+                    {{> _pages/html5/tutoriel-geolocalisation-html5/nav-item }}
+                </ul>
+            </div>
+            <div class="js-nav-list-section">
+                <h2>Lifestyle</h2>
+                <ul>
+                    {{> _pages/zeromalist/nav-item }}
+                    {{> _pages/slides/todo-zero/nav-item }}
+                </ul>
+            </div>
+            <div class="js-nav-list-section">
+                <h2>Music</h2>
+                <ul>
+                    {{> _pages/leafadventure/nav-item }}
+                    {{> _pages/music-production-lessons/nav-item }}
+                </ul>
+            </div>
+        </div>
+        <select class="nav-dropdown js-nav-dropbown">
+            <option class="js-select-blank-option" value=""></option>
+            <option value="/">Homepage</option>
+            <optgroup label="Front-End">
+                {{> _pages/consulting/select-link }}
+                {{> _pages/resume/select-link }}
+                {{> _pages/slides/css-preprocessors/select-link }}
+                {{> _pages/initializr/responsive-template/select-link }}
+                {{> _pages/requirejs/build-simple-client-side-mvc-app-require-js/select-link }}
+                {{> _pages/less-css/dont-read-less-css-tutorial-highly-addictive/select-link }}
+                {{> _pages/html5/tutoriel-geolocalisation-html5/select-link }}
+            </optgroup>
+            <optgroup label="Lifestyle">
+                {{> _pages/zeromalist/select-link }}
+                {{> _pages/slides/todo-zero/select-link }}
+            </optgroup>
+            <optgroup label="Music">
+                {{> _pages/leafadventure/select-link }}
+                {{> _pages/music-production-lessons/select-link }}
+            </optgroup>
+        </select>
+    </div>
+</div>

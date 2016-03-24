@@ -1,0 +1,615 @@
+<style>
+
+/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+
+html {color: #222; font-size: 1em; line-height: 1.4;}
+::-moz-selection {background: #b3d4fc; text-shadow: none;}
+::selection {background: #b3d4fc; text-shadow: none;}
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+audio, canvas, iframe, img, svg, video {vertical-align: middle;}
+fieldset {border: 0; margin: 0; padding: 0;}
+textarea {resize: vertical;}
+.browserupgrade {margin: 0.2em 0; background: #ccc; color: #000; padding: 0.2em 0;}
+
+.clearfix:before, .clearfix:after {content: " "; display: table;}
+.clearfix:after {clear: both;}
+
+html {
+    overflow-y: scroll;
+    box-sizing: border-box;
+    font-family: 'Noto Serif', serif;
+    line-height: 30px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+code {
+    word-break: break-word;
+}
+
+
+.sep-24 { margin: 24px 0 !important }
+.sep-30 { margin: 30px 0 !important }
+.sep-36 { margin: 36px 0 !important }
+.sep-42 { margin: 42px 0 !important }
+.sep-48 { margin: 48px 0 !important }
+.sep-54 { margin: 54px 0 !important }
+.sep-60 { margin: 60px 0 !important }
+.sep-66 { margin: 66px 0 !important }
+.sep-72 { margin: 72px 0 !important }
+
+.padding-l-24 { padding-left: 24px !important }
+.padding-l-30 { padding-left: 30px !important }
+.padding-l-36 { padding-left: 36px !important }
+.padding-l-42 { padding-left: 42px !important }
+.padding-l-48 { padding-left: 48px !important }
+.padding-l-54 { padding-left: 54px !important }
+.padding-l-60 { padding-left: 60px !important }
+.padding-l-6p { padding-left: 6% !important }
+
+.padding-r-24 { padding-right: 24px !important }
+.padding-r-30 { padding-right: 30px !important }
+.padding-r-36 { padding-right: 36px !important }
+.padding-r-42 { padding-right: 42px !important }
+.padding-r-48 { padding-right: 48px !important }
+.padding-r-54 { padding-right: 54px !important }
+.padding-r-60 { padding-right: 60px !important }
+.padding-r-6p { padding-right: 6% !important }
+
+
+.panels {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: table;
+    margin: 0;
+    min-width: 100%;
+    padding: 0;
+    table-layout: auto;
+}
+
+.panel {
+    display: table-cell;
+    padding: 0;
+    vertical-align: top;
+}
+
+.panel-50 {
+    width: 50%;
+}
+
+.main-content h2 {
+    margin-top: 40px;
+}
+
+.main-content h3 {
+    margin-top: 30px;
+}
+
+.main-content a {
+    border-bottom: 1px solid black;
+}
+
+.no-border {
+    border: none !important;
+}
+
+.main-content img,
+.full-size-img {
+    display: block;
+    max-width: 100%;
+    margin: 30px auto;
+}
+
+.gist {
+    margin-top: 1em;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.relative {
+    position: relative;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.inline-block {
+    display: inline-block !important;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.nav-column {
+    position: fixed;
+    min-width: 34.88%;
+    padding: 100px 0 40px 20%;
+    background: white;
+}
+
+.nav-content {
+    width: 232px;
+}
+
+.nav-dropdown {
+    width: 100%;
+    display: none;
+}
+
+.main-column {
+    min-width: 60.92%;
+    padding: 65px 21.66% 80px 4.38%;
+    margin-left: 36%;
+    background: white;
+}
+
+.single-column {
+    margin: 70px auto 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: initial;
+}
+
+a.print-link {
+    color: #999;
+    border: none;
+    margin-left: 15px;
+    font-weight: normal;
+    font-size: 21px;
+    position: relative;
+    top: -2px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+a.print-link:hover {
+    color: #222;
+}
+
+.main-content {
+    width: 660px;
+}
+
+.separator {
+    margin: 10px auto 60px;
+}
+
+hr {
+    border-color: #ddd;
+}
+
+
+.homepage-link {
+    margin-bottom: 16px;
+}
+
+.css-email::before {
+    content: "hello@verekia.com";
+}
+
+.css-email-leaf::before {
+    content: "leaf@leafadventure.com";
+}
+
+.nav-list h2 {
+    text-transform: uppercase;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 9px;
+    letter-spacing: 1px;
+}
+
+.nav-list ul {
+    padding-left: 0;
+    list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.nav-list a {
+    display: block;
+}
+
+.nav-double-link-item a {
+    display: inline;
+}
+
+.nav-signature {
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.nav-item-hidden {
+    display: none;
+}
+
+.nav-signature-name {
+    margin-bottom: 6px;
+    font-size: 16px;
+    margin-top: 0;
+    letter-spacing: 0.9px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.twitter-button-container {
+    height: 31px;
+}
+
+.twitter-follow-button {
+    color: white;
+}
+
+.mailchimp-form-input {
+    border: 1px solid #bbb;
+    padding: 4px 17px 3px 5px;
+    font-size: 14px;
+}
+
+.mailchimp-form-button {
+    background: #f2f2f2;
+    border: 1px solid #bbb;
+    padding: 4px 10px 3px;
+    font-size: 14px;
+}
+
+.mailchimp-form-button:hover {
+    background: #fafafa;
+}
+
+a.expand-nav-link {
+    display: inline;
+    font-weight: normal;
+    margin-left: 5px;
+    font-size: 14px;
+    color: #999;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.expand-nav-link:hover {
+    color: #333;
+}
+
+.homepage-top-space {
+    height: 65px;
+}
+
+.homepage-content h2 a {
+    border-bottom: none;
+    color: #333;
+}
+
+.main-content h1 {
+    line-height: 45px;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.island {
+    padding: 4% 5%;
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+.resume-aside-note {
+    float: right;
+    font-size: 16px;
+    color: #666;
+    font-weight: normal;
+    position: relative;
+    top: -1px;
+}
+
+.pricing {
+    font-size: 18px;
+}
+
+.pricing-item:first-of-type {
+    padding-left: 6%;
+}
+
+.pricing-item:last-of-type {
+    padding-right: 6%;
+}
+
+@media (max-width: 1436px) {
+
+    .nav-column {
+        padding-left: 8.7%;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .nav-column {
+        padding-left: 4.35%;
+        min-width: 27%;
+    }
+
+    .main-column {
+        margin-left: 31.2%;
+    }
+}
+
+@media (max-width: 1100px) {
+
+    .nav-column {
+        padding-left: 2%;
+        padding-right: 0;
+    }
+
+    .main-column {
+        margin-left: 23.5%;
+    }
+}
+
+/* Mobile View */
+
+@media (max-width: 990px) {
+
+    .nav-column {
+        position: static;
+        padding: 40px 5% 0;
+    }
+
+    .nav-content {
+        width: 662.75px;
+        margin: auto;
+    }
+
+    .nav-list {
+        display: none;
+    }
+
+    .nav-dropdown {
+        display: block;
+    }
+
+    .main-column {
+        margin-left: 0;
+        padding: 10px 5% 40px;
+    }
+
+    .main-content {
+        margin-top: 0;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .homepage-top-space {
+        height: 15px;
+    }
+
+    .nav-signature {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .nav-signature-name {
+        display: inline-block;
+    }
+
+    .twitter-button-container-sidebar {
+        display: inline-block;
+        margin-left: 10px;
+        position: absolute;
+        right: 0;
+        margin-top: -1px;
+    }
+}
+
+/* Fluid text */
+
+@media (max-width: 735px) {
+    .nav-content {
+        width: initial;
+    }
+    .main-content {
+        width: initial;
+    }
+
+    .resume-aside-note {
+        float: none;
+        margin-top: 3px;
+    }
+}
+
+
+/* Enables compact sidebar scrolling on short screens
+   We don't want the sidebar on the mobile view. */
+
+/* With 4 menu sections: 750px of height */
+@media (max-height: 700px) and (min-width: 991px){
+    .nav-column {
+        padding-top: 50px;
+    }
+
+    .main-column {
+        padding-top: 15px;
+    }
+}
+
+/* With 4 menu sections: 660px of height */
+@media (max-height: 550px) and (min-width: 991px){
+    .nav-column {
+        overflow-y: scroll;
+        height: 100%;
+    }
+}
+
+/* Crops the followers count on mobile, works for English follow buttons only */
+@media (max-width: 490px) {
+    .twitter-button-container-sidebar {
+        width: 138px;
+        overflow: hidden;
+    }
+
+    .mailchimp-form-input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .mailchimp-form-button{
+        width: 100%;
+        margin-top: 9px;
+        box-sizing: border-box;
+    }
+
+    .pricing-item:first-of-type {
+        padding-left: 0;
+    }
+
+    .pricing-item:last-of-type {
+        padding-right: 0;
+    }
+
+}
+
+@media (max-width: 390px) {
+    .twitter-button-container-sidebar {
+        display: none;
+    }
+}
+
+@media print {
+    .print-hide {
+        display: none;
+    }
+}
+
+@media print {
+    .single-column {
+        padding: 20px 60px 0;
+        margin-bottom: 0;
+    }
+
+    .resume {
+        font-size: 14px;
+        line-height: 21px;
+        padding-top: 80px;
+    }
+
+    .print-link {
+        display: none;
+    }
+
+    .page-break {
+        page-break-after: always;
+    }
+
+    @page {
+        size: auto;
+        margin: 0;
+    }
+
+    /* Specificity War */
+    .resume .resume-aside-note {
+        float: right;
+        margin-top: 0;
+    }
+
+    .print-space-above {
+        padding-top: 30px;
+    }
+}
+
+@media print {
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    *:first-line {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+/*    a,
+    a:visited {
+        text-decoration: underline;
+    }*/
+
+/*    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }*/
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+</style>

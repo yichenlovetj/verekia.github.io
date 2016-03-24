@@ -1,0 +1,76 @@
+# A 'url' attribute is automatically added for each page
+# Keep your homepage mapped to the 'homepage' reserved key
+
+homepage:
+    link-text: Go to homepage
+
+consulting:
+    short-title: Consulting
+
+'consulting/code-review':
+    short-title: Code Review
+
+'consulting/development':
+    short-title: Development
+
+'consulting/development/contract/fr':
+    short-title: Contrat de prestation
+    company_name: Alcopa Auction
+    company_name: '[Nom de votre entreprise]'
+    company_person: Martin LEONARD
+    company_person: '[Nom du représentant]'
+    company_person_role: Responsable Technique
+    company_person_role: '[Rôle du représentant]'
+    company_address: 38 rue de la République, 93100 Montreuil
+    company_address: '[Adresse de votre entreprise]'
+    email_perso: jonathan.verrecchia+[nom-de-l'entreprise]@gmail.com
+    cycle: 15
+
+'consulting/code-review/contract':
+    short-title: CSS Code Review Agreement
+
+'demo/exemple-geolocalisation-html5':
+    short-title: Exemple Géolocalisation HTML5
+
+'demo/exemple-geolocalisation-html5/demo':
+    short-title: ''
+
+'html5/tutoriel-geolocalisation-html5':
+    short-title: '[FR] Géolocalisation HTML5'
+
+'initializr/responsive-template':
+    short-title: Responsive Initializr
+
+leafadventure:
+    short-title: Leaf Adventure
+    url: http://soundcloud.com/leafadventure
+
+'less-css/dont-read-less-css-tutorial-highly-addictive':
+    short-title: Less CSS Tutorial
+
+'music-production-lessons':
+    short-title: Music Production Lessons
+
+'requirejs/build-simple-client-side-mvc-app-require-js':
+    short-title: RequireJS Tutorial
+
+resume:
+    short-title: Resume
+
+'slides/css-preprocessors':
+    short-title: CSS Preprocessors Talk
+
+'slides/todo-zero':
+    short-title: Getting Things Done
+
+zeromalist:
+    short-title: Minimalism Guidelines
+
+external-links:
+    facebook: https://www.facebook.com/stinson.sven
+    github: https://github.com/verekia/
+    linkedin: https://www.linkedin.com/in/verekia
+    twitter: https://twitter.com/verekia
+
+
+consulting-email: consulting@verekia.com

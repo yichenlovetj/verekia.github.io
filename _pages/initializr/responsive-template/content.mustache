@@ -1,0 +1,162 @@
+ <a href="/_pages/initializr/responsive-template/img/responsive-web-design-template.png" target="_blank">
+<img src="/_pages/initializr/responsive-template/img/responsive-web-design-template.png" alt="Resize me - Reponsive Web Design Template" title="Resize me - Reponsive Web Design Template" />
+</a>
+
+Today I'm proud to announce that a "Responsive template" is now available on <a href="http://www.initializr.com/" target="_blank">Initializr</a>! It will help you dealing with all the various devices used to display your site. Mobiles, tablets, netbooks, laptops, desktop monitors, HUGE desktop monitors... Making your site work correctly on all these devices is a real nightmare. Well guess what? This nightmare is... absolutely not over! But as least, the boilerplate code of a responsive layout is now here to make your life easier.
+
+<h2>About responsive web design</h2>
+
+For those who have been living in a cave for the last few months (understand: for those who have a life and don’t spend days reading tweets and blogs) you probably need a short update about what a "responsive" design is.
+
+<p></p>
+
+The concept, introduced by <a href="http://ethanmarcotte.com/" target="_blank">Ethan Marcotte</a>, is pretty simple: the page layout should adapt depending on the screen size so it’s always convenient and easily readable for the user. On mobile for instance, it’s more comfortable to get a minimalistic one-column vertical view than getting a 2 or 3 columns view – which is perfect for desktops. What about tablets? Maybe we can also adapt the layout to fit their medium size screen too? Since we can’t know the screen size of our users’ devices, well it should just work everywhere.
+
+ <a href="/_pages/initializr/responsive-template/img/responsive-web-design-ethan-marcotte.jpg" target="_blank">
+<img src="/_pages/initializr/responsive-template/img/responsive-web-design-ethan-marcotte.jpg" alt="Responsive Web Design - Ethan Marcotte" title="Responsive Web Design - Ethan Marcotte" />
+</a>
+
+To design a responsive layout, we have to forget about the usual static 960px width layouts and go fluid with percentage widths and media queries.
+
+<h2>A fluid layout with percentage widths</h2>
+
+The first thing our page needs is a "fluid" layout. A layout is called fluid when the text adapts its container size and when proportions are preserved when the window is resized. To get this working we can’t have any hard coded static value for widths, horizontal padding nor horizontal margins. We can basically only use percentages:
+
+<script src="https://gist.github.com/verekia/06a4afe90649d5029ac1.js"></script>
+
+If you strictly follow this approach, your layout will scale perfectly from a small mobile screen to a huge desktop monitor. It’s already pretty cool, but you still have the same layout on every device, which is far from ideal! Don’t worry, now comes the fun part with media-queries to solve this problem.
+
+<h2>Mobile-first approach media queries</h2>
+
+Media queries are a cool way to specify different styles depending on the device used (by aiming particular screen resolutions or orientations for example). The mobile-first approach is the equivalent of progressive enhancement for media-queries. The principle is to start with the lowest resolution devices and then enhance the experience for bigger screens.
+
+<h3>The mobile view</h3>
+
+Here is the very simple mobile display of the responsive template. It doesn’t take into account any media query yet:
+
+ <a href="/_pages/initializr/responsive-template/img/responsive-layout-mobile-smartphone-iphone.png" target="_blank">
+<img src="/_pages/initializr/responsive-template/img/responsive-layout-mobile-smartphone-iphone.png" alt="Responsive Layout for mobile - Smartphone - iPhone" title="Responsive Layout for mobile - Smartphone - iPhone" />
+</a>
+
+You can see that an aside orange block is located at the bottom of the page:
+
+ <a href="/_pages/initializr/responsive-template/img/media-query-mobile-smartphone-iphone-bottom.png" target="_blank">
+<img src="/_pages/initializr/responsive-template/img/media-query-mobile-smartphone-iphone-bottom.png" alt="Responsive Layout for mobile - Smartphone - iPhone" title="Responsive Layout for mobile - Smartphone - iPhone" />
+</a>
+
+<p class="island">
+<strong>Note</strong>: Remember that an <code>aside</code> element is absolutely not meant to just be on the right or the left of an other element. Its semantic definition is that its content should be related to the main content, so its perfectly fine to have it under the article.
+</p>
+
+<h3>The intermediate view</h3>
+
+If we display this page on a larger device (like a tablet or a wide smartphone), the vertical menu gets a little bit annoying and ugly because its buttons are stretched too much. We can use a media query to display them horizontally for screens larger than 480px like this:
+
+<script src="https://gist.github.com/verekia/8f86fc263b71a750dc6d.js"></script>
+
+Which has the following result:
+
+ <a href="/_pages/initializr/responsive-template/img/media-query-tablets-ipad.png" target="_blank">
+<img src="/_pages/initializr/responsive-template/img/media-query-tablets-ipad.png" alt="Media Queries Tablets iPad" title="Media Queries Tablets iPad" />
+</a>
+
+<h3>The wide view</h3>
+
+We now have a more convenient menu for tablets. Awesome! But what if we open this page on a laptop now? They have bigger screens so the vertical one column layout might not be the best fit for these devices. We would rather prefer a 2 columns layout, so we can move the <code>aside</code> block and the menu to the right of the page, and keep the content on the left. Let’s use a second media query to do that for resolutions higher than 768px:
+
+<script src="https://gist.github.com/verekia/0011388832ae9b6db94b.js"></script>
+
+This is what we get on a screen of approximately 900 pixels wide:
+
+ <a href="/_pages/initializr/responsive-template/img/media-query-960.png" target="_blank">
+<img src="/_pages/initializr/responsive-template/img/media-query-960.png" alt="960 pixels wide layout" title="960 pixels wide layout" />
+</a>
+
+We now have a nice 2-columns desktop view. You see, it wasn't that hard to start from the mobile version first! I admit it might not be intuitive at first, but you get used to it pretty fast, and it's definitely cleaner.
+
+<p class="island">
+<strong>Note</strong>: You may have noticed some new shadows on this one. Fancy CSS3 effects, like shadows, are CPU consuming so they’re not very suitable for mobiles and low-CPU devices in general. This layout will probably be displayed on a more powerful device like a laptop or a desktop, so we can suppose they’re good enough to handle these effects.
+</p>
+
+<h3>The maximum-width view</h3>
+
+
+Last but not least, we want a decent display on wide screens. If we leave it as it is now and open the page on a wide screen, a 5 line paragraph would be turned into an awful huge single line, which is terrible for readability. We need a maximal width limit to avoid this on wide screens. This limit can be anything: 960px, 1140px, 2000px, whatever, just choose one that make sense for your site.
+
+<p></p>
+
+In our case I picked 1140px, which suits well 1280 pixels wide screens, the most common resolution. An old school wrapper with fixed width and auto margins does the job perfectly:
+
+<script src="https://gist.github.com/verekia/3e93afe9b23b67cb576a.js"></script>
+
+I've set the wrapper’s width to 1026px (1140px – 10%) because on the previous layouts the margins were set to 10%. Therefore if we resize the browser it will move from one layout to another seamlessly. Here is the widest layout we can get:
+
+ <a href="/_pages/initializr/responsive-template/img/media-query-1140-large.png" target="_blank">
+<img src="/_pages/initializr/responsive-template/img/media-query-1140-large.png" alt="Wide screen 1140 pixels static layout" title="Wide screen 1140 pixels static layout" />
+</a>
+
+All right! We’re done with media queries!
+
+<h2>Christmas presents for nice web developers</h2>
+
+Since you've been very nice this year, here are some other presents for you!
+
+<h3>1st gift: A Live Demo!</h3>
+
+There is now a live demo of the responsive template to see if it works as expected before downloading anything. This is also particularly convenient to see how it runs on your mobile or tablet.
+
+<p></p>
+
+You can find it on <a href="http://www.initializr.com/try" target="_blank">initializr.com/try</a>.
+
+<h3>2nd gift: The Golden Ratio</h3>
+
+This responsive template comes with some golden ratio black magic. You may have heard of it, it’s a weird mathematical proportion that our stupid brains are supposed to like. Even if its effects are pretty uncertain, many designers and artists like to use it, hoping people will subconsciously like their work more. I’ve set the proportions of the left and right sections of the desktop view to 62% and 38% (take margins into account) so it always matches the golden ratio as you resize the browser.
+
+<p></p>
+
+Here is also a <a href="http://goldenratiocalculator.com/?width=100" target="_blank">golden ratio calculator</a> for you to play with, and an <a href="http://net.tutsplus.com/tutorials/other/the-golden-ratio-in-web-design/" target="_blank">interesting tutorial</a> about how to apply it to your layout. Feel free to use this black magic or not, but don’t go crazy with it, this is more myth than science :)
+
+ <a href="/_pages/initializr/responsive-template/img/golden-ratio.jpg" target="_blank">
+<img src="/_pages/initializr/responsive-template/img/golden-ratio.jpg" alt="Golden ratio" title="Golden ratio" />
+</a>
+
+<h3>3rd gift: Readability For The Win</h3>
+
+This new template comes with pretty decent styles for a good readability. Remember that readability is absolutely crucial for your users. It will make them actually read what you have to say instead of just looking at pictures, and if this reading is pleasant they will be more eager to subscribe, retweet, buy your stuff or whatever you want them to do. This is a pretty big deal!
+
+<p></p>
+
+Here is some advice to improve readability:
+
+<ul>
+    <li>Use a big font size and an adapted line height (like 16px / 24px).</li>
+    <li>A line should have approximately 80 characters.</li>
+    <li>Avoid paragraphs of more than 5 lines.</li>
+    <li>Avoid sections of more than 5 paragraphs in a row.</li>
+    <li>Put stuff between paragraphs when you can and when it makes sense so the reader can breath before he starts a new one (charts, pictures, code, decorations...).</li>
+</ul>
+
+ <a href="/_pages/initializr/responsive-template/img/readability.jpg" target="_blank">
+<img src="/_pages/initializr/responsive-template/img/readability.jpg" alt="Glasses" title="Glasses" />
+</a>
+
+<h3>4th gift: A Github repository for this responsive template</h3>
+
+Some of you might have noticed that Initializr’s Github repository is the website’s repository, not the template’s. So it’s pretty useless for you except if you want to know how to generate archives in Java! I’ve created a new Github repo for this responsive template, so you can fork it and suggest modifications and improvements to it. Way more useful, yay!
+
+<p></p>
+
+Here is the new repository: <a href="https://github.com/verekia/initializr-template" target="_blank">github.com/verekia/initializr-template</a>.
+
+ <a href="/_pages/initializr/responsive-template/img/github-logo.png" target="_blank">
+<img src="/_pages/initializr/responsive-template/img/github-logo.png" alt="Github logo" title="Github logo" />
+</a>
+
+<h2>Enjoy!</h2>
+
+I hope this new responsive template will make your web developer life easier, so you can focus on your actual business instead of setting up again and again the same boilerplate code. I would love to hear your feedback about this, so feel free to <a href="https://github.com/verekia/initializr-template/issues" target="_blank">open issues on Github</a> or mention <a href="http://twitter.com/#!/initializr" target="_blank">@initializr</a> or <a href="http://twitter.com/#!/verekia" target="_blank">@verekia</a> on Twitter, I usually reply fast :)
+
+<p></p>
+
+Merry Christmas and Happy New Year!

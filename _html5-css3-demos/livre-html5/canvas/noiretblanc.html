@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+	<style>
+	canvas{border:1px solid}
+	</style>
+	<!--[if IE]><script src="excanvas.js"></script><![endif]-->
+</head>
+<body>
+<canvas id="mycanvas" width="500" height="300">
+	Il faut vivre avec son temps mon vieux !
+</canvas>
+<script>
+	var oCtx = null;
+
+	window.addEventListener('load', function() {
+		oCtx = document.getElementById("mycanvas").getContext("2d");
+		dessinerLogo();		
+	}, false);
+	
+	function dessinerLogo(){
+		var oLogo = new Image();
+		oLogo.src = "logohtml5.png";	
+		oLogo.onload = function(){
+			oCtx.drawImage(oLogo, 120, 20);
+			filtreNoirEtBlanc();
+		};
+	}	
+		
+	function filtreNoirEtBlanc(){
+	  var oImageData = oCtx.getImageData(0, 0,
+										 oCtx.canvas.width,
+										 oCtx.canvas.height);
+	  for (var i = 0; i < oImageData.data.length; i = i + 4){
+		var iGray = (oImageData.data[i] * 0.3 +
+					 oImageData.data[i + 1] * 0.59 +
+					 oImageData.data[i + 2] *0.11);
+		oImageData.data[i] = iGray;
+		oImageData.data[i + 1] = iGray;
+		oImageData.data[i + 2] = iGray;
+	  }
+	  oCtx.putImageData(oImageData, 0, 0);				
+	}
+	
+	</script>
+</body>
+</html>

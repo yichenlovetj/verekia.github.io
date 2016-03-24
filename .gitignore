@@ -1,2 +1,9 @@
 .DS_Store
 __pycache__
+private/
+private/*
+_brainventory/
+_brainventory/*
+brainventory/
+brainventory/*
+brainventory.py

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+	<style>
+		canvas{border:1px solid}
+	</style>
+</head>
+<body>
+<canvas id="mycanvas" width="500" height="300">
+	Il faut vivre avec son temps mon vieux !
+</canvas>
+<script>
+	var oCtx = null;
+	var oRect = {x:0, y:100};
+	
+	window.addEventListener('load', function() {
+		oCtx = document.getElementById("mycanvas").getContext("2d");
+		setInterval(mainLoop, 16);
+	}, false);
+	
+	function mainLoop(){
+		oCtx.clearRect(0, 0, 500, 300);
+		oCtx.fillRect(oRect.x, oRect.y, 100, 60);
+		oRect.x++;
+	}
+	</script>
+</body>
+</html>
