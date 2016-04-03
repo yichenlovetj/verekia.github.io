@@ -54,6 +54,9 @@ leafadventure:
 resume:
     short-title: Resume
 
+fb:
+    short-title: Facebook Redirect
+
 'slides/css-preprocessors':
     short-title: CSS Preprocessors Talk
 

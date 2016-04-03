@@ -4,6 +4,10 @@ private/
 private/*
 _brainventory/
 _brainventory/*
+_brainventory/content/people/
+_brainventory/content/people/*
 brainventory/
 brainventory/*
 brainventory.py
+
+# *is_private* files
