@@ -22,6 +22,8 @@ consulting:
     email_perso1: jonathan.verrecch
     email_perso2: ia@gmail.com
     cycle: 15
+    city: '[City]'
+    date: '[Date]'
 
 'consulting/code-review/contract':
     short-title: CSS Code Review Agreement
