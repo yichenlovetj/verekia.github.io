@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Exemple de géolocalisation en HTML5 | Jonathan Verrecchia</title>
+        <title>Une police personnalisée CSS3 avec @font-face ou Google Font | Jonathan Verrecchia</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#000000">
@@ -1241,41 +1241,192 @@
         <div class="main-column">
             <div class="main-content">
                 <h1>
-                    Exemple de géolocalisation en HTML5
+                    Une police personnalisée CSS3 avec @font-face ou Google Font
                 </h1>
-                Cet exemple est une démonstration simple des capacités de géolocalisation de l'HTML5.
-                Elle teste la capacité du navigateur à utiliser la géolocalisation, et dès qu'un déplacement est effectué, elle affiche :
+                 <a href="/_pages/css3/police-personnalisee-css3-font-face-google-font/img/police-personnalisee-css3-font-face-google-font.png" target="_blank">
+                <img src="/_pages/css3/police-personnalisee-css3-font-face-google-font/img/police-personnalisee-css3-font-face-google-font.png" alt="Police personnalisée avec font-face" title="Police personnalisée avec font-face" />
+                </a>
+
+                L'utilisation de polices personnalisées a toujours été un problème pour les développeurs et les webdesigners. Une image de texte est affichée correctement par tous les navigateurs, tandis q'un vrai texte peut être référencé et sélectionné. Il est à présent possible grâce à la propriété <code>@font-face</code> d'embarquer des polices sur son site, et que celles-ci s'affichent correctement même si l'utilisateur n'a pas la police installée.
+
+                <p></p>
+
+                Avant toute chose il est important de savoir quels navigateurs implémentent la fonctionnalité <code>@font-face</code>...
+
+                <p class="island">A tous les coups ça ne va pas marcher sur Internet Explorer !</p>
+
+                Eh bien si ! Internet Explorer reconnait la propriété <code>@font-face</code> ! Mais attendez une seconde... Vous vous doutez bien que ce serait un peu trop simple qu'IE respecte les standards comme tout le monde. Effectivement, il y a quand même un hic, c'est qu'IE ne sait interpréter que son propre format de police, qui lui, n'est pas du tout standard... Mais rassurez-vous, à la fin de ce tutoriel, vous aurez une belle police sur tous les navigateurs !
+
+                <h2>Le @font-face simple</h2>
+
+                Commençons tout d'abord par le cas simple qui fonctionnera correctement sur tous les navigateurs modernes. L'application d'une police personnalisée passe tout d'abord par le chargement de celle-ci dans le navigateur du client. C'est justement ce que fait la propriété CSS3 <code>@font-face</code>. Voici un exemple de son utilisation :
+
+                <script src="https://gist.github.com/verekia/0efe4b426e73768580a97a99f0ec9bf0.js"></script>
+
+                Ce bout de code un peu particulier ne sert pas à appliquer un style à un élément, mais à déclarer une police. L'attribut <code>font-family</code> correspond au nom que l'on va assigner à cette police, afin de l'appliquer ensuite sur des éléments. L'attribut <code>src</code> indique tout simplement le chemin vers le fichier de police (.ttf ou .otf).
+
+                Une fois la police déclarée, elle est utilisable comme n'importe quelle autre police :
+
+                <script src="https://gist.github.com/verekia/133f5b40154af3e7375ce520d1622d77.js"></script>
+
+                Et c'est tout ! Ces quelques lignes de code suffisent à faire fonctionner votre police sur les versions récentes de Firefox, Chrome, Safari et Opera. Maintenant il va falloir s'attaquer au rebelle du lot.
+
+                <h2>@font-face ultra compatible</h2>
+
+                Internet Explorer utilise le format de police .eot (Embedded OpenType) plutôt que les .ttf (TrueType) ou .otf (OpenType). Par conséquent, il va falloir feinter pour rediriger IE vers un fichier .eot et les autres navigateurs vers le .ttf ou .otf.
+
+                <p></p>
+
+                Il existe de nombreuses méthodes permettant de le faire, qui sont détaillées sur cet <a href="http://paulirish.com/2009/bulletproof-font-face-implementation-syntax/">article de Paul Irish</a>. En réalité, une technique a été communément admise comme étant la plus pertinente, et c'est uniquement celle-ci que nous allons voir maintenant.
+
+                <p></p>
+
+                Parmi les attributs que l'on peut ajouter à notre déclaration de police <code>@font-face</code>, il existe l'attribut <code>local("NomDePolice")</code> qui peut être utilisé pour prioriser une version locale de la police recherchée si elle est présente sur l'ordinateur du client, ainsi que l'attribut <code>format("FormatDePolice")</code>, qui sert à préciser le format de police utilisé.
+
+                <p></p>
+
+                Internet Explorer ne connait aucun de ces 2 attributs et c'est cette faille qui va nous servir à le détecter efficacement grâce au code suivant :
+
+                <script src="https://gist.github.com/verekia/8d0c97120a94a77cad07fab8cf01aeb4.js"></script>
+
+                <p class="island">Oula, ça y est, je ne comprends plus rien !</p>
+
+                Un peu d'explications ne sont pas de refus : Ici, Internet Explorer comprendra l'instruction src : <code>url('GraublauWeb.eot')</code> mais s'arrêtera sur le <code>local('x')</code> qu'il n'arrivera pas à lire. La valeur contenue dans <code>local()</code> a pour seul condition de ne pas être une police existante, donc vous pouvez par exemple y mettre un simple caractère. D'ailleurs, un caractère de smiley y est souvent placé car il est considéré comme la "marque de fabrique" de cette méthode, et vous le retrouverez un peu partout.
+
+                <p></p>
+
+                Les autres navigateurs considéreront la définition de police suivante qui est la version TrueType universelle, en ignorant également le <code>local('x')</code>, qui ne correspond vraisemblablement pas à un nom de police existant localement chez le client... Et voilà ! Cet extrait de code suffit à faire fonctionner le capricieux Internet Explorer !
+
+                <p></p>
+
+                Un dernier point cependant, certaines anciennes versions de Chrome ne supportent qu'un récent format spécifique, le .woff ainsi que les polices SVG.
+
+                <p></p>
+
+                Une adaptation du code précédent permet de le rendre encore plus universel, en gérant ces 2 cas supplémentaires :
+
+                <script src="https://gist.github.com/verekia/78908299a415e360c84eb81ac9149b95.js"></script>
+
+                Cette technique suit le même schéma que la précédente.
+
+                <p></p>
+
+                Vous reconnaitrez qu'il est assez fastidieux de devoir gérer tous ces cas et tous ces formats à la main, ce qui passe d'ailleurs par une phase de conversion de formats. Heureusement pour nous, il existe des outils qui font tout le travail à notre place, et un en particulier : le <a href="http://www.fontsquirrel.com/fontface/generator">@Font-face Generator de Font Squirrel</a>.
+
+                <p></p>
+
+                Il suffit d'uploader une police (attention à bien respecter les droits d'auteur liés aux polices que vous utilisez), et Font Squirrel se charge de vous fournir un "kit" contenant tous les formats convertis de votre police ainsi que des fichiers HTML et CSS de démo pour que vous n'ayez plus qu'à faire un copier-coller vers votre site ! Ceux qui auront la curiosité d'activer le mode "Expert" verront d'ailleurs que c'est la méthode du "smiley" qui est également utilisée par ce générateur.
+
+                <p class="island">Tu n'aurais pas pu commencer par nous parler de ça plutôt que de tout détailler ?</p>
+
+                Haha effectivement ! Mais reconnaissez que comme ça, vous comprenez bien le fonctionnement de ces kits !
+
+                <p></p>
+
+                Passons maintenant à une méthode alternative très intéressante : les Google Fonts.
+
+                <h2>Les Web Fonts avec Google Font</h2>
+
+                Il existe un autre moyen d'utiliser des polices exotiques sur une page web sans avoir à s'occuper de <code>@font-face</code>. Il existe des services qui fournissent des polices à intégrer directement dans son CSS depuis une URL distante. Les polices proposées sont en général adaptées à l'affichage dans un navigateur, s'afficheront correctement sur la majorité des navigateurs, et enfin le service se chargera de fournir la police à l'utilisateur, ce qui peut s'avérer non négligeable étant donné que la plupart des polices font entre 50ko et 300ko ! Cela nous fait donc 3 bonnes raisons de préférer passer par un tel service lorsqu'une des polices proposées par le service en question vous plaît.
+
+                <p></p>
+
+                Nous allons dans cet article nous intéresser particulièrement au service Google Font. Ce service gratuit est constitué de la Google Font API et du Google Font Directory.
+
+                <h2>Google Font API</h2>
+
+                L'API de Google Font est très facile à manipuler. Il suffit simplement d'ajouter une feuille de style à votre page HTML afin d'obtenir la nouvelle police. L'exemple officiel qui suit illustre bien le concept :
+
+                <script src="https://gist.github.com/verekia/6358e84600e761ba7f98dfc6d6844d0a.js"></script>
+
+                Ici, il n'y a donc pas de <code>@font-face</code> à écrire. Tout est géré dans la feuille de style hébergée chez Google, qui va effectuer tous les traitements de son côté afin d'assurer l'affichage correct de la police. L'utilisation de l'API se résume donc à :
 
                 <ul>
-                    <li>La latitude de l'utilisateur</li>
-                    <li>La longitude de l'utilisateur</li>
-                    <li>La précision de la latitude et de la longitude</li>
-                    <li>L'altitude de l'utilisateur</li>
-                    <li>La précision de l'altitude</li>
-                    <li>L'angle par rapport au Nord</li>
-                    <li>La vitesse par rapport à la dernière position</li>
-                    <li>La date et l'heure de la dernière position</li>
+                  <li>Inclure la police qui nous intéresse,</li>
+                  <li>L'appliquer à une classe CSS avec <code>font-family</code>.</li>
                 </ul>
 
-                Elle est à tester de préférence avec un smartphone équipé d'un GPS.
+                Simple non ?
 
                 <p></p>
 
-                Voir la
-                <a href="/demo/exemple-geolocalisation-html5/demo/">démonstration de géolocalisation en HTML5</a>.
+                Pour ceux qui se poseraient tout de même la question de ce qui se passe dans cette fameuse feuille de style CSS, Google analyse quel navigateur est utilisé par l'utilisateur, et renvoie le code CSS qui fonctionne le mieux pour ce navigateur. Et ce code CSS est composé d'un simple <code>@font-face</code> !
+
+                <h2>Le fallback et les polices alternatives</h2>
+
+                Il est important de préciser au moins une police alternative standard au cas où pour une quelconque raison, la police n'ait pas été chargée correctement. Ainsi, il faut au minimum ajouter à notre propriété <code>font-family</code> la valeur <code>serif</code> ou <code>sans-serif</code> après notre web font.
+
+                <script src="https://gist.github.com/verekia/9d4a51cdd3f4e85c3520c8cfa2aa4620.js"></script>
+
+                Profitons-en pour rappeler qu'une police serif possède des "<a href="http://fr.wikipedia.org/wiki/Empattement_(typographie)">empattements</a>" (petites extensions au bout des lettres représentant l'écriture manuscrite), comme la police Times New Roman, et qu'une police sans-serif ne possèdera pas d'empattements, comme la police Arial.
 
                 <p></p>
 
-                Cet exemple peut être obtenu en suivant le
-                <a href="/html5/tutoriel-geolocalisation-html5/">tutoriel de géolocalisation en HTML5</a>.
+                Tout comme l'usage habituel de la propriété <code>font-family</code>, il est bien entendu possible d'ajouter autant de polices alternatives qu'on le souhaite :
+
+                <script src="https://gist.github.com/verekia/93ccb077f4eda2f68602722f7bdf92cd.js"></script>
+
+                Le navigateur tentera d'afficher la première police, puis si elle est indisponible, passera à la suivante... jusqu'à atteindre <code>serif</code> ou <code>sans-serif</code>.
+
+                <h2>Construire l'URL de la feuille de style</h2>
+
+                L'URL du CSS de l'API Google Font à inclure est basée sur les règles suivantes. L'URL commence toujours par :
+
+                <script src="https://gist.github.com/verekia/fe315de4af4e340505fd61af18c5b8dd.js"></script>
+
+                On y ajoute ensuite les noms des polices à inclure, en utilisant le symbole <code>+</code> à la place des espaces, et en séparant chaque police par un <code>|</code> :
+
+                <script src="https://gist.github.com/verekia/0809d0ac201722b0fc35675717eeda74.js"></script>
+
+                Il vaut mieux utiliser cette méthode pour récupérer plusieurs polices plutôt que d'inclure une nouvelle CSS, ce qui consommerait une requête HTTP supplémentaire.
 
                 <p></p>
 
-                Voici son code source :
+                Enfin, il est possible de spécifier si l'on souhaite une police en italique ou en gras en ajoutant des valeurs après le nom de la police suivi par le caractère <code>:</code>.
 
-                <script src="https://gist.github.com/verekia/38ea1e7323fd3dc44f59.js"></script>                <p class="text-right"><span class="screen-reader-text">Posted on </span><time class="entry-date published"
-                datetime="2010-09-14">
-                September 14, 2010
+                <p></p>
+
+                Voici les différentes valeurs possibles :
+
+                <ul>
+                  <li>Italique : <code>italic</code> ou <code>i</code></li>
+                  <li>Gras : <code>bold</code>, <code>b</code> ou le poids de la lettre, <code>700</code> par exemple</li>
+                  <li>Gras italique : <code>bolditalic</code> ou <code>bi</code></li>
+                </ul>
+
+                Comme le montrent ces exemples :
+
+                <script src="https://gist.github.com/verekia/c5005c76fa1493ae1e9fb0eca17c2207.js"></script>
+
+                Enfin un paramètre <code>subset</code> sert à indiquer le type d'alphabet à utiliser pour une police (Cyrillique ou Latin par exemple) et s'écrit de la manière suivante :
+
+                <script src="https://gist.github.com/verekia/70ddddf703430c988517448107410f05.js"></script>
+
+                <h2>Google Font Directory</h2>
+
+                L'ensemble des polices utilisables par l'API Google Font se trouve dans le <a href="http://code.google.com/webfonts">Google Font Directory</a>. Une trentaine de polices y sont proposées. Chacune possède une page affichant les <a href="http://code.google.com/webfonts/family?family=Droid+Sans&subset=latin">détails</a> de la police ainsi qu'un célèbre "The quick brown fox jumps over the lazy dog" contenant les 26 lettres de l'alphabet latin. Une page de <a href="http://code.google.com/webfonts/preview#font-family=Droid+Sans">prévisualisation</a> est également disponible, ainsi qu'une section "<a href="http://code.google.com/webfonts/family?family=Droid+Sans#code">Get the code</a>" qui vous fournira directement l'adresse de la feuille CSS à inclure.
+
+                <p></p>
+
+                Pour ceux qui souhaitent aller plus loin, vous pouvez consulter en anglais les <a href="http://code.google.com/intl/fr-FR/apis/webfonts/docs/technical_considerations.html">considérations techniques</a>,  la documentation de l'<a href="http://code.google.com/intl/fr-FR/apis/webfonts/docs/webfont_loader.html">API pour les développeurs</a>, et utiliser les "Advanced techniques" présentes sur les pages "Get the code" afin d'améliorer le chargement des polices.
+
+                <p></p>
+
+                J'espère que ce tutoriel aura éveillé votre inventivité en matière de polices sur le web, mais faites tout de même attention à ne pas surcharger vos pages avec de trop nombreuses polices, ni des polices trop volumineuses.
+
+                <p></p>
+
+                Vous pouvez tester la propriété @font-face et les polices Google Font ici :
+
+                <a href="/demo/exemple-police-css3-font-face-google-font/">
+Démonstration de la propriété @font-face en CSS3 et des polices Google Font</a>.
+
+                <p></p>
+
+                A bientôt dans un prochain tutoriel !
+                <p class="text-right"><span class="screen-reader-text">Posted on </span><time class="entry-date published"
+                datetime="2010-10-06">
+                October 6, 2010
                     </time>
                 </p>            </div>
         </div>

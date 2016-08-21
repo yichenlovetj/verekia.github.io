@@ -28,6 +28,13 @@ consulting:
 'consulting/code-review/contract':
     short-title: CSS Code Review Agreement
 
+'demo/exemple-police-css3-font-face-google-font':
+    short-title: 'Exemple de police CSS3 avec @font-face et Google Font'
+'demo/exemple-police-css3-font-face-google-font/demo':
+    short-title: ''
+'css3/police-personnalisee-css3-font-face-google-font':
+    short-title: '[FR] Font-face'
+
 'demo/exemple-dombre-en-css3-avec-box-shadow':
     short-title: "Exemple d'ombre en CSS3 avec box-shadow"
 'demo/exemple-dombre-en-css3-avec-box-shadow/demo':
