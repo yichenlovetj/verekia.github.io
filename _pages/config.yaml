@@ -28,12 +28,17 @@ consulting:
 'consulting/code-review/contract':
     short-title: CSS Code Review Agreement
 
+'demo/exemple-geolocalisation-html5-api-google-maps':
+    short-title: Exemple API Google Maps
+'demo/exemple-geolocalisation-html5-api-google-maps/demo':
+    short-title: ''
+'html5/tutoriel-api-google-maps-geolocalisation-html5':
+    short-title: "[FR] L'API Google Maps"
+
 'demo/exemple-geolocalisation-html5':
     short-title: Exemple Géolocalisation HTML5
-
 'demo/exemple-geolocalisation-html5/demo':
     short-title: ''
-
 'html5/tutoriel-geolocalisation-html5':
     short-title: '[FR] Géolocalisation HTML5'
 
