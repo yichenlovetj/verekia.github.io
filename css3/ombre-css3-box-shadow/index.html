@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Exemple de géolocalisation HTML5 avec l'API Google Maps | Jonathan Verrecchia</title>
+        <title>Les ombres en CSS3 avec box-shadow | Jonathan Verrecchia</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#000000">
@@ -1234,28 +1234,181 @@
         <div class="main-column">
             <div class="main-content">
                 <h1>
-                    Exemple de géolocalisation HTML5 avec l'API Google Maps
+                    Les ombres en CSS3 avec box-shadow
                 </h1>
-                Cet exemple affiche une carte utilisant l'API Google Maps ainsi que les données de géolocalisation afin de situer l'utilisateur grâce au GPS de son téléphone. L'application affiche le tracé du parcours de l'utilisateur s'il se déplace et place un marqueur à chaque nouvelles coordonnées reçues par le service de géolocalisation :
+                 <a href="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-1.png" target="_blank">
+                <img src="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-1.png" alt="Ombre CSS3 box-shadow" title="Ombre CSS3 box-shadow" />
+                </a>
+
+                Ce tutoriel a pour but de détailler l'utilisation de la nouvelle propriété CSS3 <code>box-shadow</code>. Cette puissante propriété permet des réaliser de très beaux effets de volume ou de creux tout en conservant un code d'un poids minimal pour la page, et sans utiliser la moindre image.
+
+                <h2>Avant de commencer</h2>
+
+                Afin d'exploiter les possibilités de la propriété CSS3 <code>box-shadow</code>, nous allons tout d'abord créer un simple <code>div</code> :
+
+                <script src="https://gist.github.com/verekia/56ad42cd34178880bab1f7181c580577.js"></script>
+
+                Avec les styles suivants :
+
+                <script src="https://gist.github.com/verekia/14b15f002cf5f037912c07123d941110.js"></script>
+
+                Nous allons appliquer la propriété <code>box-shadow</code> à cet élément. Cependant, afin de ne pas alourdir le code au fil de cet exemple, je n'utiliserai pas les préfixes propres à chaque navigateur, c'est à dire que les exemples seront écrits avec <code>box-shadow</code>, et non pas <code>-moz-box-shadow</code>, ni <code>-webkit-shadow</code>. Ce qui signifie que si vous voulez tester ces propriétés dans un navigateur particulier, vous devrez les rajouter.
 
                 <p></p>
 
-                <a href="/demo/exemple-geolocalisation-html5-api-google-maps/demo/">
-Démonstration de géolocalisation HTML5 avec l'API Google Maps</a>.
+                Sur ce point, il est important de préciser qu'il y a un ordre à respecter lorsque vous utilisez ces préfixes. Comme la finalité des navigateurs est d'implémenter ces propriétés sans préfixes, si vous souhaitez que votre design soit stable pour les années à venir, vous devez également ajouter la propriété non-préfixée à la suite des propriétés préfixées.
 
                 <p></p>
 
-                Cet exemple est le produit final du <a href="/html5/tutoriel-api-google-maps-geolocalisation-html5/">
-Tutoriel sur l'API Google Maps avec la géolocalisation HTML5</a>.
+                C'est à dire que toutes vos propriétés CSS3 doivent être écrites sous la forme :
+
+                <script src="https://gist.github.com/verekia/4579adab234dbd4aeaf254f57a55dfc1.js"></script>
+
+                Lorsque les propriétés CSS3 en questions seront parfaitement supportées, vous pourrez n'écrire que :
+
+                <script src="https://gist.github.com/verekia/a6c6435d1269e5b32cc2b4a8fe66c9be.js"></script>
+
+                C'est donc sous cette forme que les exemples suivants seront écrits.
+
+                <h2>Les différents paramètres</h2>
+
+                Commençons tout d'abord par analyser les différents paramètres que l'on doit fournir à box-shadow afin qu'elle fonctionne correctement.
+
+                <ul>
+                  <li>
+                    Le décalage horizontal : Un nombre positif décalera l'ombre sur la droite par rapport à l'élément. Un nombre négatif décalera sur la gauche.
+                    <a href="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-2.png" target="_blank">
+                      <img src="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-2.png" alt="Ombre CSS3 box-shadow" title="Ombre CSS3 box-shadow" />
+                    </a>
+                  </li>
+                  <li>
+                    Le décalage vertical : Un nombre positif décalera l'ombre vers le bas par rapport à l'élément. Un nombre négatif décalera vers le haut.
+                    <a href="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-3.png" target="_blank">
+                      <img src="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-3.png" alt="Ombre CSS3 box-shadow" title="Ombre CSS3 box-shadow" />
+                    </a>
+                  </li>
+                  <li>
+                    Le rayon du flou : c'est la taille du dégradé sur les bords de votre ombre. Cette valeur est forcément positive. Si elle vaut 0, l'ombre sera nette et reprendra la forme exacte de l'élément. En revanche, plus le nombre sera grand et plus l'ombre sera floutée.
+                    <a href="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-4.png" target="_blank">
+                      <img src="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-4.png" alt="Ombre CSS3 box-shadow" title="Ombre CSS3 box-shadow" />
+                    </a>
+                  </li>
+                  <li>
+                    Le rayon d'étendue : Un nombre positif agrandira l'ombre, un nombre négatif la rétractera, et enfin si il n'est pas spécifié ou vaut 0px, l'ombre aura la même taille que l'élément. (dans le cas d'une ombre intérieure, une valeur positive augmentera la taille de l'ombre, c'est à dire qu'elle se resserera sur le contenu de l'élément).
+                    <a href="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-5.png" target="_blank">
+                      <img src="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-5.png" alt="Ombre CSS3 box-shadow" title="Ombre CSS3 box-shadow" />
+                    </a>
+                  </li>
+                  <li>
+                    La couleur peut être écrite de plusieurs façons. Pour une ombre sans transparence, le plus simple est d'utiliser l'habituelle notation RGB. Pour une ombre bleue on écrira donc <code>#00F</code> ou <code>#0000FF</code>. Si l'on souhaite ajouter de la transparence on utiliser plutôt la notation RGBA comme ceci : <code>rgba(0, 0, 255, 0.5)</code>. Les 3 premiers paramètres sont les couleurs RGB habituelles écrites en base 10 (de 0 à 255 donc), et le 4ème paramètre est l'opacité, qui prend des valeurs situées entre 0 et 1. Une opacité de 0 sera invisible tandis qu'une opacité valant 1 sera totalement opaque.
+                    <a href="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-6.png" target="_blank">
+                    <img src="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-6.png" alt="Ombre CSS3 box-shadow" title="Ombre CSS3 box-shadow" />
+                    </a>
+                    <a href="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-7.png" target="_blank">
+                    <img src="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-7.png" alt="Ombre CSS3 box-shadow" title="Ombre CSS3 box-shadow" />
+                    </a>
+                  </li>
+                  <li>
+                    Enfin, il est possible d'ajouter le mot <code>inset</code> pour que l'ombre soit située à l'intérieur de l'élément et au premier plan, et non pas à l'extérieur et en arrière-plan. Cette valeur est donc utilisée pour créer un effet de creux à l'intérieur d'un élément. Notez qu'il est possible de placer le <code>inset</code> aussi bien en premier qu'en dernier paramètre, les deux cas sont acceptés.
+                    <a href="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-8.png" target="_blank">
+                      <img src="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-8.png" alt="Ombre CSS3 box-shadow" title="Ombre CSS3 box-shadow" />
+                    </a>
+                  </li>
+                </ul>
+
+                <h2>border-radius</h2>
+
+                <p class="island">
+                  "Et si j'ai appliqué un border-radius sur mon élément, l'ombre sera arrondie aussi ?"
+                </p>
+
+                 Et oui ! La forme de l'ombre est calculée à partir de la forme de l'élément, donc si les coins de cet élément sont arrondis, l'ombre le sera également. Si cette particularité n'est pas très intéressante dans le cas des ombres extérieures (sans <code>inset</code>), elle est en revanche essentielle dans le cas d'une ombre intérieure, afin que celle-ci épouse bien la forme de l'élément.
+
+                 <a href="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-9.png" target="_blank">
+                 <img src="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-9.png" alt="Ombre CSS3 box-shadow" title="Ombre CSS3 box-shadow" />
+                 </a>
+
+                <h2>Ombres multiples</h2>
+
+                Il est possible d'appliquer plusieurs ombres sur un même élément. Pour cela il suffit de les séparer par des virgules.
 
                 <p></p>
 
-                Code source de la démonstration :
+                Par exemple :
 
-                <script src="https://gist.github.com/verekia/88382814694e9943d39a3cc3127e7f27.js"></script>
+                <script src="https://gist.github.com/verekia/859a98feb393efbcbaa19c27dd019ee2.js"></script>
+
+                Le fait de pouvoir combiner différentes ombres permet de produire d'excellentes illusions de volume. La prochaine partie vous apprendra à réaliser les deux effets les plus courants.
+
+                <a href="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-10.png" target="_blank">
+                <img src="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-10.png" alt="Ombre CSS3 box-shadow" title="Ombre CSS3 box-shadow" />
+                </a>
+
+                <h2>Effet de volume</h2>
+
+                Un effet de volume se réalise avec 2 ombres :
+                <ul>
+                  <li>Une ombre intérieure claire sur le haut de l'élément</li>
+                  <li>Une ombre extérieure sombre sur le bas de l'élément</li>
+                </ul>
+
+                <a href="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-11.png" target="_blank">
+                <img src="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-11.png" alt="Ombre CSS3 box-shadow" title="Ombre CSS3 box-shadow" />
+                </a>
+
+                Il est également efficace d'utiliser une couleur différente pour l'intérieur de l'élément. Dans le cas de cet effet de volume, on veut que l'élément ressorte, et qu'il soit donc plus exposé à la lumière. Une couleur plus claire est donc plus appropriée.
+
+                <p></p>
+
+                Les ombres peuvent avoir un décalage horiontal, mais je préfère personnellement lorsqu'il n'y en a pas, ce qui correspond davantage à un design moderne épuré.
+
+                <p></p>
+
+                Voici le code qui permet de réaliser cet effet :
+
+                <script src="https://gist.github.com/verekia/36bd5f262daa2a8270e58aeda54f481d.js"></script>
+
+                <h2>Effet de creux</h2>
+
+                Un effet de creux se réalise avec 2 ombres :
+
+                <ul>
+                  <li>Une ombre intérieure sombre sur le haut de l'élément</li>
+                  <li>Une ombre extérieure claire sur le bas de l'élément</li>
+                </ul>
+
+                <a href="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-12.png" target="_blank">
+                <img src="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-12.png" alt="Ombre CSS3 box-shadow" title="Ombre CSS3 box-shadow" />
+                </a>
+
+                Pour cet effet on utilisera pour l'intérieur de notre élément une couleur plus foncée, puisqu'en toute logique, un creux est moins exposé au soleil. Encore une fois je préfère ne pas utiliser de décalage horizontal.
+
+                <p></p>
+
+                Voici le code de cet effet :
+
+                <script src="https://gist.github.com/verekia/8cfe770a8993d43b8b779d53d9072e48.js"></script>
+
+                Vous pouvez retrouver une démonstration de ces effets ici :
+
+                <a href="/demo/exemple-dombre-en-css3-avec-box-shadow/">
+Démonstration de la propriété box-shadow en CSS3</a>.
+
+                <p></p>
+
+                Enfin, pour les flemmards, sachez qu'il existe de très nombreux générateurs de code CSS3 qui gèrent la propriété box-shadow.
+                En voici quelques-uns :
+
+                <ul>
+                  <li><a href="http://www.westciv.com/tools/boxshadows/index.html">Westciv</a></li>
+                  <li><a href="http://css3generator.com/">CSS3 Generator</a></li>
+                  <li><a href="http://css3please.com/">CSS3 Please!</a></li>
+                </ul>
+
+                Cela dit, cette propriété est réellement simple à utiliser, et utiliser des générateurs dans ce cadre, je trouve ça un peu dommage. Dans tous les cas j'espère que ce tutoriel aura éveillé votre créativité !
                 <p class="text-right"><span class="screen-reader-text">Posted on </span><time class="entry-date published"
-                datetime="2010-09-24">
-                September 24, 2010
+                datetime="2010-09-30">
+                September 30, 2010
                     </time>
                 </p>            </div>
         </div>

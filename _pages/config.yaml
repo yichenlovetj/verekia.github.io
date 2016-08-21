@@ -28,6 +28,13 @@ consulting:
 'consulting/code-review/contract':
     short-title: CSS Code Review Agreement
 
+'demo/exemple-dombre-en-css3-avec-box-shadow':
+    short-title: "Exemple d'ombre en CSS3 avec box-shadow"
+'demo/exemple-dombre-en-css3-avec-box-shadow/demo':
+    short-title: ''
+'css3/ombre-css3-box-shadow':
+    short-title: '[FR] Box-shadow'
+
 'demo/exemple-geolocalisation-html5-api-google-maps':
     short-title: Exemple API Google Maps
 'demo/exemple-geolocalisation-html5-api-google-maps/demo':
