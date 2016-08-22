@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Tutoriel de géolocalisation en HTML5 | Jonathan Verrecchia</title>
+        <title>Les conférences sur HTML5 au Devoxx 2010 | Jonathan Verrecchia</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#000000">
@@ -1255,130 +1255,90 @@
         <div class="main-column">
             <div class="main-content">
                 <h1>
-                    Tutoriel de géolocalisation en HTML5
+                    Les conférences sur HTML5 au Devoxx 2010
                 </h1>
-                 <a href="/_pages/html5/tutoriel-geolocalisation-html5/img/tutoriel-geolocalisation-html5.png" target="_blank">
-                <img src="/_pages/html5/tutoriel-geolocalisation-html5/img/tutoriel-geolocalisation-html5.png" alt="Terre" title="Terre" />
+                 <a href="/_pages/html5/conferences-html5-devoxx-2010/img/conferences-html5-devoxx-2010.png" target="_blank">
+                <img src="/_pages/html5/conferences-html5-devoxx-2010/img/conferences-html5-devoxx-2010.png" alt="Devoxx 2010" title="Devoxx 2010" />
                 </a>
 
-                Ce tutoriel a pour but de mettre en pratique pas à pas la géolocalisation en HTML5. Nous allons voir comment il est possible de récupérer les coordonnées d'un utilisateur, comment gérer les cas de succès et d'erreur avec les <em>callbacks</em>, comment suivre ses déplacements, et enfin toutes les informations que nous pouvons obtenir sur ses coordonnées, comme sa vitesse ou sa direction.
+                Du 15 au 19 novembre a eu lieu à Anvers en Belgique l'événement <a href="http://devoxx.com/display/Devoxx2K10/Home">Devoxx 2010</a>. Il s'agit du plus grand salon européen autour des technologies Java. Ce salon annuel a été créé et est organisé par <a href="http://www.devoxx.com/display/JV08/Stephan+Janssen">Stephan Janssen</a>, président du <a href="http://www.bejug.org/confluenceBeJUG/display/BeJUG/Home">BeJug</a> (Belgium Java User Group).
 
                 <p></p>
 
-                Avant de commencer il est important de rappeler qu'à l'heure actuelle, la géolocalisation n'est pas encore supportée par Internet Explorer. En revanche, tous les autres navigateurs modernes l'implémentent correctement. Il est possible de suivre l'évolution des fonctionnalités HTML5 prises en charge par les différents navigateurs sur <a target="_blank" href="http://caniuse.com/">CanIUse.com</a> ou bien le <a target="_blank" href="http://en.wikipedia.org/wiki/Comparison_of_layout_engines_(HTML5)">Wiki des moteurs de rendu</a> utilisés par les navigateurs.
-
-                <h2>Récupérer les coordonnées</h2>
-
-                Tout d'abord, nous allons créer un document HTML le plus simple possible, sans se soucier du <code>Doctype</code>, de la partie <code>head</code> et des autres détails de la structure HTML habituelle. Nous avons uniquement besoin d'exécuter du code JavaScript. Voilà donc à quoi ressemble notre fichier :
-
-                <script src="https://gist.github.com/verekia/7531663978030d432dc9.js"></script>
-
-                Avant de chercher à utiliser la géolocalisation, il est bien entendu important de savoir si le navigateur de l'utilisateur la supporte. Pour cela on ajoute tout simplement les lignes suivantes :
-
-                <script src="https://gist.github.com/verekia/a58d41e2ecb22fd698eb.js"></script>
-
-                <code>navigator.geolocation</code> renvoie un simple booléen valant vrai ou faux selon la capacité du navigateur à utiliser la géolocalisation (...autrement dit c'est un détecteur d'IE !).
-                Ensuite, afin de récupérer les coordonnées, on utilise la méthode <code>getCurrentPosition()</code> :
-
-                <script src="https://gist.github.com/verekia/e3295a807bcd558712df.js"></script>
-
-                Cette méthode prend en paramètre une fonction de <em>callback</em> qu'elle va appeler en lui fournissant le paramètre position contenant les coordonnées. Dans l'exemple ci-dessus, on utilise une fonction anonyme afin de traiter la variable position immédiatement à la suite du code d'appel. Dans le cas où l'on souhaite un traitement plus propre et détaillé, on utilisera une fonction nommée et déclarée comme le montrent les prochains exemples.
-
-                <p class="island">
-                <em>Mais attends une seconde... On peut connaître l'emplacement de n'importe quel utilisateur avec un petit bout de code comme ça ?</em>
-                </p>
-
-                Oui, à condition qu'il accepte de partager sa localisation ! Vous avez peut-être déjà remarqué le bandeau qui apparaît en haut de certaines pages (le même bandeau qui vous propose d'enregistrer un mot de passe par exemple). Afin d'accepter de partager sa localisation, un bandeau de ce type apparaît :
-
-                 <a href="/_pages/html5/tutoriel-geolocalisation-html5/img/barre-autorisation-partage-géolocalisation.png" target="_blank">
-                <img src="/_pages/html5/tutoriel-geolocalisation-html5/img/barre-autorisation-partage-géolocalisation.png" alt="Barre d'autorisation de partage de géolocalisation" title="Barre d'autorisation de partage de géolocalisation" />
-                </a>
-
-                Sur les smartphones, c'est un pop-up équivalent qui apparaît.
-
-                <p class="island">
-                <em>Et elle apparaît quand cette barre ?</em>
-                </p>
-
-                Elle apparaît dès que l'on cherche à accéder aux coordonnées de l'utilisateur. Donc par exemple lorsque vous utilisez <code>getCurrentPosition</code> ! Ce qui évite de demander l'autorisation inutilement à l'utilisateur. Allez, on reprend avec nos callbacks !
-
-                <h2>Utilisation des callbacks</h2>
-
-                La méthode <code>getCurrentPosition()</code> peut prendre un second paramètre : le callback d'erreur. C'est la fonction qui sera appelée dans les cas où :
-                <ul>
-                    <li>L'utilisateur refuse l'autorisation d'accès à sa position</li>
-                    <li>L'emplacement de l'utilisateur n'ait pas pu être déterminé</li>
-                    <li>Le service de géolocalisation ne réponde pas assez vite</li>
-                </ul>
-
-                On utilise donc la fonction de callback pour gérer ces 3 cas :
-
-                <script src="https://gist.github.com/verekia/ceeeb8d40e733f6e27a1.js"></script>
-
-                Enfin, le 3ème paramètre de <code>getCurrentPosition()</code> sert à indiquer certaines options particulières, écrites de la forme suivante : <code>{nom:valeur, nom:valeur, ...}</code>.
-                On peut ainsi spécifier :
-                <ul>
-                    <li>L'utilisation du GPS pour obtenir des coordonnées beaucoup plus précises</li>
-                    <li>Un <em>timeout</em> si l'on a besoin d'une réponse avant un certain délai</li>
-                    <li>La durée de vie maximale d'une coordonnée envoyée par l'utilisateur</li>
-                </ul>
-
-                <script src="https://gist.github.com/verekia/62e1f0792c8d4f929c85.js"></script>
-
-                Les options <code>timeout</code> et <code>maximumAge</code> sont indiquées en millisecondes, donc ici, on établit un délai de 10 secondes de timeout, et une durée de vie maximale de la dernière position de l'utilisateur de 10 minutes. Par défaut, <code>timeout</code> a pour valeur <code>Infinity</code>, et si <code>maximumAge</code> vaut 0, alors l'application demande systématiquement une mise à jour de la position de l'utilisateur.
-
-                <h2>Suivre les déplacements</h2>
-
-                Dans de nombreux cas, on aimerait mettre à jour la position de l'utilisateur si celui-ci se déplace. On pourrait penser qu'une fonctionnalité telle que celle-ci pourrait être assez lourde à mettre en place... ce n'est pas le cas ! Il suffit simplement de remplacer <code>getCurrentPosition()</code> par :
-
-                <script src="https://gist.github.com/verekia/0c08e81303802a951b2d.js"></script>
-
-                Comme on veut permettre à l'utilisateur d'arrêter le suivi de ses déplacements, on ajoute un simple lien effectuant un appel à <code>clearWatch()</code>.
-
-                <script src="https://gist.github.com/verekia/b83d4752aa31e24652de.js"></script>
-
-                <script src="https://gist.github.com/verekia/174aef76b5f99e20dbb1.js"></script>
-
-                Enfin, si l'on souhaite pouvoir tester facilement ce code en se promenant dans la rue avec son smartphone, il faut activer l'option <code>enableHighAccuracy</code> pour utiliser le GPS afin d'avoir une mise à jour fréquente de la position.
-
-                Voici le code JavaScript complet permettant d'afficher une nouvelle popup contenant les coordonnées chaque fois que l'utilisateur se déplace :
-
-                <script src="https://gist.github.com/verekia/0fa72af36f675b3cba63.js"></script>
-
-                C'est court n'est-ce pas ? Et encore, nous avons une gestion des erreurs, ainsi qu'une fonctionnalité d'arrêt de la géolocalisation ! Si on avait voulu simplifier à l'extrême on aurait pu laisser uniquement les lignes vitales :
-
-                <script src="https://gist.github.com/verekia/fe0e3f93bec74890c2c5.js"></script>
-
-                Je ne sais pas ce que vous en dites, mais lorsque je me suis rendu compte que 4 lignes de code JavaScript pouvaient faire fonctioner un suivi de position par GPS, j'ai vraiment été bluffé. Cela montre bien la volonté du W3C de faire de l'HTML5 un nouveau standard simple à utiliser.
-
-                <h2>La vitesse ! La boussole ! L'altitude !</h2>
-
-                Si vous avez été charmés par la simplicité par la partie précédente, voilà qui devrait vous achever !
-                Lorsque l'on récupère la variable position afin d'obtenir la latitude grâce à <code>position.coords.latitude</code>, on a accès à plusieurs autres attributs :
-                <ul>
-                    <li><code>position.timestamp</code>, qui renvoie le timestamp de l'heure à laquelle a été mise à jour la position</li>
-                    <li><code>position.coords.altitude</code>, qui correspond à l'altitude de l'utilisateur</li>
-                    <li><code>position.coords.accuracy</code>, qui correspond à la précision des coordonnées</li>
-                    <li><code>position.coords.altitudeAccuracy</code>, qui correspond à la précision de l'altitude</li>
-                    <li><code>position.coords.heading</code>, qui correspond à l'angle compris entre 0 et 360° par rapport au Nord (ce n'est pas aussi précis que la boussole d'un smartphone)</li>
-                    <li><code>position.coords.speed</code>, qui correspond à la vitesse de l'utilisateur par rapport à sa dernière position.</li>
-                </ul>
-
-                Toutes ces valeurs sont remplies par le service de géolocalisation et vous n'avez absolument pas besoin de les calculer vous-même !
+                Cette année, pas moins de 3000 personnes ont eu le privilège d'assister aux conférences animées par des dizaines d'intervenants très reconnus du monde Java. Parmi ces intervenants on peut par exemple citer <a href="http://en.wikipedia.org/wiki/Joshua_Bloch">Joshua Bloch</a>, ingénieur logiciel chez Google, et <a href="http://www.curious-creature.org/">Romain Guy</a>, un des ingénieurs travaillant sur Android.
 
                 <p></p>
 
-                Pour terminer, voici la démonstration complète de tout ce que l'on vient de voir, avec une mise en page minimale :
-
-                <a href="/demo/exemple-geolocalisation-html5/">Démonstration de géolocalisation en HTML5</a>
+                Les conférences ne se limitaient pas à Java, et traitaient plus généralement des grandes tendances très actuelles du monde informatique telles que le Cloud, le NoSQL, les RIA, les Frameworks Web, les méthodes agiles ou encore l'HTML5.
 
                 <p></p>
 
-                Et maintenant la cerise sur le gâteau : Pour ceux qui souhaitent utiliser toutes ces informations grâce à l'API Google Maps, je vous invite à lire mon <a href="/html5/tutoriel-api-google-maps-geolocalisation-html5/">
-Tutoriel sur l'API Google Maps avec la géolocalisation en HTML5</a>.
+                Je vais donc vous faire profiter de mes retours sur les conférences HTML5 de ce Devoxx 2010.
+
+                <h2>Keynote : The State of The Web</h2>
+
+                Cette keynote animée par <a href="http://almaer.com/blog/">Dion Almaer</a> et <a href="http://benzilla.galbraiths.org/">Ben Galbraith</a> a traité du potentiel des applications web. Après les avoir comparé les différents marchés des applications natives et des applications web, l'accent a été mis sur les frameworks capables de créer des applications natives à partir d'HTML/CSS/JavaScript, sans se soucier des contraintes spécifiques à chaque appareil. Deux projets ont particulièrement été retenus :
+
+                <ul>
+                	<li><a href="http://www.phonegap.com/">Phonegap</a></li>
+                	<li><a href="http://www.appcelerator.com/">Appcelerator - Titanium</a></li>
+                </ul>
+
+                Ces deux projets prometteurs sont déjà en production et utilisés. S'il est en effet pour le moment risqué favoriser les applications web par rapport aux applications natives, l'utilisation de tels frameworks permet de faire une transition en douceur vers les applications web, tout en conservant une portabilité maximum sur les téléphones et OS mobiles actuels.
+
+                <h2>Les WebSockets HTML5 avec Kaazing</h2>
+
+                Cette conférence a été animée par par <a href="http://www.jroller.com/jonasjacobi/">Jonas Jacobi</a>.
+                Jonas Jacobi travaille sur le projet <a href="http://www.kaazing.com/">Kaazing</a>, qui se focalise entièrement sur l'exploitation des WebSockets HTML5 afin de fournir un protocole de liaison client-serveur à haute vitesse. Voici une <a href="http://kaazing.me/">démonstration des capacités des WebSockets avec Kaazing</a>.
+
+                <p></p>
+
+                Pour résumer, les WebSockets permettent le full-duplex entre le client et le serveur, c'est à dire que le serveur sera capable d'envoyer des informations au client en temps réel, sans que le client ne fasse de requête serveur pour vérifier si le serveur a une nouvelle information à lui envoyer. Ce système remplacera à terme les mises à jour de contenu réalisées par appels AJAX effectués toutes les n secondes afin d'actualiser un contenu.
+
+                <p></p>
+
+                Les WebSockets permettent uniquement l'échange de chaînes de caractères entre le client et le serveur. Cette limitation vient du fait que les échanges via WebSockets sont très bas niveau. Si l'on souhaite travailler avec une couche d'abstraction supplémentaire il faut utiliser un protocole plus haut niveau, et c'est justement ce que propose Kaazing.
+
+                <p></p>
+
+                D'autres démonstrations basées sur les websockets sont disponibles sur <a href="http://websocket.org/">websocket.org</a>.
+
+                <h2>HTML5 Fact and Fiction</h2>
+
+                Cette conférence orchestrée par <a href="http://ntschutta.com/jat/">Nathaniel Schutta</a> a présenté de nombreuses nouveautés apportées par l'HTML5. Elle reprend dans l'ensemble le contenu de l'ebook de <a href="http://diveintomark.org/">Mark Pilgrim</a>, <a href="http://diveintohtml5.org/">DiveIntoHTML5</a>. La plupart des nouveautés présentées concernaient les nouvelles balises HTML5 ainsi que la vérification de la capacité du navigateur à les supporter. Celle-ci est grandement simplifiée par l'utilisation de la bibliothèque JavaScript <a href="http://www.modernizr.com/">Modernizr</a>.
+
+                <p></p>
+
+                La détection de la capacité à utiliser le canvas HTML5 peut être par exemple effectuée avec la simple ligne :
+
+                <script src="https://gist.github.com/verekia/69b0e713ece1f5f1a1738a27a6fa68d2.js"></script>
+
+                La création d'un site en production utilisant les fonctionnalités de l'HTML5 requiert de gérer convenablement le cas des navigateurs non compatibles, et c'est ce que fait Modernizr. Un incontournable donc.
+
+                <h2>L'application Devoxx avec GWT et HTML5</h2>
+
+                <a href="http://twitter.com/#!/salvadordiaz">Salvador Diaz</a> de chez <a href="http://www.sfeir.com/">Sfeir</a> a présenté le fonctionnement de son client Devoxx réalisé sous GWT. Il s'agit d'une application web fonctionnant sur Google App Engine qui permet d'accéder à l'ensemble des informations des conférences et intervenants du Devoxx 2010. Cette application utilise les WebServices REST fournis par Devoxx et a été couplée avec la capacité offline de l'HTML5 qui est particulièrement pratique afin de maintenir une consultation du contenu même en cas de déconnexion. Ceci est possible grâce a l'utilisation du <a href="/html5/tutoriel-application-web-offline-html5-cache-manifest/">
+cache manifest HTML5</a>.
+
+                <p></p>
+
+                L'application est disponible <a href="http://devoxxschedule.appspot.com/">ici</a> et son code source est accessible sur <a href="http://code.google.com/p/salvadordiaz/source/browse/#svn/trunk">Google Code</a>.
+
+                <p></p>
+
+                On peut d'ailleurs noter que les boutons de l'applications sont entièrement réalisés en CSS3, sans utilisation d'image. Un tel résultat peut être obtenu en suivant le <a href="/css3/ombre-css3-box-shadow/">
+tutoriel des ombres en CSS3 avec <code>box-shadow</code></a>.
+
+                <p></p>
+
+                Enfin je remercie <a href="http://www.application-servers.com/">Didier Girard</a> de chez Sfeir, qui m'a permis d'assister à ce Devoxx 2010. J'effectuerai d'ailleurs mon stage chez Sfeir à partir de février sur le thème de l'HTML5, ce qui me permettra de me focaliser à 100% sur cette technologie, et de vous tenir informés de toutes mes découvertes grâce à des tutoriels réguliers postés sur ce site.
+
+                <p></p>
+
+                A très bientôt !
                 <p class="text-right"><span class="screen-reader-text">Posted on </span><time class="entry-date published"
-                datetime="2010-09-14">
-                September 14, 2010
+                datetime="2010-11-21">
+                November 21, 2010
                     </time>
                 </p>            </div>
         </div>

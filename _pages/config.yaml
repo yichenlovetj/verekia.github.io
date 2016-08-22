@@ -49,12 +49,8 @@ consulting:
 # 'html5/':
 #     short-title: '[FR] '
 #
-# 'demo/':
-#     short-title: ''
-# 'demo/':
-#     short-title: ''
-# 'html5/':
-#     short-title: '[FR] '
+'html5/conferences-html5-devoxx-2010':
+    short-title: '[FR] HTML5 à Devoxx 2010'
 
 'demo/exemple-application-web-offline-html5-cache-manifest':
     short-title: "Exemple d'application web offline HTML5 avec le cache manifest"

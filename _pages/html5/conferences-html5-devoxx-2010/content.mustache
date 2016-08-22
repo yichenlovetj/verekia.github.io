@@ -1,0 +1,77 @@
+ <a href="/_pages/html5/conferences-html5-devoxx-2010/img/conferences-html5-devoxx-2010.png" target="_blank">
+<img src="/_pages/html5/conferences-html5-devoxx-2010/img/conferences-html5-devoxx-2010.png" alt="Devoxx 2010" title="Devoxx 2010" />
+</a>
+
+Du 15 au 19 novembre a eu lieu à Anvers en Belgique l'événement <a href="http://devoxx.com/display/Devoxx2K10/Home">Devoxx 2010</a>. Il s'agit du plus grand salon européen autour des technologies Java. Ce salon annuel a été créé et est organisé par <a href="http://www.devoxx.com/display/JV08/Stephan+Janssen">Stephan Janssen</a>, président du <a href="http://www.bejug.org/confluenceBeJUG/display/BeJUG/Home">BeJug</a> (Belgium Java User Group).
+
+<p></p>
+
+Cette année, pas moins de 3000 personnes ont eu le privilège d'assister aux conférences animées par des dizaines d'intervenants très reconnus du monde Java. Parmi ces intervenants on peut par exemple citer <a href="http://en.wikipedia.org/wiki/Joshua_Bloch">Joshua Bloch</a>, ingénieur logiciel chez Google, et <a href="http://www.curious-creature.org/">Romain Guy</a>, un des ingénieurs travaillant sur Android.
+
+<p></p>
+
+Les conférences ne se limitaient pas à Java, et traitaient plus généralement des grandes tendances très actuelles du monde informatique telles que le Cloud, le NoSQL, les RIA, les Frameworks Web, les méthodes agiles ou encore l'HTML5.
+
+<p></p>
+
+Je vais donc vous faire profiter de mes retours sur les conférences HTML5 de ce Devoxx 2010.
+
+<h2>Keynote : The State of The Web</h2>
+
+Cette keynote animée par <a href="http://almaer.com/blog/">Dion Almaer</a> et <a href="http://benzilla.galbraiths.org/">Ben Galbraith</a> a traité du potentiel des applications web. Après les avoir comparé les différents marchés des applications natives et des applications web, l'accent a été mis sur les frameworks capables de créer des applications natives à partir d'HTML/CSS/JavaScript, sans se soucier des contraintes spécifiques à chaque appareil. Deux projets ont particulièrement été retenus :
+
+<ul>
+	<li><a href="http://www.phonegap.com/">Phonegap</a></li>
+	<li><a href="http://www.appcelerator.com/">Appcelerator - Titanium</a></li>
+</ul>
+
+Ces deux projets prometteurs sont déjà en production et utilisés. S'il est en effet pour le moment risqué favoriser les applications web par rapport aux applications natives, l'utilisation de tels frameworks permet de faire une transition en douceur vers les applications web, tout en conservant une portabilité maximum sur les téléphones et OS mobiles actuels.
+
+<h2>Les WebSockets HTML5 avec Kaazing</h2>
+
+Cette conférence a été animée par par <a href="http://www.jroller.com/jonasjacobi/">Jonas Jacobi</a>.
+Jonas Jacobi travaille sur le projet <a href="http://www.kaazing.com/">Kaazing</a>, qui se focalise entièrement sur l'exploitation des WebSockets HTML5 afin de fournir un protocole de liaison client-serveur à haute vitesse. Voici une <a href="http://kaazing.me/">démonstration des capacités des WebSockets avec Kaazing</a>.
+
+<p></p>
+
+Pour résumer, les WebSockets permettent le full-duplex entre le client et le serveur, c'est à dire que le serveur sera capable d'envoyer des informations au client en temps réel, sans que le client ne fasse de requête serveur pour vérifier si le serveur a une nouvelle information à lui envoyer. Ce système remplacera à terme les mises à jour de contenu réalisées par appels AJAX effectués toutes les n secondes afin d'actualiser un contenu.
+
+<p></p>
+
+Les WebSockets permettent uniquement l'échange de chaînes de caractères entre le client et le serveur. Cette limitation vient du fait que les échanges via WebSockets sont très bas niveau. Si l'on souhaite travailler avec une couche d'abstraction supplémentaire il faut utiliser un protocole plus haut niveau, et c'est justement ce que propose Kaazing.
+
+<p></p>
+
+D'autres démonstrations basées sur les websockets sont disponibles sur <a href="http://websocket.org/">websocket.org</a>.
+
+<h2>HTML5 Fact and Fiction</h2>
+
+Cette conférence orchestrée par <a href="http://ntschutta.com/jat/">Nathaniel Schutta</a> a présenté de nombreuses nouveautés apportées par l'HTML5. Elle reprend dans l'ensemble le contenu de l'ebook de <a href="http://diveintomark.org/">Mark Pilgrim</a>, <a href="http://diveintohtml5.org/">DiveIntoHTML5</a>. La plupart des nouveautés présentées concernaient les nouvelles balises HTML5 ainsi que la vérification de la capacité du navigateur à les supporter. Celle-ci est grandement simplifiée par l'utilisation de la bibliothèque JavaScript <a href="http://www.modernizr.com/">Modernizr</a>.
+
+<p></p>
+
+La détection de la capacité à utiliser le canvas HTML5 peut être par exemple effectuée avec la simple ligne :
+
+<script src="https://gist.github.com/verekia/69b0e713ece1f5f1a1738a27a6fa68d2.js"></script>
+
+La création d'un site en production utilisant les fonctionnalités de l'HTML5 requiert de gérer convenablement le cas des navigateurs non compatibles, et c'est ce que fait Modernizr. Un incontournable donc.
+
+<h2>L'application Devoxx avec GWT et HTML5</h2>
+
+<a href="http://twitter.com/#!/salvadordiaz">Salvador Diaz</a> de chez <a href="http://www.sfeir.com/">Sfeir</a> a présenté le fonctionnement de son client Devoxx réalisé sous GWT. Il s'agit d'une application web fonctionnant sur Google App Engine qui permet d'accéder à l'ensemble des informations des conférences et intervenants du Devoxx 2010. Cette application utilise les WebServices REST fournis par Devoxx et a été couplée avec la capacité offline de l'HTML5 qui est particulièrement pratique afin de maintenir une consultation du contenu même en cas de déconnexion. Ceci est possible grâce a l'utilisation du {{> _pages/html5/tutoriel-application-web-offline-html5-cache-manifest/link }}cache manifest HTML5</a>.
+
+<p></p>
+
+L'application est disponible <a href="http://devoxxschedule.appspot.com/">ici</a> et son code source est accessible sur <a href="http://code.google.com/p/salvadordiaz/source/browse/#svn/trunk">Google Code</a>.
+
+<p></p>
+
+On peut d'ailleurs noter que les boutons de l'applications sont entièrement réalisés en CSS3, sans utilisation d'image. Un tel résultat peut être obtenu en suivant le {{> _pages/css3/ombre-css3-box-shadow/link }}tutoriel des ombres en CSS3 avec <code>box-shadow</code></a>.
+
+<p></p>
+
+Enfin je remercie <a href="http://www.application-servers.com/">Didier Girard</a> de chez Sfeir, qui m'a permis d'assister à ce Devoxx 2010. J'effectuerai d'ailleurs mon stage chez Sfeir à partir de février sur le thème de l'HTML5, ce qui me permettra de me focaliser à 100% sur cette technologie, et de vous tenir informés de toutes mes découvertes grâce à des tutoriels réguliers postés sur ce site.
+
+<p></p>
+
+A très bientôt !
