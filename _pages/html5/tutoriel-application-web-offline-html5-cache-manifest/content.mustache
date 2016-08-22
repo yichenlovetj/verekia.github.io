@@ -1,0 +1,261 @@
+ <a href="/_pages/html5/tutoriel-application-web-offline-html5-cache-manifest/img/tutoriel-application-web-offline-html5-cache-manifest.png" target="_blank">
+<img src="/_pages/html5/tutoriel-application-web-offline-html5-cache-manifest/img/tutoriel-application-web-offline-html5-cache-manifest.png" alt="La Terre dans un dossier" title="La Terre dans un dossier" />
+</a>
+
+Parmi l'ensemble des nouveautés apportées par l'HTML5, on entend surtout parler des plus "multimédia" d'entre elles, c'est à dire des balises <code>audio</code>, <code>video</code>, <code>canvas</code>... Pourtant, ces fonctionnalités ne sont pas vraiment nouvelles pour l'utilisateur final, qui était déjà habitué à de tels contenus avec Flash. L'une des réelles révolutions apportées par l'HTML5, et une des moins médiatisée, est la possibilité de créer des applications web offline.
+
+<h2>Introduction</h2>
+
+Le terme "application offline" doit être un peu nuancé et compris plutôt comme : "Des applications web qui continuent à fonctionner même quand la connexion internet se coupe". De plus, le terme "application" a été banalisé par l'avènement des smartphones, mais dans ce cadre, on doit plutôt comprendre des "sites web". Cela dit la différence entre les deux va s'amoindrir de plus en plus dans les années à venir...
+
+<p></p>
+
+Ces applications sont donc principalement destinées aux téléphones portables, qui subissent régulièrement des déconnexions. Prenons un exemple :
+
+<p></p>
+
+Vous rédigez un mail sur votre iPhone ou votre Android, connecté à internet avec la 3G, sur l'application Gmail. Puisque vous êtes bien entendu quelqu'un de mobile et dynamique (c'est évident !) vous vous déplacez avec votre smartphone. Puis vous prenez un ascenseur, ou votre métro passe dans un tunnel, ce qui coupe votre connexion 3G. Que se passe-t-il ?
+
+<p class="island">Hum... Rien ?</p>
+
+Tout à fait ! L'application Gmail ne se ferme pas subitement en criant "Alerte ! Je ne capte plus le réseau 3G, fermeture de l'application !". Elle continue de fonctionner en "offline". Vous pouvez même "envoyer" un mail sans avoir d'accès à internet, et celui-ci sera mis en attente localement, puis réellement envoyé dès que vous récupérerez votre connexion.
+
+<p></p>
+
+On est donc face à des applications "hybrides" qui fonctionnent à la fois online et offline.
+
+<p class="island">Ça me semble bien compliqué à réaliser...</p>
+
+Bien au contraire, c'est très simple, et vous saurez le faire après avoir lu ce tutoriel !
+
+<h3>La compatibilité</h3>
+
+Comme toute fonctionnalité HTML5, une question importante se pose : la compatibilité.
+Qu'en est-il avec les applications offline ? Elles fonctionnent déjà sur tous les navigateurs sauf Internet Explorer. Et Internet Explorer 9 ne supportera pas cette fonctionnalité non plus.
+
+<p class="island">Quoi ?! Mais ça n'a aucun intérêt !</p>
+
+Haha du calme... Croyez-vous que votre ordinateur fixe subisse fréquemment des déconnexions du réseau 3G...? Non bien entendu. Les applications offline sont principalement destinées aux smartphones et autres tablettes tactiles, et les navigateurs Android et iPhone, supportent déjà cette fonctionnalité. Aucun problème du côté de la compatibilité donc !
+
+<p class="island">Bon d'accord, on peut l'utiliser alors. Mais attends, il n'y a pas déjà un mode hors-ligne dans les navigateurs ?</p>
+
+Effectivement les navigateurs proposent déjà depuis plusieurs années des consultations de site "hors ligne", et de la mise en cache de certains fichiers. Mais soyons clairs : ces techniques sont peu fiables et très instables. Si vous actualisez une page en ayant perdu la connexion à internet, la plupart du temps vous aurez droit à une belle erreur vous demandant de vérifier votre connexion...
+
+<p></p>
+
+Allez, trêve de bavardage, on se plonge au coeur du sujet !
+
+<h2>Le cache d'application (AppCache)</h2>
+
+Les applications offline utilisent "l'application cache" du navigateur, qui permet :
+<ul>
+	<li>D'utiliser une application web ou de naviguer sur un site entier sans connexion internet.</li>
+	<li>D'améliorer la vitesse de chargement des pages puisque les fichiers sont présents en local.</li>
+	<li>De réduire la charge du serveur, puisqu'en effet, il n'enverra que les fichiers qui auront changé depuis le dernier passage de l'utilisateur.</li>
+</ul>
+
+Notez au passage une petite remarque non négligeable : le cache d'une application est limité à 5Mo.
+
+<h2>La page HTML</h2>
+
+L'application cache repose principalement sur l'utilisation d'un fichier "manifest" à ajouter aux pages HTML de votre site. Tout d'abord, créons donc une structure basique de page web :
+
+<script src="https://gist.github.com/verekia/97b237d775d7d718e054ca04ef57d0cd.js"></script>
+
+Afin d'utiliser le cache d'application, il va falloir déclarer un fichier manifest.
+Ce fichier se déclare dans la balise <code>html</code> comme ceci :
+
+<script src="https://gist.github.com/verekia/d9db369a1036e1480fcbf9fa17ec2bf4.js"></script>
+
+<h2>Le manifest</h2>
+
+Une fois déclaré, il faut bien sûr créer le fichier manifest en question. Appelons le nôtre <code>site.manifest</code>.
+
+Dans ce fichier, qui commence obligatoirement par la ligne <code>CACHE MANIFEST</code>, nous allons déclarer les fichiers qui doivent être mis en cache :
+
+<script src="https://gist.github.com/verekia/3d3aeb7ed7ef0767d749764f4927eaa0.js"></script>
+
+On peut également y ajouter des commentaires. Chaque ligne de commentaire doit commencer par <code>#</code>. Il est important de versionner son fichier manifest via un commentaire, afin que le navigateur détecte par la suite les changements dans le fichier. Nous y reviendrons plus tard.
+
+<p></p>
+
+Notons qu'il est possible d'utiliser des URL absolues (<code>http://www.mon-url.com/absolue/fichier.html</code>).
+
+<p></p>
+
+Il est possible d'ajouter différentes sections à notre fichier manifest :
+<ul>
+	<li><code>CACHE</code>, il s'agit de la section par défaut qui liste les fichiers à mettre en cache.</li>
+	<li><code>NETWORK</code>, qui liste les fichiers qui nécessitent obligatoirement une connexion internet.</li>
+	<li><code>FALLBACK</code>, qui liste les fichiers qui, au cas où ils ne soient pas accessibles en ligne, doivent renvoyer vers d'autres fichiers.</li>
+</ul>
+
+L'exemple suivant représente un site web classique dont la page d'accueil, le CSS et les images sont mises en cache. Si l'utilisateur se connecte à la page d'accueil en étant hors ligne, la page <code>offline.html</code> lui est présentée au lieu d'<code>index.html</code>. Il est donc informé qu'il est déconnecté. Par conséquent il ne pourra pas accéder aux autres pages du site, puisque la section <code>NETWORK</code> spécifie via une étoile <code>*</code>, que tous les autres fichiers requièrent une connexion internet.
+
+<script src="https://gist.github.com/verekia/9c9e098d7526aeafb019abe3a5ace523.js"></script>
+
+<h2>Le .htaccess</h2>
+
+Nous arrivons maintenant au passage (un peu) délicat. Il va falloir déclarer le <a href="http://fr.wikipedia.org/wiki/Type_MIME">MIME-type</a> du fichier manifest. Ceci se fait par l'intermédiaire du fichier de configuration de serveur. Dans la grande majorité des cas vous utiliserez un fichier <code>.htaccess</code> pour les projets PHP.
+Créez donc un fichier <code>.htaccess</code> dans le répertoire de votre application et ajoutez-y simplement la ligne :
+
+<script src="https://gist.github.com/verekia/03a3987952c6649abe91a0ec1fd152be.js"></script>
+
+Dans cette ligne, on déclare que tous les fichiers se terminant par <code>manifest</code> ont pour MIME-type <code>text/cache-manifest</code>.
+
+<h2>Test de l'application hors ligne</h2>
+
+Afin de pouvoir tester localement notre application, nous allons devoir passer par Apache (et oui, faites chauffer vos WAMP / MAMP / LAMP !).
+
+<p></p>
+
+Plaçons notre application dans le dossier de votre serveur (www pour WAMP) et rendez-vous sur l'adresse <code>http://localhost/</code>. Si tout se passe bien, votre page s'affiche. Maintenant stoppez les services de WAMP, puis rafraîchissez la page.
+
+<p></p>
+
+Alors qu'une page classique aurait naturellement fait afficher une belle erreur 404... Votre page est toujours là !
+Ouvrez maintenant la console de votre navigateur si celui-ci en possède une (pour Chrome, elle se trouve dans Outils, Outils de développement, onglet Console).
+
+<p></p>
+
+On peut y voir ceci :
+
+<script src="https://gist.github.com/verekia/7401779fcebeaf0b89859f3d923116db.js"></script>
+
+On y voit en effet tous les événements qui ont lieu lorsque votre navigateur met à jour son AppCache. Les plus coriaces d'entre vous souhaiterons pouvoir intercepter ces événements pour pouvoir effectuer des traitements au moment du déclenchement de ces événements. Ces événements seront détaillés dans la partie "aller plus loin" de ce tutoriel.
+
+<h2>Mise à jour du manifest</h2>
+
+Attention soyez bien attentif à présent ! La phrase suivante a de quoi perturber : une fois votre application dans l'AppCache grâce au fichier manifest, c'est cette version offline qui a la priorité sur la version en ligne ! Pourquoi ? Tout simplement parce que vous lui avez justement dit de le stocker dans le cache ! C'est exactement comme lorsque votre navigateur garde en mémoire une image ou un CSS sur un site, afin de ne pas avoir à le télécharger à nouveau. Seulement, c'est un peu plus perturbant lorsqu'il est question d'un fichier HTML, je le reconnais... Et donc, comment fait-on pour mettre à jour le cache avec la version en ligne ?
+
+<p></p>
+
+L'Application Cache sera mis à jour si :
+<ul>
+	<li>L'utilisateur vide son cache manuellement.</li>
+	<li>Le fichier manifest change.</li>
+	<li>Le cache est mis à jour avec du code JavaScript.</li>
+</ul>
+
+Voilà pourquoi il était important d'insérer un numéro de version dans un commentaire ! Il suffit de changer ce numéro de version pour obliger l'AppCache du client à se mettre à jour. Si vous effectuez peu de mises à jour (dans le cas d'un site vitrine par exemple) c'est la meilleure solution. Par contre, si vous avez besoin que le client soit en permanence à jour, on préfèrera la version JavaScript. Et encore une fois, c'est dans la section "Aller plus loin" que ça se passe !
+
+<p></p>
+
+Deux remarques avant de passer à la suite :
+<ul>
+	<li>Si le téléchargement de l'un des fichiers échoue, alors l'ensemble du téléchargement échoue. On peut considérer que le manifest liste le contenu d'un "pack" non-scindable.</li>
+	<li>Lorsque l'on rafraichit la page après avoir modifié le fichier manifest, c'est la page initiale (donc non à jour) qui s'affiche en premier pendant le téléchargement du nouveau manifest. La nouvelle version ne s'affichera qu'au prochain rafraichissement de page (ou si on le fait via JavaScript).</li>
+</ul>
+
+<h2>WebApps iPhone et Android</h2>
+
+Alors attention, c'est le moment grandiose du tutoriel ! Depuis le début on parle d'applications, mais qui sont en fait des sites, mais qui sont quand même surtout destinés aux smartphones qui utilisent des applications... Bref c'est plus très clair tout ça ! Alors voilà qui devrait réconcilier tout le monde : la finalité de tout ça est entre autres de transformer un site web en véritable application pour mobile.
+
+C'est à dire que notre site-application pourra :
+<ul>
+	<li>Avoir une icone,</li>
+	<li>Avoir un écran de chargement,</li>
+	<li>S'afficher en plein écran,</li>
+	<li>Etre installée sans passer par l'App Store Apple ni l'Android Market.</li>
+</ul>
+
+Pas mal non ? Il s'agit en réalité d'un raccourci vers l'URL de votre site web qui sera à placer sur le bureau du smartphone de l'utilisateur. Un simple favoris devient donc une application à part entière.
+
+<p class="island">Mais si mes utilisateurs ne passent pas par un App Store, comment vont-ils comprendre qu'il s'agit d'une Web App à installer via les favoris du navigateur ?</p>
+
+Bien vu. C'est effectivement la grosse faiblesse d'une Web App par rapport à une application native. Il n'est pas intuitif pour un utilisateur lambda de placer un raccourci web parmi ses icônes d'applications habituelles.
+
+<p class="island">C'est fichu alors ? Les Web Apps ne vont être destinées qu'aux geeks de l'HTML5 qui savent faire ça ?</p>
+
+Heureusement ça n'est pas fichu, grâce à plusieurs projets très prometteurs qui permettent de transformer une web app en application native, et donc permettre de les trouver via un App Store et de les installer comme n'importe quelle autre application native. Les plus curieux pourront faire quelques recherches sur Phonegap et Appcelerator Titanium, qui feront l'objet de tutoriels dédiés sur ce site un peu plus tard.
+
+<p></p>
+
+Revenons-en à nos moutons !
+
+<p></p>
+
+La déclaration des icones, des images de chargement, etc. est contenue dans des balises <code>link</code> et <code>meta</code>, qui sont comme d'habitude à placer entre les balises <code>head</code> du document.
+
+<p></p>
+
+Apple ayant été pionnier dans les Web Apps, il ont choisi de nommer ces paramètres avec des noms propriétaires. Heureusement pour nous, Google a décidé d'utiliser les balises Apple afin de ne pas compliquer encore plus la vie des développeurs. Par conséquent, les extraits de code suivants fonctionnent aussi sur Android.
+
+<p></p>
+
+Utiliser une icone qui aura un effet de lumière sur iPhone :
+
+<script src="https://gist.github.com/verekia/9d5d90eb17577623bbdf1e5f56ba79da.js"></script>
+
+Désactiver l'effet de lumière :
+
+<script src="https://gist.github.com/verekia/74bf6fa7c78d2ab235f400bcbe445bfa.js"></script>
+
+Sur iPhone, les icones seront mises au format iPhone, c'est à dire carrées aux coins arrondis. Et en ce qui concerne Android, il est possible d'utiliser des images transparentes.
+
+<p></p>
+
+Afficher son application en plein écran :
+
+<script src="https://gist.github.com/verekia/1c8d3ba9b5253e1b5d6f9aaae0436238.js"></script>
+
+Choisir le style de la barre de statut sur iPhone :
+
+<script src="https://gist.github.com/verekia/f7aa9c6e8603a91aa91d6d21c0240b94.js"></script>
+
+Utiliser une image de chargement :
+
+<script src="https://gist.github.com/verekia/b89758cfeb51d57e841038403d7c1a51.js"></script>
+
+Ne possédant pas d'iPhone, je ne peux vraiment tester les options spécifiques aux iPhones mais je vous invite à me dire si tout fonctionne bien dans les commentaires. Sur un Android HTC Desire, l'icone (qui est le plus important) s'affiche correctement. Je vous invite d'ailleurs à nous faire part de vos expérimentations sur iPhone via les commentaires sur cette page.
+
+<h2>Aller plus loin : le JavaScript</h2>
+
+L'API JavaScript HTML5 possède un objet <code>window.applicationCache</code>. Cet objet permet de :
+
+<ul>
+	<li>Connaître les états du cache,</li>
+	<li>Attacher des traitements aux événements,</li>
+	<li>Faire une mise à jour du cache,</li>
+	<li>Changer le cache actuel.</li>
+</ul>
+
+Voici la classe <code>ApplicationCache</code> telle qu'elle est donnée par le WHATWG :
+
+<script src="https://gist.github.com/verekia/b50ec54daf944121a6f3bb230dc1e2da.js"></script>
+
+Ainsi on peut tester le statut actuel :
+
+<script src="https://gist.github.com/verekia/f361ad590e98e2d802971c14663e1019.js"></script>
+
+Ou avec un <code>switch</code> :
+
+<script src="https://gist.github.com/verekia/456e42a351b5fdb635d9c290cda389f2.js"></script>
+
+Mais il est préférable de passer par la gestion d'événements pour détecter lorsque l'Application Cache change de statut :
+
+<script src="https://gist.github.com/verekia/ee6dfa8e3deb12c602e84766cb4e3b5f.js"></script>
+
+<ul>
+	<li>La méthode <code>update()</code> force le lancement du processus de mise à jour du cache.</li>
+	<li><code>addEventListener("updateready", updateCache, false)</code> lancera la fonction <code>updateCache</code> dès que le statut de l'AppCache passera en <code>updateready</code>.</li>
+	<li><code>swapCache()</code> permet d'échanger l'ancien cache avec le nouveau cache, ce qui finalise l'opération.</li>
+</ul>
+
+Si vous souhaitez trouver de plus amples informations sur le sujet, je vous invite à vous rendre sur la page <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#application-cache-api">Application Cache du WHATWG</a>, où sont listés tous les status que peut prendre applicationcache.status, et tous les événements associés.
+
+<p></p>
+
+Dernière petite remarque, il est possible de tester si l'utilisateur est connecté à internet ou non avec la propriété :
+
+<script src="https://gist.github.com/verekia/4d8fc6a7e8dfd91612f5c292b1ffce2f.js"></script>
+
+Et voilà ! Vous avez tous les outils en main pour réaliser de superbes applications web ! Il y a fort à parier que ces applications deviendront le standard sur les smartphones d'ici quelques années, puisqu'elles fonctionnent aussi bien sur iPhone qu'Android. Couplé avec une balise <code>canvas</code>, on pourra par exemple jouer à des jeux vidéos en 3D dans le navigateur, qui seront compatibles avec tous les mobiles ! Pas besoin de s'embêter à développer plusieurs versions pour chaque OS mobile, du HTML/CSS et JavaScript suffisent !
+
+<p></p>
+
+Voici une simple {{> _pages/demo/exemple-application-web-offline-html5-cache-manifest/link }}démonstration d'application web offline HTML5 avec le cache manifest</a>.
+
+<p></p>
+
+Merci d'avoir lu jusqu'ici et à très bientôt pour de nouveaux tutoriels !

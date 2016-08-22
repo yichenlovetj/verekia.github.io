@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Exemple de géolocalisation en HTML5 | Jonathan Verrecchia</title>
+        <title>Exemple d’application web offline HTML5 avec le cache manifest | Jonathan Verrecchia</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#000000">
@@ -1248,41 +1248,36 @@
         <div class="main-column">
             <div class="main-content">
                 <h1>
-                    Exemple de géolocalisation en HTML5
+                    Exemple d’application web offline HTML5 avec le cache manifest
                 </h1>
-                Cet exemple est une démonstration simple des capacités de géolocalisation de l'HTML5.
-                Elle teste la capacité du navigateur à utiliser la géolocalisation, et dès qu'un déplacement est effectué, elle affiche :
-
-                <ul>
-                    <li>La latitude de l'utilisateur</li>
-                    <li>La longitude de l'utilisateur</li>
-                    <li>La précision de la latitude et de la longitude</li>
-                    <li>L'altitude de l'utilisateur</li>
-                    <li>La précision de l'altitude</li>
-                    <li>L'angle par rapport au Nord</li>
-                    <li>La vitesse par rapport à la dernière position</li>
-                    <li>La date et l'heure de la dernière position</li>
-                </ul>
-
-                Elle est à tester de préférence avec un smartphone équipé d'un GPS.
+                Cette simple page de démonstration illustre les capacité des smartphones (iPhone et Android notamment) à considérer un lien vers une page web comme étant une application web. En ajoutant cette page en favoris et sur le bureau de votre smartphone, une icone spécifique apparaîtra et vous pourrez accéder à la page sans connexion internet si vous l'avez visité une fois auparavant.
 
                 <p></p>
 
-                Voir la
-                <a href="/demo/exemple-geolocalisation-html5/demo/">démonstration de géolocalisation en HTML5</a>.
+                Voici la <a href="/demo/exemple-application-web-offline-html5-cache-manifest/demo/">
+démonstration d'application web offline HTML5 avec le cache manifest</a>.
 
                 <p></p>
 
-                Cet exemple peut être obtenu en suivant le
-                <a href="/html5/tutoriel-geolocalisation-html5/">tutoriel de géolocalisation en HTML5</a>.
+                Le fonctionnement de cette page est décrit dans ce <a href="/html5/tutoriel-application-web-offline-html5-cache-manifest/">
+Tutoriel pour réaliser une application web HTML5 offline avec le cache manifest</a>.
 
                 <p></p>
 
-                Voici son code source :
+                Voici le code source de la page en question :
 
-                <script src="https://gist.github.com/verekia/38ea1e7323fd3dc44f59.js"></script>                <p class="text-right"><span class="screen-reader-text">Posted on </span><time class="entry-date published"
-                datetime="2010-09-14">
-                September 14, 2010
+                <script src="https://gist.github.com/verekia/74549ae5be972f1230c40acd9d468eeb.js"></script>
+
+                Le fichier <code>site.manifest</code> :
+
+                <script src="https://gist.github.com/verekia/ec6957f695af4bddad9686d987e5fed8.js"></script>
+
+                Le <code>.htaccess</code> :
+
+                <script src="https://gist.github.com/verekia/dca7477cf94738d1eca411fc2572c3fb.js"></script>
+                <p class="text-right"><span class="screen-reader-text">Posted on </span><time class="entry-date published"
+                datetime="2010-10-15">
+                October 15, 2010
                     </time>
                 </p>            </div>
         </div>
