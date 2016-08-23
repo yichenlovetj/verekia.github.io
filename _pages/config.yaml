@@ -46,9 +46,13 @@ consulting:
 #     short-title: ''
 # 'demo/':
 #     short-title: ''
-# 'html5/':
-#     short-title: '[FR] '
-#
+
+'css3/introduction-css3':
+    short-title: "[FR] Introduction au CSS3"
+
+'html5/introduction-html5':
+    short-title: "[FR] Introduction à l'HTML5"
+
 'html5/conferences-html5-devoxx-2010':
     short-title: '[FR] HTML5 à Devoxx 2010'
 

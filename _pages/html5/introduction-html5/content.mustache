@@ -1,0 +1,366 @@
+ <a href="/_pages/html5/introduction-html5/img/logo-html5-officiel-w3c.png" target="_blank">
+<img src="/_pages/html5/introduction-html5/img/logo-html5-officiel-w3c.png" style="height: 200px;" alt="Logo HTML5" title="Logo HTML5" />
+</a>
+
+Cet article est destiné aux débutants en HTML5, et à tous ceux qui souhaitent en savoir un peu plus sur cette nouvelle technologie qui agite le web et le monde mobile. Si vous vous intéressez aux technologies du web, vous avez probablement déjà entendu parler d'HTML5 aux cours des dernières années. Cette introduction va vous donner un premier aperçu de ce qui se cache derrière le terme HTML5, vous présentera le contexte dans lequel évolue cette technologie, et nous verrons un bon nombre de nouvelles fonctionnalités qu'il apporte.
+
+Sommaire :
+<ul class="sommaire">
+<li><a href="#part1">L'HTML5 c'est quoi ?</a></li>
+<ul>
+<li><a href="#part1-1">L'HTML5 n'est pas...</a></li>
+<li><a href="#part1-2">L'HTML5 est...</a></li>
+<li><a href="#part1-3">Le W3C et le WHATWG</a></li>
+</ul>
+<li><a href="#part2">Les nouveautés dans le code HTML</a></li>
+<ul>
+<li><a href="#part2-1">Un allégement du code</a></li>
+<li><a href="#part2-2">Les nouvelles balises sémantiques</a></li>
+<li><a href="#part2-3">Les balises multimédia</a></li>
+<li><a href="#part2-4">Des formulaires améliorés</a></li>
+</ul>
+<li><a href="#part3">Les nouveautés dans le code JavaScript</a></li>
+<ul>
+<li><a href="#part3-1">Le Local Storage</a></li>
+<li><a href="#part3-2">La géolocalisation</a></li>
+<li><a href="#part3-3">Le Drag and Drop</a></li>
+<li><a href="#part3-4">Les Web Sockets</a></li>
+</ul>
+<li><a href="#part4">L'HTML5 ça sort quand ?</a></li>
+<ul>
+<li><a href="#part4-1">Une affaire de navigateur</a></li>
+<li><a href="#part4-2">Internet Explorer 9</a></li>
+<li><a href="#part4-3">Utiliser l'HTML5 dès maintenant</a></li>
+</ul>
+<li><a href="#part5">… Et le CSS alors ?</a></li>
+</ul>
+</ul>
+
+<h2 id="part1">L'HTML5 c'est quoi ?</h2>
+
+<h3 id="part1-1">L'HTML5 n'est pas...</h3>
+
+Tout d'abord, je suis convaincu que parmi vous certains se disent :
+
+<p class="island">HTML5, c'est un nouveau langage ?</p>
+
+Ou encore :
+
+<p class="island">Je débute, j'ai envie d'apprendre HTML5 directement, ça a l'air mieux que l'HTML d'avant.</p>
+
+Voire :
+
+<p class="island">Pfff, moi qui venait d'apprendre l'HTML, je vais devoir tout réapprendre...</p>
+
+Il est grand temps de clarifier les choses :
+
+L'HTML5 n'est <b>pas</b> un nouveau langage. On ne peut donc <b>pas</b> non plus commencer par "directement apprendre" l'HTML5, et enfin vous n'aurez <b>pas</b> à tout réapprendre.
+
+<h3 id="part1-2">L'HTML5 est...</h3>
+
+L'HTML5 est une <em>évolution</em> de l'HTML 4.01 (et de l'XHTML 1.0), c'est à dire que tout ce que vous savez faire en HTML reste valide. Cette évolution consiste en une multitude de nouvelles fonctionnalités qui ont été apportées au langage HTML ainsi qu'au JavaScript. Si vous savez faire de l'HTML "classique" vous devrez donc apprendre à manipuler ces nouvelles fonctionnalités. Si vous ne savez pas, je vous conseille l'excellent <a href="http://www.siteduzero.com/tutoriel-3-13666-apprenez-a-creer-votre-site-web.html">SiteDuZero</a>, qui constitue un point de départ solide pour l'apprentissage de l'HTML et du CSS.
+
+<p></p>
+
+Nous allons voir un aperçu de certaines de ces nouveautés apportées par l'HTML5, mais tout d'abord, commençons par nous intéresser aux gens qui travaillent dessus !
+
+<h3 id="part1-3">Le W3C et le WHATWG</h3>
+
+Le W3C (<a href="http://fr.wikipedia.org/wiki/World_Wide_Web_Consortium">World Wide Web Consortium</a>) est l'organisation qui s'occupe de standardiser le web. Elle est constituée d'un ensemble de membres actifs qui réfléchissent à l'évolution des standards tels que l'HTML et le CSS. Ils discutent par exemple des bonnes pratiques à employer pour écrire son code HTML, ou encore de nouvelles balises qu'il serait intéressant d'ajouter au langage. Le W3C travaille donc à l'élaboration du standard qu'est "HTML5".
+
+<p></p>
+
+Seulement voilà, le problème c'est qu'une telle responsabilité présente un inconvénient majeur : la lenteur du processus. La conséquence de cette lenteur est la création d'un groupe de rébellion au sein du W3C, nommé le WHATWG (<a href="http://fr.wikipedia.org/wiki/Web_Hypertext_Application_Technology_Working_Group">Web Hypertext Application Technology Working Group</a>). Ce groupe est constitué principalement de développeurs des navigateurs tels que Mozilla, Opera ou Apple. L'approche est ici totalement différente puisque ce groupe est beaucoup plus ouvert et surtout a pour objectif d'accélérer la standardisation (ou du moins la mise en place de standards pour les navigateurs).
+
+<p></p>
+
+HTML5 est donc le fruit des travaux du W3C et du WHATWG.
+
+<p></p>
+
+Voyons sans plus attendre un petit aperçu de ce que nous ont concocté ces gens d'un point de vue du code HTML.
+
+<h2 id="part2">Les nouveautés dans le code HTML</h2>
+
+<h3 id="part2-1">Un allégement du code</h3>
+
+Tout d'abord, certaines balises ont été simplifiées afin d'alléger le code.
+C'est le cas par exemple du Doctype (la première ligne indigeste que vous copiez/colliez en haut de chaque page HTML), de la balise <code>html</code>, de la balise <code>meta</code> de l'encodage des caractères, et des balises de feuilles de <code>style</code> et de <code>script</code>.
+
+<p></p>
+
+Alors qu'auparavant on pouvait avoir ce genre de code :
+
+<script src="https://gist.github.com/verekia/cbd72dae29e1204dad9bd93010338405.js"></script>
+
+En HTML5, ça nous donne :
+
+<script src="https://gist.github.com/verekia/9a63ff50a83d4c19656e67c4cc39a185.js"></script>
+
+Plutôt sympathique n'est-ce pas ? De manière générale, on peut dire que l'HTML5 est beaucoup plus léger et laxiste sur l'écriture du code HTML. Un document HTML5 sera valide W3C même si vous écrivez vos balises en majuscules, ou si vous n'écrivez pas le <code>/</code> de fermeture d'une balise auto-fermante telle que <code>img</code>. La philosophie est donc à présent de laisser chacun adopter le style de code qu'il préfère. Ce choix est assez contestable mais il ne tient qu'à nous de conserver les bonnes pratiques adoptées grâce à l'XHTML1.0.
+
+<h3 id="part2-2">Les nouvelles balises sémantiques</h3>
+
+HTML5 introduit également un ensemble de nouvelles balises afin de donner plus de sémantique (de sens) à nos pages. Par exemple, au lieu d'utiliser une <code>div</code> avec un <code>id="header"</code>, nous pouvons utiliser tout simplement la balise <code>header</code>. Parmi ces balises sémantiques on trouve entre autres:
+<ul>
+<li><code>header</code> : Qui indique que l'élément est une en-tête</li>
+<li><code>footer</code> : Qui indique que l'élément est un pied-de-page</li>
+<li><code>nav</code> : Qui indique un élément de navigation tel qu'un menu</li>
+<li><code>aside</code> : Qui correspond à une zone secondaire non liée au contenu principal de la page</li>
+<li><code>article</code> : Qui représente une portion de la page qui garde un sens même séparée de l'ensemble de la page (comme un article de blog par exemple)</li>
+</ul>
+
+Ces noms n'ont pas été choisis au hasard. Google a fourni au W3C les chiffres de la fréquence d'utilisation de tous les id utilisés sur les sites indexés par le moteur de recherche, et ceux-ci font partie de ceux qui sont les plus employés.
+
+<p class="island">Ouais c'est bien beau tout ça, mais bon, l'utilisateur s'en fiche lui, il ne voit rien de tout ça. Tu n'as rien de plus palpitant ?</p>
+
+On y arrive ! Croyez-moi, si l'HTML5 n'était qu'une histoire de remplacement de <code>div</code> par de nouvelles balises, on n'en entendrait pas autant parler ! Voyons maintenant quelles sont les 3  nouvelles balises les plus séduisantes.
+
+<h3 id="part2-3">Les balises multimédia</h3>
+
+<strong><code>video</code></strong>
+
+<p></p>
+
+Cette balise intègre directement un lecteur vidéo dans la page, avec des boutons Lecture, Pause, une barre de progression, du volume... Un vrai petit YouTube intégré à votre page et natif au navigateur !
+
+<a href="/_pages/html5/introduction-html5/img/html5-video-lecteur.jpg" target="_blank">
+<img src="/_pages/html5/introduction-html5/img/html5-video-lecteur.jpg" alt="Lecteur vidéo HTML5" title="Lecteur vidéo HTML5" />
+</a>
+
+<strong><code>audio</code></strong>
+
+<p></p>
+
+Cette balise est l'équivalent de la balise video mais pour l'audio. En 3 lignes de code vous avez un lecteur MP3 !
+Nous pouvons d'ailleurs voir sur l'image ci-dessous que chaque navigateur utilise un design qui lui est propre pour styliser son lecteur. Dans tous les cas il vous est possible de créer votre propre design si vous préférez un rendu uniforme quel que soit le navigateur utilisé.
+
+<a href="/_pages/html5/introduction-html5/img/html5-audio-lecteur.png" target="_blank">
+<img src="/_pages/html5/introduction-html5/img/html5-audio-lecteur.png" alt="Lecteur audio HTML5" title="Lecteur audio HTML5" />
+</a>
+
+<strong><code>canvas</code></strong>
+
+<p></p>
+
+Cette balise est probablement la plus prometteuse de toutes, puisqu'il s'agit d'une surface sur laquelle il est possible de tracer des formes et de les animer. En résumé... C'est dans cette zone que sont réalisées des animations ou des jeux.
+
+<a href="/_pages/html5/introduction-html5/img/html5-canvas.jpg" target="_blank">
+<img src="/_pages/html5/introduction-html5/img/html5-canvas.jpg" alt="Un jeu vidéo en HTML5" title="Un jeu vidéo en HTML5" />
+</a>
+
+Les possibilités offertes par la balise canvas sont immenses, et couplé avec le standard WebGL de rendu graphique 3D, on obtient des résultats impressionnants au sein même du navigateur. Un projet de portage du jeu Quake 2 a été réalisé par 3 développeurs de Google afin de démontrer le potentiel de cette technique :
+
+<p></p>
+
+<iframe class="full-width" width="560" height="315" src="https://www.youtube.com/embed/fyfu4OwjUEI" frameborder="0" allowfullscreen></iframe>
+
+<h3 id="part2-4">Des formulaires améliorés</h3>
+
+Enfin parmi les nouveautés côté HTML on peut également citer une évolution des formulaires.
+Il est possible de spécifier de toutes nouvelles valeurs dans le champ <code>type</code> des balises <code>input</code>, afin d'indiquer le type de contenu du champ. C'est particulièrement utile afin d'effectuer une première validation du contenu avant l'envoi des informations au serveur. C'est également très important pour la navigation depuis un smartphone, qui affichera un clavier adapté selon le type de contenu.
+
+<p></p>
+
+Par exemple, pour le champ input suivant :
+
+<script src="https://gist.github.com/verekia/a54c084d399713b1f3ab635ae96ea96c.js"></script>
+
+On aura le clavier suivant sur un iPhone :
+
+<a href="/_pages/html5/introduction-html5/img/html5-form-iphone-tel.png" target="_blank">
+<img src="/_pages/html5/introduction-html5/img/html5-form-iphone-tel.png" alt="Un clavier de téléphone sur iPhone" title="Un clavier de téléphone sur iPhone" />
+</a>
+
+Ou sur un Android :
+
+<a href="/_pages/html5/introduction-html5/img/html5-form-android-number.png" target="_blank">
+<img src="/_pages/html5/introduction-html5/img/html5-form-android-number.png" alt="Un clavier de téléphone sur Android" title="Un clavier de téléphone sur Android" />
+</a>
+
+Pour le champ suivant :
+
+<script src="https://gist.github.com/verekia/cd967dc9bea6ef701d52d53d6ace5b7c.js"></script>
+
+Un iPhone affichera ce clavier adapté aux URLs :
+
+<a href="/_pages/html5/introduction-html5/img/html5-form-iphone-url.png" target="_blank">
+<img src="/_pages/html5/introduction-html5/img/html5-form-iphone-url.png" alt="Un clavier pour URLs sur iPhone" title="Un clavier pour URLs sur iPhone" />
+</a>
+
+Il existe bien d'autres nouveautés pour le code HTML, mais je pense que c'est suffisant pour une première introduction. Passons maintenant au JavaScript.
+
+<h2 id="part3">Les nouveautés dans le code JavaScript</h2>
+
+Il est loin le temps où le JavaScript était une sale bête noire détestée... L'apogée de l'AJAX et du web 2.0 ainsi que des bibliothèques JavaScript telles que jQuery a rendu son utilisation bien plus agréable et efficace. De plus, de moins en moins d'utilisateurs désactivent le JavaScript et il est même souvent impossible de le désactiver sur certains navigateurs.
+C'est dans ce contexte que le JavaScript a été propulsé vers l'avant avec l'HTML5. L'API JavaScript (les objets et les méthodes utilisables) a été généreusement enrichi avec de nouvelles fonctionnalités. En voici quelques unes :
+
+<h3 id="part3-1">Le Local Storage</h3>
+
+Le Local Storage est une manière élégante de stocker dans le navigateur des informations facilement. Par exemple, pour écrire puis lire une valeur dans le Local Storage il suffit d'écrire :
+
+<script src="https://gist.github.com/verekia/0b42e35fa3c737621e3bcf6ffbdb6bd3.js"></script>
+
+La variable sera toujours disponible si l'utilisateur ferme puis ré-ouvre son navigateur. L'utilisation du Local Storage est proche de celle des cookies, mais contrairement aux cookies, ces informations ne sont jamais communiquées au serveur. Elles sont ainsi particulièrement adaptées aux applications offline.
+
+<h3 id="part3-2">La géolocalisation</h3>
+
+Il ne s'agit pas strictement d'une spécification de l'HTML5, mais elle y est souvent associée. Il est possible grâce à {{> _pages/html5/tutoriel-geolocalisation-html5/link }}l'API de géolocalisation</a> d'accéder aux coordonnées de l'utilisateur si celui-ci a accepté de partager sa position via le bandeau s'affichant en haut de page :
+
+<a href="/_pages/html5/introduction-html5/img/barre-autorisation-partage-géolocalisation.png" target="_blank">
+<img src="/_pages/html5/introduction-html5/img/barre-autorisation-partage-géolocalisation.png" alt="Demande d'autorisation de partage de géolocalisation" title="Demande d'autorisation de partage de géolocalisation" />
+</a>
+
+On peut alors très facilement disposer d'informations telles que :
+
+<ul>
+<li>La latitude, la longitude, et l'altitude de l'utilisateur</li>
+<li>Son orientation par rapport au Nord</li>
+<li>La vitesse à laquelle il se déplace</li>
+</ul>
+
+<h3 id="part3-3">Le Drag and Drop</h3>
+
+Il est également possible d'effectuer des "glisser-déposer" dans une page web. Cette fonctionnalité n'aura donc plus besoin d'être visuellement émulée par des bibliothèques JavaScript tierces mais sera présente nativement dans l'API JavaScript. Par exemple, si l'on souhaite pouvoir déplacer un élément d'une liste, il suffit de déclarer cet élément avec l'attribut <code>draggable</code> à <code>true</code> :
+
+<script src="https://gist.github.com/verekia/8fa07f6da794669c37f4643fde3aed05.js"></script>
+
+Définir une zone potentielle de destination :
+
+<script src="https://gist.github.com/verekia/0fb99cfc7a89830d70be7fb32e9da8df.js"></script>
+
+Puis ensuite effectuer le traitement JavaScript correspondant :
+
+<script src="https://gist.github.com/verekia/463bb9234c95c056299f965763adb1ef.js"></script>
+
+Bien entendu, l'utilisation de bibliothèques telles que jQuery est préférable à l'injection de code JavaScript dans l'HTML.
+
+<h3 id="part3-4">Les Web Sockets</h3>
+
+Il s'agit là d'un nouveau protocole ambitieux de communication avec le serveur. Un navigateur ne peut habituellement qu'effectuer des requêtes au serveur puis recevoir sa réponse. C'est une communication unidirectionnelle (dite par canal simplex). Les Web Sockets apportent la communication bi-directionnelle (dite full-duplex) entre le client et le serveur.
+Pour prendre un exemple un peu plus concret, demandez-vous comment vous réaliseriez une page dont le contenu devrait toujours être à jour (comme un chat par exemple) ?
+
+<p class="island">Euh... On vérifierait s'il y a eu des changements sur le serveur toutes les n secondes en AJAX ?</p>
+
+Effectivement c'est une des premières idées auxquelles on pourrait penser ! Ce qui reconnaissez le, est particulièrement sale. Le client travaille, le serveur travaille, et la plupart du temps il n'y a rien à mettre à jour. Sachez cependant qu'il existe d'autres méthodes plus efficaces mais qui ne sont toujours pas idéales. C'est là que les Web Sockets nous sauvent la mise ! Le serveur va pouvoir nous envoyer les changements dès qu'ils se produisent, et le tout est effectué dans une requête spéciale dépourvue d'en-têtes HTTP ! C'est à dire que les données téléchargées sont ultra légères et ne contiennent que l'information qui nous intéresse. Pas mal non ?
+
+<p></p>
+
+Il existe encore de nombreux autres enrichissements de l'API JavaScript avec l'HTML5, et chacun d'entre-eux fera l'objet d'un article sur ce site.
+
+<p class="island">Ok, j'ai bien compris que l'HTML5 était plein de bonnes choses mais... en fait, ça sort quand ?</p>
+
+<h2 id="part4">L'HTML5 ça sort quand ?</h2>
+
+Haha, si on s'en tenait à attendre la date de "sortie officielle" correspondant à la recommandation du W3C, nous aurions tous des cheveux blancs avant de nous y mettre !
+
+<p></p>
+
+L'HTML5 n'est pas un "gros pack" avec une date de sortie. Il s'agit d'une multitude de petits modules étant élaborés et développés séparément. Par conséquent, certains sont déjà "sortis" et d'autres ne le sont pas encore.
+
+<p class="island">Ouais d'accord, donc comment je fais pour utiliser ceux déjà sortis ? Je les trouve où ?</p>
+
+De la même manière que pour tout ce que l'on utilise déjà sans se poser de questions avec l'HTML habituel, les nouveautés de l'HTML5 sont situées tout simplement... dans les navigateurs des visiteurs de votre site.
+
+<h3 id="part4-1">Une affaire de navigateur</h3>
+
+Les standards du web évoluent constamment, grâce au W3C et au WHATWG. Mais rien ne sert d'élaborer des standards si les navigateurs n'implémentent pas ces standards.
+
+Prenons un exemple. Si vous faites du CSS, vous savez que la couleur rouge correspond à la valeur hexadécimale <code>#FF0000</code>. Imaginons que le W3C décide alors de totalement changer son système de notation hexadécimale pour les couleurs et que le rouge s'écrive maintenant <code>#FF#00#00</code>. Que se passerait-il ?
+
+<ul>
+<li>Les navigateurs implémenteraient cette nouvelle notation dans leur dernière version,</li>
+<li>Les utilisateurs ayant cette dernière version verront s'afficher la bonne couleur peu importe si elle est écrite avec <code>#FF0000</code> ou <code>#FF#00#00</code>,</li>
+<li>Les utilisateurs ayant une "ancienne" version ne verront s'afficher correctement que la couleur avec pour notation <code>#FF0000</code>,</li>
+<li>... Et les développeurs hésiteront franchement à se mettre à la nouvelle notation, puisqu'elle risque de mal s'afficher chez leurs clients utilisant des versions anciennes des navigateurs.</li>
+</ul>
+
+On a donc une phase de transition sensible qui se déroule entre l'implémentation de la fonctionnalité par les navigateurs et son adoption par les développeurs.
+
+<p class="island">Et donc en ce moment c'est la même chose avec l'HTML5 ?</p>
+
+En quelque sorte ! L'HTML5 étant constitué de nombreux petits modules, certains sont déjà assez largement implémentés par les navigateurs pour être utilisés sans crainte par les développeurs. Pour les autres, il suffit de prévoir une solution alternative au cas où le visiteur utilise un ancien navigateur.
+
+<p></p>
+
+Dans le cas de notre exemple avec la couleur rouge, si un développeur souhaite utiliser la nouvelle notation, il peut utiliser les 2 notations conjointement de manière à ce que tous les navigateurs, modernes ou anciens, l'affichent correctement. C'est typiquement le genre de raisonnement qu'il faut adopter si l'on veut passer à l'HTML5.
+
+<p class="island">D'accord, et donc actuellement quels navigateurs supportent les fonctionnalités de l'HTML5 ?</p>
+
+Tous les navigateurs modernes (Firefox, Chrome, Safari, Opera, ainsi que les navigateurs Android et iPhone / iPad) implémentent de nombreuses fonctionnalités de l'HTML5. Il existe plusieurs sites qui  référencent la compatibilité de chaque navigateur avec chaque fonctionnalité. Je vous conseille le très complet <a href="http://caniuse.com/">CanIUse.com</a> ou <a href="http://findmebyip.com/litmus/">findmebyIP</a>. On y voit qu'Internet Explorer gère très peu de fonctionnalités HTML5.
+
+<a href="/_pages/html5/introduction-html5/img/caniuse-html5-css3.jpg" target="_blank">
+<img src="/_pages/html5/introduction-html5/img/caniuse-html5-css3.jpg" alt="CanIUse" title="CanIUse" />
+</a>
+
+<a href="/_pages/html5/introduction-html5/img/findmebyip-html5-css3.jpg" target="_blank">
+<img src="/_pages/html5/introduction-html5/img/findmebyip-html5-css3.jpg" alt="FindMeByIP" title="FindMeByIP" />
+</a>
+
+<h3 id="part4-2">Internet Explorer 9</h3>
+
+Microsoft, qui a toujours été peu respectueux des standards du web, a décidé de corriger le tir avec Internet Explorer 9. Un effort a été en particulier fait sur le support de fonctionnalités HTML5. Certaines manquent à l'appel, mais c'est dans l'ensemble un énorme pas en avant.
+
+<p class="island">Donc la sortie d'Internet Explorer 9 marquera le début de l'adoption de l'HTML5 ?</p>
+
+Disons qu'elle va rassurer un bon nombre de développeurs, qui couvriront alors une plus grande part d'utilisateurs. Mais ne vous leurrez pas, tant qu'il y aura des utilisateurs d'IE8, IE7 et IE6, vous ne couvrirez jamais la totalité des utilisateurs. C'est pourquoi il est important de toujours penser à des solutions alternatives pour ces navigateurs.
+
+<h3 id="part4-3">Utiliser l'HTML5 dès maintenant</h3>
+
+<p class="island">Donc au final on attend la sortie d'Internet Explorer 9 ? On attend que plus personne n'utilise IE6, IE7 et IE8 ? On attend la recommandation du W3C ?</p>
+
+Alors là je vous demande d'ouvrir bien grand les yeux et de retenir ceci :
+
+<p></p>
+
+On peut utiliser l'HTML5 <b>dès maintenant</b> !
+
+<p></p>
+
+Et j'en rajoute même une couche :
+
+<p></p>
+
+Ce n'est pas une blague, on peut <b>vraiment</b> l'utiliser aujourd'hui !
+
+<p></p>
+
+Si vous ne me croyez pas, jetez donc un oeil aux Doctypes de sites comme YouTube, Google, Apple, ou Gmail... Ou regardez simplement le code source de ce site ! L'HTML5 arrive doucement mais sûrement. Donc autant s'y former le plus tôt possible, pour avoir une longueur d'avance.
+
+<p></p>
+
+Vous qui lisez actuellement ces lignes, sachez que le plus dur est fait. Vous avez beaucoup de chance car nous avons atteint un stade de maturité suffisant pour pouvoir utiliser l'HTML5 dans de vrais projets. De plus, les nouveautés de l'HTML5 sont toutes indépendantes, et sont pour beaucoup d'entre-elles des améliorations non-critiques, qui ne présentent aucun risque à être utilisées en production.
+
+<p></p>
+
+De plus, des gens très talentueux ont créé pour nous de fabuleux outils pour pouvoir mettre en place dès maintenant et facilement des sites HTML5 fonctionnels. Nous aurons l'occasion de voir en détail le fonctionnement de certains d'entre eux tels qu'HTML5 Boilerplate, Modernizr, ou encore Selectivizr.
+
+<p></p>
+
+Bref, je vous demande de me croire sur parole, l'HTML5 ce n'est pas le futur, c'est le présent. Et à vrai dire ça a déjà commencé depuis quelques temps donc il est grand temps de vous y mettre !
+
+<h2 id="part5">… Et le CSS alors ?</h2>
+
+<p class="island">Et est-ce que le CSS3 a un rapport avec l'HTML5 ?</p>
+
+Ah je la sentais arriver cette question ! Effectivement j'allais y venir :
+
+<p></p>
+
+Le CSS3 correspond à un ensemble de nouveautés sur les feuilles de style. Mais attention, que ce soit bien clair : le CSS3 n'est pas forcément lié à l'HTML5 ! On associe facilement et abusivement les deux car on en entend parler à la même période, et que les navigateurs les implémentent en même temps, mais chacun fonctionne indépendamment de l'autre.
+
+<p></p>
+
+Comprendre : On peut styliser une balise <code>header</code> avec du code CSS2.1 et styliser une balise <code>div</code> avec du code CSS3.
+
+<p></p>
+
+Après avoir pris une petite pause (vous le méritez bien !) je vous invite à vous rendre sur l'{{> _pages/css3/introduction-css3/link }}Introduction au CSS3</a> qui est la suite logique de cette page.
+
+<p></p>
+
+Merci d'avoir lu jusqu'ici, j'espère vous avoir donné envie de vous plonger au coeur de cette nouvelle technologie, et si c'est le cas je vous invite à suivre régulièrement ce site qui va être particulièrement actif au cours des prochains mois.
+
+<p></p>
+
+A bientôt !
