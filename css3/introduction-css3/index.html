@@ -1271,13 +1271,465 @@
                 <h1>
                     Introduction au CSS3
                 </h1>
-                 <a href="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-1.png" target="_blank">
-                <img src="/_pages/css3/ombre-css3-box-shadow/img/ombre-css3-box-shadow-1.png" alt="Ombre CSS3 box-shadow" title="Ombre CSS3 box-shadow" />
+                <a href="/_pages/css3/introduction-css3/img/css3-logo.png" target="_blank">
+                <img src="/_pages/css3/introduction-css3/img/css3-logo.png" style="height: 200px" alt="Logo CSS3" title="Logo CSS3" />
                 </a>
 
+                Cette introduction est destinée à ceux qui souhaitent avoir un aperçu global de ce qu'apporte le CSS3. Vous y découvrirez un ensemble conséquent de nouveautés, comment utiliser les préfixes propriétaires afin d'en tirer profit dès maintenant et nous discuterons du caractère non-critique de son utilisation. Il s'agit de la suite logique de l'<a href="/html5/introduction-html5/">
+Introduction à l'HTML5</a>, mais elle peut être lue indépendamment.
 
-                <a href="/html5/introduction-html5/">
-xxx</a>.
+                <p></p>
+
+                Sommaire :
+
+                <ul class="sommaire">
+                <li><a href="#part1">Le CSS3 c'est quoi ?</a></li>
+
+                <li><a href="#part2">Exemple pratique : les bordures arrondies</a></li>
+                <ul>
+                <li><a href="#part2-1">L'art de faire les choses salement</a></li>
+                <li><a href="#part2-2">La belle manière de faire en CSS3</a></li>
+                </ul>
+                <li><a href="#part3">Les préfixes propriétaires (ou préfixes vendeurs)</a></li>
+                <li><a href="#part4">Est-ce grave si mes bordures ne sont pas arrondies ?</a></li>
+                <ul>
+                <li><a href="#part4-1">...Probablement pas</a></li>
+                  <li><a href="#part4-2">Ils n'en sauront rien !</a></li>
+                </ul>
+                <li><a href="#part5">Les nouveautés - Quoi de neuf docteur ?</a></li>
+
+                <li><a href="#part6">Effets visuels</a></li>
+                <ul>    <li><a href="#part6-1">border-radius</a></li>
+                    <li><a href="#part6-2">box-shadow</a></li>
+                    <li><a href="#part6-3">text-shadow</a></li>
+                <li><a href="#part6-4">gradients</a></li>
+                    <li><a href="#part6-5">font-face</a></li>
+                    <li><a href="#part6-6">opacity</a></li>
+                    <li><a href="#part6-7">transform</a></li>
+                    <li><a href="#part6-8">transition</a></li>
+                    <li><a href="#part6-9">3d transform</a></li>
+                </ul>
+
+                <li><a href="#part7">Sélecteurs</a></li>
+                <ul>
+                    <li><a href="#part7-1">Sélection par position des fils</a></li>
+                    <li><a href="#part7-2">Séléction d'éléments par la valeur d'un de leurs attributs</a></li>
+                    <li><a href="#part7-3">Exclusion d'éléments</a></li>
+                </ul>
+                  <li><a href="#part8">Les nouveaux outils pratiques</a></li>
+                <ul>
+                    <li><a href="#part8-1">Les media queries</a></li>
+                    <li><a href="#part8-2">Les colonnes</a></li>
+                    <li><a href="#part8-3">RGBA et HSL(A)</a></li>
+                </ul>
+                <li><a href="#part9">Conclusion</a></li>
+                </ul>
+
+                <h2 id="part1">Le CSS3 c'est quoi ?</h2>
+
+                Le CSS3 est le nom employé pour caractériser l'ensemble des nouveautés depuis le CSS2.1. Il s'agit par exemple d'un ensemble de nouveaux effets à appliquer sur nos éléments HTML. Vous verrez dans cet article à quel point il est simple de réaliser des effets visuels impressionnants en quelques lignes.
+
+                <p></p>
+
+                Mais le CSS3 c'est également un ensemble de nouveaux sélecteurs, de nouvelles manières de spécifier les couleurs, une détection des caractéristiques de l'appareil de l'utilisateur, des calculs dans les feuilles de style, des SVG en arrière plan... Bref, le CSS3 est un généreux enrichissement des feuilles de style qui, en plus d'être profitable à l'utilisateur, l'est au développeur également !
+
+                <p></p>
+
+                La plupart des développeurs web ont découvert le CSS3 en cherchant à appliquer certains effets sur leurs sites. Pour ma part, j'ai cherché à appliquer des bordures arrondies sur mes blocs HTML. Je vais prendre donc prendre cet effet comme exemple pour introduire les concepts du CSS3.
+
+                <h2 id="part2">Exemple pratique : Les bordures arrondies</h2>
+
+                Supposons que vous travailliez sur le design d'un site web qui inclut un système de commentaires, comme un blog par exemple. Vous avez la soudaine idée lumineuse d'afficher une bulle à la manière des bandes dessinées afin d'apporter une touche un peu originale à vos commentaires.
+                Vous êtes donc face à votre belle balise <code>div</code> contenant un commentaire de votre lecteur :
+
+                <script src="https://gist.github.com/verekia/55a4d4762de2e8572b7c0dff174fa384.js"></script>
+
+                Et vous vous dites :
+
+                <p class="island">Bon... Il va falloir que je transforme ce carré tout moche en bulle arrondie de bande dessinée. Demandons à Google ce qu'il en pense.</p>
+
+                Après quelques recherches vous tombez sur des sites à l'allure assez vieillotte qui vous disent :
+
+                <p></p>
+
+                "Il faut faire un <code>table</code> à 9 cases dans lequel on va placer 9  images découpées sous Photoshop".
+
+                <h3 id="part2-1">L'art de faire les choses salement</h3>
+
+                Nous voici donc partis pour mettre en place l'HTML de notre tableau à 9 cases (au mieux certaines techniques alternatives réduisent à 3 cases à condition que la largeur ou la hauteur de votre bloc soit fixe).
+
+                <p></p>
+
+                Après avoir donc passé 2 heures sous Photoshop à essayer de bien caler au pixel près vos images, notre pauvre balise <code>div</code> s'est maintenant transformée en quelque chose du genre :
+
+                <script src="https://gist.github.com/verekia/34a8e7fd4c73de14e94cf7ecb8e88faa.js"></script>
+
+                Avec pour CSS :
+
+                <script src="https://gist.github.com/verekia/2342601656263a657e07eca1c7aba6ab.js"></script>
+
+                Et en théorie à ce moment là nous devrions prendre un peu de recul et nous poser quelques questions sur ce que nous venons d'écrire.
+
+                <ul>
+                <li>C'est long et pénible à écrire</li>
+                <li>Nous ne respectons pas le principe de séparation du contenu et du design</li>
+                <li>Nous utilisons un tableau qui ne contient pas de données tabulaires</li>
+                <li>La page sera plus longue à charger (surtout si on a beaucoup de commentaires)</li>
+                <li>Le code est difficilement maintenable, par quelqu'un d'autre et par soi-même</li>
+                <li>On risque potentiellement d'être pénalisé par les moteurs de recherches pour contenu mal formaté</li>
+                </ul>
+
+                Bref, ce type de pratique est à bannir définitivement. Les bidouilles de ce genre étaient parfaites lorsqu'il n'y avait pas d'autres alternatives, lorsque le CSS3 n'était que très peu supporté. Aujourd'hui nous sommes en 2011, et nous avons enfin la chance de pouvoir faire autrement !
+
+                <p></p>
+
+                Donc on sélectionne tout cet affreux code préhistorique, et on fait un grand ménage ! Nous en sommes donc revenus au point de départ. Il est grand temps de redonner à l'HTML la fonction qui lui est dûe, à savoir organiser le contenu de la page.
+                Pour tout ce qui concerne le design, c'est uniquement dans la feuille de style CSS que ça se passe.
+
+                <h3 id="part2-2">La belle manière de faire en CSS3</h3>
+
+                Afin de styliser notre bulle de bande dessinée nous allons commencer par lui appliquer une simple bordure d'1 pixel et un fond blanc :
+
+                <script src="https://gist.github.com/verekia/d076a82af1729705a73cb5462c3eac42.js"></script>
+
+                Se pose ensuite la question fatidique des coins arrondis. Je ne doute pas que la plupart d'entre vous savent déjà que je vais vous parler de la propriété <b><code>border-radius</code></b>. Effectivement, c'est ce que nous allons maintenant utiliser pour arrondier nos coins. Il s'agit d'une nouvelle propriété CSS3 que l'on utilise en spécifiant la taille de l'arrondis de notre bordure :
+
+                <script src="https://gist.github.com/verekia/ba698ea6dde7728cde1e7b61dfba5a64.js"></script>
+
+                Donc là vous vous précipitez vers votre navigateur favoris pour tester ce code... et là, c'est le drame.
+
+                <p class="island">Je ne vois aucune bordure arrondie, tu nous as roulés !</p>
+
+                Ah oui ? Peut-être devriez-vous essayer ceci dans un autre navigateur ?
+
+                <p class="island">J'ai testé sous Internet Explorer 8, Firefox, Chrome, Safari, rien ne marche !!</p>
+
+                Avez-vous testé sous Internet Explorer 9 ? Sous Opera ?
+
+                <p class="island">Ohhhh... ça marche ici ! … Mais c'est débile ! Personne n'utilise Internet Explorer 9 ni Opera, ça n'a aucun intérêt !</p>
+
+                Effectivement, vous auriez totalement raison si nous en restions là...
+
+                <h2 id="part3">Les préfixes propriétaires (ou préfixes vendeurs)</h2>
+
+                Si je vous disais que nous pourrions faire fonctionner ces coins arrondis sous Firefox, Chrome et Safari, ce serait déjà mieux non ? Ces navigateurs, qui ont été des précurseurs de l'implémentation de <code>border-radius</code>, utilisent des <em>préfixes propriétaires</em> qui sont théoriquement des expérimentations des nouvelles propriétés. Ils sont ainsi libres de ne pas suivre les recommandations du W3C, aussi bien dans la manière d'afficher l'effet que dans la manière de l'écrire en CSS.
+
+                <p class="island">Ça doit être un beau bazar si chacun fait ce qui lui plait ?</p>
+
+                Heureusement, ces navigateurs ont une forte volontée de respect des standards. Et à part quelques rares exceptions, ils suivent très exactement les spécifications du W3C. Par conséquent l'écriture des nouvelles propriétés est la même, mais en incluant simplement le préfixe spécifique à chaque navigateur :
+
+                <ul>
+                <li><code>-moz-</code> pour Firefox</li>
+                <li><code>-webkit-</code> pour Chrome, Safari, iPhone, Android</li>
+                <li><code>-o-</code> pour Opera</li>
+                <li><code>-ms-</code> pour Internet Explorer</li>
+                <li><code>-khtml-</code> pour Konqueror</li>
+                <li><code>-</code> ...et il en existe encore d'autres...</li>
+                </ul>
+
+                <p class="island">Donc on va devoir écrire 6 fois une propriété pour qu'elle fonctionne partout ?</p>
+
+                En pratique non ! Tout d'abord, certains navigateurs n'implémentent pas certaines propriétés CSS3, donc préfixes ou non, ça ne marchera pas (c'est le cas d'Internet Explorer). Ensuite, on peut considérer que les navigateurs très fortement minoritaires tels que Konqueror peuvent être ignorés. Et enfin Opera se veut avant-gardiste en implémentant directement la plupart des propriétés CSS3 sans préfixe. Ça nous laisse donc avec :
+
+                <ul>
+                <li><code>-moz-</code></li>
+                <li><code>-webkit-</code></li>
+                </ul>
+
+                Ce qui est bien plus digeste.
+
+                <p></p>
+
+                Pour en revenir à notre exemple de <code>border-radius</code>, en écrivant ceci :
+
+                <script src="https://gist.github.com/verekia/ed038cc6ecd461b23943c7d1e1b63367.js"></script>
+
+                Notre bordure s'affichera correctement arrondie sur :
+
+                <ul>
+                <li>Internet Explorer 9</li>
+                <li>Firefox</li>
+                <li>Chrome</li>
+                <li>Safari</li>
+                <li>Opera</li>
+                <li>Le navigateur iPhone</li>
+                <li>Le navigateur Android</li>
+                <li>Le navigateur Blackberry</li>
+                </ul>
+
+                Et ne s'affichera pas arrondie sur :
+
+                <ul><li>Internet Explorer 8 et versions inférieures</li></ul>
+
+                Reconnaissez que ce serait vraiment dommage de ne pas tirer profit d'une telle simplicité uniquement parce vous n'avez pas de bords arrondis sous IE8...
+
+                <p class="island">Sur mon site, au moins 30% des utilisateurs utilisent Internet Explorer 8 et inférieurs !</p>
+
+                Ah mais c'est certain, Internet Explorer couvre encore une grande partie de la population, c'est clair. Mais la question importante à laquelle il faut maintenant répondre c'est : Si elles ne s'affichent pas, est-ce si grave ?
+
+                <h2 id="part4">Est-ce si grave que mes bordures ne soient pas arrondies ?</h2>
+
+                <h3 id="part4-1">...Probablement pas</h3>
+
+                Si le coeur de votre site repose sur le fait d'afficher des blocs aux bords arrondis, et que celui-ci perd tout intérêt sans ces bords arrondis, alors effectivement, il est important que les utilisateurs d'Internet Explorer 6, 7 et 8 voient s'afficher correctement vos bordures.
+
+                <p></p>
+
+                Dans tous les autres cas, demandez vous sérieusement : Est-ce que c'est <em>si</em> grave que mon site n'affiche pas de bordures arrondies ? A-t-il l'air bancale, cassé, non fonctionnel s'il ne les affiche pas ? Soyons raisonnables 5 minutes, des coins arrondis ne sont à 99,9% jamais vitaux pour nos sites. Il s'agit la plupart du temps d'une bonne idée qui nous a traversé l'esprit pour améliorer un peu notre design, mais reconnaissez que ça n'est pas si dramatique de ne pas les avoir.
+
+                <p></p>
+
+                Chaque année, chaque mois, chaque jour, des gens achètent de nouveaux ordinateurs, font des mises à jour, Internet Explorer 9 est un énorme pas en avant qui va faire basculer une grande partie des utilisateurs non-techniques vers le monde du CSS3.
+
+                <p class="island">Oui mais... Et le reste ?</p>
+
+                Le reste verront des bords carrés. Voilà, c'est dit. Et vous savez quoi ? Ça n'est vraiment pas grave. Pourquoi ? Parce qu'ils n'auront aucune idée du fait que votre design affiche des bords arrondis sur d'autres navigateurs.
+
+                <h3 id="part4-2">Ils n'en sauront rien !</h3>
+
+                Prenons un exemple connu de tous : Facebook.
+
+                <p></p>
+
+                Vous savez tous que ce bandeau bleu est présent en haut du site :
+
+                <a href="/_pages/css3/introduction-css3/img/facebook-banner.png" target="_blank">
+                <img src="/_pages/css3/introduction-css3/img/facebook-banner.png" alt="Header Facebook" title="Header Facebook" />
+                </a>
+
+                Il est tout à fait satisfaisant ce bandeau bleu non ?. Certains le trouvent même particulièrement joli et simple. Tout va bien.
+
+                <p></p>
+
+                Si je vous révélais maintenant un scoop : Sur Opera, il y a une légère ombre sous le bandeau bleu en haut de la page de Facebook.
+
+                <a href="/_pages/css3/introduction-css3/img/facebook-banner-shadow.png" target="_blank">
+                <img src="/_pages/css3/introduction-css3/img/facebook-banner-shadow.png" alt="Header Facebook avec ombre" title="Header Facebook avec ombre" />
+                </a>
+
+                Est-ce que votre monde s'écroule ? Est-ce que le bandeau bleu qui ne posait aucun problème est devenu subitement immonde et dépassé ?
+
+                <p></p>
+
+                Non.
+
+                <p></p>
+
+                Tout simplement parce que nous n'avions aucune idée de l'existence de ce design alternatif sur un autre navigateur. Et ça ne nous avait jamais posé de problème.
+
+                <p></p>
+
+                Les utilisateurs lambdas (ou "Madame Michu" pour ceux qui préfèrent) ne savent pas que le site qu'ils ont sous les yeux pourrait s'afficher d'une autre manière sous un autre navigateur. Ils ne se poseront même pas la question du fait que nos bords carrés seraient plus jolis s'ils étaient ronds.
+
+                <p></p>
+
+                Tant que vous fournissez à Internet Explorer 6, 7 et 8 un design correct, fonctionnel, qui n'a pas l'air cassé... alors vous pouvez vous faire plaisir et utiliser le CSS3 tant que vous voulez et dès aujourd'hui.
+
+                <h2 id="part5">Les nouveautés - Quoi de neuf docteur ?</h2>
+
+                Nous allons maintenant voir un bon nombre de nouveautés que je vais diviser en 3 grandes catégories :
+
+                <ul>
+                <li>Les effets visuels</li>
+                <li>Les sélecteurs</li>
+                <li>Les nouveaux outils pratiques</li>
+                </ul>
+
+                Il ne s'agit pas de l'intégralité des nouveautés, mais ça vous permettra d'avoir un très bon aperçu global.
+
+                <h2 id="part6">Les effets visuels</h2>
+
+                <h3 id="part6-1">border radius</h3>
+
+                Arrondit les bords d'un bloc :
+
+                <a href="/_pages/css3/introduction-css3/img/css3-border-radius.png" target="_blank">
+                <img src="/_pages/css3/introduction-css3/img/css3-border-radius.png" alt="border-radius" title="border-radius" />
+                </a>
+
+                <h3 id="part6-2">box-shadow</h3>
+
+                Applique une ombre sur un bloc :
+
+                <a href="/_pages/css3/introduction-css3/img/css3-box-shadow.png" target="_blank">
+                <img src="/_pages/css3/introduction-css3/img/css3-box-shadow.png" alt="box-shadow" title="box-shadow" />
+                </a>
+
+                <h3 id="part6-3">text-shadow</h3>
+
+                Applique une ombre sur un texte :
+
+                <a href="/_pages/css3/introduction-css3/img/css3-text-shadow.jpg" target="_blank">
+                <img src="/_pages/css3/introduction-css3/img/css3-text-shadow.jpg" alt="text-shadow" title="text-shadow" />
+                </a>
+
+                <h3 id="part6-4">gradients</h3>
+
+                Affiche un dégradé de couleurs :
+
+                <a href="/_pages/css3/introduction-css3/img/css3-gradients.jpg" target="_blank">
+                <img src="/_pages/css3/introduction-css3/img/css3-gradients.jpg" alt="Dégradés" title="Dégradés" />
+                </a>
+
+                <h3 id="part6-5">font face</h3>
+
+                Permet d'utiliser n'importe quelle police :
+
+                <a href="/_pages/css3/introduction-css3/img/css3-font-face.png" target="_blank">
+                <img src="/_pages/css3/introduction-css3/img/css3-font-face.png" alt="font-face" title="font-face" />
+                </a>
+
+                <h3 id="part6-6">opacity</h3>
+
+                Ajuste la transparence d'un élément :
+
+                <a href="/_pages/css3/introduction-css3/img/css3-opacity1.png" target="_blank">
+                <img src="/_pages/css3/introduction-css3/img/css3-opacity1.png" alt="Opacité" title="Opacité" />
+                </a>
+
+                <h3 id="part6-7">transform</h3>
+
+                Déplace, déforme, ou effectue la rotation d'un élément :
+
+                <a href="/_pages/css3/introduction-css3/img/css3-transform.png" target="_blank">
+                <img src="/_pages/css3/introduction-css3/img/css3-transform.png" alt="Rotation" title="Rotation" />
+                </a>
+
+                <h3 id="part6-8">transition</h3>
+
+                Passe d'un état à un autre d'un élément avec par une transition animée :
+
+                <a href="/_pages/css3/introduction-css3/img/css3-transition.png" target="_blank">
+                <img src="/_pages/css3/introduction-css3/img/css3-transition.png" alt="Transition" title="Transition" />
+                </a>
+
+                <h3 id="part6-9">3D transform</h3>
+
+                Effectue des transformations en 3D :
+
+                <a href="/_pages/css3/introduction-css3/img/css3-3d-transform.jpg" target="_blank">
+                <img src="/_pages/css3/introduction-css3/img/css3-3d-transform.jpg" alt="Transformation 3D" title="Transformation 3D" />
+                </a>
+
+                <h2 id="part7">Les sélecteurs</h2>
+
+                Le CSS3 introduit un ensemble de nouveaux sélecteurs. En voici quelques uns :
+
+                <h3 id="part7-1">Sélection par position des fils</h3>
+
+                <code>:nth-child(expression)</code> permet de sélectionner un ensemble d'éléments selon leur position grâce à une expression mathématique (rassurez-vous, pas de cosinus d'exponentielle au carré au programme !) ou bien grâce à certains mots-clés. Un cas d'utilisation très fréquent est la coloration d'un tableau. Il est plus lisible d'utiliser 2 couleurs de fond différentes alternées afin que l'utilisateur puisse se repérer plus facilement :
+
+                <a href="/_pages/css3/introduction-css3/img/css3-nth-child-table.png" target="_blank">
+                <img src="/_pages/css3/introduction-css3/img/css3-nth-child-table.png" alt="Tableau aux couleurs intercalées" title="Tableau aux couleurs intercalées" />
+                </a>
+
+                On pouvait auparavant utiliser du JavaScript ou un code côté serveur pour colorer une ligne sur deux. On a maintenant une méthode bien plus simple grâce à <code>:nth-child</code> :
+
+                <script src="https://gist.github.com/verekia/28f5c7d549a55d99dad16f2169295040.js"></script>
+
+                Le mot-clé <code>odd</code> signifie "chiffres impairs" (et <code>even</code> pour les chiffres pairs), mais nous aurions également pu construire une expression mathématique simple en utilisant la variable <code>n</code> :
+
+                <script src="https://gist.github.com/verekia/c7ba3ad95b6abe8b95640265d43dce4d.js"></script>
+
+                Ce qui produit exactement le même effet, mais permet une utilisation bien plus poussée dans certains cas spécifiques.
+
+                <h3 id="part7-2">Séléction d'éléments par la valeur d'un de leurs attributs</h3>
+
+                <code>[attribut^="valeur"]</code> sélectionne les éléments dont l'attribut spécifié commence par une certaine valeur. Voici un exemple d'utilisation :
+
+                <script src="https://gist.github.com/verekia/1f43ccbd7641f521cdc648d354a523d9.js"></script>
+
+                <script src="https://gist.github.com/verekia/eca8f3a9b3814f44a892aed6c144f75e.js"></script>
+
+                Ce qui colorera en rouge uniquement les liens externes.
+
+                <p></p>
+
+                Il existe également 2 autres notations qui permettent de filtrer les éléments dont les attributs se terminent par une valeur <code>([attribut$="valeur"])</code> et les éléments dont les attributs contiennent au moins une fois une chaine de caractères <code>([attribut*="valeur"])</code>.
+
+                <h3 id="part7-3">Exclusion d'éléments</h3>
+
+                <code>:not</code> permet d'exclure certains éléments de la sélection. Par exemple, le code suivant n'affichera en vert que les 2 derniers liens :
+
+                <script src="https://gist.github.com/verekia/e37e3d6fed109ccedd2adc56e94937f3.js"></script>
+
+                <script src="https://gist.github.com/verekia/479d2d56a2f47d18aa029c065fcb0563.js"></script>
+
+                <h2 id="part8">Les nouveaux outils pratiques</h2>
+
+                <h3 id="part8-1">Les media queries</h3>
+
+                Les media queries sont une manière élégante de définir des styles différents selon le type de média de l'utilisateur. C'est particulièrement utile pour avoir des styles différents sur les écrans de petite taille des smartphones et des tablettes tactiles. Ainsi une seule page HTML utilisant les media queries peut distribuer des versions différentes de son design, afin de s'adapter par exemple à la largeur de l'écran ou même à l'orientation du téléphone.
+
+                <script src="https://gist.github.com/verekia/b181e24475199fbdce7a769c321624cc.js"></script>
+
+                Dans cet exemple le fond de la page s'affichera en vert sur les grands écrans et en rouge sur les petits écrans.
+
+                <h3 id="part8-2">Les colonnes</h3>
+
+                Avec le CSS3 il est désormais possible de définir des colonnes, à la manière des contenus éditoriaux de journaux. Ce cas d'utilisation était assez rare avant l'apparition du CSS3, qui simplifie grandement les choses. Avec un code aussi simple que :
+
+                <script src="https://gist.github.com/verekia/8202477077bb6b5d20fbde51953dc6a7.js"></script>
+
+                On peut passer très facilement de :
+
+
+
+                <a href="/_pages/css3/introduction-css3/img/css3-columns-1.png" target="_blank">
+                <img src="/_pages/css3/introduction-css3/img/css3-columns-1.png" alt="Texte en une colonne" title="Texte en une colonne" />
+                </a>
+
+                à
+
+                <a href="/_pages/css3/introduction-css3/img/css3-columns-2.png" target="_blank">
+                <img src="/_pages/css3/introduction-css3/img/css3-columns-2.png" alt="Texte en deux colonnes" title="Texte en deux colonnes" />
+                </a>
+
+                ou bien encore :
+
+                <a href="/_pages/css3/introduction-css3/img/css3-columns-3.png" target="_blank">
+                <img src="/_pages/css3/introduction-css3/img/css3-columns-3.png" alt="Texte en trois colonnes" title="Texte en trois colonnes" />
+                </a>
+
+                Il était auparavant très délicat de reproduire une telle structure de page, ce qui impliquait un découpage du texte avec du code serveur ou JavaScript. Cette nouvelle méthode ultra simple permet de créer des mises en page originales afin d'aérer davantage le texte.
+
+                <h3 id="part8-3">RGBA et HSL(A)</h3>
+
+                Il est désormais également possible d'utiliser de nouvelles notation pour spécifier des couleurs. La méthode standard RGB accueille maintenant une composante Alpha qui gère l'opacité. Cette nouvelle notation diffère beaucoup de la précédente. On utilise le format <code>rgba(r, g, b, a)</code> avec "r", "g" et "b" étant des entiers de 0 à 255 et "a" un décimal de 0 à 1.
+                Ainsi pour colorer un arrière plan en rouge semi-transparent nous devons écrire :
+
+                <script src="https://gist.github.com/verekia/77364f970b33c925291a348f84c4a546.js"></script>
+
+                La notation HSL (Hue, Saturation, Lightness) un peu moins commune permet d'obtenir les mêmes résultats en jouant sur la teinte, la saturation et la luminosité.
+
+                <h2 id="part9">Conclusion</h2>
+
+                Vous êtes arrivé jusqu'ici ? Félicitations ! C'est probablement que vous portez un intérêt réel au CSS3 et je ne peux que vous encourager.
+
+                <p></p>
+
+                Pour terminer, s'il y a une seule chose que j'aimerais que vous gardiez en tête c'est le fait qu'il n'est pas nécessaire qu'un site s'affiche exactement de la même manière sur tous les navigateurs. Il s'agit d'un changement de philosophie actuel dans le webdesign qui va de pair avec des sujets tels que l'amélioration progressive (ou enrichissement progressif) et la dégradation gracieuse. Nous aurons l'occasion d'en reparler, mais pour le moment un petit instant de détente en rapport avec le sujet sur le site :
+
+                <p></p>
+
+                <a href="http://dowebsitesneedtobeexperiencedexactlythesameineverybrowser.com/">http://DoWebsitesNeedToBeExperiencedExactlyTheSameInEveryBrowser.com/</a>
+
+                <p></p>
+
+                Un passage de la souris sur le texte révélera le potentiel de votre navigateur, mais l'important est bel et bien le contenu et le message à faire passer. A méditer !
+
+                <p></p>
+
+                Comme vous pouvez le voir, le CSS3 apporte énormément de nouveautés. Chacune d'entre elles mérite un tutoriel complet spécifique, et c'est un des objectifs de ce site. Je vous invite donc à suivre l'activité de ce site au cours des prochains mois, qui seront particulièrement intenses !
+
+                <p></p>
+
+                A bientôt pour une avalanche de tutoriels !
+
+                <p></p>
+
+                Psst ! J'ai aussi un article d'<a href="/html5/introduction-html5/">
+Introduction à HTML5</a> si vous en voulez encore !
                 <p class="text-right"><span class="screen-reader-text">Posted on </span><time class="entry-date published"
                 datetime="2011-01-14">
                 January 14, 2011
