@@ -45,6 +45,9 @@ consulting:
 # 'demo/':
 #     short-title: ''
 
+'initializr/initializr-generateur-template-html5-boilerplate':
+  short-title: '[FR] Initializr'
+
 'html5/logo-html5-officiel-w3c':
     short-title: '[FR] Logo HTML5 du W3C'
 

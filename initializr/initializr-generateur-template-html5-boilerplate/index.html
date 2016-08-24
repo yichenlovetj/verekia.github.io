@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Tutoriel sur l'API Google Maps avec la géolocalisation HTML5 | Jonathan Verrecchia</title>
+        <title>Initializr - Un générateur de templates basé sur HTML5 Boilerplate | Jonathan Verrecchia</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#000000">
@@ -1283,215 +1283,143 @@
         <div class="main-column">
             <div class="main-content">
                 <h1>
-                    Tutoriel sur l'API Google Maps avec la géolocalisation HTML5
+                    Initializr - Un générateur de templates basé sur HTML5 Boilerplate
                 </h1>
-                <a href="/_pages/html5/tutoriel-api-google-maps-geolocalisation-html5/img/tutoriel-api-google-maps-html5.png" target="_blank">
-                <img src="/_pages/html5/tutoriel-api-google-maps-geolocalisation-html5/img/tutoriel-api-google-maps-html5.png" alt="Tutoriel API Google Maps HTML5" title="Tutoriel API Google Maps HTML5" />
+                 <a href="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/initializr-generateur-template-html5-boilerplate.png" target="_blank">
+                <img src="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/initializr-generateur-template-html5-boilerplate.png" alt="Initializr" title="Initializr" />
                 </a>
 
-                Ce tutoriel vient en complément au <a href="/html5/tutoriel-geolocalisation-html5/">Tutoriel de géolocalisation en HTML5</a>, et vous apprendra à exploiter les informations de géolocalisation que vous y avez obtenu sur une carte Google Maps.
-                Nous allons réaliser une application qui affiche votre position sur une carte et trace votre parcours en suivant vos déplacements.
-
-                <h2>L'API Google Maps</h2>
-
-                Tout d'abord, il est essentiel de bien comprendre ce qu'est une API. Toute application web peut choisir d'autoriser des développeurs tiers à utiliser une partie de ses fonctionnalités. Ces fonctionnalités peuvent être accédées de plusieurs manières :
-                <ul>
-                  <li>en téléchargeant une bibliothèque de fonctions pour l'inclure sur son site,</li>
-                  <li>en récupérant une donnée précise en construisant une URL,</li>
-                  <li>En incluant directement la bibliothèque en ligne.</li>
-                </ul>
-
-                Concernant Google Maps, on est dans ce dernier cas, c'est à dire qu'on va directement inclure la bibliothèque Google Maps dans notre JavaScript.
-
-                <h3>Inclure Google Maps</h3>
-
-                Pour inclure les fonctions Google Maps dans notre application, nous ajoutons une balise <code>script</code> dans la partie <code>head</code> de notre page :
-
-                <script src="https://gist.github.com/verekia/f2d31eb4faf4f97af1bb77d4e47975b9.js"></script>
-
-                L'API Google Maps est disponible sous plusieurs déclinaisons, que l'on peut choisir en ajoutant un paramètre à cette URL.
-                Parmi ces paramètres on retrouve :
-                <ul>
-                  <li>L'utilisation ou non du GPS : <code>sensor</code></li>
-                  <li>La langue des textes affichés sur la carte : <code>language</code></li>
-                  <li>Le pays : <code>region</code></li>
-                </ul>
-
-                Dans le cadre de ce tutoriel nous allons simplement activer l'utilisation du GPS avec le paramètre <code>sensor</code> que l'on va passer à <code>true</code> :
-
-                <script src="https://gist.github.com/verekia/c41a13a8ecb75032a8ee1e5009a56fd9.js"></script>
-
-                Concernant les autres paramètres je vous invite à aller lire la <a href="http://code.google.com/intl/fr-FR/apis/maps/documentation/javascript/basics.html">documentation officielle</a> (en anglais).
-
-                <h2>Création de la structure de notre page</h2>
-
-                Notre carte va venir se loger dans un simple div, auquel nous allons attribuer l'id <code>map_canvas</code>.
-
-                <script src="https://gist.github.com/verekia/0e40365d6156b02a8a1e63d11f4aad7a.js"></script>
-
-                Afin que la carte s'affiche en plein écran, et qu'elle le fasse correctement sur tous les navigateurs, nous allons ajouter les propriétés de style suivantes :
-
-                <script src="https://gist.github.com/verekia/dc591a5f578d99a9c9f4e6233541ff6a.js"></script>
-
-                <p class="island">C'est quoi ces histoires de <code>height</code> et <code>width</code> à <code>100%</code> ?</p>
-
-                Pour afficher la carte en plein écran avec des valeurs en pourcentages, les navigateurs les plus âgés auront besoin que l'on définisse également en pourcentage la taille des éléments parents. On indique donc également une <code>height : 100%</code> pour la balise <code>body</code> et pour la balise <code>html</code>.
-
-                Nous allons également ajouter une balise <code>meta</code> dans le <code>head</code> de notre HTML afin que l'utilisateur ne puisse pas réduire ou agrandir la carte :
-
-                <script src="https://gist.github.com/verekia/5db279c5a36a2c68ba537b8b0ede0693.js"></script>
-
-                Et voilà ! Nous avons maintenant une page HTML prête à accueillir une Google Map. Voici ce à quoi devrait ressembler votre code pour le moment :
-
-                <script src="https://gist.github.com/verekia/65369dd866d1e1572abc705b5cbc522c.js"></script>
-
-                Un rapide aperçu dans le navigateur nous montre... qu'absolument rien ne s'affiche, et c'est tout à fait normal ! Un peu de patience, la magie va agir très bientôt.
-
-                <h2>Afficher la carte Google Maps</h2>
-
-                Bien, il est temps de passer aux choses sérieuses !
-                Nous souhaitons afficher la carte une fois notre page html chargée. Pour cela nous allons ajouter l'attribut <code>onload</code> à notre balise <code>body</code> :
-
-                <script src="https://gist.github.com/verekia/0af910aea525c267160da05b86f90c9e.js"></script>
-
-                Puis créer la fameuse fonction <code>initialize()</code> dans un <code>script</code>.
-
-                <script src="https://gist.github.com/verekia/28c37f57ee1342b66e54822e2683233a.js"></script>
-
-                Cette fonction va, comme son nom l'indique, initialiser la carte Google Maps. Dans le cadre de ce tutoriel, nous allons créer une carte :
-                <ul>
-                  <li>Contenue dans notre <code>div</code> <code>map_canvas</code></li>
-                  <li>Centrée sur les coordonnées 48.858565, 2.347198 (ce qui représente Châtelet à Paris)</li>
-                  <li>De niveau de zoom 19 (très précis afin de pouvoir tester facilement les déplacements un peu plus tard)</li>
-                  <li>En mode <code>ROADMAP</code> c'est à dire un plan classique, sans image satellite ni relief</li>
-                </ul>
-
-                Ces paramètres sont à fournir à l'instanciation de l'objet <code>google.maps.Map</code> comme ceci :
-
-                <script src="https://gist.github.com/verekia/0f036aed87524a044a2501ebf6429b13.js"></script>
-
-                Revenons un peu sur ce code...
+                <a href="http://www.initializr.com" target="_blank">Initializr</a> vous permet de générer un template basé sur HTML5 Boilerplate qui vous rendra opérationnel sur un projet HTML5 en quelques secondes seulement. Vous pouvez personnaliser votre template selon vos besoins afin d'éviter de démarrer votre projet avec un code trop chargé. L'ensemble du processus de création du projet et les options disponibles sont détaillées dans cet article.
 
                 <p></p>
 
-                Tout d'abord, le premier paramètre correspond à l'élément du DOM dans lequel va être injecté notre carte (ici <code>map_canvas</code>, que l'on récupère grâce à <code>document.getElementById())</code>. Ensuite, le second paramètre, les options, doivent être fournies sous cette forme : <code>{nom: valeur, nom: valeur, ...}</code>.
+                Avant de commencer, si vous êtes novice en HTML5 et que vous souhaitez avoir un aperçu global de ce qui se cache derrière cette nouvelle technologie, je vous recommande de lire cette <a href="/html5/introduction-html5/">
+Introduction à l'HTML5</a> avant de passer à la suite.
 
                 <p></p>
 
-                On remarque que les coordonnées du <code>center</code> sont fournies au travers d'un nouvel objet : <code>google.maps.LatLng</code>. Il en sera ainsi dès que l'on voudra définir la latitude et longitude d'une coordonnée.
-                Enfin <code>mapTypeId</code> correspond au type de carte à afficher :
-                <ul>
-                  <li><code>ROADMAP</code> pour le plan</li>
-                  <li><code>SATELLITE</code> pour les photos satellite</li>
-                  <li><code>HYBRID</code> pour afficher les photos satellites avec le plan superposé</li>
-                  <li><code>TERRAIN</code> pour afficher les reliefs</li>
-                </ul>
+                Tout d'abord il faut savoir qu'Initializr est basé sur HTML5 Boilerplate. Intéressons-nous donc déjà à ce fameux Boilerplate.
 
-                Allez, cette fois on peut ouvrir la page html dans son navigateur et... bingo ! Voilà un beau plan centré sur Châtelet ! Si possible, testez avec un smartphone afin de voir que les boutons de zoom, et de changement de vue apparaissent bien et qu'ils soient de la bonne taille. En effet si vous avez oublié la balise meta ils seront minuscules et inaccessibles...
+                <h2>HTML5 Boilerplate</h2>
 
-                <p class="island">Bon c'est bien joli ton truc mais je ne vois pas où est l'HTML5 là dedans !</p>
+                HTML5 Boilerplate est un template HTML5 puissant et fiable créé et maintenu par Paul Irish, de Google, et Divya Manian. Boilerplate est constitué d'un ensemble de fichiers HTML, CSS et JavaScript, qui servent à bien démarrer un projet HTML5. Il inclut également des outils très utiles tels que Modernizr, jQuery, et un reset de CSS.
 
-                Patience on y arrive... Puisqu'on va maintenant utiliser la géolocalisation HTML5 !
+                <a href="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/html5-boilerplate.png">
+                <img src="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/html5-boilerplate.png" alt="HTML5 Boilerplate" title="HTML5 Boilerplate" />
+                </a>
 
-                <h2>Ajouter la géolocalisation HTML5</h2>
+                Boilerplate inclut en revanche d'autres outils moins utiles comme le profiling jQuery, le code de Google Analytics, des fonctions JavaScript pour le logging, un fichier de configuration pour le cross domain Flash, la configuration serveur IIS et nginx, des pages de tests, des scripts de build Ant... Bref, lorsque vous démarrez un projet avec Boilerplate, cela passe par une longue phase de suppression de toutes les parties du template qui ne vous serviront pas.
 
-                Tout d'abord je précise à nouveau qu'il est nécessaire que vous maitrisiez la <a href="/html5/tutoriel-geolocalisation-html5/">géolocalisation en HTML5</a> car ses principes ne seront pas réexpliqués dans ce tutoriel.
+                <h2>Initializr - Un Boilerplate léger et customisable</h2>
 
-                <p></p>
+                L'idée d'Initializr est de proposer le template de Boilerplate sans ces outils rarement utiles, afin de pouvoir commencer un projet HTML5 très rapidement tout en restant aussi fiable que Boilerplate. Le code généré par Initializr est intégralement basé sur Boilerplate, dont la solidité n'est plus à prouver. Initializr propose différentes options de personnalisation de votre template dont voici le détail :
 
-                Pour commencer, à la suite de la fonction <code>initialize()</code>, nous testons la compatibilité du navigateur avec la géolocalisation HTML :
+                <h2>HTML/CSS</h2>
 
-                <script src="https://gist.github.com/verekia/12fd7bb55333f5ca5d8690c181eadf4b.js"></script>
+                Par défaut, Boilerplate vous fournit une page blanche. Initializr vous permet de générer un premier contenu basique, qui vous aidera à démarrer rapidement. La page d'exemple reprend le thème du site en mettant en forme une structure de page web classique avec un header, un footer, un menu de navigation, un bloc sur le côté, ainsi qu'une structure d'article de type blog.
 
-                Vous pouvez noter que je n'utilise pas d'<code>errorCallback</code>, ceci afin de ne pas alourdir le code et se concentrer sur l'essentiel.
-                A chaque mise à jour de la position de l'utilisateur, la variable <code>position</code> dans <code>successCallback</code> est mise à jour. De plus, la méthode <code>panTo()</code> permet de centrer la carte sur de nouvelles coordonnées. Par conséquent nous allons ajouter à notre <code>successCallback</code> :
+                <a href="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/initializr-html5-template.jpg">
+                <img src="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/initializr-html5-template.jpg" alt="Template HTML5 Initializr" title="Template HTML5 Initializr" />
+                </a>
 
-                <script src="https://gist.github.com/verekia/71af565e67271d72dfbb4bfa416295a9.js"></script>
+                <h2>JavaScript</h2>
 
-                Et pour représenter la position exacte, nous allons placer un marqueur sur la carte comme ceci :
+                HTML5 Boilerplate inclut l'excellent framework JavaScript jQuery. On retrouve donc sur Initializr cette bibliothèque, disponible en version compressée ou non, mais également la possibilité de ne pas l'inclure, voire même de ne pas du tout inclure de JavaScript. Alors soyons cependant clairs sur ce point, nous parlons ici de votre JavaScript, pas de celui présent dans Modernizr ou html5shiv, qui assurent la compatibilité avec les navigateurs les plus capricieux.
 
-                <script src="https://gist.github.com/verekia/5892bb313db7c4ad9f582ccb82192645.js"></script>
+                <a href="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/jquery-logo.png">
+                <img src="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/jquery-logo.png" alt="Logo jQuery" title="Logo jQuery" />
+                </a>
 
-                Nous avons donc à présent :
+                <h2>La compatibilité</h2>
 
-                <script src="https://gist.github.com/verekia/bf1a4ecc25c6836f660f2fd387aa8d8f.js"></script>
+                <h3>HTML5shiv</h3>
 
-                A chaque déplacement effectué par l'utilisateur, un nouveau marqueur est placé sur la carte afin d'indiquer votre nouvel emplacement. Sympathique non ?
+                Les navigateurs modernes supportent parfaitement les nouvelles balises HTML5. Cependant les versions d'Internet Explorer 8 et inférieures ont besoin d'un petit coup de pouce afin de styliser ces nouvelles balises, qui par défaut ne sont pas reconnues. Ce petit coup de pouce se nomme HTML5shiv. Il s'agit d'un petit fichier JavaScript qui permettra à Internet Explorer de reconnaître les balises HTML5 grâce à la fonction <code>createElement()</code> :
 
-                <p></p>
+                <script src="https://gist.github.com/verekia/ff2db8cffd08180bad65aed8f76f274f.js"></script>
 
-                Notez cependant que si vous faites le test dans la rue avec votre smartphone, dès que le GPS perd le signal, votre position sera replacée au point relais auquel votre 3G est rattachée, ce qui est beaucoup moins précis.
+                Tous les nouveaux éléments sont ainsi automatiquement créés avant que le contenu du corps de la page ne soit affiché. Il est ainsi obligatoire de placer HTML5shiv dans le <code>head</code> de la page plutôt qu'en bas de votre <code>body</code>, ce qui est conseillé pour le reste de votre JavaScript.
 
-                <p></p>
+                <h3>Modernizr</h3>
 
-                Et voilà ! A ce stade vous avez toutes les connaissances pour exploiter la géolocalisation en HTML5 au travers de l'API Google Maps. Les plus curieux d'entre vous pourront pousser leurs recherches un peu plus loin en parcourant la documentation de l'API Google Maps, afin d'exploiter aux mieux les très nombreuses fonctionnalités proposées par l'API.
+                <a href="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/modernizr-logo.png">
+                <img src="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/modernizr-logo.png" alt="Logo Modernizr" title="Logo Modernizr" />
+                </a>
 
-                <h2>Bonus : le tracé du parcours</h2>
+                Modernizr est un détecteur de support des fonctionnalités HTML5 et CSS3 qui inclut HTML5shiv. Il s'agit d'un fichier JavaScript qui va créer un objet <code>Modernizr</code> contenant des propriétés indiquant pour chaque fonctionnalité si elle fonctionne ou non dans votre navigateur :
 
-                Vous en voulez encore ? Parfait ! Nous allons ajouter à notre application la cerise sur le gâteau qui épatera vos proches ! (qui ont cependant 9 chances sur 10 de vous répondre "Ben qu'est-ce que ça a de si formidable ? C'est l'application Google Maps quoi...", mais ne perdez pas espoir !).
+                <script src="https://gist.github.com/verekia/ae7a8977bf6fea68a9a49ee85ac40579.js"></script>
 
-                <p></p>
+                Modernizr ajoute également des classes CSS à la balise <code>html</code> afin de pouvoir facilement prévoir des styles alternatifs si certaines propriétés CSS3 ne sont pas supportées :
 
-                Afin de parfaire notre application nous allons donc tracer une ligne qui va représenter le chemin suivi par l'utilisateur. Pour ce faire, nous allons avoir recours à l'objet <code>google.maps.Polyline</code>.
-                Un <code>Polyline</code> est une ligne tracée entre plusieurs points. Dans le cadre de cet exemple, à chaque nouvelle position de géolocalisation, nous allons tracer une ligne reliant la position précédente à la nouvelle.
+                <script src="https://gist.github.com/verekia/086657b7d10c3460d779129976b5b5d5.js"></script>
 
-                Un <code>Polyline</code> se crée de la manière suivante :
+                Modernizr est donc un outil particulièrement complet dans la détection du support des fonctionnalités HTML5 et CSS3 mais il est important de bien comprendre qu'il n'ajoute pas de fonctionnalités manquantes. C'est l'outil de compatibilité sélectionné par défaut sur Initializr.
 
-                <script src="https://gist.github.com/verekia/ae14f8b33ed18d6be934203334893664.js"></script>
+                <h2>La configuration serveur</h2>
 
-                Les 3 derniers paramètres servent à définir l'apparence du tracé (qui sera donc rouge dans cet exemple), et le premier paramètre est un tableau de coordonnées, c'est à dire :
-
-                <script src="https://gist.github.com/verekia/d1d0e16a2d11a769c4d28d4cf5f09c44.js"></script>
-
-                Cette variable doit être créée avant <code>newLine</code> bien entendu.
-
-                On remarque la variable <code>previousPosition</code> qui n'est pas encore définie. Nous allons le faire immédiatement en déclarant une variable globale tout en haut de notre script :
-
-                <script src="https://gist.github.com/verekia/41b4a5bd91d567ef8d6d628157dcca1f.js"></script>
-
-
-                Cette variable contiendra en permanence la position précédente afin d'effectuer le tracé du <code>Polyline</code>.
-
-                Une fois toutes ces informations fournies pour la création du <code>Polyline</code>, il suffit d'ajouter ce dernier à notre carte :
-
-                <script src="https://gist.github.com/verekia/762b549e2ec8ede1bbbf296f30f444c6.js"></script>
-
-
-                Enfin, on attribue la valeur courante de position à previousPosition :
-
-                <script src="https://gist.github.com/verekia/391f4c45306e87a466719fb3b98a682c.js"></script>
-
-                Ce qui donne le code suivant :
-
-                <script src="https://gist.github.com/verekia/b5aeef63df697c790558f099879283cd.js"></script>
-
-                On a également ajouté une condition sur l'existence de la variable <code>previousPosition</code>, afin de ne pas déclencher d'erreur lors de la première exécution du code.
+                Enfin, Initializr propose d'inclure un fichier de configuration serveur également fourni par Boilerplate. Il est donc possible de choisir un fichier <code>.htaccess</code> pour les serveurs PHP, <code>web.config</code> pour les serveurs Microsoft IIS, ou bien <code>nginx.conf</code> pour Ruby on Rails. Il est important de noter que par défaut, ces fichiers vont réécrire l'URL de la page pour supprimer le "www" afin d'obtenir des URL plus courtes.
 
                 <p></p>
 
-                Si vous testez ce code sur votre smartphone, vous remarquerez que chaque coupure du signal GPS provoque le tracé de lignes vers le point très éloigné de votre anterre 3G la plus proche. Afin de pallier à ce défaut, nous pouvons faire appel à l'une des propriétés très intéressantes de l'objet <code>position.coords</code>. Si vous avez bien suivi le précédent tutoriel vous devriez avoir deviné qu'il s'agit de la propriété <code>accuracy</code> !
+                Si vous préférez garder votre "www", vous pouvez retirer les lignes suivantes dans le cas d'un .htaccess :
+
+                <script src="https://gist.github.com/verekia/846d89d9d305eba253a5c1600458ae7f.js"></script>
+
+                <a href="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/htaccess-webconfig-nginx.png">
+                <img src="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/htaccess-webconfig-nginx.png" alt=".htaccess web.config nginx.conf" title=".htaccess web.config nginx.conf" />
+                </a>
+
+                <h2>Y a plus qu'à cliquer sur le bouton !</h2>
+
+                Une fois vos choix de configuration faits, il vous suffira de cliquer sur le (très) gros bouton <i>Download!</i> pour télécharger l'archive générée.
+
+                <a href="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/initializr-download.png">
+                <img src="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/initializr-download.png" alt="Bouton télécharger Initializr" title="Bouton télécharger Initializr" />
+                </a>
+
+                Si vous laissez la configuration par défaut, vous obtiendrez une structure de projet complète prête à être utilisée, qui ressemblera à ceci :
+
+                <a href="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/html5-initializr-structure.png">
+                <img src="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/html5-initializr-structure.png" alt="Structure Initializr" title="Structure Initializr" />
+                </a>
+
+                Un rapide coup d'oeil dans le fichier <code>index.html</code> vous permettra de voir que le code de Boilerplate est déjà bien corsé :
+
+                <script src="https://gist.github.com/verekia/79c1eb5ae3e87e495778adb83bc80494.js"></script>
+
+                Le fichier style.css fait quant à lui près de 200 lignes dont les premiers 3 quarts sont un Reset CSS. Si vous cherchez où placer vos styles au milieu de tout ce code CSS, faites défiler le fichier jusqu'à atteindre le commentaire plutôt explicite :
+
+                <script src="https://gist.github.com/verekia/73014599c6fec2faa282192ce27eb82e.js"></script>
+
+                Enfin le fichier <code>script.js</code> contient un simple test pour vérifier si la bibliothèque jQuery est chargée. C'est dans ce fichier que vous pourrez écrire votre code JavaScript.
+
+                <h2>TODO.txt</h2>
+
+                Un fichier <code>TODO.txt</code> est également inclus afin de vous indiquer quelles tâches il vous reste à faire pour commencer votre projet HTML5 et comment utiliser certaines astuces présentes dans HTML5 Boilerplate. Par exemple, il vous est rappelé de ne pas oublier de remplacer la langue <code>en</code> si votre page n'est pas en anglais, ou encore de créer une page <code>404.html</code> si votre fichier de configuration serveur effectue une redirection 404.
+
+                <a href="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/initializr-todo.png">
+                <img src="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/initializr-todo.png" alt="Initializr TODO" title="Initializr TODO" />
+                </a>
+
+                <h2>Aller plus loin</h2>
+
+                La version d'HTML5 Boilerplate fournie dans Initializr est volontairement plus légère que l'originale. Si vous souhaitez approfondir votre compréhension du template et avoir des informations détaillées sur l'ensemble des fichiers présents, vous pouvez visionner l'explication officielle de Boilerplate en anglais par Paul Irish :
 
                 <p></p>
 
-                Afin de ne jamais prendre en compte les coordonnées imprécises du Wifi et de la 3G sans GPS, il nous suffit donc d'ajouter un seuil de précision minimal en mètres qui va englober tout le contenu du <code>successCallback</code>.
-
-                <script src="https://gist.github.com/verekia/c3b478d91a2d6c1aff28fb491ddb22bd.js"></script>
-
-                Et voilà c'est terminé ! Vous pouvez maintenant voir en oeuvre la démonstration de ce tutoriel ici :
-
-                <a href="/demo/exemple-geolocalisation-html5-api-google-maps/">
-Démonstration de géolocalisation HTML5 avec l'API Google Maps</a>.
+                <iframe class="full-width" width="660" height="371" src="https://www.youtube.com/embed/qyM37XKkmKQ" frameborder="0" allowfullscreen></iframe>
 
                 <p></p>
 
-                J'espère que ce tutoriel vous a plu, et qu'il a rendu un peu plus concrète l'utilisation de la géolocalisation en HTML5. C'est vrai qu'avoir des chiffres qui bougent c'est bien, mais une carte c'est mieux !
+                Je vous invite d'ailleurs également à visiter la <a href="http://html5boilerplate.com/" target="_blank">page officielle d'HTML5 Boilerplate</a> où vous trouverez de nombreux conseils pour améliorer votre site, sa compatibilité, et ses performances.
 
                 <p></p>
 
-                A très bientôt pour de nouveaux tutoriels !
+                J'espère que cette présentation vous aura donné envie d'utiliser HTML5 Boilerplate et <a href="http://www.initializr.com" target="_blank">Initializr</a> ! Certains d'entre-vous connaissent déjà probablement Boilerplate, pensez-vous qu'un outil tel qu'Initializr permettra d'aider la diffusion d'HTML5 sur le web ? L'utiliserez-vous personnellement ?
                 <p class="text-right"><span class="screen-reader-text">Posted on </span><time class="entry-date published"
-                datetime="2010-09-24">
-                September 24, 2010
+                datetime="2011-02-12">
+                February 12, 2011
                     </time>
                 </p>            </div>
         </div>

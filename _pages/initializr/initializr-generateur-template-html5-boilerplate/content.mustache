@@ -1,0 +1,131 @@
+ <a href="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/initializr-generateur-template-html5-boilerplate.png" target="_blank">
+<img src="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/initializr-generateur-template-html5-boilerplate.png" alt="Initializr" title="Initializr" />
+</a>
+
+<a href="http://www.initializr.com" target="_blank">Initializr</a> vous permet de générer un template basé sur HTML5 Boilerplate qui vous rendra opérationnel sur un projet HTML5 en quelques secondes seulement. Vous pouvez personnaliser votre template selon vos besoins afin d'éviter de démarrer votre projet avec un code trop chargé. L'ensemble du processus de création du projet et les options disponibles sont détaillées dans cet article.
+
+<p></p>
+
+Avant de commencer, si vous êtes novice en HTML5 et que vous souhaitez avoir un aperçu global de ce qui se cache derrière cette nouvelle technologie, je vous recommande de lire cette {{> _pages/html5/introduction-html5/link }}Introduction à l'HTML5</a> avant de passer à la suite.
+
+<p></p>
+
+Tout d'abord il faut savoir qu'Initializr est basé sur HTML5 Boilerplate. Intéressons-nous donc déjà à ce fameux Boilerplate.
+
+<h2>HTML5 Boilerplate</h2>
+
+HTML5 Boilerplate est un template HTML5 puissant et fiable créé et maintenu par Paul Irish, de Google, et Divya Manian. Boilerplate est constitué d'un ensemble de fichiers HTML, CSS et JavaScript, qui servent à bien démarrer un projet HTML5. Il inclut également des outils très utiles tels que Modernizr, jQuery, et un reset de CSS.
+
+<a href="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/html5-boilerplate.png">
+<img src="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/html5-boilerplate.png" alt="HTML5 Boilerplate" title="HTML5 Boilerplate" />
+</a>
+
+Boilerplate inclut en revanche d'autres outils moins utiles comme le profiling jQuery, le code de Google Analytics, des fonctions JavaScript pour le logging, un fichier de configuration pour le cross domain Flash, la configuration serveur IIS et nginx, des pages de tests, des scripts de build Ant... Bref, lorsque vous démarrez un projet avec Boilerplate, cela passe par une longue phase de suppression de toutes les parties du template qui ne vous serviront pas.
+
+<h2>Initializr - Un Boilerplate léger et customisable</h2>
+
+L'idée d'Initializr est de proposer le template de Boilerplate sans ces outils rarement utiles, afin de pouvoir commencer un projet HTML5 très rapidement tout en restant aussi fiable que Boilerplate. Le code généré par Initializr est intégralement basé sur Boilerplate, dont la solidité n'est plus à prouver. Initializr propose différentes options de personnalisation de votre template dont voici le détail :
+
+<h2>HTML/CSS</h2>
+
+Par défaut, Boilerplate vous fournit une page blanche. Initializr vous permet de générer un premier contenu basique, qui vous aidera à démarrer rapidement. La page d'exemple reprend le thème du site en mettant en forme une structure de page web classique avec un header, un footer, un menu de navigation, un bloc sur le côté, ainsi qu'une structure d'article de type blog.
+
+<a href="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/initializr-html5-template.jpg">
+<img src="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/initializr-html5-template.jpg" alt="Template HTML5 Initializr" title="Template HTML5 Initializr" />
+</a>
+
+<h2>JavaScript</h2>
+
+HTML5 Boilerplate inclut l'excellent framework JavaScript jQuery. On retrouve donc sur Initializr cette bibliothèque, disponible en version compressée ou non, mais également la possibilité de ne pas l'inclure, voire même de ne pas du tout inclure de JavaScript. Alors soyons cependant clairs sur ce point, nous parlons ici de votre JavaScript, pas de celui présent dans Modernizr ou html5shiv, qui assurent la compatibilité avec les navigateurs les plus capricieux.
+
+<a href="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/jquery-logo.png">
+<img src="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/jquery-logo.png" alt="Logo jQuery" title="Logo jQuery" />
+</a>
+
+<h2>La compatibilité</h2>
+
+<h3>HTML5shiv</h3>
+
+Les navigateurs modernes supportent parfaitement les nouvelles balises HTML5. Cependant les versions d'Internet Explorer 8 et inférieures ont besoin d'un petit coup de pouce afin de styliser ces nouvelles balises, qui par défaut ne sont pas reconnues. Ce petit coup de pouce se nomme HTML5shiv. Il s'agit d'un petit fichier JavaScript qui permettra à Internet Explorer de reconnaître les balises HTML5 grâce à la fonction <code>createElement()</code> :
+
+<script src="https://gist.github.com/verekia/ff2db8cffd08180bad65aed8f76f274f.js"></script>
+
+Tous les nouveaux éléments sont ainsi automatiquement créés avant que le contenu du corps de la page ne soit affiché. Il est ainsi obligatoire de placer HTML5shiv dans le <code>head</code> de la page plutôt qu'en bas de votre <code>body</code>, ce qui est conseillé pour le reste de votre JavaScript.
+
+<h3>Modernizr</h3>
+
+<a href="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/modernizr-logo.png">
+<img src="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/modernizr-logo.png" alt="Logo Modernizr" title="Logo Modernizr" />
+</a>
+
+Modernizr est un détecteur de support des fonctionnalités HTML5 et CSS3 qui inclut HTML5shiv. Il s'agit d'un fichier JavaScript qui va créer un objet <code>Modernizr</code> contenant des propriétés indiquant pour chaque fonctionnalité si elle fonctionne ou non dans votre navigateur :
+
+<script src="https://gist.github.com/verekia/ae7a8977bf6fea68a9a49ee85ac40579.js"></script>
+
+Modernizr ajoute également des classes CSS à la balise <code>html</code> afin de pouvoir facilement prévoir des styles alternatifs si certaines propriétés CSS3 ne sont pas supportées :
+
+<script src="https://gist.github.com/verekia/086657b7d10c3460d779129976b5b5d5.js"></script>
+
+Modernizr est donc un outil particulièrement complet dans la détection du support des fonctionnalités HTML5 et CSS3 mais il est important de bien comprendre qu'il n'ajoute pas de fonctionnalités manquantes. C'est l'outil de compatibilité sélectionné par défaut sur Initializr.
+
+<h2>La configuration serveur</h2>
+
+Enfin, Initializr propose d'inclure un fichier de configuration serveur également fourni par Boilerplate. Il est donc possible de choisir un fichier <code>.htaccess</code> pour les serveurs PHP, <code>web.config</code> pour les serveurs Microsoft IIS, ou bien <code>nginx.conf</code> pour Ruby on Rails. Il est important de noter que par défaut, ces fichiers vont réécrire l'URL de la page pour supprimer le "www" afin d'obtenir des URL plus courtes.
+
+<p></p>
+
+Si vous préférez garder votre "www", vous pouvez retirer les lignes suivantes dans le cas d'un .htaccess :
+
+<script src="https://gist.github.com/verekia/846d89d9d305eba253a5c1600458ae7f.js"></script>
+
+<a href="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/htaccess-webconfig-nginx.png">
+<img src="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/htaccess-webconfig-nginx.png" alt=".htaccess web.config nginx.conf" title=".htaccess web.config nginx.conf" />
+</a>
+
+<h2>Y a plus qu'à cliquer sur le bouton !</h2>
+
+Une fois vos choix de configuration faits, il vous suffira de cliquer sur le (très) gros bouton <i>Download!</i> pour télécharger l'archive générée.
+
+<a href="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/initializr-download.png">
+<img src="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/initializr-download.png" alt="Bouton télécharger Initializr" title="Bouton télécharger Initializr" />
+</a>
+
+Si vous laissez la configuration par défaut, vous obtiendrez une structure de projet complète prête à être utilisée, qui ressemblera à ceci :
+
+<a href="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/html5-initializr-structure.png">
+<img src="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/html5-initializr-structure.png" alt="Structure Initializr" title="Structure Initializr" />
+</a>
+
+Un rapide coup d'oeil dans le fichier <code>index.html</code> vous permettra de voir que le code de Boilerplate est déjà bien corsé :
+
+<script src="https://gist.github.com/verekia/79c1eb5ae3e87e495778adb83bc80494.js"></script>
+
+Le fichier style.css fait quant à lui près de 200 lignes dont les premiers 3 quarts sont un Reset CSS. Si vous cherchez où placer vos styles au milieu de tout ce code CSS, faites défiler le fichier jusqu'à atteindre le commentaire plutôt explicite :
+
+<script src="https://gist.github.com/verekia/73014599c6fec2faa282192ce27eb82e.js"></script>
+
+Enfin le fichier <code>script.js</code> contient un simple test pour vérifier si la bibliothèque jQuery est chargée. C'est dans ce fichier que vous pourrez écrire votre code JavaScript.
+
+<h2>TODO.txt</h2>
+
+Un fichier <code>TODO.txt</code> est également inclus afin de vous indiquer quelles tâches il vous reste à faire pour commencer votre projet HTML5 et comment utiliser certaines astuces présentes dans HTML5 Boilerplate. Par exemple, il vous est rappelé de ne pas oublier de remplacer la langue <code>en</code> si votre page n'est pas en anglais, ou encore de créer une page <code>404.html</code> si votre fichier de configuration serveur effectue une redirection 404.
+
+<a href="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/initializr-todo.png">
+<img src="/_pages/initializr/initializr-generateur-template-html5-boilerplate/img/initializr-todo.png" alt="Initializr TODO" title="Initializr TODO" />
+</a>
+
+<h2>Aller plus loin</h2>
+
+La version d'HTML5 Boilerplate fournie dans Initializr est volontairement plus légère que l'originale. Si vous souhaitez approfondir votre compréhension du template et avoir des informations détaillées sur l'ensemble des fichiers présents, vous pouvez visionner l'explication officielle de Boilerplate en anglais par Paul Irish :
+
+<p></p>
+
+<iframe class="full-width" width="660" height="371" src="https://www.youtube.com/embed/qyM37XKkmKQ" frameborder="0" allowfullscreen></iframe>
+
+<p></p>
+
+Je vous invite d'ailleurs également à visiter la <a href="http://html5boilerplate.com/" target="_blank">page officielle d'HTML5 Boilerplate</a> où vous trouverez de nombreux conseils pour améliorer votre site, sa compatibilité, et ses performances.
+
+<p></p>
+
+J'espère que cette présentation vous aura donné envie d'utiliser HTML5 Boilerplate et <a href="http://www.initializr.com" target="_blank">Initializr</a> ! Certains d'entre-vous connaissent déjà probablement Boilerplate, pensez-vous qu'un outil tel qu'Initializr permettra d'aider la diffusion d'HTML5 sur le web ? L'utiliserez-vous personnellement ?
