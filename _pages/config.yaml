@@ -44,8 +44,9 @@ consulting:
 #
 # 'demo/':
 #     short-title: ''
-# 'demo/':
-#     short-title: ''
+
+'html5/logo-html5-officiel-w3c':
+    short-title: '[FR] Logo HTML5 du W3C'
 
 'css3/introduction-css3':
     short-title: "[FR] Introduction au CSS3"
