@@ -42,8 +42,8 @@ consulting:
 # 'html5/':
 #     short-title: '[FR] '
 #
-# 'demo/':
-#     short-title: ''
+'html5/html5-page-web-application-web-livre-dunod':
+    short-title: '[FR] Mon livre sur HTML5'
 
 'initializr/initializr-generateur-template-html5-boilerplate':
   short-title: '[FR] Initializr'
