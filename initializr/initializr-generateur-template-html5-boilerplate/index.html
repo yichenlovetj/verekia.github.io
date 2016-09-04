@@ -1175,51 +1175,6 @@ Articles about Front-End</a>
                         </option>                        <option value="/front-end/">
                             Front-End Articles
                         </option>
-                        <option value="/slides/css-preprocessors/">
-                            CSS Preprocessors Talk
-                        </option>
-                        <option value="/initializr/responsive-template/">
-                            Initializr: With Great Templates Comes Great Responsivity!
-                        </option>
-                        <option value="/requirejs/build-simple-client-side-mvc-app-require-js/">
-                            Build a simple client-side MVC app with RequireJS
-                        </option>
-                        <option value="/less-css/dont-read-less-css-tutorial-highly-addictive/">
-                            DON'T READ this Less CSS Tutorial (Highly Addictive)
-                        </option>
-                        <option value="/html5/html5-page-web-application-web-livre-dunod/">
-                            HTML5 : De la page web à l'application web, livre à paraître chez Dunod
-                        </option>
-                        <option value="/initializr/initializr-generateur-template-html5-boilerplate/">
-                            Initializr - Un générateur de templates basé sur HTML5 Boilerplate
-                        </option>
-                        <option value="/html5/logo-html5-officiel-w3c/">
-                            Le logo HTML5 officiel du W3C
-                        </option>
-                        <option value="/css3/introduction-css3/">
-                            Introduction au CSS3
-                        </option>
-                        <option value="/html5/introduction-html5/">
-                            Introduction à l'HTML5
-                        </option>
-                        <option value="/html5/conferences-html5-devoxx-2010/">
-                            Les conférences sur HTML5 au Devoxx 2010
-                        </option>
-                        <option value="/html5/tutoriel-application-web-offline-html5-cache-manifest/">
-                            Tutoriel : Une application web offline HTML5 avec le cache manifest
-                        </option>
-                        <option value="/css3/police-personnalisee-css3-font-face-google-font/">
-                            Une police personnalisée CSS3 avec @font-face ou Google Font
-                        </option>
-                        <option value="/css3/ombre-css3-box-shadow/">
-                            Les ombres en CSS3 avec box-shadow
-                        </option>
-                        <option value="/html5/tutoriel-api-google-maps-geolocalisation-html5/">
-                            Tutoriel sur l'API Google Maps avec la géolocalisation HTML5
-                        </option>
-                        <option value="/html5/tutoriel-geolocalisation-html5/">
-                            Tutoriel de géolocalisation en HTML5
-                        </option>
                     </optgroup>
                     <optgroup label="Lifestyle">
                         <option value="/zeromalist/">
@@ -1405,17 +1360,30 @@ Introduction à l'HTML5</a> avant de passer à la suite.
         </script>
 
         <script>
+          var pathname = window.location.pathname;
+          var isArticle = false;
+
+          $('.js-nav-dropbown option').each(function(optionIndex, optionEl) {
+            if ($(optionEl).val() === pathname) {
+              isArticle = true;
+            }
+          });
+
+          if (isArticle) {
             // The blank option avoids text flicking at loading
             $('.js-select-blank-option').remove();
+            $('.js-nav-dropbown').val(pathname);
+          } else {
+            $('.js-select-blank-option').text('Navigation');
+            $('.js-select-blank-option').attr('disabled', true);
+          }
 
-            $('.js-nav-dropbown').val(window.location.pathname);
 
-            $('.js-nav-dropbown').change(function(){
-                window.location = $(this).val();
-                // Note to self: opening a new tab using window.open on mobile blocks a popup
-                // so I ended up using a simple window.location
-            });
-
+          $('.js-nav-dropbown').change(function(){
+            window.location = $(this).val();
+            // Note to self: opening a new tab using window.open on mobile blocks a popup
+            // so I ended up using a simple window.location
+          });
         </script>
         <script>
             $('.js-email').click(function(){

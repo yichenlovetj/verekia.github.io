@@ -5,17 +5,30 @@
         {{> _components/js-twitter-button }}
 
         <script>
+          var pathname = window.location.pathname;
+          var isArticle = false;
+
+          $('.js-nav-dropbown option').each(function(optionIndex, optionEl) {
+            if ($(optionEl).val() === pathname) {
+              isArticle = true;
+            }
+          });
+
+          if (isArticle) {
             // The blank option avoids text flicking at loading
             $('.js-select-blank-option').remove();
+            $('.js-nav-dropbown').val(pathname);
+          } else {
+            $('.js-select-blank-option').text('Navigation');
+            $('.js-select-blank-option').attr('disabled', true);
+          }
 
-            $('.js-nav-dropbown').val(window.location.pathname);
 
-            $('.js-nav-dropbown').change(function(){
-                window.location = $(this).val();
-                // Note to self: opening a new tab using window.open on mobile blocks a popup
-                // so I ended up using a simple window.location
-            });
-
+          $('.js-nav-dropbown').change(function(){
+            window.location = $(this).val();
+            // Note to self: opening a new tab using window.open on mobile blocks a popup
+            // so I ended up using a simple window.location
+          });
         </script>
         {{> _components/js-email }}
         {{> _components/js-analytics }}
