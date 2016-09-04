@@ -42,74 +42,78 @@ consulting:
 # 'html5/':
 #     short-title: '[FR] '
 #
+
+'front-end':
+    short-title: 'Front-End Articles'
+
 'html5/html5-page-web-application-web-livre-dunod':
-    short-title: '[FR] Mon livre sur HTML5'
+    short-title: "HTML5 : De la page web à l'application web, livre à paraître chez Dunod"
 
 'initializr/initializr-generateur-template-html5-boilerplate':
-  short-title: '[FR] Initializr'
+  short-title: 'Initializr - Un générateur de templates basé sur HTML5 Boilerplate'
 
 'html5/logo-html5-officiel-w3c':
-    short-title: '[FR] Logo HTML5 du W3C'
+    short-title: 'Le logo HTML5 officiel du W3C'
 
 'css3/introduction-css3':
-    short-title: "[FR] Introduction au CSS3"
+    short-title: "Introduction au CSS3"
 
 'html5/introduction-html5':
-    short-title: "[FR] Introduction à l'HTML5"
+    short-title: "Introduction à l'HTML5"
 
 'html5/conferences-html5-devoxx-2010':
-    short-title: '[FR] HTML5 à Devoxx 2010'
+    short-title: 'Les conférences sur HTML5 au Devoxx 2010'
 
 'demo/exemple-application-web-offline-html5-cache-manifest':
     short-title: "Exemple d'application web offline HTML5 avec le cache manifest"
 'demo/exemple-application-web-offline-html5-cache-manifest/demo':
     short-title: ''
 'html5/tutoriel-application-web-offline-html5-cache-manifest':
-    short-title: '[FR] Application Offline'
+    short-title: 'Tutoriel : Une application web offline HTML5 avec le cache manifest'
 
 'demo/exemple-police-css3-font-face-google-font':
     short-title: 'Exemple de police CSS3 avec @font-face et Google Font'
 'demo/exemple-police-css3-font-face-google-font/demo':
     short-title: ''
 'css3/police-personnalisee-css3-font-face-google-font':
-    short-title: '[FR] Font-face'
+    short-title: 'Une police personnalisée CSS3 avec @font-face ou Google Font'
 
 'demo/exemple-dombre-en-css3-avec-box-shadow':
     short-title: "Exemple d'ombre en CSS3 avec box-shadow"
 'demo/exemple-dombre-en-css3-avec-box-shadow/demo':
     short-title: ''
 'css3/ombre-css3-box-shadow':
-    short-title: '[FR] Box-shadow'
+    short-title: 'Les ombres en CSS3 avec box-shadow'
 
 'demo/exemple-geolocalisation-html5-api-google-maps':
     short-title: Exemple API Google Maps
 'demo/exemple-geolocalisation-html5-api-google-maps/demo':
     short-title: ''
 'html5/tutoriel-api-google-maps-geolocalisation-html5':
-    short-title: "[FR] L'API Google Maps"
+    short-title: "Tutoriel sur l'API Google Maps avec la géolocalisation HTML5"
 
 'demo/exemple-geolocalisation-html5':
     short-title: Exemple Géolocalisation HTML5
 'demo/exemple-geolocalisation-html5/demo':
     short-title: ''
 'html5/tutoriel-geolocalisation-html5':
-    short-title: '[FR] Géolocalisation HTML5'
+    short-title: 'Tutoriel de géolocalisation en HTML5'
 
 'initializr/responsive-template':
-    short-title: Responsive Initializr
+    short-title: "Initializr: With Great Templates Comes Great Responsivity!"
 
 leafadventure:
     short-title: Leaf Adventure
     url: http://soundcloud.com/leafadventure
 
 'less-css/dont-read-less-css-tutorial-highly-addictive':
-    short-title: Less CSS Tutorial
+    short-title: "DON'T READ this Less CSS Tutorial (Highly Addictive)"
 
 'music-production-lessons':
     short-title: Music Production Lessons
 
 'requirejs/build-simple-client-side-mvc-app-require-js':
-    short-title: RequireJS Tutorial
+    short-title: Build a simple client-side MVC app with RequireJS
 
 resume:
     short-title: Resume

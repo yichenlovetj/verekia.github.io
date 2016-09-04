@@ -5,23 +5,6 @@
         {{> _components/js-twitter-button }}
 
         <script>
-            var displayedNavSection = null;
-
-            $('.js-nav-expand').click(function(){
-                if (!displayedNavSection) {
-                    displayedNavSection = $(this).parents('.js-nav-list-section');
-                    $(this).parents('.js-nav-list').find('.js-nav-list-section').hide();
-                    displayedNavSection.show();
-                    displayedNavSection.find('.js-nav-item-hidden').show();
-                    $(this).text('(back)');
-                } else {
-                    $('.js-nav-list-section').show();
-                    $(this).text('(more)');
-                    $('.js-nav-item-hidden').hide()
-                    displayedNavSection = null;
-                }
-            });
-
             // The blank option avoids text flicking at loading
             $('.js-select-blank-option').remove();
 
